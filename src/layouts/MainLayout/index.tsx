@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Header from "./Header";
 interface HomepageLayoutProps {
   children: React.ReactNode;
@@ -10,14 +10,7 @@ const HomepageLayout = ({
   hasHeader = true,
 }: HomepageLayoutProps) => {
   return (
-    <Box
-      height="100vh"
-      width="100vw"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      style={{ backgroundColor: "whitesmoke", overflow: "hidden" }}
-    >
+    <Container maxWidth="xl">
       <Box
         height="100%"
         width="100%"
@@ -28,7 +21,7 @@ const HomepageLayout = ({
         {hasHeader && <Header />}
         {children}
       </Box>
-    </Box>
+    </Container>
   );
 };
 

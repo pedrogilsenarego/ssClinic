@@ -1,7 +1,16 @@
-import { Grid } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { options } from "./constants";
+import useStyles from "./styles";
 
 const Header = () => {
-  return <Grid container>Header</Grid>;
+  const classes = useStyles();
+  return (
+    <Box className={classes.root}>
+      {options.map((option) => {
+        return <Typography>{option.name}</Typography>;
+      })}
+    </Box>
+  );
 };
 
 export default Header;
