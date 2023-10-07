@@ -24,6 +24,11 @@ export const content = {
           },
           createProducts: {
             title: "Manage Products - Create Product",
+            form: {
+              required: "Required",
+              model: "Model",
+              submit: "Create Product",
+            },
           },
         },
       },
