@@ -33,6 +33,63 @@ const CreateProduct = () => {
                 "Model"
               )}
             />
+            <ControlledFormInput
+              control={control}
+              name="dimensions"
+              inputPlaceholder={i18n.t(
+                "pages.admin.createProducts.form.dimensions",
+                "Dimensions"
+              )}
+            />
+            <ControlledFormInput
+              control={control}
+              name="movement"
+              inputPlaceholder={i18n.t(
+                "pages.admin.createProducts.form.movement",
+                "Movement"
+              )}
+            />
+            <ControlledFormInput
+              control={control}
+              name="sku"
+              inputPlaceholder={i18n.t(
+                "pages.admin.createProducts.form.sku",
+                "SKU"
+              )}
+            />
+            <ControlledFormInput
+              control={control}
+              multiline={10}
+              name="description"
+              inputPlaceholder={i18n.t(
+                "pages.admin.createProducts.form.description",
+                "Description"
+              )}
+            />
+            <ControlledFormInput
+              control={control}
+              name="color"
+              inputPlaceholder={i18n.t(
+                "pages.admin.createProducts.form.color",
+                "Color"
+              )}
+            />
+            <ControlledFormInput
+              control={control}
+              name="bracelet"
+              inputPlaceholder={i18n.t(
+                "pages.admin.createProducts.form.bracelet",
+                "Bracelet"
+              )}
+            />
+            <ControlledFormInput
+              control={control}
+              name="numberWatches"
+              inputPlaceholder={i18n.t(
+                "pages.admin.createProducts.form.numberWatches",
+                "Number Watches"
+              )}
+            />
           </Box>
           <Button type="submit">
             {i18n.t("pages.admin.createProducts.form.submit", "Create Product")}

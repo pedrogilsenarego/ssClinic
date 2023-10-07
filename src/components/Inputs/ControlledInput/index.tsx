@@ -4,8 +4,8 @@ import {
   FormControl,
   FormControlProps,
   FormHelperText,
-  Input,
   InputLabel,
+  TextField,
   Tooltip,
 } from "@mui/material";
 import { FC } from "react";
@@ -21,6 +21,7 @@ export interface BaseReactHookFormProps {
   tooltipLabel?: string;
   inputPlaceholder: string;
   type?: string;
+  multiline?: number;
 }
 export interface BaseProps extends FormControlProps, BaseReactHookFormProps {}
 
@@ -60,6 +61,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
     name,
     control,
     label,
+    multiline,
     inputPlaceholder,
     type,
 
@@ -79,8 +81,9 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
       {...rest}
       inputPlaceholder={inputPlaceholder}
     >
-      <Input
+      <TextField
         type={type}
+        multiline={true}
         style={{ marginBottom: hasError ? "0.2rem" : "0" }}
         {...field}
         id={name}

@@ -27,7 +27,13 @@ export const content = {
             form: {
               required: "Required",
               model: "Model",
+              dimensions: "Dimensions",
+              color: "Color",
+              description: "Description",
+              sku: "SKU",
               submit: "Create Product",
+              bracelet: "Bracelet",
+              numberWatches: "Number Watches",
             },
           },
         },
