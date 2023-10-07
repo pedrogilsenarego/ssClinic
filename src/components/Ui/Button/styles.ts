@@ -8,4 +8,5 @@ export const buttonStyle: CSSProperties = {
   borderRadius: "10px",
   textTransform: "capitalize",
   marginTop: "5px",
+  border: `solid 2px ${Colors.black[40050]}`,
 };

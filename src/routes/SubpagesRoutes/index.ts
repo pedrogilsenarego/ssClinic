@@ -1,1 +1,3 @@
-export const subpagesRoutes = [];
+import { AdminPages } from "./Admin";
+
+export const subpagesRoutes = [...AdminPages];
