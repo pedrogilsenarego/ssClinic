@@ -15,12 +15,17 @@ export const productsServices = {
   getProducts: async () => {
     try {
       const querySnapshot = await getDocs(collection(db, DB.PRODUCTS));
+      const productsArray: Product[] = [];
+
       querySnapshot.forEach((doc) => {
-        console.log(`Product:${doc.id} => ${doc.data()}`);
+        const data = doc.data() as any;
+        const id = doc.id;
+        productsArray.push({ id, ...data });
       });
-      return querySnapshot;
+
+      return productsArray;
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error fetching documents: ", e);
     }
   },
 };

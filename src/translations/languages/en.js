@@ -21,6 +21,9 @@ export const content = {
           manageProducts: {
             title: "Manage Products",
             createProduct: "Create Product",
+            list: {
+              model: "Model",
+            },
           },
           createProducts: {
             title: "Manage Products - Create Product",

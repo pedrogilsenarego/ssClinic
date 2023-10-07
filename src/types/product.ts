@@ -3,4 +3,7 @@ export type Product = {
   dimensions: string;
   movement: string;
   sku: string;
+  description: string;
+  numberWatches: string;
+  bracelet: string;
 };
