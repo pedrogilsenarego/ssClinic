@@ -29,6 +29,7 @@ export const content = {
             title: "Manage Products - Create Product",
             form: {
               required: "Required",
+              thumbnail: "Thumbnail",
               model: "Model",
               dimensions: "Dimensions",
               color: "Color",

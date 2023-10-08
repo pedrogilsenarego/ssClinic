@@ -10,7 +10,7 @@ import { CreateProductSchema, CreateProductSchemaType } from "./validation";
 
 const useCreateProduct = () => {
   const navigate = useNavigate();
-  const { reset, control, handleSubmit, setValue } =
+  const { reset, control, handleSubmit, setValue, setError } =
     useForm<CreateProductSchemaType>({
       resolver: zodResolver(CreateProductSchema),
       defaultValues,
@@ -34,7 +34,14 @@ const useCreateProduct = () => {
   ) => {
     createProduct(formData as Product);
   };
-  return { handleSubmit, onSubmit, control, setValue, isCreatingProduct };
+  return {
+    handleSubmit,
+    onSubmit,
+    control,
+    setValue,
+    isCreatingProduct,
+    setError,
+  };
 };
 
 export default useCreateProduct;

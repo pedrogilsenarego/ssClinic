@@ -1,5 +1,6 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import ControlledFormInput from "../../../../components/Inputs/ControlledInput";
+import FileUploader from "../../../../components/Inputs/FileUploader";
 import Button from "../../../../components/Ui/Button";
 import { i18n } from "../../../../translations/i18n";
 import useStyles from "./styles";
@@ -7,7 +8,8 @@ import useCreateProduct from "./useCreateProduct";
 
 const CreateProduct = () => {
   const classes = useStyles();
-  const { handleSubmit, onSubmit, control } = useCreateProduct();
+  const { handleSubmit, onSubmit, control, setValue, setError } =
+    useCreateProduct();
   return (
     <>
       <Typography fontSize="16px">
@@ -26,6 +28,18 @@ const CreateProduct = () => {
         >
           <Box className={classes.inputBox}>
             <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <FileUploader
+                  name="thumbnail"
+                  control={control}
+                  setValue={setValue}
+                  setError={setError}
+                  fieldTitle={i18n.t(
+                    "pages.admin.createProducts.form.thumbnail",
+                    "Thumbnail"
+                  )}
+                />
+              </Grid>
               <Grid item xs={6}>
                 <ControlledFormInput
                   control={control}

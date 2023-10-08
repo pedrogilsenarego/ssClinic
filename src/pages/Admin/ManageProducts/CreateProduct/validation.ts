@@ -2,6 +2,12 @@ import { z } from "zod";
 import { i18n } from "../../../../translations/i18n";
 
 export const CreateProductSchema = z.object({
+  thumbnail: z.string({
+    required_error: i18n.t(
+      "pages.admin.createProducts.form.required",
+      "Required"
+    ),
+  }),
   model: z.string({
     required_error: i18n.t(
       "pages.admin.createProducts.form.required",

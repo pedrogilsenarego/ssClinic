@@ -1,4 +1,5 @@
 export const defaultValues = {
+  thumbnail: undefined,
   model: undefined,
   dimensions: undefined,
   movement: undefined,

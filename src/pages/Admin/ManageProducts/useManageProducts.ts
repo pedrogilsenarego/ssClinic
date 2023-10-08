@@ -4,9 +4,10 @@ import { productsServices } from "../../../services/products.services";
 import { Product } from "../../../types/product";
 
 const useManageProducts = () => {
-  const { data: productsData = [], refetch: refetchProducts } = useQuery<
-    Product[] | any
-  >([queryIdentifiers.PRODUCTS], productsServices.getProducts);
+  const { data: productsData = [] } = useQuery<Product[] | any>(
+    [queryIdentifiers.PRODUCTS],
+    productsServices.getProducts
+  );
 
   const handleAction = async (type: string, id: number, value?: any) => {
     switch (type) {

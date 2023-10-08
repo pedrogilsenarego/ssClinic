@@ -1,4 +1,5 @@
 export type Product = {
+  thumbnail: string;
   model: string;
   dimensions: string;
   movement: string;
