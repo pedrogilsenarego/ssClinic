@@ -12,9 +12,22 @@ export const productsServices = {
         product.thumbnail,
         (progress) => console.log(progress)
       );
+
+      const specialThumbnailUrl = await handleAddThumbnail(
+        product.sku,
+        product.specialThumbnail,
+        (progress) => console.log(progress)
+      );
+      const imagesUrl = await handleAddThumbnail(
+        product.sku,
+        product.images,
+        (progress) => console.log(progress)
+      );
       const newProduct: Product = {
         ...product,
         thumbnail: thumbnailUrl,
+        specialThumbnail: specialThumbnailUrl,
+        images: imagesUrl,
       };
 
       const docRef = await addDoc(collection(db, DB.PRODUCTS), newProduct);

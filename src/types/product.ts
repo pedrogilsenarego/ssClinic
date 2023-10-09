@@ -1,5 +1,7 @@
 export type Product = {
-  thumbnail: string;
+  thumbnail: any;
+  specialThumbnail: any;
+  images: any;
   model: string;
   dimensions: string;
   movement: string;

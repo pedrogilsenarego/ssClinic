@@ -23,7 +23,7 @@ const Image = ({ pos, image, deleteImage }: Props) => {
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: hover ? "lightGrey" : "transparent",
-        width: "100%",
+        width: "90%",
         height: "80px",
         border: `solid 3px ${Colors.black[40050]}`,
         borderRadius: "10px",
@@ -44,12 +44,6 @@ const Image = ({ pos, image, deleteImage }: Props) => {
         src={URL.createObjectURL(image)}
       />
       <div style={{ display: "flex", columnGap: "5px" }}>
-        <MdOutlineSearch
-          size="1.5rem"
-          color={Colors.black[400]}
-          style={{ cursor: "pointer" }}
-        />
-
         <RiDeleteBinLine
           onClick={() => deleteImage(pos)}
           style={{ cursor: "pointer" }}

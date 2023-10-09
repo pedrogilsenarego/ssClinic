@@ -8,6 +8,18 @@ export const CreateProductSchema = z.object({
       "Required"
     ),
   }),
+  specialThumbnail: z.unknown({
+    required_error: i18n.t(
+      "pages.admin.createProducts.form.required",
+      "Required"
+    ),
+  }),
+  images: z.unknown({
+    required_error: i18n.t(
+      "pages.admin.createProducts.form.required",
+      "Required"
+    ),
+  }),
   model: z.string({
     required_error: i18n.t(
       "pages.admin.createProducts.form.required",

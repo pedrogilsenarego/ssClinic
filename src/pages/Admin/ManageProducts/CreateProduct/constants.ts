@@ -1,5 +1,6 @@
 export const defaultValues = {
   thumbnail: undefined,
+  specialThumbnail: undefined,
   model: undefined,
   dimensions: undefined,
   movement: undefined,
@@ -8,4 +9,5 @@ export const defaultValues = {
   color: undefined,
   numberWatches: undefined,
   bracelet: undefined,
+  images: undefined,
 };
