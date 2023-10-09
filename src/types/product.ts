@@ -10,3 +10,12 @@ export type Product = {
   numberWatches: string;
   bracelet: string;
 };
+
+export type ProductMapped = {
+  id: number;
+  thumbnail: string;
+  sku: string;
+  model: string;
+  movement: string;
+  actions: any[];
+};

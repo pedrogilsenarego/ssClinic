@@ -1,5 +1,6 @@
 import { Box, Card, Divider, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../../components/Loader";
 import TableList from "../../../components/TableList";
 import Button from "../../../components/Ui/Button";
 import { ROUTE_PATHS } from "../../../routes/constants";
@@ -10,7 +11,7 @@ import useManageProducts from "./useManageProducts";
 
 const ManageProducts = () => {
   const classes = useStyles();
-  const { handleAction, productsData } = useManageProducts();
+  const { handleAction, productsData, isDeletingProduct } = useManageProducts();
   const navigate = useNavigate();
 
   return (
@@ -25,11 +26,15 @@ const ManageProducts = () => {
         </Button>
         <Box style={{ marginTop: "30px" }}>
           <Card style={{ padding: "20px" }}>
-            <TableList
-              columns={tableColumns}
-              rows={productsData}
-              onAction={handleAction}
-            />
+            {isDeletingProduct ? (
+              <Loader customMessage="Deleting Product" />
+            ) : (
+              <TableList
+                columns={tableColumns}
+                rows={productsData}
+                onAction={handleAction}
+              />
+            )}
           </Card>
           <Box
             display="flex"

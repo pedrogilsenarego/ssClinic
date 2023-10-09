@@ -23,6 +23,19 @@ export const content = {
             createProduct: "Create Product",
             list: {
               model: "Model",
+              movement: "Movement",
+              sku: "SKU",
+              actions: "Actions",
+              actionsHints: {
+                delete: {
+                  tooltip: "Delete this product",
+                  title: "Delete product",
+                  confirm: "Confirm",
+                  reject: "Reject",
+                  description:
+                    "Are you sure you want to delete this product, this is irreversible",
+                },
+              },
             },
           },
           createProducts: {

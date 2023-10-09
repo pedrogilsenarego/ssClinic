@@ -1,8 +1,15 @@
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+} from "firebase/firestore";
+
 import { db } from "../firebase/utils";
 import { Product } from "../types/product";
 import { DB } from "./constants";
-import { handleAddThumbnail } from "./products.handlers";
+import { deleteStorageFolder, handleAddThumbnail } from "./products.handlers";
 
 export const productsServices = {
   createProduct: async (product: Product) => {
@@ -50,6 +57,23 @@ export const productsServices = {
       return productsArray;
     } catch (e) {
       console.error("Error fetching documents: ", e);
+    }
+  },
+  deleteProduct: async ({
+    productId,
+    sku,
+  }: {
+    productId: string;
+    sku: string;
+  }) => {
+    try {
+      await deleteDoc(doc(db, DB.PRODUCTS, productId));
+      await deleteStorageFolder(`products/${sku}`);
+
+      console.log(`Product with ID ${productId} and model ${sku} deleted.`);
+    } catch (error) {
+      console.error("Error deleting product: ", error);
+      throw error; // Propagate the error to handle it appropriately in the calling code.
     }
   },
 };

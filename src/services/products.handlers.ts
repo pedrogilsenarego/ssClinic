@@ -1,4 +1,11 @@
-import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import {
+  deleteObject,
+  getDownloadURL,
+  getStorage,
+  listAll,
+  ref,
+  uploadBytes,
+} from "firebase/storage";
 
 export const handleAddThumbnail = async (
   title: string,
@@ -36,4 +43,39 @@ export const handleAddThumbnail = async (
     await uploadImageAsPromise(imageFile);
   }
   return c;
+};
+
+export const deleteStorageFolder = async (folderPath: string) => {
+  try {
+    const storage = getStorage();
+
+    const listRef = ref(storage, folderPath);
+
+    const files = await listAll(listRef);
+
+    // Delete each file/object within the folder
+    const deletePromises = files.items.map(async (fileRef) => {
+      try {
+        await deleteObject(fileRef);
+        console.log(`Deleted file: ${fileRef.name}`);
+      } catch (deleteError: any) {
+        console.error(
+          `Error deleting file ${fileRef.name}: ${deleteError.message}`
+        );
+      }
+    });
+
+    await Promise.all(deletePromises);
+
+    // After all files are deleted, delete the folder
+    try {
+      await deleteObject(listRef);
+      console.log(`Folder '${folderPath}' deleted.`);
+    } catch (folderDeleteError: any) {
+      console.error(`Error deleting folder: ${folderDeleteError.message}`);
+    }
+  } catch (error) {
+    console.error("Error listing files in folder: ", error);
+    throw error; // Propagate the error to handle it appropriately in the calling code.
+  }
 };

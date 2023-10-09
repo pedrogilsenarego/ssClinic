@@ -43,7 +43,7 @@ export const TableCell = styled(MuiTableCell, {
   paddingInline: isFirstRow ? "0px" : "10px",
   paddingTop: isFirstRow ? "16px" : "6px",
   paddingBottom: isFirstRow ? "4px" : "6px",
-  color: isFirstRow ? Colors.white[400] : Colors.white[400],
+  color: isFirstRow ? Colors.black[400] : Colors.black[400],
   cursor: onClick ? "pointer" : "default",
   backgroundColor: isFirstRow ? "inherit" : Colors.black[40025],
 }));
