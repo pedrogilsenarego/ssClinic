@@ -67,7 +67,7 @@ export const content = {
             register: "Not registered yet? Click here",
           },
           register: {
-            loaderMessage: "Logging in",
+            loaderMessage: "Creating new user",
             username: "Username",
             password: "Password",
             confirmPassword: "Confirm Password",

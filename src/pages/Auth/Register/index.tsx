@@ -13,7 +13,10 @@ const Register = () => {
     <>
       {isRegistering ? (
         <Loader
-          customMessage={i18n.t("pages.auth.login.loaderMessage", "Logging in")}
+          customMessage={i18n.t(
+            "pages.auth.register.loaderMessage",
+            "Creating new user"
+          )}
         />
       ) : (
         <Box className={classes.root}>

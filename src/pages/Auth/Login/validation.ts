@@ -2,72 +2,34 @@ import { z } from "zod";
 import { i18n } from "../../../translations/i18n";
 
 export const CreateProductSchema = z.object({
-  thumbnail: z.unknown({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
+  email: z
+    .string()
+    .email({
+      message: i18n.t(
+        "pages.access.subpages.login.validation.invalidEmail",
+        "Invalid email address"
+      ),
+    })
+    .min(1, {
+      message: i18n.t(
+        "pages.access.subpages.login.validation.emailRequired",
+        "The email is required"
+      ),
+    }),
+  password: z
+    .string({
+      required_error: i18n.t(
+        "pages.access.subpages.login.validation.passwordRequired",
+        "The password is required"
+      ),
+    })
+    .min(
+      3,
+      i18n.t(
+        "pages.access.subpages.login.validation.passwordShort",
+        "The password is to short"
+      )
     ),
-  }),
-  specialThumbnail: z.unknown({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  images: z.unknown({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  model: z.string({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  dimensions: z.string({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  movement: z.string({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  sku: z.string({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  description: z.string({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  color: z.string({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  bracelet: z.string({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
-  numberWatches: z.string({
-    required_error: i18n.t(
-      "pages.admin.createProducts.form.required",
-      "Required"
-    ),
-  }),
 });
 
 export type CreateProductSchemaType = z.infer<typeof CreateProductSchema>;

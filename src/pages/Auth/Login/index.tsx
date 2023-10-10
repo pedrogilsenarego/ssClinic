@@ -29,11 +29,8 @@ const Login = () => {
                 <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
-                    name="username"
-                    inputPlaceholder={i18n.t(
-                      "pages.auth.login.username",
-                      "Username"
-                    )}
+                    name="email"
+                    inputPlaceholder={i18n.t("pages.auth.login.email", "Email")}
                   />
                 </Grid>
                 <Grid item xs={12}>

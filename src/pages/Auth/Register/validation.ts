@@ -9,12 +9,20 @@ export const CreateUserSchema = z
         "The username is required"
       ),
     }),
-    email: z.string({
-      required_error: i18n.t(
-        "pages.access.subpages.login.validation.usernameRequired",
-        "The email is required"
-      ),
-    }),
+    email: z
+      .string()
+      .email({
+        message: i18n.t(
+          "pages.access.subpages.login.validation.invalidEmail",
+          "Invalid email address"
+        ),
+      })
+      .min(1, {
+        message: i18n.t(
+          "pages.access.subpages.login.validation.emailRequired",
+          "The email is required"
+        ),
+      }),
     password: z
       .string({
         required_error: i18n.t(
@@ -23,7 +31,7 @@ export const CreateUserSchema = z
         ),
       })
       .min(
-        3,
+        6,
         i18n.t(
           "pages.access.subpages.login.validation.passwordShort",
           "The password is to short"
@@ -36,7 +44,7 @@ export const CreateUserSchema = z
           "The password is required"
         ),
       })
-      .min(3, "passwordTooShort"),
+      .min(6, "passwordTooShort"),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Password doesn't match",
