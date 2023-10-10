@@ -5,4 +5,6 @@ export const ROUTE_PATHS = {
   MY_ACCOUNT: "/my-account",
   ADMIN: "/admin/manage-products",
   ADMIN_CREATE_PRODUCT: "/admin/manage-products/create-product",
+  LOGIN: "/auth/login",
+  REGISTER: "/auth/register",
 };

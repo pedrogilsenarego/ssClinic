@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Control, UseFormSetValue, get, useController } from "react-hook-form";
 
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
 };
 
 const useControlledInput = ({ name, control, setValue }: Props) => {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     field,
     formState: { isSubmitting, errors },
@@ -17,7 +19,23 @@ const useControlledInput = ({ name, control, setValue }: Props) => {
   const error = get(errors, name, "");
   const hasError = Boolean(error?.message);
 
-  return { hasError, field, isSubmitting };
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (event: any) => {
+    event.preventDefault();
+  };
+
+  return {
+    hasError,
+    field,
+    isSubmitting,
+    showPassword,
+    setShowPassword,
+    handleClickShowPassword,
+    handleMouseDownPassword,
+  };
 };
 
 export default useControlledInput;

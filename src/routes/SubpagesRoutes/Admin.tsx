@@ -3,7 +3,7 @@ import AdminLayout from "../../layouts/Admin/AdminLayout";
 import { ROUTE_PATHS } from "../constants";
 import { RoutesI } from "../routesImport";
 
-export const AdminPages = [
+export const adminPages = [
   {
     path: ROUTE_PATHS.ADMIN,
     component: (

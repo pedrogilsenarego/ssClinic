@@ -1,9 +1,12 @@
 /* eslint-disable react/no-unused-prop-types */
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Box,
   FormControl,
   FormControlProps,
   FormHelperText,
+  IconButton,
+  InputAdornment,
   InputLabel,
   TextField,
   Tooltip,
@@ -22,6 +25,7 @@ export interface BaseReactHookFormProps {
   inputPlaceholder: string;
   type?: string;
   multiline?: number;
+  password?: boolean;
 }
 export interface BaseProps extends FormControlProps, BaseReactHookFormProps {}
 
@@ -64,11 +68,18 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
     multiline,
     inputPlaceholder,
     type,
-
+    password,
     setValue,
     ...rest
   } = props;
-  const { hasError, field, isSubmitting } = useControlledInput({
+  const {
+    hasError,
+    field,
+    isSubmitting,
+    showPassword,
+    handleClickShowPassword,
+    handleMouseDownPassword,
+  } = useControlledInput({
     name,
     control,
     setValue,
@@ -82,13 +93,30 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
       inputPlaceholder={inputPlaceholder}
     >
       <TextField
-        type={type}
         multiline={true}
         style={{ marginBottom: hasError ? "0.2rem" : "0" }}
         {...field}
         id={name}
         disabled={isSubmitting}
         placeholder={inputPlaceholder}
+        type={showPassword || !password ? "text" : "password"}
+        InputProps={
+          password
+            ? {
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }
+            : {}
+        }
       />
     </FormControlComp>
   );

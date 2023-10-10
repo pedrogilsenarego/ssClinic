@@ -6,6 +6,7 @@ export const content = {
         collections: "Collections",
         dna: "DNA",
         account: "My account",
+        login: "Login",
         admin: "Admin",
       },
       errors: {
@@ -55,6 +56,23 @@ export const content = {
               bracelet: "Bracelet",
               numberWatches: "Number Watches",
             },
+          },
+        },
+        auth: {
+          login: {
+            loaderMessage: "Logging in",
+            username: "Username",
+            password: "Password",
+            login: "Login",
+            register: "Not registered yet? Click here",
+          },
+          register: {
+            loaderMessage: "Logging in",
+            username: "Username",
+            password: "Password",
+            confirmPassword: "Confirm Password",
+            email: "E-mail",
+            register: "Register",
           },
         },
       },

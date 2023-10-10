@@ -5,4 +5,5 @@ export const queryIdentifiers = {
 
 export const DB = {
   PRODUCTS: "products",
+  USERS: "users",
 };
