@@ -1,16 +1,20 @@
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { State } from "../redux/types";
 import { ROUTE_PATHS } from "../routes/constants";
 import { CurrentUser } from "../types/user";
 import checkUserIsAdmin from "../utils/checkUserIsAdmin";
 
 const useAdminAuth = (props: any) => {
-  const currentUser: CurrentUser = { username: "poedro", roles: ["admin"] };
+  const currentUser = useSelector<State, CurrentUser | null>(
+    (state) => state.user.currentUser
+  );
 
   const navigate = useNavigate();
   useEffect(
     () => {
-      if (!checkUserIsAdmin(currentUser)) {
+      if (!currentUser || !checkUserIsAdmin(currentUser)) {
         navigate(ROUTE_PATHS.HOME);
       }
     },

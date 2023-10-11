@@ -5,7 +5,8 @@ export const roles = {
 
 export type CurrentUser = {
   username: string;
-  roles: (typeof roles)[keyof typeof roles][];
+  email: string;
+  role: (typeof roles)[keyof typeof roles][];
 };
 
 export type CreateUser = {
