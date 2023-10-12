@@ -44,7 +44,9 @@ export const content = {
             isCreatingProduct: "The product is being created",
             form: {
               required: "Required",
+              mustNumber: "Must be a number",
               thumbnail: "Thumbnail",
+              fileSize: "The file size should be less than:",
               specialThumbnail: "Special Thumbnail",
               images: "Images",
               model: "Model",

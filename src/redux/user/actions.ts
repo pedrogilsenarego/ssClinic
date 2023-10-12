@@ -5,3 +5,7 @@ export const setUser = (payload: CurrentUser) => ({
   type: userTypes.SET_USER,
   payload,
 });
+
+export const signOut = () => ({
+  type: userTypes.SIGNOUT,
+});

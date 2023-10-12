@@ -1,20 +1,16 @@
-import { zodResolver } from "@hookform/resolvers/zod";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import { productsServices } from "../../../../services/products.services";
-import { Product } from "../../../../types/product";
-import { defaultValues } from "./constants";
-import { CreateProductSchema, CreateProductSchemaType } from "./validation";
+import { FORM_VALIDATION } from "./validation";
 
 const useCreateProduct = () => {
   const navigate = useNavigate();
-  const { reset, control, handleSubmit, setValue, setError } =
-    useForm<CreateProductSchemaType>({
-      resolver: zodResolver(CreateProductSchema),
-      defaultValues,
-    });
+  const { reset, control, handleSubmit, setValue, setError } = useForm({
+    resolver: yupResolver(FORM_VALIDATION),
+  });
 
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
     productsServices.createProduct,
@@ -29,10 +25,8 @@ const useCreateProduct = () => {
     }
   );
 
-  const onSubmit: SubmitHandler<CreateProductSchemaType> = async (
-    formData: CreateProductSchemaType
-  ) => {
-    createProduct(formData as Product);
+  const onSubmit = async (formData: any) => {
+    createProduct(formData);
   };
   return {
     handleSubmit,

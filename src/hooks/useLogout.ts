@@ -1,17 +1,17 @@
-import { useQueryClient } from "@tanstack/react-query";
 import { useCallback } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { signOut } from "../redux/user/actions";
 import { ROUTE_PATHS } from "../routes/constants";
-import { queryIdentifiers } from "../services/constants";
 
 export const useSignOut = () => {
-  const queryClient = useQueryClient();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onSignOut = useCallback(() => {
-    queryClient.setQueryData([queryIdentifiers.USER], null);
+    dispatch(signOut());
     navigate(ROUTE_PATHS.LOGIN);
-  }, [navigate, queryClient]);
+  }, [navigate, dispatch]);
 
   return { onSignOut };
 };
