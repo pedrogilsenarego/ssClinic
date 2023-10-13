@@ -11,6 +11,7 @@ import useControlledSelect from "./useControlledSelect";
 
 export interface BaseReactHookFormProps {
   name: string;
+  defaultLabel?: string;
   control?: Control<any, any>;
   setValue?: UseFormSetValue<any>;
   label?: string;
@@ -19,15 +20,23 @@ export interface BaseReactHookFormProps {
 
 export interface BaseProps extends FormControlProps, BaseReactHookFormProps {}
 
-const ControlledSelect = ({ label, name, control, options }: BaseProps) => {
+const ControlledSelect = ({
+  label,
+  defaultLabel,
+  name,
+  control,
+  options,
+}: BaseProps) => {
   const { errors, error } = useControlledSelect({ name, control });
   return (
-    <FormControl error={!!errors[name]}>
+    <FormControl error={!!errors[name]} fullWidth>
       <InputLabel>{label}</InputLabel>
       <Controller
         name={name}
         control={control}
-        defaultValue=""
+        defaultValue={
+          options.find((option) => option.label === defaultLabel)?.value || ""
+        }
         render={({ field }) => (
           <Select {...field}>
             {options.map((option) => (

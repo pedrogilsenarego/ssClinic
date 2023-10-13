@@ -8,7 +8,9 @@ import { CreateUser, Login } from "../types/user";
 import { DB } from "./constants";
 
 export const userServices = {
-  createUser: async ({ email, password, username }: CreateUser) => {
+  createUser: async (newUser: CreateUser) => {
+    const { password, confirmPassword, ...userData } = newUser;
+    const { email } = newUser;
     try {
       // Create a new user in Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(
@@ -20,7 +22,8 @@ export const userServices = {
 
       // Create a Firestore document with the same ID as user.uid
       const userDocRef = doc(db, DB.USERS, user.uid);
-      await setDoc(userDocRef, { email, username, role: ["USER"] });
+
+      await setDoc(userDocRef, { ...userData, role: ["USER"] });
 
       console.log("Document written with ID: ", user.uid); // Use user.uid as the Firestore document ID
     } catch (error) {

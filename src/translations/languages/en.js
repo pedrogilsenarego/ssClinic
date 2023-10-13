@@ -50,6 +50,7 @@ export const content = {
               specialThumbnail: "Special Thumbnail",
               images: "Images",
               model: "Model",
+
               dimensions: "Dimensions",
               color: "Color",
               description: "Description",
@@ -70,8 +71,14 @@ export const content = {
           },
           register: {
             loaderMessage: "Creating new user",
+            phone: "Phone",
             username: "Username",
+            fullName: "Full Name",
             password: "Password",
+            address1: "Address line 1",
+            address2: "Address line 2",
+            city: "City",
+            postalCode: "Postal Code",
             confirmPassword: "Confirm Password",
             email: "E-mail",
             register: "Register",

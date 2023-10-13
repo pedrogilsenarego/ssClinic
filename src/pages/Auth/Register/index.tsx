@@ -1,8 +1,10 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Divider, Grid } from "@mui/material";
 import ControlledFormInput from "../../../components/Inputs/ControlledInput";
+import ControlledSelect from "../../../components/Inputs/ControlledSelect";
 import Loader from "../../../components/Loader";
 import Button from "../../../components/Ui/Button";
 import { i18n } from "../../../translations/i18n";
+import { countryOptions } from "./constants";
 import useStyles from "./styles";
 import useRegister from "./useRegister";
 
@@ -29,6 +31,9 @@ const Register = () => {
             <Box className={classes.inputBox}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
+                  <Divider>User Data</Divider>
+                </Grid>
+                <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
                     name="username"
@@ -38,7 +43,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
                     name="email"
@@ -48,7 +53,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
                     password
@@ -59,7 +64,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
                     password
@@ -68,6 +73,81 @@ const Register = () => {
                       "pages.auth.register.confirmPassword",
                       "Confirm password"
                     )}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Divider>Personal Data</Divider>
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledFormInput
+                    control={control}
+                    name="phone"
+                    inputPlaceholder={i18n.t(
+                      "pages.auth.register.phone",
+                      "Phone"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledFormInput
+                    control={control}
+                    name="fullName"
+                    inputPlaceholder={i18n.t(
+                      "pages.auth.register.fullName",
+                      "Full Name"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Divider>Address</Divider>
+                </Grid>
+
+                <Grid item xs={12}>
+                  <ControlledFormInput
+                    control={control}
+                    name="address1"
+                    inputPlaceholder={i18n.t(
+                      "pages.auth.register.address1",
+                      "Address line 1"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <ControlledFormInput
+                    control={control}
+                    name="address2"
+                    inputPlaceholder={i18n.t(
+                      "pages.auth.register.address2",
+                      "Address line 2"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledFormInput
+                    control={control}
+                    name="city"
+                    inputPlaceholder={i18n.t(
+                      "pages.auth.register.city",
+                      "City"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledFormInput
+                    control={control}
+                    name="postalCode"
+                    inputPlaceholder={i18n.t(
+                      "pages.auth.register.postalCode",
+                      "Postal Code"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledSelect
+                    control={control}
+                    name="country"
+                    options={countryOptions}
+                    defaultLabel={countryOptions[0].label}
                   />
                 </Grid>
               </Grid>
