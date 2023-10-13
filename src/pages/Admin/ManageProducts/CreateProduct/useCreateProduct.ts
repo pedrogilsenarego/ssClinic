@@ -1,11 +1,12 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import { queryIdentifiers } from "../../../../services/constants";
 import { productsServices } from "../../../../services/products.services";
+import { defaultValues, defaultValues1 } from "./constants";
 import { FORM_VALIDATION } from "./validation";
 
 type Props = {
@@ -19,15 +20,9 @@ const useCreateProduct = ({ edit = false }: Props) => {
 
   const documentID = id || "";
 
-  const { reset, control, handleSubmit, setValue, setError } = useForm({
-    resolver: yupResolver(FORM_VALIDATION),
-  });
-
-  const {
-    isLoading: isLoadingProduct,
-    error: errorFetchingProduct,
-    data: productData,
-  } = useQuery<[string, string]>(
+  const { isLoading: isLoadingProduct, data: productData } = useQuery<
+    [string, string]
+  >(
     [queryIdentifiers.PRODUCT, documentID],
     () => productsServices.getProduct(documentID),
     {
@@ -35,7 +30,18 @@ const useCreateProduct = ({ edit = false }: Props) => {
     }
   );
 
-  console.log(productData);
+  const initialValues = useMemo(() => {
+    if (edit && productData) {
+      return defaultValues1(productData);
+    } else {
+      return defaultValues;
+    }
+  }, [edit, productData]);
+
+  const { reset, control, handleSubmit, setValue, setError } = useForm({
+    resolver: yupResolver(FORM_VALIDATION),
+    defaultValues: initialValues,
+  });
 
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
     productsServices.createProduct,
@@ -51,7 +57,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
   );
 
   const onSubmit = async (formData: any) => {
-    createProduct(formData);
+    if (!edit) createProduct(formData);
   };
   return {
     handleSubmit,

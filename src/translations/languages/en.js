@@ -41,6 +41,7 @@ export const content = {
           },
           createProducts: {
             title: "Manage Products - Create Product",
+            editTitle: "Manage Products - Edit Product",
             isCreatingProduct: "The product is being created",
             isLoadingProduct: "The product is being fetched",
             form: {

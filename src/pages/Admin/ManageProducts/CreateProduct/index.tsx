@@ -25,10 +25,15 @@ const CreateProduct = ({ edit = false }: Props) => {
   return (
     <>
       <Typography fontSize="16px">
-        {i18n.t(
-          "pages.admin.createProducts.title",
-          "Manage Products - Create Product"
-        )}
+        {edit
+          ? i18n.t(
+              "pages.admin.createProducts.editTitle",
+              "Manage Products - Edit Product"
+            )
+          : i18n.t(
+              "pages.admin.createProducts.title",
+              "Manage Products - Create Product"
+            )}
       </Typography>
       <Divider />
       {isCreatingProduct || (isLoadingProduct && edit) ? (
