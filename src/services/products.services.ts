@@ -3,6 +3,7 @@ import {
   collection,
   deleteDoc,
   doc,
+  getDoc,
   getDocs,
 } from "firebase/firestore";
 
@@ -57,6 +58,23 @@ export const productsServices = {
       return productsArray;
     } catch (e) {
       console.error("Error fetching documents: ", e);
+    }
+  },
+  getProduct: async (id: string) => {
+    try {
+      const productDocRef = doc(db, DB.PRODUCTS, id);
+      const productDoc = await getDoc(productDocRef);
+
+      if (productDoc.exists()) {
+        const data = productDoc.data() as any;
+        return { id, ...data };
+      } else {
+        // Document with the provided ID doesn't exist
+        console.error("Product not found with ID: ", id);
+        return null;
+      }
+    } catch (e) {
+      console.error("Error fetching document: ", e);
     }
   },
   deleteProduct: async ({

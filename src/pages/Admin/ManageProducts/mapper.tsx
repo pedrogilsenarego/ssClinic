@@ -12,6 +12,17 @@ const mapProducts = (product: Product, index: number): ProductMapped => {
     actions: [
       {
         buttonType: "icon",
+        event: "edit",
+        icon: (
+          <Icons.Edit
+            size="20px"
+            style={{ cursor: "pointer", marginBottom: "-4px" }}
+          />
+        ),
+        label: "Edit",
+      },
+      {
+        buttonType: "icon",
         event: "delete",
         icon: (
           <Icons.Delete

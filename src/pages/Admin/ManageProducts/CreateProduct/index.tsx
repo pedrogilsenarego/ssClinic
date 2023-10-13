@@ -7,7 +7,11 @@ import { i18n } from "../../../../translations/i18n";
 import useStyles from "./styles";
 import useCreateProduct from "./useCreateProduct";
 
-const CreateProduct = () => {
+interface Props {
+  edit?: boolean;
+}
+
+const CreateProduct = ({ edit = false }: Props) => {
   const classes = useStyles();
   const {
     handleSubmit,
@@ -16,7 +20,8 @@ const CreateProduct = () => {
     setValue,
     setError,
     isCreatingProduct,
-  } = useCreateProduct();
+    isLoadingProduct,
+  } = useCreateProduct({ edit });
   return (
     <>
       <Typography fontSize="16px">
@@ -26,12 +31,19 @@ const CreateProduct = () => {
         )}
       </Typography>
       <Divider />
-      {isCreatingProduct ? (
+      {isCreatingProduct || (isLoadingProduct && edit) ? (
         <Loader
-          customMessage={i18n.t(
-            "pages.admin.createProducts.isCreatingProduct",
-            "The product is being created"
-          )}
+          customMessage={
+            isCreatingProduct
+              ? i18n.t(
+                  "pages.admin.createProducts.isCreatingProduct",
+                  "The product is being created"
+                )
+              : i18n.t(
+                  "pages.admin.createProducts.isLoadingProduct",
+                  "The product is being fetched"
+                )
+          }
         />
       ) : (
         <Box className={classes.root}>

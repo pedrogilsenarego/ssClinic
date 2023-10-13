@@ -15,6 +15,16 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_EDIT_PRODUCT,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminCreateProduct edit />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_CREATE_PRODUCT,
     component: (
       <WithAdminAuth>

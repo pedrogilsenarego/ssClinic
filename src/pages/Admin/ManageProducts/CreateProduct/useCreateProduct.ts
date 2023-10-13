@@ -1,16 +1,41 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
+import { queryIdentifiers } from "../../../../services/constants";
 import { productsServices } from "../../../../services/products.services";
 import { FORM_VALIDATION } from "./validation";
 
-const useCreateProduct = () => {
+type Props = {
+  edit?: boolean;
+};
+
+const useCreateProduct = ({ edit = false }: Props) => {
   const navigate = useNavigate();
+  const { id } = useParams<Record<string, string | undefined>>();
+  const [edited, setEdited] = useState<boolean>(false);
+
+  const documentID = id || "";
+
   const { reset, control, handleSubmit, setValue, setError } = useForm({
     resolver: yupResolver(FORM_VALIDATION),
   });
+
+  const {
+    isLoading: isLoadingProduct,
+    error: errorFetchingProduct,
+    data: productData,
+  } = useQuery<[string, string]>(
+    [queryIdentifiers.PRODUCT, documentID],
+    () => productsServices.getProduct(documentID),
+    {
+      enabled: edit && !!documentID,
+    }
+  );
+
+  console.log(productData);
 
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
     productsServices.createProduct,
@@ -34,6 +59,7 @@ const useCreateProduct = () => {
     control,
     setValue,
     isCreatingProduct,
+    isLoadingProduct,
     setError,
   };
 };

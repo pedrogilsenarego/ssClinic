@@ -1,6 +1,7 @@
 export const queryIdentifiers = {
   USER: "USER",
   PRODUCTS: "PRODUCTS",
+  PRODUCT: "PRODUCT",
 };
 
 export const DB = {
