@@ -56,7 +56,7 @@ const Register = () => {
                 <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
-                    password
+                    type="password"
                     name="password"
                     inputPlaceholder={i18n.t(
                       "pages.auth.register.password",
@@ -67,7 +67,7 @@ const Register = () => {
                 <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
-                    password
+                    type="password"
                     name="confirmPassword"
                     inputPlaceholder={i18n.t(
                       "pages.auth.register.confirmPassword",

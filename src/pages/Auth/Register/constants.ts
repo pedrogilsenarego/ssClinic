@@ -12,7 +12,7 @@ export const countryOptions: Option[] = [
   },
   {
     value: "SWITZERLAND",
-    label: i18n.t("pages.access.subpages.manage.user", "switzerland"),
+    label: i18n.t("pages.access.subpages.manage.user", "Switzerland"),
   },
 ];
 export const defaultValues = {

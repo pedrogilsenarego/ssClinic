@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unused-prop-types */
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Box,
   FormControl,
@@ -14,6 +13,7 @@ import {
 import { FC } from "react";
 import { Control, UseFormSetValue, get, useController } from "react-hook-form";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { Icons } from "../../Icons";
 import useControlledInput from "./useControlledInput";
 
 export interface BaseReactHookFormProps {
@@ -24,8 +24,7 @@ export interface BaseReactHookFormProps {
   tooltipLabel?: string;
   inputPlaceholder: string;
   type?: string;
-  multiline?: number;
-  password?: boolean;
+  hasDialText?: boolean;
 }
 export interface BaseProps extends FormControlProps, BaseReactHookFormProps {}
 
@@ -65,16 +64,16 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
     name,
     control,
     label,
-    multiline,
     inputPlaceholder,
     type,
-    password,
+    hasDialText,
     setValue,
     ...rest
   } = props;
   const {
     hasError,
     field,
+
     isSubmitting,
     showPassword,
     handleClickShowPassword,
@@ -93,15 +92,21 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
       inputPlaceholder={inputPlaceholder}
     >
       <TextField
-        multiline={true}
+        inputProps={{ readOnly: hasDialText }}
+        type={
+          type === "password"
+            ? !showPassword
+              ? "password"
+              : "text"
+            : undefined
+        }
         style={{ marginBottom: hasError ? "0.2rem" : "0" }}
         {...field}
         id={name}
         disabled={isSubmitting}
         placeholder={inputPlaceholder}
-        type={showPassword || !password ? "text" : "password"}
         InputProps={
-          password
+          type === "password"
             ? {
                 endAdornment: (
                   <InputAdornment position="end">
@@ -110,7 +115,11 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showPassword ? (
+                        <Icons.EyeInvisible />
+                      ) : (
+                        <Icons.EyeVisible />
+                      )}
                     </IconButton>
                   </InputAdornment>
                 ),

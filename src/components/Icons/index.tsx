@@ -1,6 +1,8 @@
 import { IconBaseProps } from "react-icons";
 import {
   AiFillDelete,
+  AiFillEye,
+  AiFillEyeInvisible,
   AiFillLock,
   AiFillSound,
   AiOutlineAim,
@@ -46,6 +48,8 @@ export const Icons = {
   Fan: (props: IconBaseProps) => <PiFan {...props} />,
   Lock: (props: IconBaseProps) => <AiFillLock {...props} />,
   Loop: (props: IconBaseProps) => <RxLoop {...props} />,
+  EyeInvisible: (props: IconBaseProps) => <AiFillEyeInvisible {...props} />,
+  EyeVisible: (props: IconBaseProps) => <AiFillEye {...props} />,
   LightBulbOn: (props: IconBaseProps) => <BsLightbulbFill {...props} />,
   LightBulbOff: (props: IconBaseProps) => <BsLightbulbOffFill {...props} />,
   Graph: (props: IconBaseProps) => <BsGraphUp {...props} />,

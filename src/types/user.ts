@@ -14,13 +14,13 @@ export type CreateUser = {
   password: string;
   confirmPassword: string;
   email: string;
-  phone: string;
-  fullName: string;
-  address1: string;
-  address2: string;
-  city: string;
-  postalCode: string;
-  country: string;
+  phone?: string;
+  fullName?: string;
+  address1?: string;
+  address2?: string;
+  city?: string;
+  postalCode?: string;
+  country?: string;
 };
 
 export type Login = {

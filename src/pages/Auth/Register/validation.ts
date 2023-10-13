@@ -23,13 +23,13 @@ export const CreateUserSchema = z
           "The email is required"
         ),
       }),
-    phone: z.string(),
-    fullName: z.string(),
-    address1: z.string(),
-    address2: z.string(),
-    city: z.string(),
-    postalCode: z.string(),
-    country: z.string(),
+    phone: z.string().optional(),
+    fullName: z.string().optional(),
+    address1: z.string().optional(),
+    address2: z.string().optional(),
+    city: z.string().optional(),
+    postalCode: z.string().optional(),
+    country: z.string().optional(),
 
     password: z
       .string({

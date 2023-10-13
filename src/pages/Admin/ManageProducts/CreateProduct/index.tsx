@@ -123,7 +123,6 @@ const CreateProduct = () => {
                 <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
-                    multiline={10}
                     name="description"
                     inputPlaceholder={i18n.t(
                       "pages.admin.createProducts.form.description",

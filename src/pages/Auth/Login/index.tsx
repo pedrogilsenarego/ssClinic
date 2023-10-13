@@ -36,6 +36,7 @@ const Login = () => {
                 <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
+                    type="password"
                     name="password"
                     inputPlaceholder={i18n.t(
                       "pages.auth.login.password",
