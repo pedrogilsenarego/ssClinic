@@ -1,11 +1,13 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import { queryIdentifiers } from "../../../../services/constants";
 import { productsServices } from "../../../../services/products.services";
+import { getObjectDifferences } from "../../../../utils/compareObjects";
+import { handleConvertStringIntoFile } from "../../../../utils/imagesHelpers";
 import { defaultValues, defaultValues1 } from "./constants";
 import { FORM_VALIDATION } from "./validation";
 
@@ -16,6 +18,21 @@ type Props = {
 const useCreateProduct = ({ edit = false }: Props) => {
   const navigate = useNavigate();
   const { id } = useParams<Record<string, string | undefined>>();
+  const [thumbnailLoader, setThumbnailLoader] = useState<boolean>(false);
+  const [thumbnailValue, setThumbnailValue] = useState<any>(undefined);
+  const [touchedThumbnail, setTouchedThumbnail] = useState<boolean>(false);
+
+  const [specialThumbnailLoader, setSpecialThumbnailLoader] =
+    useState<boolean>(false);
+  const [specialThumbnailValue, setSpecialThumbnailValue] =
+    useState<any>(undefined);
+  const [touchedSpecialThumbnail, setTouchedSpecialThumbnail] =
+    useState<boolean>(false);
+
+  const [imagesLoader, setImagesLoader] = useState<boolean>(false);
+  const [imagesValue, setImagesValue] = useState<any>(undefined);
+  const [touchedImages, setTouchedImages] = useState<boolean>(false);
+
   const [edited, setEdited] = useState<boolean>(false);
 
   const documentID = id || "";
@@ -38,6 +55,35 @@ const useCreateProduct = ({ edit = false }: Props) => {
     }
   }, [edit, productData]);
 
+  useEffect(() => {
+    if (!isLoadingProduct && edit) {
+      if (initialValues.thumbnail.length > 0)
+        handleConvertStringIntoFile(
+          initialValues.thumbnail,
+          setThumbnailLoader,
+          setThumbnailValue
+        );
+      if (initialValues.specialThumbnail.length > 0)
+        handleConvertStringIntoFile(
+          initialValues.specialThumbnail,
+          setSpecialThumbnailLoader,
+          setSpecialThumbnailValue
+        );
+      if (initialValues.images.length > 0)
+        handleConvertStringIntoFile(
+          initialValues.images,
+          setImagesLoader,
+          setImagesValue
+        );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    isLoadingProduct,
+    initialValues.thumbnail,
+    initialValues.specialThumbnail,
+    initialValues.images,
+  ]);
+
   const { reset, control, handleSubmit, setValue, setError } = useForm({
     resolver: yupResolver(FORM_VALIDATION),
     defaultValues: initialValues,
@@ -57,8 +103,29 @@ const useCreateProduct = ({ edit = false }: Props) => {
   );
 
   const onSubmit = async (formData: any) => {
-    if (!edit) createProduct(formData);
+    if (edit) {
+      if (
+        !touchedThumbnail &&
+        !touchedSpecialThumbnail &&
+        !touchedImages &&
+        initialValues.sku === formData.sku
+      ) {
+        delete formData.thumbnaiil;
+        delete formData.specialThumbnail;
+        delete formData.images;
+      }
+
+      const payload = {
+        values: getObjectDifferences(initialValues, { ...formData }),
+        documentID: documentID,
+        sku: initialValues.sku,
+      };
+      console.log(payload);
+      //dispatch(editBook(payload));
+      setEdited(true);
+    } else createProduct(formData);
   };
+
   return {
     handleSubmit,
     onSubmit,
@@ -67,6 +134,15 @@ const useCreateProduct = ({ edit = false }: Props) => {
     isCreatingProduct,
     isLoadingProduct,
     setError,
+    thumbnailLoader,
+    thumbnailValue,
+    specialThumbnailLoader,
+    specialThumbnailValue,
+    imagesLoader,
+    imagesValue,
+    setTouchedThumbnail,
+    setTouchedSpecialThumbnail,
+    setTouchedImages,
   };
 };
 

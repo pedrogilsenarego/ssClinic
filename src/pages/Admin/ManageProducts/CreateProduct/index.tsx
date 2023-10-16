@@ -21,6 +21,15 @@ const CreateProduct = ({ edit = false }: Props) => {
     setError,
     isCreatingProduct,
     isLoadingProduct,
+    thumbnailLoader,
+    thumbnailValue,
+    specialThumbnailLoader,
+    specialThumbnailValue,
+    imagesLoader,
+    imagesValue,
+    setTouchedThumbnail,
+    setTouchedSpecialThumbnail,
+    setTouchedImages,
   } = useCreateProduct({ edit });
   return (
     <>
@@ -63,7 +72,10 @@ const CreateProduct = ({ edit = false }: Props) => {
                 <Grid item xs={12}>
                   <FileUploader
                     name="thumbnail"
+                    touched={setTouchedThumbnail}
                     control={control}
+                    loading={thumbnailLoader}
+                    value={thumbnailValue || undefined}
                     setValue={setValue}
                     setError={setError}
                     fieldTitle={i18n.t(
@@ -75,6 +87,9 @@ const CreateProduct = ({ edit = false }: Props) => {
                 <Grid item xs={12}>
                   <FileUploader
                     name="specialThumbnail"
+                    loading={specialThumbnailLoader}
+                    touched={setTouchedSpecialThumbnail}
+                    value={specialThumbnailValue || undefined}
                     control={control}
                     setValue={setValue}
                     setError={setError}
@@ -88,6 +103,9 @@ const CreateProduct = ({ edit = false }: Props) => {
                   <FileUploader
                     name="images"
                     multiple
+                    loading={imagesLoader}
+                    touched={setTouchedImages}
+                    value={imagesValue || undefined}
                     control={control}
                     setValue={setValue}
                     setError={setError}

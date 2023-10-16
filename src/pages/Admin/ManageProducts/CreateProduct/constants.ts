@@ -15,16 +15,16 @@ export const defaultValues = {
 export const defaultValues1 = (createData: any) => {
   console.log(createData);
   return {
-    thumbnail: {},
-    specialThumbnail: {},
-    model: createData.model || "",
-    dimensions: createData.movement || "",
-    movement: createData.movement || "",
-    sku: createData.sku || "",
-    description: createData.description || "",
-    color: createData.color || "",
-    numberWatches: createData.numberWatches || "",
-    bracelet: createData.bracelet || "",
-    images: {},
+    thumbnail: createData?.thumbnail || [],
+    specialThumbnail: createData?.specialThumbnail || [],
+    model: createData?.model || "",
+    dimensions: createData?.movement || "",
+    movement: createData?.movement || "",
+    sku: createData?.sku || "",
+    description: createData?.description || "",
+    color: createData?.color || "",
+    numberWatches: createData?.numberWatches || "",
+    bracelet: createData?.bracelet || "",
+    images: createData?.images || [],
   };
 };
