@@ -5,6 +5,7 @@ import {
   doc,
   getDoc,
   getDocs,
+  updateDoc,
 } from "firebase/firestore";
 
 import { db } from "../firebase/utils";
@@ -44,6 +45,70 @@ export const productsServices = {
       console.error("Error adding document: ", e);
     }
   },
+
+  editProduct: async (payload: {
+    documentID: string;
+    sku: string;
+    values: Partial<Product>;
+  }) => {
+    const { documentID, sku, values } = payload;
+    const newSku = values.sku || sku;
+
+    try {
+      // Check if the SKU has changed
+      if (newSku !== sku) {
+        // SKU has changed, delete the old storage folder
+        await deleteStorageFolder(`products/${sku}`);
+      }
+
+      // Initialize variables to store the new image URLs
+      let thumbnailUrl = null;
+      let specialThumbnailUrl = null;
+      let imagesUrl = null;
+
+      // Upload new images to the updated storage folder
+      if (values.thumbnail) {
+        thumbnailUrl = await handleAddThumbnail(
+          newSku,
+          values.thumbnail,
+          (progress) => console.log(progress)
+        );
+        values.thumbnail = thumbnailUrl;
+      }
+
+      if (values.specialThumbnail) {
+        specialThumbnailUrl = await handleAddThumbnail(
+          newSku,
+          values.specialThumbnail,
+          (progress) => console.log(progress)
+        );
+        values.specialThumbnail = specialThumbnailUrl;
+      }
+
+      if (values.images) {
+        imagesUrl = await handleAddThumbnail(
+          newSku,
+          values.images,
+          (progress) => console.log(progress)
+        );
+        values.images = imagesUrl;
+      }
+
+      // Create an updated product object with new image URLs
+      const updatedProduct: Partial<Product> = {
+        ...values,
+      };
+
+      // Update the Firestore data with the new information
+      const docRef = doc(db, DB.PRODUCTS, documentID);
+      await updateDoc(docRef, updatedProduct);
+
+      console.log("Document updated with ID: ", documentID);
+    } catch (e) {
+      console.error("Error updating document: ", e);
+    }
+  },
+
   getProducts: async () => {
     try {
       const querySnapshot = await getDocs(collection(db, DB.PRODUCTS));

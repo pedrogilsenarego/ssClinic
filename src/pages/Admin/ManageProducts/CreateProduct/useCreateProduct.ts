@@ -102,6 +102,19 @@ const useCreateProduct = ({ edit = false }: Props) => {
     }
   );
 
+  const { mutate: editProduct, isLoading: isEditingProduct } = useMutation(
+    productsServices.editProduct,
+    {
+      onError: (error: any) => {
+        console.log("error", error);
+      },
+      onSettled: () => {
+        reset();
+        navigate(ROUTE_PATHS.ADMIN);
+      },
+    }
+  );
+
   const onSubmit = async (formData: any) => {
     if (edit) {
       if (
@@ -110,7 +123,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
         !touchedImages &&
         initialValues.sku === formData.sku
       ) {
-        delete formData.thumbnaiil;
+        delete formData.thumbnail;
         delete formData.specialThumbnail;
         delete formData.images;
       }
@@ -121,7 +134,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
         sku: initialValues.sku,
       };
       console.log(payload);
-      //dispatch(editBook(payload));
+      editProduct(payload);
       setEdited(true);
     } else createProduct(formData);
   };
@@ -132,6 +145,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
     control,
     setValue,
     isCreatingProduct,
+    isEditingProduct,
     isLoadingProduct,
     setError,
     thumbnailLoader,

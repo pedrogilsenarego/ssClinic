@@ -20,6 +20,7 @@ const CreateProduct = ({ edit = false }: Props) => {
     setValue,
     setError,
     isCreatingProduct,
+    isEditingProduct,
     isLoadingProduct,
     thumbnailLoader,
     thumbnailValue,
@@ -45,7 +46,7 @@ const CreateProduct = ({ edit = false }: Props) => {
             )}
       </Typography>
       <Divider />
-      {isCreatingProduct || (isLoadingProduct && edit) ? (
+      {isCreatingProduct || isEditingProduct || (isLoadingProduct && edit) ? (
         <Loader
           customMessage={
             isCreatingProduct
