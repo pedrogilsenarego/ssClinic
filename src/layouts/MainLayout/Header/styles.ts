@@ -4,8 +4,13 @@ const useStyles = makeStyles({
   root: {
     display: "flex",
     justifyContent: "space-between",
-    padding: "20px 20px",
-    backgroundColor: "grey",
+    padding: "40px 100px",
+    cursor: "pointer",
+    positon: "fixed",
+    top: 0,
+  },
+  text: {
+    fontSize: "18px",
   },
 });
 

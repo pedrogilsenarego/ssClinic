@@ -87,6 +87,10 @@ export const content = {
             register: "Register",
           },
         },
+        dna: {
+          theBrand: "The brand",
+          theLogo: "The logo",
+        },
       },
     },
   },

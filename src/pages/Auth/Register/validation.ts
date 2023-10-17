@@ -55,7 +55,7 @@ export const CreateUserSchema = z
       })
       .min(6, "passwordTooShort"),
   })
-  .refine((data) => data.password === data.confirmPassword, {
+  .refine((data: any) => data.password === data.confirmPassword, {
     message: "Password doesn't match",
     path: ["confirmPassword"],
   });

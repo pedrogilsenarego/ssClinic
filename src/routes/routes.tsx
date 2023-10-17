@@ -15,4 +15,12 @@ export const routes: AppRoute[] = [
       </MainLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.DNA,
+    component: (
+      <MainLayout>
+        <RoutesI.DNA />
+      </MainLayout>
+    ),
+  },
 ];

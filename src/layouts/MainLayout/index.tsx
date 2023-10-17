@@ -10,18 +10,22 @@ const HomepageLayout = ({
   hasHeader = true,
 }: HomepageLayoutProps) => {
   return (
-    <Container maxWidth="xl">
-      <Box
-        height="100%"
-        width="100%"
-        display="flex"
-        flexDirection="column"
-        //alignItems="center"
-      >
-        {hasHeader && <Header />}
-        {children}
-      </Box>
-    </Container>
+    <>
+      {hasHeader && <Header />}
+      <Container maxWidth="xl">
+        <Box
+          mt="100px"
+          mb="100px"
+          height="100%"
+          width="100%"
+          display="flex"
+          flexDirection="column"
+          //alignItems="center"
+        >
+          {children}
+        </Box>
+      </Container>
+    </>
   );
 };
 

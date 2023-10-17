@@ -7,9 +7,9 @@ type Option = {
 };
 
 export const options: Option[] = [
-  { name: i18n.t("header.home", "Home"), link: "HOME" },
+  { name: i18n.t("header.home", "Home"), link: ROUTE_PATHS.HOME },
   { name: i18n.t("header.collections", "Collections"), link: "COLLECTIONS" },
-  { name: i18n.t("header.dna", "DNA"), link: "DNA" },
+  { name: i18n.t("header.dna", "DNA"), link: ROUTE_PATHS.DNA },
   { name: i18n.t("header.account", "My Account"), link: "MY_ACCOUNT" },
   { name: i18n.t("header.login", "Login"), link: ROUTE_PATHS.LOGIN },
   { name: i18n.t("header.admin", "Admin"), link: ROUTE_PATHS.ADMIN },
