@@ -46,7 +46,6 @@ const useCreateProduct = ({ edit = false }: Props) => {
       enabled: edit && !!documentID,
     }
   );
-
   const initialValues = useMemo(() => {
     if (edit && productData) {
       return defaultValues1(productData);
@@ -133,7 +132,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
         documentID: documentID,
         sku: initialValues.sku,
       };
-      console.log(payload);
+
       editProduct(payload);
       setEdited(true);
     } else createProduct(formData);

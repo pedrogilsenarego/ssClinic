@@ -24,6 +24,7 @@ export const CreateUserSchema = z
         ),
       }),
     phone: z.string().optional(),
+    birthday: z.date().optional(),
     fullName: z.string().optional(),
     address1: z.string().optional(),
     address2: z.string().optional(),

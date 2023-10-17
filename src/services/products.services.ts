@@ -98,7 +98,6 @@ export const productsServices = {
       const updatedProduct: Partial<Product> = {
         ...values,
       };
-
       // Update the Firestore data with the new information
       const docRef = doc(db, DB.PRODUCTS, documentID);
       await updateDoc(docRef, updatedProduct);

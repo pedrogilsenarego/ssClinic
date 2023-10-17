@@ -7,11 +7,11 @@ type Option = {
 
 export const countryOptions: Option[] = [
   {
-    value: "PORTUGAL",
+    value: "PT",
     label: i18n.t("pages.access.subpages.manage.admin", "Portugal"),
   },
   {
-    value: "SWITZERLAND",
+    value: "CH",
     label: i18n.t("pages.access.subpages.manage.user", "Switzerland"),
   },
 ];
@@ -21,6 +21,7 @@ export const defaultValues = {
   password: undefined,
   confirmPassword: undefined,
   phone: undefined,
+  birthday: undefined,
   fullName: undefined,
   address1: undefined,
   address2: undefined,

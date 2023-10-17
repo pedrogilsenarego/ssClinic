@@ -76,6 +76,7 @@ export const content = {
             phone: "Phone",
             username: "Username",
             fullName: "Full Name",
+            birthday: "Birthday",
             password: "Password",
             address1: "Address line 1",
             address2: "Address line 2",

@@ -13,12 +13,11 @@ export const defaultValues = {
 };
 
 export const defaultValues1 = (createData: any) => {
-  console.log(createData);
   return {
     thumbnail: createData?.thumbnail || [],
     specialThumbnail: createData?.specialThumbnail || [],
     model: createData?.model || "",
-    dimensions: createData?.movement || "",
+    dimensions: createData?.dimensions || "",
     movement: createData?.movement || "",
     sku: createData?.sku || "",
     description: createData?.description || "",

@@ -1,6 +1,7 @@
 import { Box, Divider, Grid } from "@mui/material";
 import ControlledFormInput from "../../../components/Inputs/ControlledInput";
 import ControlledSelect from "../../../components/Inputs/ControlledSelect";
+import DateInput from "../../../components/Inputs/DateControlledInput";
 import Loader from "../../../components/Loader";
 import Button from "../../../components/Ui/Button";
 import { i18n } from "../../../translations/i18n";
@@ -77,6 +78,13 @@ const Register = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Divider>Personal Data</Divider>
+                </Grid>
+                <Grid item xs={6}>
+                  <DateInput
+                    control={control}
+                    name="birthday"
+                    label={i18n.t("pages.auth.register.birthday", "Birthday")}
+                  />
                 </Grid>
                 <Grid item xs={6}>
                   <ControlledFormInput
