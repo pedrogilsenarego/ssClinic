@@ -11,7 +11,7 @@ const Title = ({ label }: { label: string }) => {
         letterSpacing: "-1px",
         textAlign: "center",
         fontWeight: "bold",
-        border: `solid 3px red`,
+        border: `solid 3px #FF0000A6`,
         padding: "0px 30px",
         borderRadius: "4px",
       }}
