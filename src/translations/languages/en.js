@@ -14,6 +14,13 @@ export const content = {
         notFound404: "404: Page not found",
         backButton: "Back Home",
       },
+      cookiePopup: {
+        title: "Cookie Settings",
+        accept: "Accept All Cookies",
+        settings: "Cookie Settings",
+        description:
+          "By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage and assist in our marketing efforts. More info",
+      },
       footer: {
         registeredBrand:
           "© 2023 Favre-Bulle - All intelectual rights are proprietary",
@@ -70,6 +77,7 @@ export const content = {
         },
         auth: {
           login: {
+            welcome: "Enter in the world of Favre-Bulle",
             loaderMessage: "Logging in",
             username: "Username",
             password: "Password",

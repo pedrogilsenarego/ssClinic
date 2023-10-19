@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
+import { Colors } from "../../theme/theme";
 import { i18n } from "../../translations/i18n";
 
 const Title = ({ label }: { label: string }) => {
@@ -68,7 +69,9 @@ const Image = ({ src, shadow }: { src: string; shadow?: boolean }) => {
         height: "300px",
         objectFit: "cover",
         borderRadius: "2px",
-        boxShadow: shadow ? "-50px -16px 0px #FF0000BF" : undefined,
+        boxShadow: shadow
+          ? `-50px -16px 0px ${Colors.redish[40050]}`
+          : undefined,
       }}
     />
   );

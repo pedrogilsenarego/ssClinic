@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -9,74 +9,57 @@ import { setCookiePolicy } from "../../redux/general/actions";
 import { State } from "../../redux/types";
 import { ROUTE_PATHS } from "../../routes/constants";
 import { Colors } from "../../theme/theme";
-import Popup from "../Popup";
+
 import Button from "../Ui/Button";
 
 const CookiePolicy = () => {
-  const [cookiePolicyClick, setCookiePolicyClick] = useState<boolean>(false);
   const cookiePolicySignal = useSelector<State, boolean>(
     (state) => state?.general?.cookiePolicy
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  return (
+  return cookiePolicySignal ? (
     <Box
       style={{
         position: "fixed",
         bottom: "60px",
-        borderRadius: "4px",
+        maxWidth: "400px",
+        borderRadius: "10px",
         zIndex: 2000,
         right: "60px",
         backgroundColor: Colors.white[400],
         boxShadow: `2px 2px 6px ${Colors.black[40025]}`,
-        padding: "20px",
       }}
     >
-      <Grid container rowGap={2}>
-        <Grid item xs={12} sm={9}>
-          <Box
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",
-            }}
-          >
-            <Typography style={{ fontSize: mobile ? "0.6rem" : "1rem" }}>
-              {i18n.t("cookiePolicy.mainText")}
-              <b
-                onClick={() => navigate(ROUTE_PATHS.PRIVACY_POLICY)}
-                onMouseEnter={() => setCookiePolicyClick(true)}
-                onMouseLeave={() => setCookiePolicyClick(false)}
-                style={{
-                  cursor: "pointer",
-                }}
-              >
-                {i18n.t("cookiePolicy.cookiePolicy")}
-              </b>
-              {i18n.t("cookiePolicy.secondText")}
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={3}
-          justifyContent="center"
-          alignItems="center"
-          display="flex"
-          width="100%"
+      <Box style={{ padding: "20px" }}>
+        <Typography style={{ fontWeight: 700, fontSize: "20px" }}>
+          {i18n.t("cookiePopup.title")}
+        </Typography>
+        <Typography style={{ marginTop: "10px" }}>
+          {i18n.t("cookiePopup.description")}
+        </Typography>
+      </Box>
+      <Box
+        style={{
+          backgroundColor: Colors.redish[40050],
+          padding: "20px",
+          borderRadius: "0px 0px 10px 10px",
+          display: "flex",
+          justifyContent: "space-around",
+        }}
+      >
+        <Button
+          onClick={() => {
+            dispatch(setCookiePolicy(false));
+          }}
         >
-          <Button onClick={() => dispatch(setCookiePolicy(false))}>
-            {i18n.t("cookiePolicy.acceptTerms")}
-          </Button>
-        </Grid>
-      </Grid>
+          {i18n.t("cookiePopup.accept")}
+        </Button>
+        <Button>{i18n.t("cookiePopup.settings")}</Button>
+      </Box>
     </Box>
-  );
+  ) : null;
 };
 
 export default CookiePolicy;

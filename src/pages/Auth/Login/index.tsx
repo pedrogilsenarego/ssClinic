@@ -18,7 +18,17 @@ const Login = () => {
         />
       ) : (
         <Box className={classes.root}>
-          {" "}
+          <Typography
+            style={{
+              fontSize: "45px",
+              fontWeight: 800,
+              maxWidth: "500px",
+              textAlign: "center",
+              lineHeight: "49px",
+            }}
+          >
+            {i18n.t("pages.auth.login.welcome")}
+          </Typography>
           <form
             className={classes.form}
             id="login-in"

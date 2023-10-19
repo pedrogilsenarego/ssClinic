@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
 import { Icons } from "../../../components/Icons";
 import BasicPopover from "../../../components/Popover";
+import Button from "../../../components/Ui/Button";
 import { State } from "../../../redux/types";
 import { ROUTE_PATHS } from "../../../routes/constants";
 import { Colors } from "../../../theme/theme";
@@ -64,25 +65,22 @@ const Header = () => {
           );
         })}
 
-        <Box
+        <Button
           style={{
-            minWidth: "100px",
-            borderRadius: "5px",
-            height: "50px",
-            padding: "0px 20px",
-            display: "flex",
-            columnGap: "10px",
-            justifyContent: "center",
-            alignItems: "center",
-            cursor: "pointer",
-            backgroundColor: Colors.black[40025],
+            minWidth: "200px",
+          }}
+          onClick={() => {
+            if (!currentUser) navigate(ROUTE_PATHS.LOGIN);
           }}
           onMouseEnter={(e: any) => {
             if (currentUser) handleUser(e);
           }}
         >
           {currentUser ? (
-            <Typography style={{ textTransform: "capitalize" }}>
+            <Typography
+              className={classes.text}
+              style={{ textTransform: "capitalize" }}
+            >
               {currentUser?.username}
             </Typography>
           ) : (
@@ -94,9 +92,16 @@ const Header = () => {
             </Typography>
           )}
           {currentUser && (
-            <Icons.DownArrow size="1.2rem" style={{ marginTop: "3px" }} />
+            <Icons.DownArrow
+              size="1.1rem"
+              style={{
+                marginTop: "1px",
+                marginLeft: "5px",
+                color: Colors.blackish[400],
+              }}
+            />
           )}
-        </Box>
+        </Button>
       </Container>
       <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
         <UserPopoverContent handleClose={handleClose} />

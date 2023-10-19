@@ -1,4 +1,4 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { useSignOut } from "../../../../hooks/useLogout";
@@ -19,79 +19,47 @@ const UserPopoverContent = ({ handleClose }: any) => {
     <div
       onMouseLeave={handleClose}
       style={{
-        padding: "20px",
+        padding: "20px 10px",
         display: "flex",
         flexDirection: "column",
-        rowGap: "6px",
+        rowGap: "12px",
         minWidth: "200px",
         justifyContent: "center",
-        alignItems: "end",
+        alignItems: "center",
       }}
     >
       <Typography
         style={{
-          textAlign: "right",
           cursor: "pointer",
-          fontWeight: 800,
+          fontWeight: 700,
+          fontSize: "20px",
+          textDecoration: "underline",
+          color: Colors.redish[40050],
         }}
       >
         {currentUser?.email}
       </Typography>
-      <Divider style={{ width: "100%" }} />
-      <Box>
+
+      <Box style={{}}>
         <Typography
           onClick={() => navigate(ROUTE_PATHS.HOME)}
           style={{
+            fontSize: "20px",
             cursor: "pointer",
             color: Colors.blackish[400],
             fontWeight: 800,
-            textTransform: "uppercase",
           }}
         >
-          {i18n.t("menuBar.userPopover.user")}
+          {i18n.t("header.account")}
         </Typography>
-        <Box style={{ marginLeft: "14px" }}>
-          <Typography
-            onClick={() => navigate(ROUTE_PATHS.HOME)}
-            style={{
-              cursor: "pointer",
-              color: Colors.blackish[400],
-              fontSize: "12px",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-            }}
-          >
-            {i18n.t("modules.clientManagement.generalSettings")}
-          </Typography>
-          <Typography
-            style={{
-              cursor: "pointer",
-              color: Colors.blackish[400],
-              fontSize: "12px",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-            }}
-          >
-            {i18n.t("modules.clientManagement.invoiceSettings")}
-          </Typography>
-          <Typography
-            style={{
-              cursor: "pointer",
-              color: Colors.blackish[400],
-              fontSize: "12px",
-              fontWeight: "bold",
-              textTransform: "uppercase",
-            }}
-          >
-            {i18n.t("modules.clientManagement.couponsSettings")}
-          </Typography>
-        </Box>
       </Box>
-      <Divider style={{ width: "100%" }} />
+
       <Typography
         onClick={onSignOut}
         style={{
           cursor: "pointer",
+          fontWeight: 800,
+          fontSize: "20px",
           color: Colors.blackish[400],
         }}
       >
@@ -99,10 +67,11 @@ const UserPopoverContent = ({ handleClose }: any) => {
       </Typography>
       {currentUser?.role?.includes("ADMIN") && (
         <>
-          <Divider style={{ width: "100%" }} />
           <Typography
             style={{
+              fontSize: "20px",
               cursor: "pointer",
+              fontWeight: 800,
               color: Colors.blackish[400],
             }}
             onClick={() => navigate(ROUTE_PATHS.ADMIN)}

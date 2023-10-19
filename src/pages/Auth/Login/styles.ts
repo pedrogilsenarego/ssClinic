@@ -5,6 +5,10 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   root: {
     padding: "80px 40px 0px 40px",
+    display: "flex",
+    flexDirection: "column",
+    rowGap: "60px",
+    alignItems: "center",
   },
   form: {
     width: "60%",
