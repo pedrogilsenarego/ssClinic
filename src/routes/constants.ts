@@ -8,4 +8,5 @@ export const ROUTE_PATHS = {
   ADMIN_CREATE_PRODUCT: "/admin/manage-products/create-product",
   LOGIN: "/auth/login",
   REGISTER: "/auth/register",
+  PRIVACY_POLICY: "/privacy-policy",
 };

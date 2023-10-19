@@ -1,5 +1,6 @@
 import { IconBaseProps } from "react-icons";
 import {
+  AiFillCaretDown,
   AiFillDelete,
   AiFillEye,
   AiFillEyeInvisible,
@@ -81,5 +82,6 @@ export const Icons = {
   RightArrow: (props: IconBaseProps) => <TiArrowRight {...props} />,
   Radiation: (props: IconBaseProps) => <PiLightbulbThin {...props} />,
   LeftArrow: (props: IconBaseProps) => <TiArrowLeft {...props} />,
+  DownArrow: (props: IconBaseProps) => <AiFillCaretDown {...props} />,
   Checked: (props: IconBaseProps) => <BsCheck {...props} />,
 };

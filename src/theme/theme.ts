@@ -24,6 +24,7 @@ export const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily: "'Kanit', sans-serif",
+      fontWeight: 400,
       textTransform: "none",
       fontSize: 16,
       color: Colors.blackish[400],

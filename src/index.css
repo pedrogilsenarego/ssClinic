@@ -20,28 +20,6 @@ input:-webkit-autofill:active {
 }
 
 body::-webkit-scrollbar {
-  width: 10px;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #ebeef5;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #1a2032;
-}
-
-@media (max-width: 900px) {
-  body {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    overflow-x: hidden !important;
-    /* hide scrollbar */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  body::-webkit-scrollbar {
-    display: none;
-  }
+  width: none;
+  display: none;
 }

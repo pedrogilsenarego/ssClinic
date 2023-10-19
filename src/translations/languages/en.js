@@ -7,11 +7,16 @@ export const content = {
         dna: "DNA",
         account: "My account",
         login: "Login",
+        logout: "Sign Out",
         admin: "Admin",
       },
       errors: {
         notFound404: "404: Page not found",
         backButton: "Back Home",
+      },
+      footer: {
+        registeredBrand:
+          "© 2023 Favre-Bulle - All intelectual rights are proprietary",
       },
       pages: {
         admin: {
