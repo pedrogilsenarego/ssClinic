@@ -122,40 +122,32 @@ const Header = () => {
               </Button>
             </Box>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {" "}
-            <Box
-              style={{
-                display: "flex",
-
-                columnGap: "20px",
-                marginTop: "20px",
-                justifyContent: "space-around",
-              }}
-            >
-              {options.map((option) => {
-                return (
-                  <Typography
-                    className={classes.text}
-                    key={option.name}
-                    onClick={() => navigate(option.link)}
-                  >
-                    {option.name}
-                  </Typography>
-                );
-              })}
-            </Box>
-          </Grid>
         </Grid>
       </Container>
+
+      <Box
+        style={{
+          display: "flex",
+          borderTop: `solid 1px ${Colors.blackish[40005]}`,
+          columnGap: "20px",
+          marginTop: "20px",
+          padding: "10px 0px",
+          justifyContent: "center",
+        }}
+      >
+        {options.map((option) => {
+          return (
+            <Typography
+              className={classes.text}
+              key={option.name}
+              onClick={() => navigate(option.link)}
+            >
+              {option.name}
+            </Typography>
+          );
+        })}
+      </Box>
+
       <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
         <UserPopoverContent handleClose={handleClose} />
       </BasicPopover>

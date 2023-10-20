@@ -3,7 +3,7 @@ import { Colors } from "../../../theme/theme";
 
 const useStyles = makeStyles({
   root: {
-    padding: "30px 0px",
+    padding: "30px 0px 0px 0px",
     backgroundColor: Colors.white[40098],
     position: "fixed",
     width: "100%",

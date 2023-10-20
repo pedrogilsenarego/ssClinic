@@ -34,6 +34,7 @@ export const Colors = {
   },
   blackish: {
     400: "#1A2032",
+    40005: "#1A20320D",
   },
 };
 
