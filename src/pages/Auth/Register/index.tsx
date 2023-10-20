@@ -76,7 +76,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} mt="50px">
                   <Divider>Personal Data</Divider>
                 </Grid>
                 <Grid item xs={6}>
@@ -106,7 +106,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12} mt="50px">
                   <Divider>Address</Divider>
                 </Grid>
 

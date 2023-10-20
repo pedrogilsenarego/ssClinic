@@ -1,11 +1,12 @@
 import { createTheme } from "@mui/material/styles";
 
 export const CSS = {
-  borderRadius: "10px",
+  borderRadius: "16px",
 };
 
 export const Colors = {
   redish: {
+    200: "#ff5959",
     400: "#FF0000",
     40050: "#FF0000A6",
   },
@@ -26,6 +27,16 @@ export const Colors = {
   },
   blackish: {
     400: "#1A2032",
+  },
+};
+
+export const mainColors = {
+  primary: {
+    400: Colors.blackish[400],
+  },
+  secondary: {
+    400: Colors.redish[400],
+    40050: Colors.redish[40050],
   },
 };
 

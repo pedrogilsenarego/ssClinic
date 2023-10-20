@@ -13,7 +13,9 @@ import {
 import { FC } from "react";
 import { Control, UseFormSetValue, get, useController } from "react-hook-form";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { Colors } from "../../../theme/theme";
 import { Icons } from "../../Icons";
+import useStyles from "./styles";
 import useControlledInput from "./useControlledInput";
 
 export interface BaseReactHookFormProps {
@@ -24,7 +26,6 @@ export interface BaseReactHookFormProps {
   tooltipLabel?: string;
   inputPlaceholder: string;
   type?: string;
-  hasDialText?: boolean;
 }
 export interface BaseProps extends FormControlProps, BaseReactHookFormProps {}
 
@@ -66,7 +67,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
     label,
     inputPlaceholder,
     type,
-    hasDialText,
+
     setValue,
     ...rest
   } = props;
@@ -83,6 +84,8 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
     control,
     setValue,
   });
+
+  const classes = useStyles();
   return (
     <FormControlComp
       name={name}
@@ -92,7 +95,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
       inputPlaceholder={inputPlaceholder}
     >
       <TextField
-        inputProps={{ readOnly: hasDialText }}
+        className={classes.root}
         type={
           type === "password"
             ? !showPassword
@@ -110,17 +113,24 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
             ? {
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton
+                    <Box
                       onClick={handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
-                      edge="end"
                     >
                       {showPassword ? (
-                        <Icons.EyeInvisible />
+                        <Icons.EyeInvisible
+                          size={"30px"}
+                          style={{ cursor: "pointer", marginTop: "2px" }}
+                          color={Colors.white[400]}
+                        />
                       ) : (
-                        <Icons.EyeVisible />
+                        <Icons.EyeVisible
+                          size={"30px"}
+                          style={{ cursor: "pointer", marginTop: "2px" }}
+                          color={Colors.white[400]}
+                        />
                       )}
-                    </IconButton>
+                    </Box>
                   </InputAdornment>
                 ),
               }

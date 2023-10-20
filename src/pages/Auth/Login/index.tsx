@@ -3,6 +3,7 @@ import ControlledFormInput from "../../../components/Inputs/ControlledInput";
 import Loader from "../../../components/Loader";
 import Button from "../../../components/Ui/Button";
 import { ROUTE_PATHS } from "../../../routes/constants";
+import { Colors } from "../../../theme/theme";
 import { i18n } from "../../../translations/i18n";
 import useStyles from "./styles";
 import useLogin from "./useLogin";
@@ -18,17 +19,27 @@ const Login = () => {
         />
       ) : (
         <Box className={classes.root}>
-          <Typography
-            style={{
-              fontSize: "45px",
-              fontWeight: 800,
-              maxWidth: "500px",
-              textAlign: "center",
-              lineHeight: "49px",
-            }}
-          >
-            {i18n.t("pages.auth.login.welcome")}
-          </Typography>
+          <Box>
+            <Typography
+              style={{
+                fontSize: "45px",
+                fontWeight: 800,
+                maxWidth: "500px",
+                textAlign: "center",
+                lineHeight: "49px",
+              }}
+            >
+              {i18n.t("pages.auth.login.welcome")}
+            </Typography>
+            <Typography
+              style={{
+                textAlign: "center",
+                marginTop: "20px",
+              }}
+            >
+              {i18n.t("pages.auth.login.subWelcome")}
+            </Typography>
+          </Box>
           <form
             className={classes.form}
             id="login-in"
@@ -67,9 +78,28 @@ const Login = () => {
                 </Grid>
               </Grid>
             </Box>
-            <Button type="submit">
-              {i18n.t("pages.auth.login.login", "Login")}
-            </Button>
+            <Box
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "15px",
+              }}
+            >
+              <Button
+                darkenColors
+                type="submit"
+                style={{ color: Colors.blackish[400] }}
+              >
+                {i18n.t("pages.auth.login.login", "Login")}
+              </Button>
+              <Button
+                darkenColors
+                onClick={() => navigate(ROUTE_PATHS.REGISTER)}
+                style={{ color: Colors.blackish[400] }}
+              >
+                {i18n.t("pages.auth.login.newUser")}
+              </Button>
+            </Box>
           </form>
         </Box>
       )}

@@ -2,7 +2,9 @@ import { ButtonProps, Button as MuiButton } from "@mui/material";
 import React, { useState } from "react";
 import { buttonStyle } from "./styles";
 
-interface Props extends ButtonProps {}
+interface Props extends ButtonProps {
+  darkenColors?: boolean;
+}
 
 const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const [hover, setHover] = useState<boolean>(false);
@@ -12,7 +14,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
       onMouseLeave={() => setHover(false)}
       ref={ref}
       {...props}
-      sx={buttonStyle({ hover })}
+      sx={buttonStyle({ hover, darkenColors: props.darkenColors })}
     />
   );
 });

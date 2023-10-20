@@ -2,8 +2,6 @@ import { IconBaseProps } from "react-icons";
 import {
   AiFillCaretDown,
   AiFillDelete,
-  AiFillEye,
-  AiFillEyeInvisible,
   AiFillLock,
   AiFillSound,
   AiOutlineAim,
@@ -29,7 +27,12 @@ import { FaRegUser } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
 import { GoHome } from "react-icons/go";
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
-import { LiaPlaySolid, LiaStopSolid } from "react-icons/lia";
+import {
+  LiaEyeSlash,
+  LiaEyeSolid,
+  LiaPlaySolid,
+  LiaStopSolid,
+} from "react-icons/lia";
 import { LuBookOpen } from "react-icons/lu";
 import { MdOutlineDialpad, MdOutlineEdit } from "react-icons/md";
 import {
@@ -49,8 +52,8 @@ export const Icons = {
   Fan: (props: IconBaseProps) => <PiFan {...props} />,
   Lock: (props: IconBaseProps) => <AiFillLock {...props} />,
   Loop: (props: IconBaseProps) => <RxLoop {...props} />,
-  EyeInvisible: (props: IconBaseProps) => <AiFillEyeInvisible {...props} />,
-  EyeVisible: (props: IconBaseProps) => <AiFillEye {...props} />,
+  EyeInvisible: (props: IconBaseProps) => <LiaEyeSlash {...props} />,
+  EyeVisible: (props: IconBaseProps) => <LiaEyeSolid {...props} />,
   LightBulbOn: (props: IconBaseProps) => <BsLightbulbFill {...props} />,
   LightBulbOff: (props: IconBaseProps) => <BsLightbulbOffFill {...props} />,
   Graph: (props: IconBaseProps) => <BsGraphUp {...props} />,

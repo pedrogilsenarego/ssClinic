@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +11,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 code {
@@ -12,14 +28,40 @@ code {
     monospace;
 }
 
+body::-webkit-scrollbar {
+  width: none;
+  display: none;
+}
+
+body:focus {
+  outline: none !important;
+}
+
+/* Style the input fields */
+input {
+  /* Set the desired text color */
+  color: white;
+  /* Set the desired background color */
+  background-color: transparent !important;
+  /* Add any other desired styles */
+}
+
+/* Handle autofill styles */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #cdc8c2f0 inset !important;
+  /* Reset text color */
+  -webkit-text-fill-color: white !important;
+  /* Reset background color */
+  -webkit-box-shadow: 0 0 0 30px #ff5959 inset !important;
 }
 
-body::-webkit-scrollbar {
-  width: none;
-  display: none;
+/* Additional input styles for focused and hovered states */
+input:focus {
+  background-color: transparent !important;
+}
+
+input:hover {
+  background-color: transparent !important;
 }

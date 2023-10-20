@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
   form: {
-    width: "60%",
+    width: "40%",
     display: "flex",
     flexDirection: "column",
     rowGap: "40px",
@@ -23,6 +23,7 @@ const useStyles = makeStyles({
   },
   register: {
     cursor: "pointer",
+    fontWeight: 700,
   },
 });
 

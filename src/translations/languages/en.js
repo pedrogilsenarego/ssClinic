@@ -78,10 +78,12 @@ export const content = {
         auth: {
           login: {
             welcome: "Enter in the world of Favre-Bulle",
+            subWelcome: "Login to your account",
             loaderMessage: "Logging in",
             username: "Username",
             password: "Password",
             login: "Login",
+            newUser: "New User",
             register: "Not registered yet? Click here",
           },
           register: {

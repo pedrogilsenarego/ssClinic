@@ -16,7 +16,7 @@ export const countryOptions: Option[] = [
   },
 ];
 export const defaultValues = {
-  username: undefined,
+  usernamenotname: undefined,
   email: undefined,
   password: undefined,
   confirmPassword: undefined,
