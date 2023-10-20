@@ -36,7 +36,7 @@ const BasicPopover: React.FC<BasicPopoverProps> = ({
           marginTop: "10px",
           cursor: "pointer",
         }}
-        PaperProps={{ sx: { borderRadius: CSS.borderRadius } }}
+        PaperProps={{ sx: { borderRadius: CSS.borderRadiusS } }}
       >
         {children}
       </Popover>

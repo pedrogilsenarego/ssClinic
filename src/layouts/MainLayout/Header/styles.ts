@@ -3,7 +3,7 @@ import { Colors } from "../../../theme/theme";
 
 const useStyles = makeStyles({
   root: {
-    padding: "10px 0px",
+    padding: "30px 0px",
     backgroundColor: Colors.white[40098],
     position: "fixed",
     width: "100%",
@@ -17,9 +17,8 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
   text: {
-    fontSize: "18px",
     cursor: "pointer",
-    fontWeight: 700,
+    fontSize: "14px",
   },
 });
 

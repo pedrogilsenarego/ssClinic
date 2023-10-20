@@ -26,7 +26,7 @@ const useStyles = makeStyles({
       },
       "&.Mui-focused fieldset": {
         borderColor: Colors.blackish[400],
-        marginTop: "-3px",
+        marginTop: "-4px",
         margin: "-4px",
         borderRadius: "20px",
       },

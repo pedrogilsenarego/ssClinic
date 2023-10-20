@@ -1,6 +1,5 @@
 import { IconBaseProps } from "react-icons";
 import {
-  AiFillCaretDown,
   AiFillDelete,
   AiFillLock,
   AiFillSound,
@@ -34,7 +33,11 @@ import {
   LiaStopSolid,
 } from "react-icons/lia";
 import { LuBookOpen } from "react-icons/lu";
-import { MdOutlineDialpad, MdOutlineEdit } from "react-icons/md";
+import {
+  MdOutlineDialpad,
+  MdOutlineEdit,
+  MdOutlineKeyboardArrowDown,
+} from "react-icons/md";
 import {
   PiFan,
   PiLightbulbThin,
@@ -85,6 +88,8 @@ export const Icons = {
   RightArrow: (props: IconBaseProps) => <TiArrowRight {...props} />,
   Radiation: (props: IconBaseProps) => <PiLightbulbThin {...props} />,
   LeftArrow: (props: IconBaseProps) => <TiArrowLeft {...props} />,
-  DownArrow: (props: IconBaseProps) => <AiFillCaretDown {...props} />,
+  DownArrow: (props: IconBaseProps) => (
+    <MdOutlineKeyboardArrowDown {...props} />
+  ),
   Checked: (props: IconBaseProps) => <BsCheck {...props} />,
 };

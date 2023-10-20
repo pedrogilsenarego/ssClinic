@@ -56,21 +56,7 @@ const Header = () => {
               justifyContent: "left",
               alignItems: "center",
             }}
-          >
-            <Box>
-              {options.map((option) => {
-                return (
-                  <Typography
-                    className={classes.text}
-                    key={option.name}
-                    onClick={() => navigate(option.link)}
-                  >
-                    {option.name}
-                  </Typography>
-                );
-              })}
-            </Box>
-          </Grid>
+          ></Grid>
           <Grid
             item
             xs={4}
@@ -134,6 +120,38 @@ const Header = () => {
                   />
                 )}
               </Button>
+            </Box>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {" "}
+            <Box
+              style={{
+                display: "flex",
+
+                columnGap: "20px",
+                marginTop: "20px",
+                justifyContent: "space-around",
+              }}
+            >
+              {options.map((option) => {
+                return (
+                  <Typography
+                    className={classes.text}
+                    key={option.name}
+                    onClick={() => navigate(option.link)}
+                  >
+                    {option.name}
+                  </Typography>
+                );
+              })}
             </Box>
           </Grid>
         </Grid>

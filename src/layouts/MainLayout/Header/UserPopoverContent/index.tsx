@@ -31,8 +31,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
       <Typography
         style={{
           cursor: "pointer",
-          fontWeight: 700,
-          fontSize: "20px",
+
           textDecoration: "underline",
           color: Colors.redish[40050],
         }}
@@ -44,7 +43,6 @@ const UserPopoverContent = ({ handleClose }: any) => {
         <Typography
           onClick={() => navigate(ROUTE_PATHS.HOME)}
           style={{
-            fontSize: "20px",
             cursor: "pointer",
             color: Colors.blackish[400],
             fontWeight: 800,
@@ -59,7 +57,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
         style={{
           cursor: "pointer",
           fontWeight: 800,
-          fontSize: "20px",
+
           color: Colors.blackish[400],
         }}
       >
@@ -69,7 +67,6 @@ const UserPopoverContent = ({ handleClose }: any) => {
         <>
           <Typography
             style={{
-              fontSize: "20px",
               cursor: "pointer",
               fontWeight: 800,
               color: Colors.blackish[400],
