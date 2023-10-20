@@ -1,12 +1,12 @@
 import { makeStyles } from "@mui/styles";
-import { CSS, Colors } from "../../../theme/theme";
+import { CSS, Colors, mainColors } from "../../../theme/theme";
 
 //interface Props extends CSSProperties {}
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    backgroundColor: Colors.redish[40050],
+    backgroundColor: mainColors.secondary[40050],
     borderRadius: CSS.borderRadius,
     maxWidth: "auto",
     color: "white",
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
         borderWidth: "0px",
       },
       "&:hover fieldset": {
-        borderColor: Colors.redish[40050],
+        borderColor: mainColors.secondary[40050],
         borderRadius: "20px",
       },
       "&.Mui-focused fieldset": {

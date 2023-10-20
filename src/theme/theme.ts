@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 export const CSS = {
+  borderRadiusS: "4px",
   borderRadius: "16px",
 };
 
@@ -15,8 +16,14 @@ export const Colors = {
     40010: "#ffffff1A",
     40050: "#ffffff80",
     40075: "#ffffffBF",
+    40095: "#ffffffF2",
+    40098: "#ffffffFA",
   },
-
+  grey: {
+    200: "#898c90",
+    400: "#494F55",
+    40050: "#494F55A6",
+  },
   black: {
     400: "#000000",
     40001: "#00000003",

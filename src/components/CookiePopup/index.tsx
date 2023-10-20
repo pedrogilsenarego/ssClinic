@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { setCookiePolicy } from "../../redux/general/actions";
 import { State } from "../../redux/types";
 import { ROUTE_PATHS } from "../../routes/constants";
-import { Colors } from "../../theme/theme";
+import { CSS, Colors, mainColors } from "../../theme/theme";
 
 import Button from "../Ui/Button";
 
@@ -25,7 +25,7 @@ const CookiePolicy = () => {
         position: "fixed",
         bottom: "60px",
         maxWidth: "400px",
-        borderRadius: "10px",
+        borderRadius: CSS.borderRadiusS,
         zIndex: 2000,
         right: "60px",
         backgroundColor: Colors.white[400],
@@ -42,9 +42,9 @@ const CookiePolicy = () => {
       </Box>
       <Box
         style={{
-          backgroundColor: Colors.redish[40050],
+          backgroundColor: mainColors.secondary[40050],
           padding: "20px",
-          borderRadius: "0px 0px 10px 10px",
+          borderRadius: `0px 0px ${CSS.borderRadiusS} ${CSS.borderRadiusS}`,
           display: "flex",
           justifyContent: "space-around",
         }}

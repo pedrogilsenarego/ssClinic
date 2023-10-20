@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -9,7 +9,7 @@ import BasicPopover from "../../../components/Popover";
 import Button from "../../../components/Ui/Button";
 import { State } from "../../../redux/types";
 import { ROUTE_PATHS } from "../../../routes/constants";
-import { Colors } from "../../../theme/theme";
+import { Colors, mainColors } from "../../../theme/theme";
 import { CurrentUser } from "../../../types/user";
 import UserPopoverContent from "./UserPopoverContent";
 import { options } from "./constants";
@@ -47,61 +47,96 @@ const Header = () => {
   return (
     <Box className={classes.root}>
       <Container maxWidth="xl" className={classes.subRoot}>
-        <img
-          onClick={() => navigate(ROUTE_PATHS.HOME)}
-          src={logo}
-          alt="logo"
-          style={{ width: "170px", cursor: "pointer" }}
-        />
-        {options.map((option) => {
-          return (
-            <Typography
-              className={classes.text}
-              key={option.name}
-              onClick={() => navigate(option.link)}
-            >
-              {option.name}
-            </Typography>
-          );
-        })}
-
-        <Button
-          style={{
-            minWidth: "200px",
-          }}
-          onClick={() => {
-            if (!currentUser) navigate(ROUTE_PATHS.LOGIN);
-          }}
-          onMouseEnter={(e: any) => {
-            if (currentUser) handleUser(e);
-          }}
-        >
-          {currentUser ? (
-            <Typography
-              className={classes.text}
-              style={{ textTransform: "capitalize" }}
-            >
-              {currentUser?.username}
-            </Typography>
-          ) : (
-            <Typography
-              className={classes.text}
-              onClick={() => navigate(ROUTE_PATHS.LOGIN)}
-            >
-              Login
-            </Typography>
-          )}
-          {currentUser && (
-            <Icons.DownArrow
-              size="1.1rem"
-              style={{
-                marginTop: "1px",
-                marginLeft: "5px",
-                color: Colors.blackish[400],
-              }}
+        <Grid container>
+          <Grid
+            item
+            xs={4}
+            style={{
+              display: "flex",
+              justifyContent: "left",
+              alignItems: "center",
+            }}
+          >
+            <Box>
+              {options.map((option) => {
+                return (
+                  <Typography
+                    className={classes.text}
+                    key={option.name}
+                    onClick={() => navigate(option.link)}
+                  >
+                    {option.name}
+                  </Typography>
+                );
+              })}
+            </Box>
+          </Grid>
+          <Grid
+            item
+            xs={4}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              onClick={() => navigate(ROUTE_PATHS.HOME)}
+              src={logo}
+              alt="logo"
+              style={{ width: "150px", cursor: "pointer" }}
             />
-          )}
-        </Button>
+          </Grid>
+          <Grid
+            item
+            xs={4}
+            style={{
+              display: "flex",
+              justifyContent: "end",
+              alignItems: "center",
+            }}
+          >
+            <Box>
+              <Button
+                style={{
+                  minWidth: "200px",
+                }}
+                onClick={() => {
+                  if (!currentUser) navigate(ROUTE_PATHS.LOGIN);
+                }}
+                onMouseEnter={(e: any) => {
+                  if (currentUser) handleUser(e);
+                }}
+              >
+                {currentUser ? (
+                  <Typography
+                    className={classes.text}
+                    style={{ textTransform: "capitalize" }}
+                  >
+                    {currentUser?.username}
+                  </Typography>
+                ) : (
+                  <Typography
+                    className={classes.text}
+                    onClick={() => navigate(ROUTE_PATHS.LOGIN)}
+                  >
+                    Login
+                  </Typography>
+                )}
+                {currentUser && (
+                  <Icons.DownArrow
+                    size="1.1rem"
+                    style={{
+                      marginTop: "1px",
+                      marginLeft: "5px",
+                      color: Colors.blackish[400],
+                    }}
+                  />
+                )}
+              </Button>
+            </Box>
+          </Grid>
+        </Grid>
       </Container>
       <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
         <UserPopoverContent handleClose={handleClose} />

@@ -54,6 +54,7 @@ input:-webkit-autofill:active {
   /* Reset text color */
   -webkit-text-fill-color: white !important;
   /* Reset background color */
+  /*-webkit-box-shadow: 0 0 0 30px #898c90 inset !important;*/
   -webkit-box-shadow: 0 0 0 30px #ff5959 inset !important;
 }
 
