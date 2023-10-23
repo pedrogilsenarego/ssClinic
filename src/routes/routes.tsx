@@ -23,4 +23,20 @@ export const routes: AppRoute[] = [
       </MainLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.COLLECTIONS,
+    component: (
+      <MainLayout>
+        <RoutesI.Collections />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.PRODUCT,
+    component: (
+      <MainLayout>
+        <RoutesI.Product />
+      </MainLayout>
+    ),
+  },
 ];

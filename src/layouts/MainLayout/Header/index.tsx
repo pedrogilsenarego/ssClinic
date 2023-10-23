@@ -9,7 +9,7 @@ import BasicPopover from "../../../components/Popover";
 import Button from "../../../components/Ui/Button";
 import { State } from "../../../redux/types";
 import { ROUTE_PATHS } from "../../../routes/constants";
-import { Colors, mainColors } from "../../../theme/theme";
+import { Colors } from "../../../theme/theme";
 import { CurrentUser } from "../../../types/user";
 import UserPopoverContent from "./UserPopoverContent";
 import { options } from "./constants";

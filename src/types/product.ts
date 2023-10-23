@@ -9,6 +9,7 @@ export type Product = {
   description: string;
   numberWatches: string;
   bracelet: string;
+  id: string;
 };
 
 export type ProductMapped = {

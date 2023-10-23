@@ -1,6 +1,7 @@
 export const ROUTE_PATHS = {
   HOME: "/",
   COLLECTIONS: "/collections",
+  PRODUCT: "/product/:product",
   DNA: "/dna",
   MY_ACCOUNT: "/my-account",
   ADMIN: "/admin/manage-products",

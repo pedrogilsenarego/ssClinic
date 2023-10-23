@@ -135,7 +135,6 @@ export const productsServices = {
       } else {
         // Document with the provided ID doesn't exist
         console.error("Product not found with ID: ", id);
-        return null;
       }
     } catch (e) {
       console.error("Error fetching document: ", e);
