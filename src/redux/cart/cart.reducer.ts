@@ -27,8 +27,17 @@ const cartReducer = (state = INITIAL_STATE, action: Action) => {
           (item, id) => item.product.id !== action.payload
         ),
       };
-    case cartTypes.CHANGE_VALUE:
+    case cartTypes.UPDATE_CART:
       const { id, value } = action.payload;
+
+      // Check if the value is less than or equal to 0
+      if (value <= 0) {
+        return {
+          ...state,
+          cartItems: state.cartItems.filter((item) => item.product.id !== id),
+        };
+      }
+
       return {
         ...state,
         cartItems: state.cartItems.map((item) => {

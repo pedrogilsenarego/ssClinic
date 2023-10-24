@@ -44,7 +44,7 @@ import {
   PiThermometerHotDuotone,
 } from "react-icons/pi";
 import { RxLoop } from "react-icons/rx";
-import { TfiControlPause } from "react-icons/tfi";
+import { TfiControlPause, TfiShoppingCartFull } from "react-icons/tfi";
 import { TiArrowLeft, TiArrowRight } from "react-icons/ti";
 import { VscMenu, VscSettings } from "react-icons/vsc";
 
@@ -92,4 +92,5 @@ export const Icons = {
     <MdOutlineKeyboardArrowDown {...props} />
   ),
   Checked: (props: IconBaseProps) => <BsCheck {...props} />,
+  Cart: (props: IconBaseProps) => <TfiShoppingCartFull {...props} />,
 };

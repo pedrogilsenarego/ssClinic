@@ -25,6 +25,13 @@ export const content = {
         registeredBrand:
           "© 2023 Favre-Bulle - All intelectual rights are proprietary",
       },
+      cartDrawer: {
+        title: "Cart",
+        totalPrice: "Total Price",
+        clearCart: "Clear Cart",
+        checkout: "Checkout",
+        noProducts: "There aren't any products on the cart",
+      },
       pages: {
         admin: {
           sidebar: {

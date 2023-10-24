@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
+import DrawerMine from "../../../components/Drawer";
 import { Icons } from "../../../components/Icons";
 import BasicPopover from "../../../components/Popover";
 import Button from "../../../components/Ui/Button";
@@ -11,13 +12,15 @@ import { State } from "../../../redux/types";
 import { ROUTE_PATHS } from "../../../routes/constants";
 import { Colors } from "../../../theme/theme";
 import { CurrentUser } from "../../../types/user";
+import Cart from "./Cart";
 import UserPopoverContent from "./UserPopoverContent";
 import { options } from "./constants";
 import useStyles from "./styles";
+import useHeader from "./useHeader";
 
 const Header = () => {
   const classes = useStyles();
-
+  const { cartItems, cartDrawer, setCartDrawer } = useHeader();
   const navigate = useNavigate();
 
   const currentUser = useSelector<State, CurrentUser | null>(
@@ -146,11 +149,54 @@ const Header = () => {
             </Typography>
           );
         })}
+        <div
+          style={{
+            width: "2px",
+            height: "24px",
+            backgroundColor: Colors.blackish[40005],
+          }}
+        />
+        <Box
+          style={{ cursor: "pointer", position: "relative" }}
+          onClick={() => {
+            setCartDrawer(true);
+          }}
+        >
+          {cartItems > 0 && (
+            <Box
+              style={{
+                border: `solid 3px ${Colors.blackish[40005]}`,
+                position: "absolute",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "1px",
+                width: "16px",
+                height: "16px",
+                right: "-17px",
+                bottom: "2px",
+              }}
+            >
+              <Typography fontSize="12px">{cartItems || 0}</Typography>
+            </Box>
+          )}
+
+          <Icons.Cart size={"20px"} />
+        </Box>
       </Box>
 
       <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
         <UserPopoverContent handleClose={handleClose} />
       </BasicPopover>
+      <DrawerMine
+        minWidth="30vw"
+        fullHeight
+        position="right"
+        openDrawer={cartDrawer}
+        setOpenDrawer={setCartDrawer}
+      >
+        <Cart closeCart={setCartDrawer} />
+      </DrawerMine>
     </Box>
   );
 };
