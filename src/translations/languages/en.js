@@ -115,6 +115,9 @@ export const content = {
           theBrand: "The brand",
           theLogo: "The logo",
         },
+        myCollection: {
+          edit: "Edit Information",
+        },
       },
     },
   },

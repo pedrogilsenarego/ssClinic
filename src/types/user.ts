@@ -7,6 +7,14 @@ export type CurrentUser = {
   username: string;
   email: string;
   role: (typeof roles)[keyof typeof roles][];
+  phone: string;
+  fullName: string;
+  address1: string;
+  address2: string;
+  city: string;
+  postalCode: string;
+  country: string;
+  docId: string;
 };
 
 export type CreateUser = {

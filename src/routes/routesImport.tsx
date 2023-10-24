@@ -13,4 +13,5 @@ export const RoutesI = {
   DNA: lazyWithRetryAndLoader(() => import("../pages/DNA")),
   Collections: lazyWithRetryAndLoader(() => import("../pages/Collections")),
   Product: lazyWithRetryAndLoader(() => import("../pages/Product")),
+  MyAccount: lazyWithRetryAndLoader(() => import("../pages/MyAccount")),
 };

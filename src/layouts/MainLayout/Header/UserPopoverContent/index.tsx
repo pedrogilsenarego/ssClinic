@@ -41,7 +41,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
 
       <Box style={{}}>
         <Typography
-          onClick={() => navigate(ROUTE_PATHS.HOME)}
+          onClick={() => navigate(ROUTE_PATHS.MY_ACCOUNT)}
           style={{
             cursor: "pointer",
             color: Colors.blackish[400],

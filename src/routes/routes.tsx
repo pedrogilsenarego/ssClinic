@@ -39,4 +39,12 @@ export const routes: AppRoute[] = [
       </MainLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.MY_ACCOUNT,
+    component: (
+      <MainLayout>
+        <RoutesI.MyAccount />
+      </MainLayout>
+    ),
+  },
 ];

@@ -2,7 +2,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/utils"; // Import your Firebase Auth and Firestore instances
 import { CreateUser, Login } from "../types/user";
 import { DB } from "./constants";
@@ -42,7 +42,7 @@ export const userServices = {
       // Retrieve user data from Firestore
       const userDoc = await getDoc(doc(db, DB.USERS, user.uid));
       if (userDoc.exists()) {
-        const userData = userDoc.data();
+        const userData = { ...userDoc.data(), docId: userDoc.id };
         return { ...user, userData };
       } else {
         return user;
@@ -50,6 +50,20 @@ export const userServices = {
     } catch (error) {
       console.error("Error signing in:", error);
       throw error;
+    }
+  },
+  editUser: async (payload: {
+    documentID: string;
+    values: Partial<CreateUser>;
+  }) => {
+    const { documentID, values } = payload;
+
+    try {
+      const docRef = doc(db, DB.USERS, documentID);
+      await updateDoc(docRef, values);
+      console.log("Document updated with ID: ", documentID);
+    } catch (e) {
+      console.error("Error updating document: ", e);
     }
   },
 };

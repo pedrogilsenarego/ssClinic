@@ -9,3 +9,8 @@ export const setUser = (payload: CurrentUser) => ({
 export const signOut = () => ({
   type: userTypes.SIGNOUT,
 });
+
+export const updateCurrentUser = (compared: Partial<CurrentUser>) => ({
+  type: userTypes.UPDATE_CURRENT_USER,
+  payload: compared,
+});
