@@ -22,9 +22,9 @@ const Product = () => {
           <Typography style={{ fontWeight: 700, fontSize: "20px" }}>
             {productData?.model}
           </Typography>
-          <Typography
-            style={{ fontWeight: 700, fontSize: "20px" }}
-          ></Typography>
+          <Typography style={{ fontSize: "20px" }}>
+            €{productData?.price}
+          </Typography>
           <Button fullWidth darkenColors onClick={handleProductToCart}>
             Add to Cart
           </Button>

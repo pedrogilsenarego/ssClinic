@@ -53,6 +53,16 @@ export const FORM_VALIDATION = Yup.object().shape({
     .required(
       `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
     ),
+  price: Yup.number()
+    .typeError(
+      `${i18n.t(
+        "pages.admin.createProducts.form.mustNumber",
+        "Must be a number"
+      )}`
+    )
+    .required(
+      `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+    ),
   specialThumbnail: Yup.mixed()
     .required(
       `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
@@ -60,7 +70,7 @@ export const FORM_VALIDATION = Yup.object().shape({
     .test(fileSize(0.5))
     .test(
       onlySpecifiTypes([
-        "image/jpeg",
+        //"image/jpeg",
         // 'image/jpg',
         // 'image/gif',
         // 'image/png',
@@ -75,7 +85,7 @@ export const FORM_VALIDATION = Yup.object().shape({
     .test(fileSize(0.5))
     .test(
       onlySpecifiTypes([
-        "image/jpeg",
+        //"image/jpeg",
         // 'image/jpg',
         // 'image/gif',
         // 'image/png',
@@ -90,7 +100,7 @@ export const FORM_VALIDATION = Yup.object().shape({
     .test(fileSize(0.5))
     .test(
       onlySpecifiTypes([
-        "image/jpeg",
+        //"image/jpeg",
         // 'image/jpg',
         // 'image/gif',
         // 'image/png',

@@ -7,9 +7,10 @@ export const defaultValues = {
   sku: "",
   description: "",
   color: "",
-  numberWatches: 0,
+  numberWatches: null,
   bracelet: "",
   images: {},
+  price: null,
 };
 
 export const defaultValues1 = (createData: any) => {
@@ -25,5 +26,6 @@ export const defaultValues1 = (createData: any) => {
     numberWatches: createData?.numberWatches || "",
     bracelet: createData?.bracelet || "",
     images: createData?.images || [],
+    price: createData?.price || 0,
   };
 };

@@ -8,6 +8,7 @@ const mapProducts = (product: Product, index: number): ProductMapped => {
     model: product.model,
     movement: product.movement,
     thumbnail: product.thumbnail,
+    price: product.price || 0,
     sku: product.sku,
     actions: [
       {

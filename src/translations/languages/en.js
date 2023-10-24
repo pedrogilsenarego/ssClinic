@@ -38,6 +38,7 @@ export const content = {
               model: "Model",
               movement: "Movement",
               sku: "SKU",
+              price: "Price",
               actions: "Actions",
               actionsHints: {
                 delete: {
@@ -72,6 +73,7 @@ export const content = {
               submit: "Create Product",
               bracelet: "Bracelet",
               numberWatches: "Number Watches",
+              price: "Price",
             },
           },
         },

@@ -24,7 +24,7 @@ const Collections = () => {
             src={product.specialThumbnail}
             alt=""
             key={product.sku}
-            style={{ width: "300px", cursor: "pointer" }}
+            style={{ width: "300px", cursor: "pointer", objectFit: "contain" }}
           />
         );
       })}

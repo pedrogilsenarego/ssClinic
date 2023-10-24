@@ -196,6 +196,16 @@ const CreateProduct = ({ edit = false }: Props) => {
                     )}
                   />
                 </Grid>
+                <Grid item xs={6}>
+                  <ControlledFormInput
+                    control={control}
+                    name="price"
+                    inputPlaceholder={i18n.t(
+                      "pages.admin.createProducts.form.price",
+                      "Price"
+                    )}
+                  />
+                </Grid>
               </Grid>
             </Box>
             <Button type="submit">

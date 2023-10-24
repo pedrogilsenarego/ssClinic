@@ -21,6 +21,12 @@ export const tableColumns: Column[] = [
     sortable: false,
   },
   {
+    id: "price",
+    label: i18n.t("pages.admin.manageProducts.list.price", "Price"),
+    type: ColumnType.Text,
+    sortable: false,
+  },
+  {
     id: "movement",
     label: i18n.t("pages.admin.manageProducts.list.movement", "Movement"),
     type: ColumnType.Text,

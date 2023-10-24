@@ -9,6 +9,7 @@ export type Product = {
   description: string;
   numberWatches: string;
   bracelet: string;
+  price: number;
   id: string;
 };
 
@@ -17,6 +18,7 @@ export type ProductMapped = {
   thumbnail: string;
   sku: string;
   model: string;
+  price: number;
   movement: string;
   actions: any[];
 };
