@@ -1,4 +1,5 @@
 import { Box, Divider } from "@mui/material";
+
 import ControlledFormInput from "../../../../../components/Inputs/ControlledInput";
 import ControlledSelect from "../../../../../components/Inputs/ControlledSelect";
 import Loader from "../../../../../components/Loader";
@@ -22,7 +23,6 @@ const Checkout = () => {
         />
       ) : (
         <Box className={classes.root}>
-          {" "}
           <form
             className={classes.form}
             id="checkout"

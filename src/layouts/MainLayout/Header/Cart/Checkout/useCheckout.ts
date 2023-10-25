@@ -1,18 +1,27 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { useEffect, useMemo, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { State } from "../../../../../redux/types";
 import { ROUTE_PATHS } from "../../../../../routes/constants";
 import { userServices } from "../../../../../services/user.services";
 import { Checkout } from "../../../../../types/checkout";
-import { defaultValues } from "./constants";
+import { CurrentUser } from "../../../../../types/user";
+import { defaultValues, defaultValues1 } from "./constants";
 import { CreateUserSchema, CreateUserSchemaType } from "./validation";
 
 const useCheckout = () => {
   const navigate = useNavigate();
+
+  const currentUser = useSelector<State, CurrentUser | null>(
+    (state) => state.user.currentUser
+  );
+
   const { reset, control, handleSubmit } = useForm<CreateUserSchemaType>({
     resolver: zodResolver(CreateUserSchema),
-    defaultValues,
+    defaultValues: currentUser ? defaultValues1(currentUser) : defaultValues,
   });
 
   const { mutate: createUser, isLoading: isRegistering } = useMutation(
@@ -38,6 +47,7 @@ const useCheckout = () => {
     onSubmit,
     control,
     isRegistering,
+    currentUser,
   };
 };
 
