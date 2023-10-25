@@ -19,6 +19,7 @@ import { State } from "../../../../redux/types";
 import { publishableKey, publishableKeyTest } from "../../../../stripe/config";
 import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
+import Checkout from "./Checkout";
 import { getTotalValue } from "./Utils/totalValue";
 interface Props {
   closeCart: (signal: boolean) => void;
@@ -142,7 +143,7 @@ const Cart = ({ closeCart }: Props) => {
                 />
               </div>
             ) : (
-              <></>
+              <Checkout />
             )}
           </Elements>
         ) : (

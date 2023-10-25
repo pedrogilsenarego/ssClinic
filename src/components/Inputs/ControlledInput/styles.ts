@@ -28,7 +28,7 @@ const useStyles = makeStyles({
         borderColor: Colors.blackish[400],
         marginTop: "-4px",
         margin: "-4px",
-        borderRadius: "20px",
+        borderRadius: "6px",
       },
     },
   },

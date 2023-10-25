@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 export const CSS = {
   borderRadiusS: "4px",
-  borderRadius: "16px",
+  borderRadius: "4px",
   container: "xl",
 };
 
