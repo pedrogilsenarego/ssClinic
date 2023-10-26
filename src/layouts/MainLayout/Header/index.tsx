@@ -153,6 +153,7 @@ const Header = () => {
         })}
         <div
           style={{
+            marginRight: "-10px",
             width: "2px",
             height: "24px",
             backgroundColor: Colors.blackish[40005],
@@ -167,6 +168,7 @@ const Header = () => {
         </Box>
         <div
           style={{
+            marginLeft: "-10px",
             width: "2px",
             height: "24px",
             backgroundColor: Colors.blackish[40005],

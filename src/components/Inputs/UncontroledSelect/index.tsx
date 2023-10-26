@@ -17,19 +17,28 @@ const UncontrolledSelect = ({ initialValue, onChange, options }: Props) => {
   };
   return (
     <Select
-      variant="standard"
+      variant="outlined"
       sx={{
         height: 20,
-        margin: 0,
-        padding: 0,
+
         color: Colors.blackish[400],
 
         "& .MuiSvgIcon-root": {
-          color: mainColors.secondary,
+          color: mainColors.primary[400],
         },
+        ".MuiOutlinedInput-notchedOutline": {
+          borderColor: "transparent",
+        },
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+          borderColor: "transparent",
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+          borderColor: "transparent",
+        },
+        "& .MuiSelect-outlined": {},
       }}
-      value={value} // You can set the current value here
-      onChange={handleChange} // Handle changes to the value
+      value={value}
+      onChange={handleChange}
     >
       {options.map((option) => (
         <MenuItem key={option.value} value={option.value}>
