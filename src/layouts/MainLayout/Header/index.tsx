@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.svg";
 import DrawerMine from "../../../components/Drawer";
 import { Icons } from "../../../components/Icons";
+import UncontrolledSelect from "../../../components/Inputs/UncontroledSelect";
 import BasicPopover from "../../../components/Popover";
 import Button from "../../../components/Ui/Button";
 import { State } from "../../../redux/types";
@@ -14,13 +15,14 @@ import { Colors } from "../../../theme/theme";
 import { CurrentUser } from "../../../types/user";
 import Cart from "./Cart";
 import UserPopoverContent from "./UserPopoverContent";
-import { options } from "./constants";
+import { langOptions, options } from "./constants";
 import useStyles from "./styles";
 import useHeader from "./useHeader";
 
 const Header = () => {
   const classes = useStyles();
-  const { cartItems, cartDrawer, setCartDrawer } = useHeader();
+  const { cartItems, cartDrawer, setCartDrawer, lang, changeLanguage } =
+    useHeader();
   const navigate = useNavigate();
 
   const currentUser = useSelector<State, CurrentUser | null>(
@@ -149,6 +151,20 @@ const Header = () => {
             </Typography>
           );
         })}
+        <div
+          style={{
+            width: "2px",
+            height: "24px",
+            backgroundColor: Colors.blackish[40005],
+          }}
+        />
+        <Box>
+          <UncontrolledSelect
+            options={langOptions}
+            initialValue={lang.toLowerCase()}
+            onChange={(v) => changeLanguage(v)}
+          />
+        </Box>
         <div
           style={{
             width: "2px",

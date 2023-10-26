@@ -1,14 +1,4 @@
-import generalTypes, { Dial, General } from "./types";
-
-const DIAL_INITIAL_STATE: Dial<"number" | "text" | null> = {
-  dialType: null,
-  open: false,
-  min: -9999,
-  max: 9999,
-  setValue: 0,
-  title: "",
-  type: "",
-};
+import generalTypes, { General } from "./types";
 
 const INITIAL_STATE: General = {
   notificationMessage: "",
@@ -16,7 +6,6 @@ const INITIAL_STATE: General = {
   lang: "EN",
   cookiePolicy: true,
   positionVertical: false,
-  dial: DIAL_INITIAL_STATE,
 };
 
 interface Action {
@@ -65,16 +54,6 @@ const generalReducer = (state = INITIAL_STATE, action: Action) => {
       return {
         ...state,
         positionVertical: action.payload,
-      };
-    case generalTypes.CREATE_DIAL:
-      return {
-        ...state,
-        dial: action.payload,
-      };
-    case generalTypes.CLEAR_DIAL:
-      return {
-        ...state,
-        dial: DIAL_INITIAL_STATE,
       };
 
     default:

@@ -28,7 +28,6 @@ export interface General {
   positionVertical: boolean;
   notificationMessage: string;
   notificationType: null | "success" | "fail";
-  dial: Dial<"number" | "text" | null>;
 }
 
 export default generalTypes;

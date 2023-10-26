@@ -1,14 +1,9 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
-import { useState } from "react";
-
+import { Box, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { i18n } from "../../translations/i18n";
-
-import { useNavigate } from "react-router-dom";
 import { setCookiePolicy } from "../../redux/general/actions";
 import { State } from "../../redux/types";
-import { ROUTE_PATHS } from "../../routes/constants";
 import { CSS, Colors, mainColors } from "../../theme/theme";
+import { i18n } from "../../translations/i18n";
 
 import Button from "../Ui/Button";
 
@@ -17,7 +12,6 @@ const CookiePolicy = () => {
     (state) => state?.general?.cookiePolicy
   );
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   return cookiePolicySignal ? (
     <Box
@@ -56,7 +50,6 @@ const CookiePolicy = () => {
         >
           {i18n.t("cookiePopup.accept")}
         </Button>
-        <Button>{i18n.t("cookiePopup.settings")}</Button>
       </Box>
     </Box>
   ) : null;

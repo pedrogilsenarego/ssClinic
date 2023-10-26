@@ -14,3 +14,18 @@ export const options: Option[] = [
     link: ROUTE_PATHS.COLLECTIONS,
   },
 ];
+
+export const langOptions = [
+  {
+    value: "en",
+    label: "EN",
+  },
+  {
+    value: "fr",
+    label: "FR",
+  },
+  {
+    value: "pt",
+    label: "PT",
+  },
+];
