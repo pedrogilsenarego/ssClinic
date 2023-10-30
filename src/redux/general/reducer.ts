@@ -6,6 +6,12 @@ const INITIAL_STATE: General = {
   lang: "EN",
   cookiePolicy: true,
   positionVertical: false,
+  cookieSettings: {
+    functional: true,
+    analytics: true,
+    advertisement: true,
+    uncategorized: true,
+  },
 };
 
 interface Action {

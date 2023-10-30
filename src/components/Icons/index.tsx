@@ -23,7 +23,7 @@ import {
   BsSnow,
 } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
-import { FiSettings } from "react-icons/fi";
+import { FiInstagram, FiSettings } from "react-icons/fi";
 import { GoHome } from "react-icons/go";
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
 import {
@@ -63,6 +63,7 @@ export const Icons = {
   Menu: (props: IconBaseProps) => <VscMenu {...props} />,
   List: (props: IconBaseProps) => <AiOutlineUnorderedList {...props} />,
   Info: (props: IconBaseProps) => <BsInfoCircle {...props} />,
+  Instagram: (props: IconBaseProps) => <FiInstagram {...props} />,
   Movie: (props: IconBaseProps) => <BiSolidCameraMovie {...props} />,
   Home: (props: IconBaseProps) => <GoHome {...props} />,
   Settings: (props: IconBaseProps) => (

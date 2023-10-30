@@ -32,7 +32,7 @@ const Popup = ({
   return (
     <div>
       <Dialog
-        PaperProps={{ style: { position: "absolute", bottom: 0, right: 0 } }} // Add this style
+        PaperProps={{ style: { position: "absolute" } }}
         hideBackdrop
         open={openPopup}
         onClose={onClose}

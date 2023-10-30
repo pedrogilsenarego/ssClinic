@@ -21,7 +21,7 @@ import useHeader from "./useHeader";
 
 const Header = () => {
   const classes = useStyles();
-  const { cartItems, cartDrawer, setCartDrawer, lang, changeLanguage } =
+  const { totalCartItems, cartDrawer, setCartDrawer, lang, changeLanguage } =
     useHeader();
   const navigate = useNavigate();
 
@@ -180,7 +180,7 @@ const Header = () => {
             setCartDrawer(true);
           }}
         >
-          {cartItems > 0 && (
+          {totalCartItems > 0 && (
             <Box
               style={{
                 border: `solid 3px ${Colors.blackish[40005]}`,
@@ -195,7 +195,7 @@ const Header = () => {
                 bottom: "2px",
               }}
             >
-              <Typography fontSize="12px">{cartItems || 0}</Typography>
+              <Typography fontSize="12px">{totalCartItems || 0}</Typography>
             </Box>
           )}
 

@@ -11,11 +11,7 @@ const Product = () => {
   ) : (
     <Grid container columnSpacing="20px">
       <Grid item xs={6}>
-        <img
-          src={productData?.specialThumbnail}
-          style={{ width: "100%" }}
-          alt=""
-        />
+        <img src={productData?.images[0]} style={{ width: "100%" }} alt="" />
       </Grid>
       <Grid item xs={6}>
         <Box>

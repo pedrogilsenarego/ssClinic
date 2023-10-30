@@ -25,9 +25,16 @@ export interface Dial<T extends "number" | "text" | null> {
 export interface General {
   lang: string;
   cookiePolicy: boolean;
+
   positionVertical: boolean;
   notificationMessage: string;
   notificationType: null | "success" | "fail";
+  cookieSettings: {
+    functional: boolean;
+    analytics: boolean;
+    advertisement: boolean;
+    uncategorized: boolean;
+  };
 }
 
 export default generalTypes;

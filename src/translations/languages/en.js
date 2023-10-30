@@ -21,6 +21,9 @@ export const content = {
         description:
           "By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage and assist in our marketing efforts. More info",
       },
+      cookieSettings: {
+        title: "Customize Consent Preferences",
+      },
       footer: {
         registeredBrand:
           "© 2023 Favre-Bulle - All intelectual rights are proprietary",

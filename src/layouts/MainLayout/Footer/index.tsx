@@ -1,12 +1,28 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import miniLogo from "../../../assets/miniLogo.svg";
+import { Icons } from "../../../components/Icons";
 import { Colors } from "../../../theme/theme";
 import { i18n } from "../../../translations/i18n";
 import { options } from "./constants";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const handleInstagram = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = "instagram://user?username=thesecretwatchproject";
+      setTimeout(() => {
+        window.location.href =
+          "https://instagram.com/thesecretwatchproject?igshid=OGQ5ZDc2ODk2ZA==";
+      }, 1000);
+    } else {
+      window.open(
+        "https://instagram.com/thesecretwatchproject?igshid=OGQ5ZDc2ODk2ZA==",
+        "_blank"
+      );
+    }
+  };
   return (
     <Box style={{ backgroundColor: Colors.blackish[400] }}>
       <Container maxWidth="xl">
@@ -31,7 +47,7 @@ const Footer = () => {
             {options.map((option) => {
               return (
                 <Typography
-                  style={{ color: Colors.white[400] }}
+                  style={{ color: Colors.white[400], fontSize: "14px" }}
                   key={option.name}
                   onClick={() => navigate(option.link)}
                 >
@@ -39,6 +55,14 @@ const Footer = () => {
                 </Typography>
               );
             })}
+          </Box>
+          <Box>
+            <Icons.Instagram
+              onClick={handleInstagram}
+              size={"20px"}
+              color={Colors.white[400]}
+              style={{ cursor: "pointer" }}
+            />
           </Box>
           <Typography
             style={{

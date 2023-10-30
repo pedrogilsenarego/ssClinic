@@ -1,5 +1,4 @@
 import { ROUTE_PATHS } from "../../../routes/constants";
-import { i18n } from "../../../translations/i18n";
 
 type Option = {
   link: (typeof ROUTE_PATHS)[keyof typeof ROUTE_PATHS];
@@ -7,6 +6,7 @@ type Option = {
 };
 
 export const options: Option[] = [
-  { name: i18n.t("header.collections", "Collections"), link: "COLLECTIONS" },
-  { name: i18n.t("header.dna", "DNA"), link: ROUTE_PATHS.DNA },
+  { name: "Terms of service", link: "COLLECTIONS" },
+  { name: "Shipping Policy", link: ROUTE_PATHS.DNA },
+  { name: "Refund Policy", link: ROUTE_PATHS.DNA },
 ];

@@ -1,11 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import Loader from "../../components/Loader";
+import Button from "../../components/Ui/Button";
 import { Product } from "../../types/product";
 import useCollections from "./useCollections";
 
 const Collections = () => {
-  const { loadingProducts, productsData, handleClickProduct } =
-    useCollections();
+  const {
+    loadingProducts,
+    productsData,
+    handleClickProduct,
+    handleProductToCart,
+  } = useCollections();
   return loadingProducts ? (
     <Loader />
   ) : (
@@ -48,6 +53,13 @@ const Collections = () => {
             >
               <Typography fontWeight={700}>€{product.model}</Typography>
               <Typography>€{product.price},00</Typography>
+              <Button
+                fullWidth
+                darkenColors
+                onClick={() => handleProductToCart(product)}
+              >
+                Add to Cart
+              </Button>
             </Box>
           </Box>
         );

@@ -18,7 +18,9 @@ export const countryOptions: Option[] = [
 ];
 export const defaultValues = (currentUser: CurrentUser | null) => {
   const countryIndex = currentUser
-    ? countryOptions.findIndex((option) => option.value === currentUser.country)
+    ? countryOptions.findIndex(
+        (option) => option.value === currentUser.country || "PT"
+      )
     : 0;
 
   return {
