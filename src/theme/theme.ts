@@ -1,8 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 
 export const CSS = {
-  borderRadiusS: "4px",
-  borderRadius: "4px",
+  borderRadiusS: "0px",
+  borderRadius: "0px",
   container: "xl",
 };
 
@@ -36,12 +36,15 @@ export const Colors = {
   blackish: {
     400: "#1A2032",
     40005: "#1A20320D",
+    40080: "#1A2032CC",
   },
 };
 
 export const mainColors = {
   primary: {
     400: Colors.blackish[400],
+    40005: Colors.blackish[40005],
+    40080: Colors.blackish[40080],
   },
   secondary: {
     400: Colors.redish[400],
@@ -52,7 +55,7 @@ export const mainColors = {
 export const theme = createTheme({
   typography: {
     allVariants: {
-      fontFamily: "'Kanit', sans-serif",
+      fontFamily: "'Urbanist', sans-serif",
       fontWeight: 400,
       textTransform: "none",
       fontSize: 16,

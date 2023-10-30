@@ -1,6 +1,7 @@
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { useState } from "react";
-import { Colors, mainColors } from "../../../theme/theme";
+import { CSS, Colors, mainColors } from "../../../theme/theme";
+import { Icons } from "../../Icons";
 
 export interface Props {
   initialValue?: string;
@@ -15,12 +16,12 @@ const UncontrolledSelect = ({ initialValue, onChange, options }: Props) => {
     setValue(event.target.value);
     onChange(event.target.value);
   };
+
   return (
     <Select
+      IconComponent={() => null}
       variant="outlined"
       sx={{
-        height: 20,
-
         color: Colors.blackish[400],
 
         "& .MuiSvgIcon-root": {
@@ -39,6 +40,17 @@ const UncontrolledSelect = ({ initialValue, onChange, options }: Props) => {
       }}
       value={value}
       onChange={handleChange}
+      MenuProps={{
+        PaperProps: {
+          sx: {
+            borderRadius: CSS.borderRadiusS,
+            backgroundColor: Colors.white[40095],
+            "& .MuiMenuItem-root": {
+              color: mainColors.primary[400],
+            },
+          },
+        },
+      }}
     >
       {options.map((option) => (
         <MenuItem key={option.value} value={option.value}>

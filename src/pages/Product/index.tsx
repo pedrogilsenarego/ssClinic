@@ -38,7 +38,7 @@ const Product = () => {
         </Box>
       </Grid>
       <Grid item xs={12}>
-        <Box>
+        <Box style={{ display: "flex", columnGap: "10px" }}>
           {productData?.images.map((image: string, index: number) => {
             return (
               <img

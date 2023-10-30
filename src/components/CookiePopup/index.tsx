@@ -27,21 +27,21 @@ const CookiePolicy = () => {
             borderRadius: CSS.borderRadiusS,
             zIndex: 2000,
             right: "60px",
-            backgroundColor: Colors.white[400],
+            backgroundColor: Colors.white[40095],
             boxShadow: `2px 2px 6px ${Colors.black[40025]}`,
           }}
         >
           <Box style={{ padding: "20px" }}>
-            <Typography style={{ fontWeight: 700, fontSize: "20px" }}>
+            <Typography style={{ color: mainColors.secondary[400] }}>
               {i18n.t("cookiePopup.title")}
             </Typography>
-            <Typography style={{ marginTop: "10px" }}>
+            <Typography style={{ marginTop: "10px", fontSize: "18px" }}>
               {i18n.t("cookiePopup.description")}
             </Typography>
           </Box>
           <Box
             style={{
-              backgroundColor: mainColors.secondary[40050],
+              backgroundColor: mainColors.primary[400],
               padding: "20px",
               borderRadius: `0px 0px ${CSS.borderRadiusS} ${CSS.borderRadiusS}`,
               display: "flex",
@@ -49,14 +49,22 @@ const CookiePolicy = () => {
             }}
           >
             <Button
+              lightenColor
               onClick={() => {
                 dispatch(setCookiePolicy(false));
               }}
             >
-              {i18n.t("cookiePopup.accept")}
+              <Typography style={{ color: Colors.white[400] }}>
+                {i18n.t("cookiePopup.accept")}
+              </Typography>
             </Button>
-            <Button onClick={() => setSettingsPopup(!settingsPopup)}>
-              {i18n.t("cookiePopup.settings")}
+            <Button
+              lightenColor
+              onClick={() => setSettingsPopup(!settingsPopup)}
+            >
+              <Typography style={{ color: Colors.white[400] }}>
+                {i18n.t("cookiePopup.settings")}
+              </Typography>
             </Button>
           </Box>
         </Box>

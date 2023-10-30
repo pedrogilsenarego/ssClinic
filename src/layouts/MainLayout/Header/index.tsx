@@ -11,7 +11,7 @@ import BasicPopover from "../../../components/Popover";
 import Button from "../../../components/Ui/Button";
 import { State } from "../../../redux/types";
 import { ROUTE_PATHS } from "../../../routes/constants";
-import { Colors } from "../../../theme/theme";
+import { Colors, mainColors } from "../../../theme/theme";
 import { CurrentUser } from "../../../types/user";
 import Cart from "./Cart";
 import UserPopoverContent from "./UserPopoverContent";
@@ -21,8 +21,14 @@ import useHeader from "./useHeader";
 
 const Header = () => {
   const classes = useStyles();
-  const { totalCartItems, cartDrawer, setCartDrawer, lang, changeLanguage } =
-    useHeader();
+  const {
+    totalCartItems,
+    cartDrawer,
+    setCartDrawer,
+    lang,
+    changeLanguage,
+    location,
+  } = useHeader();
   const navigate = useNavigate();
 
   const currentUser = useSelector<State, CurrentUser | null>(
@@ -87,6 +93,61 @@ const Header = () => {
               alignItems: "center",
             }}
           >
+            <Box
+              style={{
+                display: "flex",
+                padding: "0px 20px",
+                marginRight: "20px",
+                alignItems: "center",
+                columnGap: "10px",
+              }}
+            >
+              <Box>
+                <UncontrolledSelect
+                  options={langOptions}
+                  initialValue={lang.toLowerCase()}
+                  onChange={(v) => changeLanguage(v)}
+                />
+              </Box>
+              <div
+                style={{
+                  marginLeft: "-26px",
+                  marginRight: "6px",
+                  width: "2px",
+                  height: "24px",
+                  backgroundColor: Colors.blackish[40005],
+                }}
+              />
+              <Box
+                style={{ cursor: "pointer", position: "relative" }}
+                onClick={() => {
+                  setCartDrawer(true);
+                }}
+              >
+                {totalCartItems > 0 && (
+                  <Box
+                    style={{
+                      border: `solid 3px ${Colors.blackish[40005]}`,
+                      position: "absolute",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "1px",
+                      width: "16px",
+                      height: "16px",
+                      right: "-17px",
+                      bottom: "2px",
+                    }}
+                  >
+                    <Typography fontSize="12px">
+                      {totalCartItems || 0}
+                    </Typography>
+                  </Box>
+                )}
+
+                <Icons.Cart size={"20px"} />
+              </Box>
+            </Box>
             <Box>
               <Button
                 style={{
@@ -144,6 +205,12 @@ const Header = () => {
           return (
             <Typography
               className={classes.text}
+              style={{
+                color:
+                  location.pathname === option.link
+                    ? mainColors.secondary[400]
+                    : "inherit",
+              }}
               key={option.name}
               onClick={() => navigate(option.link)}
             >
@@ -151,56 +218,6 @@ const Header = () => {
             </Typography>
           );
         })}
-        <div
-          style={{
-            marginRight: "-10px",
-            width: "2px",
-            height: "24px",
-            backgroundColor: Colors.blackish[40005],
-          }}
-        />
-        <Box>
-          <UncontrolledSelect
-            options={langOptions}
-            initialValue={lang.toLowerCase()}
-            onChange={(v) => changeLanguage(v)}
-          />
-        </Box>
-        <div
-          style={{
-            marginLeft: "-10px",
-            width: "2px",
-            height: "24px",
-            backgroundColor: Colors.blackish[40005],
-          }}
-        />
-        <Box
-          style={{ cursor: "pointer", position: "relative" }}
-          onClick={() => {
-            setCartDrawer(true);
-          }}
-        >
-          {totalCartItems > 0 && (
-            <Box
-              style={{
-                border: `solid 3px ${Colors.blackish[40005]}`,
-                position: "absolute",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "1px",
-                width: "16px",
-                height: "16px",
-                right: "-17px",
-                bottom: "2px",
-              }}
-            >
-              <Typography fontSize="12px">{totalCartItems || 0}</Typography>
-            </Box>
-          )}
-
-          <Icons.Cart size={"20px"} />
-        </Box>
       </Box>
 
       <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>

@@ -19,13 +19,13 @@ const UserPopoverContent = ({ handleClose }: any) => {
     <div
       onMouseLeave={handleClose}
       style={{
-        padding: "20px 10px",
+        padding: "20px 30px",
         display: "flex",
         flexDirection: "column",
         rowGap: "12px",
         minWidth: "200px",
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: "end",
+        alignItems: "end",
       }}
     >
       <Typography
@@ -44,8 +44,8 @@ const UserPopoverContent = ({ handleClose }: any) => {
           onClick={() => navigate(ROUTE_PATHS.MY_ACCOUNT)}
           style={{
             cursor: "pointer",
+
             color: Colors.blackish[400],
-            fontWeight: 800,
           }}
         >
           {i18n.t("header.account")}
@@ -56,7 +56,6 @@ const UserPopoverContent = ({ handleClose }: any) => {
         onClick={onSignOut}
         style={{
           cursor: "pointer",
-          fontWeight: 800,
 
           color: Colors.blackish[400],
         }}

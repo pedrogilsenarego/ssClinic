@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { CartProduct } from "../../../redux/cart/cart.types";
 import { updateLang } from "../../../redux/general/actions";
 import { State } from "../../../redux/types";
@@ -17,6 +18,8 @@ const useHeader = () => {
     0
   );
 
+  const location = useLocation();
+
   const lang = useSelector<State, string>((state) => state.general.lang);
 
   const changeLanguage = (lng: string) => {
@@ -27,7 +30,14 @@ const useHeader = () => {
     }, 200);
   };
 
-  return { totalCartItems, cartDrawer, setCartDrawer, lang, changeLanguage };
+  return {
+    totalCartItems,
+    cartDrawer,
+    setCartDrawer,
+    lang,
+    changeLanguage,
+    location,
+  };
 };
 
 export default useHeader;

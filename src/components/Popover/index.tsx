@@ -1,6 +1,6 @@
 import Popover from "@mui/material/Popover";
 import * as React from "react";
-import { CSS } from "../../theme/theme";
+import { CSS, Colors } from "../../theme/theme";
 
 interface BasicPopoverProps {
   isOpen: boolean;
@@ -36,7 +36,12 @@ const BasicPopover: React.FC<BasicPopoverProps> = ({
           marginTop: "10px",
           cursor: "pointer",
         }}
-        PaperProps={{ sx: { borderRadius: CSS.borderRadiusS } }}
+        PaperProps={{
+          sx: {
+            borderRadius: CSS.borderRadiusS,
+            backgroundColor: Colors.white[40095],
+          },
+        }}
       >
         {children}
       </Popover>

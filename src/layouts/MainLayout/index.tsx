@@ -21,19 +21,19 @@ const HomepageLayout = ({
       }}
     >
       {hasHeader && <Header />}
-      <Container maxWidth="xl">
-        <Box
-          mt="240px"
-          mb="200px"
-          height="100%"
-          width="100%"
-          display="flex"
-          flexDirection="column"
-          //alignItems="center"
-        >
-          {children}
-        </Box>
-      </Container>
+
+      <Box
+        mt="160px"
+        mb="200px"
+        height="100%"
+        width="100%"
+        display="flex"
+        flexDirection="column"
+        //alignItems="center"
+      >
+        {children}
+      </Box>
+
       <Footer />
     </Box>
   );
