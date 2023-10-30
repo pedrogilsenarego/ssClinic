@@ -22,6 +22,7 @@ import {
   BsLightbulbOffFill,
   BsSnow,
 } from "react-icons/bs";
+import { CgSwiss } from "react-icons/cg";
 import { FaRegUser } from "react-icons/fa";
 import { FiInstagram, FiSettings } from "react-icons/fi";
 import { GoHome } from "react-icons/go";
@@ -66,6 +67,7 @@ export const Icons = {
   Instagram: (props: IconBaseProps) => <FiInstagram {...props} />,
   Movie: (props: IconBaseProps) => <BiSolidCameraMovie {...props} />,
   Home: (props: IconBaseProps) => <GoHome {...props} />,
+  Swiss: (props: IconBaseProps) => <CgSwiss {...props} />,
   Settings: (props: IconBaseProps) => (
     <VscSettings {...props} style={{ transform: "rotate(90deg)" }} />
   ),
