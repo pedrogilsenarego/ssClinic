@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addProductToCart } from "../../redux/cart/cart.actions";
@@ -8,6 +9,7 @@ import { Product } from "../../types/product";
 
 const useProduct = () => {
   const dispatch = useDispatch();
+  const [mainImage, setMainImage] = useState<number>(0);
   const { product } = useParams<Record<string, string | undefined>>();
   const documentID = product || "";
   const { isLoading: isLoadingProduct, data: productData } = useQuery<
@@ -25,7 +27,13 @@ const useProduct = () => {
     if (productData) dispatch(addProductToCart([productData]));
   };
 
-  return { isLoadingProduct, productData, handleProductToCart };
+  return {
+    isLoadingProduct,
+    productData,
+    handleProductToCart,
+    mainImage,
+    setMainImage,
+  };
 };
 
 export default useProduct;

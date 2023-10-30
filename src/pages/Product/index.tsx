@@ -5,13 +5,23 @@ import Button from "../../components/Ui/Button";
 import useProduct from "./useProduct";
 
 const Product = () => {
-  const { isLoadingProduct, productData, handleProductToCart } = useProduct();
+  const {
+    isLoadingProduct,
+    productData,
+    handleProductToCart,
+    mainImage,
+    setMainImage,
+  } = useProduct();
   return isLoadingProduct ? (
     <Loader />
   ) : (
     <Grid container columnSpacing="20px">
       <Grid item xs={6}>
-        <img src={productData?.images[0]} style={{ width: "100%" }} alt="" />
+        <img
+          src={productData?.images[mainImage]}
+          style={{ width: "100%" }}
+          alt=""
+        />
       </Grid>
       <Grid item xs={6}>
         <Box>
@@ -25,6 +35,27 @@ const Product = () => {
             Add to Cart
           </Button>
           <Typography style={{}}>{productData?.description}</Typography>
+        </Box>
+      </Grid>
+      <Grid item xs={12}>
+        <Box>
+          {productData?.images.map((image: string, index: number) => {
+            return (
+              <img
+                onClick={() => setMainImage(index)}
+                key={index}
+                src={image}
+                alt=""
+                style={{
+                  cursor: "pointer",
+                  height: "100px",
+                  width: "100px",
+                  objectFit: "contain",
+                  border: mainImage === index ? `solid 2px black` : "none",
+                }}
+              />
+            );
+          })}
         </Box>
       </Grid>
     </Grid>
