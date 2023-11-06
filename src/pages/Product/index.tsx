@@ -6,6 +6,7 @@ import { Icons } from "../../components/Icons";
 
 import Button from "../../components/Ui/Button";
 import { mainColors } from "../../theme/theme";
+import { i18n } from "../../translations/i18n";
 import useProduct from "./useProduct";
 
 const Product = () => {
@@ -97,7 +98,28 @@ const Product = () => {
                 style={{}}
               ></Typography>
             </Box>
-            <Accordion />
+            <Accordion title="Technical Specifications">
+              <Box>
+                <Typography>Movement</Typography>
+                <Typography>{i18n.t("technicalDetails.movement")}</Typography>
+              </Box>
+              <Box>
+                <Typography>Functions</Typography>
+                <Typography>{i18n.t("technicalDetails.functions")}</Typography>
+              </Box>
+              <Box>
+                <Typography>Case</Typography>
+                <Typography>{i18n.t("technicalDetails.case")}</Typography>
+              </Box>
+              <Box>
+                <Typography>Strap</Typography>
+                <Typography>{i18n.t("technicalDetails.strap")}</Typography>
+              </Box>
+              <Box>
+                <Typography>Dial</Typography>
+                <Typography>{i18n.t("technicalDetails.dial")}</Typography>
+              </Box>
+            </Accordion>
           </Box>
         </Grid>
       </Grid>

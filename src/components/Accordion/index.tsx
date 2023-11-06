@@ -1,5 +1,4 @@
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
-import { Box } from "@mui/material";
 import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import MuiAccordionSummary, {
@@ -8,7 +7,11 @@ import MuiAccordionSummary, {
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import * as React from "react";
-import { i18n } from "../../translations/i18n";
+
+type Props = {
+  title: string;
+  children: React.ReactNode;
+};
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -46,7 +49,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
-export default function CustomizedAccordions() {
+export default function CustomizedAccordions({ title, children }: Props) {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleChange =
@@ -65,7 +68,7 @@ export default function CustomizedAccordions() {
           <Typography
             style={{ display: "flex", justifyContent: "center", width: "100%" }}
           >
-            Technical Specifications
+            {title}
           </Typography>
         </AccordionSummary>
         <AccordionDetails
@@ -75,26 +78,7 @@ export default function CustomizedAccordions() {
             rowGap: "20px",
           }}
         >
-          <Box>
-            <Typography>Movement</Typography>
-            <Typography>{i18n.t("technicalDetails.movement")}</Typography>
-          </Box>
-          <Box>
-            <Typography>Functions</Typography>
-            <Typography>{i18n.t("technicalDetails.functions")}</Typography>
-          </Box>
-          <Box>
-            <Typography>Case</Typography>
-            <Typography>{i18n.t("technicalDetails.case")}</Typography>
-          </Box>
-          <Box>
-            <Typography>Strap</Typography>
-            <Typography>{i18n.t("technicalDetails.strap")}</Typography>
-          </Box>
-          <Box>
-            <Typography>Dial</Typography>
-            <Typography>{i18n.t("technicalDetails.dial")}</Typography>
-          </Box>
+          {children}
         </AccordionDetails>
       </Accordion>
     </div>
