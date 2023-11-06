@@ -1,5 +1,4 @@
 import { i18n } from "../../../../../translations/i18n";
-import { CurrentUser } from "../../../../../types/user";
 
 type Option = {
   value: string;
@@ -26,16 +25,4 @@ export const defaultValues = {
   city: undefined,
   postalCode: undefined,
   country: countryOptions[0].value,
-};
-
-type DefaultValuesKeys = keyof typeof defaultValues;
-
-export const defaultValues1 = (currentUser: CurrentUser) => {
-  const selectedValues: Partial<CurrentUser> = {};
-  for (const key of Object.keys(defaultValues) as DefaultValuesKeys[]) {
-    if (currentUser[key] !== undefined) {
-      selectedValues[key] = currentUser[key];
-    }
-  }
-  return selectedValues as CurrentUser;
 };

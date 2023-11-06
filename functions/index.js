@@ -37,7 +37,7 @@ app.post("/payments/creditCard", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://octo-mistic.com/success",
+    success_url: "http://localhost:3000/success",
     cancel_url: "https://octo-mistic.com/cancel",
     metadata: values,
   });

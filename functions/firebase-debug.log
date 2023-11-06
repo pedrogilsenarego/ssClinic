@@ -415,3 +415,245 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2023-11-06T16:37:51.866Z] [worker-us-central1-api-156f1b2f-9858-453f-b7b1-95bd43179f9c]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-156f1b2f-9858-453f-b7b1-95bd43179f9c]: exited"}}
 [debug] [2023-11-06T16:37:51.866Z] [worker-us-central1-api-156f1b2f-9858-453f-b7b1-95bd43179f9c]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-156f1b2f-9858-453f-b7b1-95bd43179f9c]: FINISHED"}}
 [debug] [2023-11-06T16:40:26.745Z] File C:\Users\User\Documents\myProjects\favre-bulle-official\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\index.js changed, reloading triggers"}}
+[debug] [2023-11-06T16:40:27.758Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2023-11-06T16:40:29.845Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "start-loc": "nodemon server.js",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "api": "^5.0.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.2.1",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "stripe": "^12.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-11-06T16:40:29.845Z] Building nodejs source
+[debug] [2023-11-06T16:40:29.845Z] Failed to find version of module node: reached end of search path C:\Users\User\Documents\myProjects\favre-bulle-official\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-11-06T16:40:29.846Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-11-06T16:40:29.852Z] Found firebase-functions binary at 'C:\Users\User\Documents\myProjects\favre-bulle-official\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8705
+
+[debug] [2023-11-06T16:40:30.569Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2023-11-06T16:40:49.291Z] [work-queue] {"queuedWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:40:49.291Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:40:49.292Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:40:49.291Z"],"workRunningCount":1}
+[debug] [2023-11-06T16:40:49.292Z] Accepted request OPTIONS /favre-bulle/us-central1/api/payments/creditCard --> us-central1-api
+[debug] [2023-11-06T16:40:49.294Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-11-06T16:40:49.294Z] [functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-11-06T16:40:49.295Z] [worker-pool] Cleaned up workers for us-central1-api: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-api: 1 --> 0"}}
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-11-06T16:40:49.312Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2023-11-06T16:40:49.312Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[debug] [2023-11-06T16:40:50.622Z] [runtime-status] [19440] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2023-11-06T16:40:50.624Z] [runtime-status] [19440] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.3.1","resolution":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.3.1\",\"resolution\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2023-11-06T16:40:50.624Z] [runtime-status] [19440] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-11-06T16:40:50.625Z] [runtime-status] [19440] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.3.1","resolution":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.3.1\",\"resolution\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2023-11-06T16:40:50.858Z] [runtime-status] [19440] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-11-06T16:40:50.858Z] [runtime-status] [19440] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.3.1","resolution":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.3.1\",\"resolution\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}}"}}
+[debug] [2023-11-06T16:40:50.859Z] [runtime-status] [19440] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.3.1","resolution":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.3.1\",\"resolution\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2023-11-06T16:40:50.860Z] [runtime-status] [19440] Resolved module firebase-admin {"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2023-11-06T16:40:50.863Z] [runtime-status] [19440] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.3.1","resolution":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\node_modules\\firebase-functions\\lib\\v1\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.3.1\",\"resolution\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v1\\\\index.js\"}"}}
+[debug] [2023-11-06T16:40:50.863Z] [runtime-status] [19440] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"10.3.0","resolution":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"10.3.0\",\"resolution\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2023-11-06T16:40:51.056Z] [runtime-status] [19440] Functions runtime initialized. {"cwd":"C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions","node_version":"18.16.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\User\\\\Documents\\\\myProjects\\\\favre-bulle-official\\\\functions\",\"node_version\":\"18.16.0\"}"}}
+[debug] [2023-11-06T16:40:51.057Z] [runtime-status] [19440] Listening to port: \\?\pipe\fire_emu_9108363cc7dcc07b {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [19440] Listening to port: \\\\?\\pipe\\fire_emu_9108363cc7dcc07b"}}
+[debug] [2023-11-06T16:40:51.156Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE"}}
+[debug] [2023-11-06T16:40:51.156Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2023-11-06T16:40:51.156Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY"}}
+[debug] [2023-11-06T16:40:51.160Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 4.0054ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 4.0054ms"}}
+[debug] [2023-11-06T16:40:51.161Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE"}}
+[debug] [2023-11-06T16:40:51.161Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-11-06T16:40:51.161Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-11-06T16:40:51.161Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:40:51.162Z] [work-queue] {"queuedWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:40:51.162Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:40:51.162Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:40:51.162Z"],"workRunningCount":1}
+[debug] [2023-11-06T16:40:51.162Z] Accepted request POST /favre-bulle/us-central1/api/payments/creditCard --> us-central1-api
+[debug] [2023-11-06T16:40:51.164Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-11-06T16:40:51.164Z] [functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-11-06T16:40:51.165Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2023-11-06T16:40:51.165Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY"}}
+[debug] [2023-11-06T16:40:52.182Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1016.6227ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1016.6227ms"}}
+[debug] [2023-11-06T16:40:52.182Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE"}}
+[debug] [2023-11-06T16:40:52.182Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-11-06T16:40:52.182Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-11-06T16:40:52.182Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:44:34.997Z] [work-queue] {"queuedWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:44:34.997Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:44:34.997Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:44:34.997Z"],"workRunningCount":1}
+[debug] [2023-11-06T16:44:34.997Z] Accepted request OPTIONS /favre-bulle/us-central1/api/payments/creditCard --> us-central1-api
+[debug] [2023-11-06T16:44:34.999Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-11-06T16:44:35.000Z] [functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-11-06T16:44:35.000Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2023-11-06T16:44:35.000Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY"}}
+[debug] [2023-11-06T16:44:35.003Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 2.5866ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 2.5866ms"}}
+[debug] [2023-11-06T16:44:35.003Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE"}}
+[debug] [2023-11-06T16:44:35.004Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-11-06T16:44:35.004Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-11-06T16:44:35.004Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:44:35.004Z] [work-queue] {"queuedWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:44:35.004Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:44:35.004Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:44:35.004Z"],"workRunningCount":1}
+[debug] [2023-11-06T16:44:35.005Z] Accepted request POST /favre-bulle/us-central1/api/payments/creditCard --> us-central1-api
+[debug] [2023-11-06T16:44:35.007Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-11-06T16:44:35.007Z] [functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-11-06T16:44:35.007Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2023-11-06T16:44:35.007Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY"}}
+[debug] [2023-11-06T16:44:36.128Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1120.5018ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1120.5018ms"}}
+[debug] [2023-11-06T16:44:36.128Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE"}}
+[debug] [2023-11-06T16:44:36.129Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-11-06T16:44:36.129Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-11-06T16:44:36.129Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:47:31.568Z] [work-queue] {"queuedWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:47:31.568Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:47:31.568Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:47:31.568Z"],"workRunningCount":1}
+[debug] [2023-11-06T16:47:31.568Z] Accepted request OPTIONS /favre-bulle/us-central1/api/payments/creditCard --> us-central1-api
+[debug] [2023-11-06T16:47:31.571Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-11-06T16:47:31.571Z] [functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-11-06T16:47:31.571Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2023-11-06T16:47:31.572Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY"}}
+[debug] [2023-11-06T16:47:31.574Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 2.2778ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 2.2778ms"}}
+[debug] [2023-11-06T16:47:31.574Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE"}}
+[debug] [2023-11-06T16:47:31.575Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-11-06T16:47:31.575Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-11-06T16:47:31.575Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:47:31.575Z] [work-queue] {"queuedWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:47:31.575Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T16:47:31.575Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/favre-bulle/us-central1/api/payments/creditCard-2023-11-06T16:47:31.575Z"],"workRunningCount":1}
+[debug] [2023-11-06T16:47:31.575Z] Accepted request POST /favre-bulle/us-central1/api/payments/creditCard --> us-central1-api
+[debug] [2023-11-06T16:47:31.577Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-11-06T16:47:31.577Z] [functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/favre-bulle/us-central1/api/payments/creditCard, mapping to path=/payments/creditCard"}}
+[debug] [2023-11-06T16:47:31.577Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2023-11-06T16:47:31.578Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: BUSY"}}
+[debug] [2023-11-06T16:47:32.610Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1032.3188ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1032.3188ms"}}
+[debug] [2023-11-06T16:47:32.610Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: IDLE"}}
+[debug] [2023-11-06T16:47:32.610Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-11-06T16:47:32.611Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-11-06T16:47:32.611Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-11-06T17:01:59.358Z] File C:\Users\User\Documents\myProjects\favre-bulle-official\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\index.js changed, reloading triggers"}}
+[debug] [2023-11-06T17:02:00.375Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2023-11-06T17:02:02.582Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "start-loc": "nodemon server.js",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "api": "^5.0.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.2.1",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "stripe": "^12.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-11-06T17:02:02.583Z] Building nodejs source
+[debug] [2023-11-06T17:02:02.583Z] Failed to find version of module node: reached end of search path C:\Users\User\Documents\myProjects\favre-bulle-official\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-11-06T17:02:02.587Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-11-06T17:02:02.595Z] Found firebase-functions binary at 'C:\Users\User\Documents\myProjects\favre-bulle-official\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8487
+
+[debug] [2023-11-06T17:02:03.349Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2023-11-06T17:02:03.372Z] [worker-pool] Shutting down IDLE worker (us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-api)"}}
+[debug] [2023-11-06T17:02:03.372Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: FINISHING"}}
+[debug] [2023-11-06T17:02:03.382Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: exited"}}
+[debug] [2023-11-06T17:02:03.382Z] [worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-ef7f91f9-9188-4c32-b37f-a6d5f1543fd6]: FINISHED"}}
+[debug] [2023-11-06T17:03:07.494Z] File C:\Users\User\Documents\myProjects\favre-bulle-official\functions\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\User\\Documents\\myProjects\\favre-bulle-official\\functions\\index.js changed, reloading triggers"}}
+[debug] [2023-11-06T17:03:08.499Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2023-11-06T17:03:10.243Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "start-loc": "nodemon server.js",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "api": "^5.0.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.2.1",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
+    "stripe": "^12.0.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2023-11-06T17:03:10.243Z] Building nodejs source
+[debug] [2023-11-06T17:03:10.244Z] Failed to find version of module node: reached end of search path C:\Users\User\Documents\myProjects\favre-bulle-official\functions\node_modules
+[info] +  functions: Using node@18 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2023-11-06T17:03:10.245Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-11-06T17:03:10.252Z] Found firebase-functions binary at 'C:\Users\User\Documents\myProjects\favre-bulle-official\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8095
+
+[debug] [2023-11-06T17:03:11.229Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
