@@ -57,11 +57,16 @@ export default function CustomizedAccordions() {
   return (
     <div>
       <Accordion
+        sx={{ border: "none" }}
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Technical Specifications</Typography>
+          <Typography
+            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+          >
+            Technical Specifications
+          </Typography>
         </AccordionSummary>
         <AccordionDetails
           style={{
