@@ -143,7 +143,7 @@ const Cart = ({ closeCart }: Props) => {
                 />
               </div>
             ) : (
-              <Checkout />
+              <Checkout closeCart={closeCart} />
             )}
           </Elements>
         ) : (

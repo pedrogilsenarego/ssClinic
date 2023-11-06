@@ -8,19 +8,19 @@ import { i18n } from "../../../../../translations/i18n";
 import { countryOptions } from "./constants";
 import useStyles from "./styles";
 import useCheckout from "./useCheckout";
+type Props = {
+  closeCart: (signal: boolean) => void;
+};
 
-const Checkout = () => {
+const Checkout = ({ closeCart }: Props) => {
   const classes = useStyles();
-  const { handleSubmit, onSubmit, control, isRegistering } = useCheckout();
+  const { handleSubmit, onSubmit, control, isPaying } = useCheckout({
+    closeCart,
+  });
   return (
     <>
-      {isRegistering ? (
-        <Loader
-          customMessage={i18n.t(
-            "pages.auth.register.loaderMessage",
-            "Creating new user"
-          )}
-        />
+      {isPaying ? (
+        <Loader customMessage="Payment gooing through" />
       ) : (
         <Box className={classes.root}>
           <form
