@@ -122,6 +122,16 @@ export const content = {
           edit: "Edit Information",
         },
       },
+      technicalDetails: {
+        movement:
+          "Automatic, SW510B, stop second device, power reserve 62 hours, 27 jewels.",
+        functions:
+          "Cam operated chronographe – two push-buttons, hour, minute, small seconde",
+        case: "Stainless steel 904L, diameter 42.50mm, thickness XXXXX, sapphire crystal with anti-reflective coating (on both sides ?), Sapphire crystal case back, Water resistance: to 10 bar (100 m)",
+        strap:
+          "Cuir XXXXXX, Stainless steel 904L pin lock folding clasp, Quick pin release",
+        dial: "Grained with satin stainless steel subdials",
+      },
     },
   },
 };

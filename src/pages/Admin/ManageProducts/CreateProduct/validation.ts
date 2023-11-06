@@ -25,24 +25,24 @@ export const FORM_VALIDATION = Yup.object().shape({
   model: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  dimensions: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
-  movement: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
+  // dimensions: Yup.string().required(
+  //   `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  // ),
+  // movement: Yup.string().required(
+  //   `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  // ),
   sku: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  description: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
+  // description: Yup.string().required(
+  //   `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  // ),
   color: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  bracelet: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
+  // bracelet: Yup.string().required(
+  //   `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  // ),
   numberWatches: Yup.number()
     .typeError(
       `${i18n.t(

@@ -1,10 +1,11 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Loader from "../../components/Loader";
 
+import Accordion from "../../components/Accordion";
 import { Icons } from "../../components/Icons";
-import { Container } from "../../components/TableList/ImagePreview/styles";
+
 import Button from "../../components/Ui/Button";
-import { CSS, Colors, mainColors } from "../../theme/theme";
+import { mainColors } from "../../theme/theme";
 import useProduct from "./useProduct";
 
 const Product = () => {
@@ -23,9 +24,32 @@ const Product = () => {
         <Grid item xs={6}>
           <img
             src={productData?.images[mainImage]}
-            style={{ width: "100%", height: "800px", objectFit: "cover" }}
+            style={{ width: "100%", height: "700px", objectFit: "cover" }}
             alt=""
           />
+          <Box style={{ display: "flex", columnGap: "10px" }}>
+            {productData?.images.map((image: string, index: number) => {
+              return (
+                <img
+                  onClick={() => setMainImage(index)}
+                  key={index}
+                  src={image}
+                  alt=""
+                  style={{
+                    cursor: "pointer",
+                    height: "100px",
+                    width: "100px",
+                    objectFit: "contain",
+                    padding: "2px",
+                    border:
+                      mainImage === index
+                        ? `solid 2px ${mainColors.primary[40080]}`
+                        : "none",
+                  }}
+                />
+              );
+            })}
+          </Box>
         </Grid>
         <Grid item xs={6}>
           <Box>
@@ -47,7 +71,7 @@ const Product = () => {
               }}
             >
               <Typography style={{ fontSize: "20px" }}>
-                €{productData?.price.toFixed(2)}
+                €{productData?.price?.toFixed(2) || "N.A."}
               </Typography>
               <Box
                 style={{
@@ -65,7 +89,6 @@ const Product = () => {
               <Button fullWidth darkenColors onClick={handleProductToCart}>
                 <Typography>Add to Cart</Typography>
               </Button>
-
               <Typography
                 component="div"
                 dangerouslySetInnerHTML={{
@@ -74,27 +97,7 @@ const Product = () => {
                 style={{}}
               ></Typography>
             </Box>
-          </Box>
-        </Grid>
-        <Grid item xs={12}>
-          <Box style={{ display: "flex", columnGap: "10px" }}>
-            {productData?.images.map((image: string, index: number) => {
-              return (
-                <img
-                  onClick={() => setMainImage(index)}
-                  key={index}
-                  src={image}
-                  alt=""
-                  style={{
-                    cursor: "pointer",
-                    height: "100px",
-                    width: "100px",
-                    objectFit: "contain",
-                    border: mainImage === index ? `solid 2px black` : "none",
-                  }}
-                />
-              );
-            })}
+            <Accordion />
           </Box>
         </Grid>
       </Grid>

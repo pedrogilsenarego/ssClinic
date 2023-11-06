@@ -126,7 +126,7 @@ const CreateProduct = ({ edit = false }: Props) => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                {/* <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
                     name="dimensions"
@@ -135,8 +135,8 @@ const CreateProduct = ({ edit = false }: Props) => {
                       "Dimensions"
                     )}
                   />
-                </Grid>
-                <Grid item xs={6}>
+                </Grid> */}
+                {/* <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
                     name="movement"
@@ -145,7 +145,7 @@ const CreateProduct = ({ edit = false }: Props) => {
                       "Movement"
                     )}
                   />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
@@ -156,7 +156,7 @@ const CreateProduct = ({ edit = false }: Props) => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                {/* <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
                     name="description"
@@ -165,7 +165,7 @@ const CreateProduct = ({ edit = false }: Props) => {
                       "Description"
                     )}
                   />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
@@ -176,7 +176,7 @@ const CreateProduct = ({ edit = false }: Props) => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                {/* <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
                     name="bracelet"
@@ -185,7 +185,7 @@ const CreateProduct = ({ edit = false }: Props) => {
                       "Bracelet"
                     )}
                   />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
