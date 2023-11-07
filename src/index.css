@@ -29,8 +29,8 @@ code {
 }
 
 body::-webkit-scrollbar {
-  width: none;
-  display: none;
+  width: none !important;
+  display: none !important;
 }
 
 body:focus {

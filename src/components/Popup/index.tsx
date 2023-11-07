@@ -30,79 +30,74 @@ const Popup = ({
   onClose,
 }: Props) => {
   return (
-    <div>
-      <Dialog
-        PaperProps={{
-          style: {
-            position: "absolute",
-            borderRadius: "0px",
-            maxHeight: "60%",
-          },
+    <Dialog
+      PaperProps={{
+        style: {
+          position: "absolute",
+          borderRadius: "0px",
+          maxHeight: "65%",
+          overflow: "auto",
+        },
+      }}
+      hideBackdrop
+      open={openPopup}
+      onClose={onClose}
+    >
+      {title && (
+        <DialogTitle>
+          <div style={{ textAlign: "center" }}>
+            <Typography
+              component="div"
+              style={{
+                fontSize: "28px",
+                color: Colors.blackish[400],
+                fontWeight: 700,
+                letterSpacing: "3px",
+              }}
+            >
+              {title}
+            </Typography>
+          </div>
+        </DialogTitle>
+      )}
+      <DialogContent
+        dividers
+        style={{
+          color: "white",
+          display: "flex",
+          alignItems: "center",
         }}
-        hideBackdrop
-        open={openPopup}
-        onClose={onClose}
       >
-        {title && (
-          <DialogTitle>
-            <div style={{ textAlign: "center" }}>
-              <Typography
-                component="div"
-                style={{
-                  fontSize: "28px",
-                  color: Colors.blackish[400],
-                  fontWeight: 700,
-                  letterSpacing: "3px",
-                }}
-              >
-                {title}
-              </Typography>
-            </div>
-          </DialogTitle>
+        {children}
+        {actions && (
+          <>
+            <Divider
+              style={{
+                width: "100%",
+                background: "#ffffff66",
+                marginTop: "10px",
+              }}
+            />
+            <Grid
+              container
+              justifyContent="flex-end"
+              style={{ marginTop: "10px" }}
+            >
+              {actions?.map((item, pos) => {
+                return (
+                  <Button
+                    disabled={item.disabled}
+                    title={item.title}
+                    key={pos}
+                    onClick={item.onClick}
+                  />
+                );
+              })}
+            </Grid>
+          </>
         )}
-        <DialogContent
-          dividers
-          style={{
-            color: "white",
-            overflow: "hidden",
-            msOverflowStyle: "none",
-            scrollbarWidth: "none",
-
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          {children}
-          {actions && (
-            <>
-              <Divider
-                style={{
-                  width: "100%",
-                  background: "#ffffff66",
-                  marginTop: "10px",
-                }}
-              />
-              <Grid
-                container
-                justifyContent="flex-end"
-                style={{ marginTop: "10px" }}
-              >
-                {actions?.map((item, pos) => {
-                  return (
-                    <Button
-                      disabled={item.disabled}
-                      title={item.title}
-                      key={pos}
-                      onClick={item.onClick}
-                    />
-                  );
-                })}
-              </Grid>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 export default Popup;

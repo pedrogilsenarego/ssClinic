@@ -3,6 +3,7 @@ import { mainColors } from "../../theme/theme";
 import { i18n } from "../../translations/i18n";
 import CustomizedAccordions from "../Accordion";
 import Popup from "../Popup";
+import Button from "../Ui/Button";
 
 type Props = {
   openPopup: boolean;
@@ -73,6 +74,22 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
           </Typography>
         </CustomizedAccordions>
         <Divider />
+        <Box
+          style={{
+            width: "100%",
+            display: "flex",
+            margin: "20px 0px",
+            justifyContent: "space-between",
+            columnGap: "10px",
+          }}
+        >
+          <Button fullWidth darkenColors>
+            Accept All
+          </Button>
+          <Button fullWidth darkenColors>
+            Reject All
+          </Button>
+        </Box>
       </Box>
     </Popup>
   );
