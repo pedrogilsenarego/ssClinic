@@ -3,7 +3,7 @@ import { Colors } from "../../../theme/theme";
 
 const useStyles = makeStyles({
   root: {
-    padding: "30px 0px 0px 0px",
+    padding: "15px 0px 15px 0px",
     backgroundColor: Colors.white[40098],
     position: "fixed",
     width: "100%",
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   },
   subRoot: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
   },
   text: {

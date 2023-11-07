@@ -7,7 +7,6 @@ type Option = {
 };
 
 export const options: Option[] = [
-  { name: i18n.t("header.contact", "Contact Us"), link: ROUTE_PATHS.DNA },
   { name: i18n.t("header.dna", "DNA"), link: ROUTE_PATHS.DNA },
   {
     name: i18n.t("header.collections", "Collections"),

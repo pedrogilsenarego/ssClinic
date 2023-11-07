@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <Box className={classes.root}>
-      <Container maxWidth="xl" className={classes.subRoot}>
+      <Container maxWidth="xl" disableGutters className={classes.subRoot}>
         <Grid container>
           <Grid
             item
@@ -81,7 +81,7 @@ const Header = () => {
               onClick={() => navigate(ROUTE_PATHS.HOME)}
               src={logo}
               alt="logo"
-              style={{ width: "150px", cursor: "pointer" }}
+              style={{ width: "130px", cursor: "pointer" }}
             />
           </Grid>
           <Grid
@@ -89,19 +89,45 @@ const Header = () => {
             xs={4}
             style={{
               display: "flex",
-              justifyContent: "end",
+              justifyContent: "center",
               alignItems: "center",
+              columnGap: "30px",
             }}
           >
             <Box
               style={{
                 display: "flex",
-                padding: "0px 20px",
-                marginRight: "20px",
+
+                justifyContent: "center",
                 alignItems: "center",
                 columnGap: "10px",
               }}
             >
+              {options.map((option) => {
+                return (
+                  <Typography
+                    className={classes.text}
+                    style={{
+                      color:
+                        location.pathname === option.link
+                          ? mainColors.secondary[400]
+                          : "inherit",
+                    }}
+                    key={option.name}
+                    onClick={() => navigate(option.link)}
+                  >
+                    {option.name}
+                  </Typography>
+                );
+              })}
+              <div
+                style={{
+                  marginRight: "-10px",
+                  width: "2px",
+                  height: "24px",
+                  backgroundColor: Colors.blackish[40005],
+                }}
+              />
               <Box>
                 <UncontrolledSelect
                   options={langOptions}
@@ -148,77 +174,47 @@ const Header = () => {
                 <Icons.Cart size={"20px"} />
               </Box>
             </Box>
-            <Box>
-              <Button
-                style={{
-                  minWidth: "200px",
-                }}
-                onClick={() => {
-                  if (!currentUser) navigate(ROUTE_PATHS.LOGIN);
-                }}
-                onMouseEnter={(e: any) => {
-                  if (currentUser) handleUser(e);
-                }}
-              >
-                {currentUser ? (
-                  <Typography
-                    className={classes.text}
-                    style={{ textTransform: "capitalize" }}
-                  >
-                    {currentUser?.username}
-                  </Typography>
-                ) : (
-                  <Typography
-                    className={classes.text}
-                    onClick={() => navigate(ROUTE_PATHS.LOGIN)}
-                  >
-                    Login
-                  </Typography>
-                )}
-                {currentUser && (
-                  <Icons.DownArrow
-                    size="1.1rem"
-                    style={{
-                      marginTop: "1px",
-                      marginLeft: "5px",
-                      color: Colors.blackish[400],
-                    }}
-                  />
-                )}
-              </Button>
-            </Box>
+            <Button
+              style={{
+                marginTop: "-3px",
+                minWidth: "200px",
+              }}
+              onClick={() => {
+                if (!currentUser) navigate(ROUTE_PATHS.LOGIN);
+              }}
+              onMouseEnter={(e: any) => {
+                if (currentUser) handleUser(e);
+              }}
+            >
+              {currentUser ? (
+                <Typography
+                  className={classes.text}
+                  style={{ textTransform: "capitalize" }}
+                >
+                  {currentUser?.username}
+                </Typography>
+              ) : (
+                <Typography
+                  className={classes.text}
+                  onClick={() => navigate(ROUTE_PATHS.LOGIN)}
+                >
+                  Login
+                </Typography>
+              )}
+              {currentUser && (
+                <Icons.DownArrow
+                  size="1.1rem"
+                  style={{
+                    marginTop: "1px",
+                    marginLeft: "5px",
+                    color: Colors.blackish[400],
+                  }}
+                />
+              )}
+            </Button>
           </Grid>
         </Grid>
       </Container>
-
-      <Box
-        style={{
-          display: "flex",
-          borderTop: `solid 1px ${Colors.blackish[40005]}`,
-          columnGap: "20px",
-          marginTop: "20px",
-          padding: "10px 0px",
-          justifyContent: "center",
-        }}
-      >
-        {options.map((option) => {
-          return (
-            <Typography
-              className={classes.text}
-              style={{
-                color:
-                  location.pathname === option.link
-                    ? mainColors.secondary[400]
-                    : "inherit",
-              }}
-              key={option.name}
-              onClick={() => navigate(option.link)}
-            >
-              {option.name}
-            </Typography>
-          );
-        })}
-      </Box>
 
       <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
         <UserPopoverContent handleClose={handleClose} />
