@@ -1,0 +1,15 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--cut-width, 20%); /* Initial value, can be changed dynamically */
+  height: 100%;
+  background-color: white; /* Background color of the "cut" portion */
+  z-index: 1; /* Place the cut portion on top of the container */
+}
