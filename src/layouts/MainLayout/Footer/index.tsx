@@ -1,13 +1,16 @@
 import { Box, Container, Typography } from "@mui/material";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import miniLogo from "../../../assets/miniLogo.svg";
 import { Icons } from "../../../components/Icons";
+import { setCookiePolicy } from "../../../redux/general/actions";
 import { Colors } from "../../../theme/theme";
 import { i18n } from "../../../translations/i18n";
 import { options } from "./constants";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleInstagram = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
@@ -47,9 +50,17 @@ const Footer = () => {
             {options.map((option) => {
               return (
                 <Typography
-                  style={{ color: Colors.white[400], fontSize: "14px" }}
+                  style={{
+                    color: Colors.white[400],
+                    fontSize: "14px",
+                    cursor: "pointer",
+                  }}
                   key={option.name}
-                  onClick={() => navigate(option.link)}
+                  onClick={() => {
+                    if (option.name === "Cookie Policy")
+                      dispatch(setCookiePolicy(true));
+                    else navigate(option.link);
+                  }}
                 >
                   {option.name}
                 </Typography>

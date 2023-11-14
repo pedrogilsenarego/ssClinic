@@ -93,33 +93,67 @@ const Product = () => {
               <Typography
                 component="div"
                 dangerouslySetInnerHTML={{
-                  __html: productData?.description as string,
+                  __html: i18n.t("technicalDetails.description") as string,
                 }}
                 style={{}}
               ></Typography>
+              <Box
+                style={{
+                  display: "flex",
+                  columnGap: "6px",
+                  alignItems: "center",
+                }}
+              >
+                <Icons.Droplet size="26px" color={mainColors.primary[400]} />
+                <Typography>Free World Shipping</Typography>
+              </Box>
+              <Box
+                style={{
+                  display: "flex",
+                  columnGap: "6px",
+                  alignItems: "center",
+                }}
+              >
+                <Icons.Dial size="26px" color={mainColors.primary[400]} />
+                <Typography>Free Return in 14 days</Typography>
+              </Box>{" "}
+              <Box
+                style={{
+                  display: "flex",
+                  columnGap: "6px",
+                  alignItems: "center",
+                }}
+              >
+                <Icons.Edit size="26px" color={mainColors.primary[400]} />
+                <Typography>2 years of internation warrenty</Typography>
+              </Box>
             </Box>
-            <Accordion title="Technical Specifications">
-              <Box>
-                <Typography>Movement</Typography>
-                <Typography>{i18n.t("technicalDetails.movement")}</Typography>
-              </Box>
-              <Box>
-                <Typography>Functions</Typography>
-                <Typography>{i18n.t("technicalDetails.functions")}</Typography>
-              </Box>
-              <Box>
-                <Typography>Case</Typography>
-                <Typography>{i18n.t("technicalDetails.case")}</Typography>
-              </Box>
-              <Box>
-                <Typography>Strap</Typography>
-                <Typography>{i18n.t("technicalDetails.strap")}</Typography>
-              </Box>
-              <Box>
-                <Typography>Dial</Typography>
-                <Typography>{i18n.t("technicalDetails.dial")}</Typography>
-              </Box>
-            </Accordion>
+            <Box style={{ marginTop: "20px" }}>
+              <Accordion title="Technical Specifications">
+                <Box>
+                  <Typography>Movement</Typography>
+                  <Typography>{i18n.t("technicalDetails.movement")}</Typography>
+                </Box>
+                <Box>
+                  <Typography>Functions</Typography>
+                  <Typography>
+                    {i18n.t("technicalDetails.functions")}
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography>Case</Typography>
+                  <Typography>{i18n.t("technicalDetails.case")}</Typography>
+                </Box>
+                <Box>
+                  <Typography>Strap</Typography>
+                  <Typography>{i18n.t("technicalDetails.strap")}</Typography>
+                </Box>
+                <Box>
+                  <Typography>Dial</Typography>
+                  <Typography>{i18n.t("technicalDetails.dial")}</Typography>
+                </Box>
+              </Accordion>
+            </Box>
           </Box>
         </Grid>
       </Grid>
