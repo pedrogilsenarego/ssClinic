@@ -46,7 +46,8 @@ const Toggle = ({
     setOpenConfirmation(false);
   };
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (disabled) {
       return;
     }
@@ -59,7 +60,9 @@ const Toggle = ({
       }
       return;
     }
-    if (onClick) onClick();
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (
@@ -79,7 +82,10 @@ const Toggle = ({
             isActive={isActive}
             style={{ margin: 0 }}
             htmlFor="switch"
-            onClick={handleClick}
+            onClick={(e: any) => {
+              e.preventDefault();
+              handleClick(e);
+            }}
             disabled={disabled}
             hasBorder={hasBorder}
           />

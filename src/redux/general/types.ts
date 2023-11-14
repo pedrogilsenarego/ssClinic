@@ -6,8 +6,7 @@ const generalTypes = {
   UPDATE_LANG: "UPDATE_LANG",
   SET_COOKIE_POLICY: "SET_COOKIE_POLICY",
   POSITION_VERTICAL: "POSITION_VERTICAL",
-  CREATE_DIAL: "CREATE_DIAL",
-  CLEAR_DIAL: "CLEAR_DIAL",
+  CHANGE_COOKIE_SETTINGS: "CHANGE_COOKIE_SETTINGS",
 };
 export interface Dial<T extends "number" | "text" | null> {
   dialType: T;
@@ -22,19 +21,20 @@ export interface Dial<T extends "number" | "text" | null> {
   inputType?: string;
 }
 
+export type CookieSettings = {
+  functional: boolean;
+  analytics: boolean;
+  advertisement: boolean;
+  uncategorized: boolean;
+};
+
 export interface General {
   lang: string;
   cookiePolicy: boolean;
-
   positionVertical: boolean;
   notificationMessage: string;
   notificationType: null | "success" | "fail";
-  cookieSettings: {
-    functional: boolean;
-    analytics: boolean;
-    advertisement: boolean;
-    uncategorized: boolean;
-  };
+  cookieSettings: CookieSettings;
 }
 
 export default generalTypes;

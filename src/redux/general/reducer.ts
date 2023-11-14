@@ -16,7 +16,7 @@ const INITIAL_STATE: General = {
 
 interface Action {
   type: string;
-  payload: string;
+  payload: any;
 }
 
 const generalReducer = (state = INITIAL_STATE, action: Action) => {
@@ -60,6 +60,14 @@ const generalReducer = (state = INITIAL_STATE, action: Action) => {
       return {
         ...state,
         positionVertical: action.payload,
+      };
+    case generalTypes.CHANGE_COOKIE_SETTINGS:
+      return {
+        ...state,
+        cookieSettings: {
+          ...state.cookieSettings,
+          [action.payload.value]: action.payload.signal,
+        },
       };
 
     default:

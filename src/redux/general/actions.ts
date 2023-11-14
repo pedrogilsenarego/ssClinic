@@ -1,4 +1,4 @@
-import generalTypes, { Dial } from "./types";
+import generalTypes, { CookieSettings } from "./types";
 
 //notifications
 export const updateSuccessNotification = (message: string) => ({
@@ -29,11 +29,12 @@ export const setPositionVertical = (position: boolean) => ({
   payload: position,
 });
 
-export const createDial = (payload: Dial<"number" | "text" | null>) => ({
-  type: generalTypes.CREATE_DIAL,
-  payload: payload,
-});
+type ChangeCookieProps = {
+  value: keyof CookieSettings;
+  signal: boolean;
+};
 
-export const clearDial = () => ({
-  type: generalTypes.CLEAR_DIAL,
+export const changeCookieSettings = (value: ChangeCookieProps) => ({
+  type: generalTypes.CHANGE_COOKIE_SETTINGS,
+  payload: value,
 });

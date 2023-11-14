@@ -81,7 +81,7 @@ const Header = () => {
               onClick={() => navigate(ROUTE_PATHS.HOME)}
               src={logo}
               alt="logo"
-              style={{ width: "130px", cursor: "pointer" }}
+              style={{ width: "120px", cursor: "pointer" }}
             />
           </Grid>
           <Grid

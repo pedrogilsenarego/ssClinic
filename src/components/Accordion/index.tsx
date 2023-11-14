@@ -7,10 +7,15 @@ import MuiAccordionSummary, {
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import * as React from "react";
+import Toggle from "../Ui/Toggle";
 
 type Props = {
   title: string;
   children: React.ReactNode;
+  toggle?: {
+    onToggle: () => void;
+    signal: boolean;
+  };
 };
 
 const Accordion = styled((props: AccordionProps) => (
@@ -49,7 +54,11 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
-export default function CustomizedAccordions({ title, children }: Props) {
+export default function CustomizedAccordions({
+  title,
+  children,
+  toggle,
+}: Props) {
   const [expanded, setExpanded] = React.useState<string | false>(false);
 
   const handleChange =
@@ -70,6 +79,9 @@ export default function CustomizedAccordions({ title, children }: Props) {
           >
             {title}
           </Typography>
+          {toggle && (
+            <Toggle isActive={toggle.signal} onClick={toggle.onToggle} />
+          )}
         </AccordionSummary>
         <AccordionDetails
           style={{

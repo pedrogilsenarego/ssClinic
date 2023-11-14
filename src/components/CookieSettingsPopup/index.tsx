@@ -1,4 +1,8 @@
 import { Box, Divider, Typography } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { changeCookieSettings } from "../../redux/general/actions";
+import { CookieSettings } from "../../redux/general/types";
+import { State } from "../../redux/types";
 import { mainColors } from "../../theme/theme";
 import { i18n } from "../../translations/i18n";
 import CustomizedAccordions from "../Accordion";
@@ -11,6 +15,10 @@ type Props = {
 };
 
 const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
+  const cookieSettings = useSelector<State, CookieSettings>(
+    (state) => state.general.cookieSettings
+  );
+  const dispatch = useDispatch();
   return (
     <Popup
       openPopup={openPopup}
@@ -39,14 +47,38 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
             data.
           </Typography>
         </CustomizedAccordions>
-        <CustomizedAccordions title="Functional">
+        <CustomizedAccordions
+          title="Functional"
+          toggle={{
+            onToggle: () =>
+              dispatch(
+                changeCookieSettings({
+                  value: "functional",
+                  signal: !cookieSettings.functional,
+                })
+              ),
+            signal: cookieSettings.functional,
+          }}
+        >
           <Typography>
             Functional cookies help perform certain functionalities like sharing
             the content of the website on social media platforms, collecting
             feedback, and other third-party features.
           </Typography>
         </CustomizedAccordions>
-        <CustomizedAccordions title="Analytics">
+        <CustomizedAccordions
+          title="Analytics"
+          toggle={{
+            onToggle: () =>
+              dispatch(
+                changeCookieSettings({
+                  value: "analytics",
+                  signal: !cookieSettings.analytics,
+                })
+              ),
+            signal: cookieSettings.analytics,
+          }}
+        >
           <Typography>
             Analytical cookies are used to understand how visitors interact with
             the website. These cookies help provide information on metrics such
@@ -60,14 +92,38 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
             better user experience for the visitors.
           </Typography>
         </CustomizedAccordions>
-        <CustomizedAccordions title="Advertisement">
+        <CustomizedAccordions
+          title="Advertisement"
+          toggle={{
+            onToggle: () =>
+              dispatch(
+                changeCookieSettings({
+                  value: "advertisement",
+                  signal: !cookieSettings.advertisement,
+                })
+              ),
+            signal: cookieSettings.advertisement,
+          }}
+        >
           <Typography>
             Advertisement cookies are used to provide visitors with customized
             advertisements based on the pages you visited previously and to
             analyze the effectiveness of the ad campaigns.
           </Typography>
         </CustomizedAccordions>
-        <CustomizedAccordions title="Uncategorized">
+        <CustomizedAccordions
+          title="Uncategorized"
+          toggle={{
+            onToggle: () =>
+              dispatch(
+                changeCookieSettings({
+                  value: "uncategorized",
+                  signal: !cookieSettings.uncategorized,
+                })
+              ),
+            signal: cookieSettings.uncategorized,
+          }}
+        >
           <Typography>
             Other uncategorized cookies are those that are being analyzed and
             have not been classified into a category as yet.
