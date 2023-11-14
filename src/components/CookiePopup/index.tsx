@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setCookiePolicy } from "../../redux/general/actions";
+import { acceptAllCookies, setCookiePolicy } from "../../redux/general/actions";
 import { State } from "../../redux/types";
 import { CSS, Colors, mainColors } from "../../theme/theme";
 import { i18n } from "../../translations/i18n";
@@ -52,6 +52,7 @@ const CookiePolicy = () => {
               lightenColor
               onClick={() => {
                 dispatch(setCookiePolicy(false));
+                dispatch(acceptAllCookies());
               }}
             >
               <Typography style={{ color: Colors.white[400] }}>

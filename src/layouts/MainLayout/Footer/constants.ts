@@ -9,4 +9,5 @@ export const options: Option[] = [
   { name: "Terms of service", link: "COLLECTIONS" },
   { name: "Shipping Policy", link: ROUTE_PATHS.DNA },
   { name: "Refund Policy", link: ROUTE_PATHS.DNA },
+  { name: "Cookie Policy", link: ROUTE_PATHS.DNA },
 ];

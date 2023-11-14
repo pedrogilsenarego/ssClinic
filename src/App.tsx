@@ -2,7 +2,6 @@ import { StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { BrowserRouter } from "react-router-dom";
 import CookiePolicy from "./components/CookiePopup";
 import AppRoutes from "./routes";
@@ -18,7 +17,6 @@ function App() {
             <QueryClientProvider client={queryClient}>
               <CookiePolicy />
               <AppRoutes />
-              <ReactQueryDevtools />
             </QueryClientProvider>
           </ThemeProvider>
         </StyledEngineProvider>

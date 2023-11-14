@@ -69,7 +69,21 @@ const generalReducer = (state = INITIAL_STATE, action: Action) => {
           [action.payload.value]: action.payload.signal,
         },
       };
-
+    case generalTypes.ACCEPT_ALL_COOKIES:
+      return {
+        ...state,
+        cookieSettings: INITIAL_STATE.cookieSettings,
+      };
+    case generalTypes.DECLINE_ALL_COOKIES:
+      return {
+        ...state,
+        cookieSettings: {
+          functional: false,
+          analytics: false,
+          advertisement: false,
+          uncategorized: false,
+        },
+      };
     default:
       return state;
   }

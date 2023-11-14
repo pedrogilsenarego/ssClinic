@@ -1,4 +1,5 @@
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import { Box } from "@mui/material";
 import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import MuiAccordionSummary, {
@@ -80,7 +81,9 @@ export default function CustomizedAccordions({
             {title}
           </Typography>
           {toggle && (
-            <Toggle isActive={toggle.signal} onClick={toggle.onToggle} />
+            <Box style={{ position: "absolute", right: "20px" }}>
+              <Toggle isActive={toggle.signal} onClick={toggle.onToggle} />
+            </Box>
           )}
         </AccordionSummary>
         <AccordionDetails

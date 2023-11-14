@@ -38,3 +38,11 @@ export const changeCookieSettings = (value: ChangeCookieProps) => ({
   type: generalTypes.CHANGE_COOKIE_SETTINGS,
   payload: value,
 });
+
+export const acceptAllCookies = () => ({
+  type: generalTypes.ACCEPT_ALL_COOKIES,
+});
+
+export const declineAllCookies = () => ({
+  type: generalTypes.DECLINE_ALL_COOKIES,
+});

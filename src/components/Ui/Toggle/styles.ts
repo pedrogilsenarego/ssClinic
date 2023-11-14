@@ -25,11 +25,9 @@ export const ToggleLabel = styled("label")<ToggleLabelProps>(
     hasBorder = false,
   }) => css`
     display: block;
-    width: 48px;
-    height: 24px;
-    background-color: ${isActive
-      ? mainColors.primary[40080]
-      : mainColors.primary[40025]};
+    width: 40px;
+    height: 20px;
+    background-color: ${mainColors.primary[40025]};
     border-radius: 100px;
     position: relative;
     cursor: pointer;
@@ -37,13 +35,15 @@ export const ToggleLabel = styled("label")<ToggleLabelProps>(
 
     &::after {
       content: "";
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
 
-      background-color: ${mainColors.secondary[40050]};
+      background-color: ${isActive
+        ? mainColors.primary[40080]
+        : mainColors.primary[40025]};
       position: absolute;
       left: ${isActive
-        ? `calc(100% - ${hasBorder ? "26px" : "22px"})`
+        ? `calc(100% - ${hasBorder ? "26px" : "18px"})`
         : `${hasBorder ? "4px" : "4px"}`};
       top: 3px;
       border-radius: 70px;

@@ -1,6 +1,11 @@
 import { Box, Divider, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { changeCookieSettings } from "../../redux/general/actions";
+import {
+  acceptAllCookies,
+  changeCookieSettings,
+  declineAllCookies,
+  setCookiePolicy,
+} from "../../redux/general/actions";
 import { CookieSettings } from "../../redux/general/types";
 import { State } from "../../redux/types";
 import { mainColors } from "../../theme/theme";
@@ -139,10 +144,24 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
             columnGap: "10px",
           }}
         >
-          <Button fullWidth darkenColors>
+          <Button
+            fullWidth
+            darkenColors
+            onClick={() => {
+              dispatch(acceptAllCookies());
+              dispatch(setCookiePolicy(false));
+            }}
+          >
             Accept All
           </Button>
-          <Button fullWidth darkenColors>
+          <Button
+            fullWidth
+            darkenColors
+            onClick={() => {
+              dispatch(declineAllCookies());
+              dispatch(setCookiePolicy(false));
+            }}
+          >
             Reject All
           </Button>
         </Box>
