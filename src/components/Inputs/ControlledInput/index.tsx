@@ -13,7 +13,7 @@ import {
 import { FC } from "react";
 import { Control, UseFormSetValue, get, useController } from "react-hook-form";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { Colors } from "../../../theme/theme";
+import { Colors, mainColors } from "../../../theme/theme";
 import { Icons } from "../../Icons";
 import useStyles from "./styles";
 import useControlledInput from "./useControlledInput";
@@ -95,6 +95,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
       inputPlaceholder={inputPlaceholder}
     >
       <TextField
+        variant="standard"
         className={classes.root}
         type={
           type === "password"
@@ -111,6 +112,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
         InputProps={
           type === "password"
             ? {
+                sx: { fontSize: "20px" },
                 endAdornment: (
                   <InputAdornment position="end">
                     <Box
@@ -119,22 +121,22 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
                     >
                       {showPassword ? (
                         <Icons.EyeInvisible
-                          size={"30px"}
+                          size={"20px"}
                           style={{ cursor: "pointer", marginTop: "2px" }}
-                          color={Colors.white[400]}
+                          color={mainColors.primary[400]}
                         />
                       ) : (
                         <Icons.EyeVisible
-                          size={"30px"}
+                          size={"20px"}
                           style={{ cursor: "pointer", marginTop: "2px" }}
-                          color={Colors.white[400]}
+                          color={mainColors.primary[400]}
                         />
                       )}
                     </Box>
                   </InputAdornment>
                 ),
               }
-            : {}
+            : { sx: { fontSize: "20px" } }
         }
       />
     </FormControlComp>

@@ -4,14 +4,14 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   root: {
-    padding: "80px 40px 0px 40px",
+    marginTop: "80px",
     display: "flex",
     flexDirection: "column",
     rowGap: "60px",
     alignItems: "center",
   },
   form: {
-    width: "40%",
+    maxWidth: "500px",
     display: "flex",
     flexDirection: "column",
     rowGap: "40px",
@@ -24,6 +24,7 @@ const useStyles = makeStyles({
   register: {
     cursor: "pointer",
     fontWeight: 700,
+    textDecoration: "underline",
   },
 });
 

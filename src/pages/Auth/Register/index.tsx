@@ -1,4 +1,4 @@
-import { Box, Divider, Grid } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import ControlledFormInput from "../../../components/Inputs/ControlledInput";
 import ControlledSelect from "../../../components/Inputs/ControlledSelect";
 import DateInput from "../../../components/Inputs/DateControlledInput";
@@ -34,7 +34,7 @@ const Register = () => {
                 <Grid item xs={12}>
                   <Divider>User Data</Divider>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="username"
@@ -44,7 +44,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="email"
@@ -54,7 +54,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     type="password"
@@ -65,7 +65,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     type="password"
@@ -79,14 +79,14 @@ const Register = () => {
                 <Grid item xs={12} mt="50px">
                   <Divider>Personal Data</Divider>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <DateInput
                     control={control}
                     name="birthday"
                     label={i18n.t("pages.auth.register.birthday", "Birthday")}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="phone"
@@ -96,7 +96,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="fullName"
@@ -130,7 +130,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="city"
@@ -140,7 +140,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="postalCode"
@@ -150,7 +150,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledSelect
                     control={control}
                     name="country"
@@ -160,8 +160,10 @@ const Register = () => {
                 </Grid>
               </Grid>
             </Box>
-            <Button type="submit">
-              {i18n.t("pages.auth.register.register", "Register")}
+            <Button darkenColors type="submit">
+              <Typography>
+                {i18n.t("pages.auth.register.register", "Register")}
+              </Typography>
             </Button>
           </form>
         </Box>

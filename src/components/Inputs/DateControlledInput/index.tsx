@@ -22,7 +22,39 @@ const DateInput: React.FC<BaseProps> = (props) => {
       <Controller
         name={name}
         control={control}
-        render={({ field }) => <DatePicker {...field} label={label} />}
+        render={({ field }) => (
+          <DatePicker
+            {...field}
+            label={label}
+            slotProps={{
+              popper: {
+                sx: {
+                  borderRadius: 0,
+                },
+              },
+              layout: {
+                sx: {
+                  ".MuiDateCalendar-root": {
+                    // color: '#1565c0',
+                    // borderWidth: 1,
+                    // borderColor: '#2196f3',
+                    border: "1px solid white",
+                    //backgroundColor: "#bbdefb",
+                  },
+                },
+              },
+            }}
+            sx={{
+              ".MuiInputBase-root": {
+                borderRadius: "0px",
+                fontSize: "20px",
+              },
+              ".MuiOutlineInput-root": {
+                fontSize: "30px",
+              },
+            }}
+          />
+        )}
       />
       <FormHelperText color="error">{error.message}</FormHelperText>
     </FormControl>

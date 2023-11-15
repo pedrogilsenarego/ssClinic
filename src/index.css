@@ -40,7 +40,7 @@ body:focus {
 /* Style the input fields */
 input {
   /* Set the desired text color */
-  color: white;
+  font-size: 30 !important;
   /* Set the desired background color */
   background-color: transparent !important;
   /* Add any other desired styles */
@@ -52,17 +52,9 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   /* Reset text color */
-  -webkit-text-fill-color: white !important;
+  -webkit-text-fill-color: rgb(8, 2, 2) !important;
+
   /* Reset background color */
   /*-webkit-box-shadow: 0 0 0 30px #898c90 inset !important;*/
-  -webkit-box-shadow: 0 0 0 30px #ff5959 inset !important;
-}
-
-/* Additional input styles for focused and hovered states */
-input:focus {
-  background-color: transparent !important;
-}
-
-input:hover {
-  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

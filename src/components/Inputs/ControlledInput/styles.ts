@@ -6,30 +6,14 @@ import { CSS, Colors, mainColors } from "../../../theme/theme";
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    backgroundColor: mainColors.secondary[40050],
-    borderRadius: CSS.borderRadius,
-    maxWidth: "auto",
-    color: "white",
 
-    "& .MuiInputBase-input": {
-      color: "white",
-      borderRadius: "16px",
-    },
+    maxWidth: "auto",
+
+    "& .MuiInputBase-input": {},
     "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderRadius: "20px",
-        borderWidth: "0px",
-      },
-      "&:hover fieldset": {
-        borderColor: mainColors.secondary[40050],
-        borderRadius: "20px",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: Colors.blackish[400],
-        marginTop: "-4px",
-        margin: "-4px",
-        borderRadius: "6px",
-      },
+      "& fieldset": {},
+      "&:hover fieldset": {},
+      "&.Mui-focused fieldset": {},
     },
   },
 });

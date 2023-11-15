@@ -47,7 +47,7 @@ const Checkout = ({ closeCart }: Props) => {
                 "Full Name"
               )}
             />
-            <Divider>Address</Divider>
+            <Divider style={{ marginTop: "40px" }}>Address</Divider>
             <ControlledFormInput
               control={control}
               name="address1"

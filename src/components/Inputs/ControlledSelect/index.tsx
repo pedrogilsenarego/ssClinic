@@ -7,6 +7,7 @@ import {
   Select,
 } from "@mui/material";
 import { Control, Controller, UseFormSetValue } from "react-hook-form";
+import { Colors, mainColors } from "../../../theme/theme";
 import useControlledSelect from "./useControlledSelect";
 
 export interface BaseReactHookFormProps {
@@ -38,7 +39,39 @@ const ControlledSelect = ({
           options.find((option) => option.label === defaultLabel)?.value || ""
         }
         render={({ field }) => (
-          <Select {...field}>
+          <Select
+            {...field}
+            variant="standard"
+            inputProps={{ sx: { fontSize: "20px" } }}
+            sx={{
+              color: Colors.blackish[400],
+
+              "& .MuiSvgIcon-root": {
+                color: mainColors.primary[400],
+              },
+              ".MuiOutlinedInput-notchedOutline": {
+                borderColor: "transparent",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "transparent",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "transparent",
+              },
+              "& .MuiSelect-outlined": {},
+            }}
+            MenuProps={{
+              PaperProps: {
+                sx: {
+                  borderRadius: "0px",
+                  backgroundColor: Colors.white[40095],
+                  "& .MuiMenuItem-root": {
+                    color: mainColors.primary[400],
+                  },
+                },
+              },
+            }}
+          >
             {options.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
