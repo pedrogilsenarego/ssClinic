@@ -33,10 +33,8 @@ const Popup = ({
     <Dialog
       PaperProps={{
         style: {
-          position: "absolute",
           borderRadius: "0px",
           maxHeight: "65%",
-          overflow: "auto",
         },
       }}
       hideBackdrop
@@ -65,7 +63,6 @@ const Popup = ({
         style={{
           color: "white",
           display: "flex",
-          alignItems: "center",
         }}
       >
         {children}

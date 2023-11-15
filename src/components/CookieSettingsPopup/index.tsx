@@ -142,6 +142,7 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
             margin: "20px 0px",
             justifyContent: "space-between",
             columnGap: "10px",
+            paddingBottom: "20px",
           }}
         >
           <Button
