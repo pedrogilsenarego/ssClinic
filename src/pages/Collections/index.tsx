@@ -13,7 +13,16 @@ const Collections = () => {
     handleProductToCart,
   } = useCollections();
   return loadingProducts ? (
-    <Loader />
+    <Box
+      style={{
+        height: "87vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Loader customMessage="Getting Products" />
+    </Box>
   ) : (
     <Box>
       <Box
