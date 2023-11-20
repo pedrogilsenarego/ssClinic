@@ -26,7 +26,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+
   z-index: 2;
   clip-path: polygon(
     0 0,
@@ -37,6 +37,7 @@
 }
 
 .mainTypo {
-  width: 800px;
-  font-size: 90px;
+  width: 820px;
+  margin-top: 200px;
+  font-size: 80px;
 }

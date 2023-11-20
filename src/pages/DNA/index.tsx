@@ -5,7 +5,7 @@ import "./index.css";
 
 const DNA = () => {
   const [mouseX, setMouseX] = useState<number>(0);
-  const maintext = "Finally a watch that is your";
+  const maintext = "Finally a watch that is your...  ";
 
   useEffect(() => {
     function handleMouseMove(event: { clientX: number; clientY: any }) {
@@ -37,9 +37,10 @@ const DNA = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          height: "80vh",
-          alignItems: "center",
+          height: "120vh",
+          alignItems: "top",
           position: "relative",
+          marginBottom: "400px",
         }}
       >
         <Box className="first-box">
@@ -48,7 +49,10 @@ const DNA = () => {
             fontWeight={800}
             color={mainColors.primary[400]}
           >
-            {maintext} Friend
+            {maintext}{" "}
+            <b style={{ fontFamily: "Gochi Hand", fontSize: "140px" }}>
+              Friend
+            </b>
           </Typography>
         </Box>
         <Box
@@ -59,13 +63,14 @@ const DNA = () => {
             height: "100%",
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
+
             overflow: "hidden",
           }}
         >
           {" "}
           <Typography className="mainTypo" fontWeight={800} color="red">
-            {maintext} Enemy
+            {maintext}{" "}
+            <b style={{ fontFamily: "Gochi Hand", fontSize: "140px" }}>Enemy</b>
           </Typography>
         </Box>
       </Box>
