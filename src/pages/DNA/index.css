@@ -35,3 +35,8 @@
     0 100%
   );
 }
+
+.mainTypo {
+  width: 800px;
+  font-size: 90px;
+}

@@ -5,6 +5,7 @@ import "./index.css";
 
 const DNA = () => {
   const [mouseX, setMouseX] = useState<number>(0);
+  const maintext = "Finally a watch that is your";
 
   useEffect(() => {
     function handleMouseMove(event: { clientX: number; clientY: any }) {
@@ -43,11 +44,11 @@ const DNA = () => {
       >
         <Box className="first-box">
           <Typography
-            fontSize="50px"
+            className="mainTypo"
             fontWeight={800}
             color={mainColors.primary[400]}
           >
-            Teste
+            {maintext} Friend
           </Typography>
         </Box>
         <Box
@@ -63,8 +64,8 @@ const DNA = () => {
           }}
         >
           {" "}
-          <Typography fontSize="50px" fontWeight={800} color="red">
-            Teste3
+          <Typography className="mainTypo" fontWeight={800} color="red">
+            {maintext} Enemy
           </Typography>
         </Box>
       </Box>
