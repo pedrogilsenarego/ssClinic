@@ -37,10 +37,11 @@ const DNA = () => {
           width: "100%",
           display: "flex",
           justifyContent: "center",
-          height: "120vh",
+          height: "90vh",
           alignItems: "top",
           position: "relative",
           marginBottom: "400px",
+          boxShadow: "2px 2px 6px #00000066",
         }}
       >
         <Box className="first-box">
@@ -59,7 +60,7 @@ const DNA = () => {
           className="container"
           style={{
             position: "absolute",
-            backgroundColor: mainColors.primary[400],
+            background: `linear-gradient(to right, ${mainColors.primary[40025]}, ${mainColors.primary[40005]})`,
             height: "100%",
             display: "flex",
             justifyContent: "center",
@@ -68,7 +69,11 @@ const DNA = () => {
           }}
         >
           {" "}
-          <Typography className="mainTypo" fontWeight={800} color="red">
+          <Typography
+            className="mainTypo"
+            fontWeight={800}
+            color={mainColors.secondary[40050]}
+          >
             {maintext}{" "}
             <b style={{ fontFamily: "Gochi Hand", fontSize: "140px" }}>Enemy</b>
           </Typography>
