@@ -20,8 +20,12 @@ const DNA = () => {
 
   useEffect(() => {
     const container = document.querySelector(".container") as HTMLElement;
+    const firstBox = document.querySelector(".first-box") as HTMLElement;
     if (container) {
       container.style.setProperty("--cut-width", mouseX + "%");
+    }
+    if (firstBox) {
+      firstBox.style.setProperty("--cut-width", mouseX + "%");
     }
   }, [mouseX]);
 
@@ -37,18 +41,7 @@ const DNA = () => {
           position: "relative",
         }}
       >
-        <Box
-          className="first-box"
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1,
-          }}
-        >
+        <Box className="first-box">
           <Typography
             fontSize="50px"
             fontWeight={800}
@@ -66,7 +59,6 @@ const DNA = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            zIndex: 2,
             overflow: "hidden",
           }}
         >
