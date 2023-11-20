@@ -4,18 +4,17 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   root: {
-    padding: "80px 40px 0px 40px",
+    marginTop: "80px",
     display: "flex",
     flexDirection: "column",
-    rowGap: "60px",
+    rowGap: "120px",
     alignItems: "center",
   },
   form: {
-    width: "80%",
+    width: "500px",
     display: "flex",
     flexDirection: "column",
     rowGap: "40px",
-    maxWidth: "500px",
   },
   inputBox: {
     display: "flex",
@@ -24,6 +23,8 @@ const useStyles = makeStyles({
   },
   register: {
     cursor: "pointer",
+    fontWeight: 700,
+    textDecoration: "underline",
   },
 });
 

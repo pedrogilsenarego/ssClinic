@@ -21,7 +21,10 @@ const ManageProducts = () => {
       </Typography>
       <Divider />
       <Box className={classes.root}>
-        <Button onClick={() => navigate(ROUTE_PATHS.ADMIN_CREATE_PRODUCT)}>
+        <Button
+          darkenColors
+          onClick={() => navigate(ROUTE_PATHS.ADMIN_CREATE_PRODUCT)}
+        >
           {i18n.t("pages.admin.manageProducts.createProduct", "Create Product")}
         </Button>
         <Box style={{ marginTop: "30px" }}>

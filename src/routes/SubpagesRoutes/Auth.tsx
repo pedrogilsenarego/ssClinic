@@ -19,4 +19,12 @@ export const authPages = [
       </MainLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.RECOVER_PASSWORD,
+    component: (
+      <MainLayout>
+        <RoutesI.RecoverPassword />
+      </MainLayout>
+    ),
+  },
 ];

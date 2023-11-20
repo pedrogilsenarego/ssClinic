@@ -99,6 +99,12 @@ export const content = {
             register: "Not registered yet? Click here",
             forgotPassword: "Forgot your password, click here",
           },
+          recoverPassword: {
+            welcome: "Recover here your password",
+            subWelcome: "You will receive an email",
+            submit: "Recover",
+            loaderMessage: "Sending an e-mail",
+          },
           register: {
             loaderMessage: "Creating new user",
             phone: "Phone",

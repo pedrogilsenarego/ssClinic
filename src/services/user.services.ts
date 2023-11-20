@@ -1,5 +1,6 @@
 import {
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
@@ -11,6 +12,9 @@ export const userServices = {
   createUser: async (newUser: CreateUser) => {
     const { password, confirmPassword, ...userData } = newUser;
     const { email } = newUser;
+    const filteredUserData = Object.fromEntries(
+      Object.entries(userData).filter(([_, value]) => value !== undefined)
+    );
     try {
       // Create a new user in Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(
@@ -23,7 +27,7 @@ export const userServices = {
       // Create a Firestore document with the same ID as user.uid
       const userDocRef = doc(db, DB.USERS, user.uid);
 
-      await setDoc(userDocRef, { ...userData, role: ["USER"] });
+      await setDoc(userDocRef, { ...filteredUserData, role: ["USER"] });
 
       console.log("Document written with ID: ", user.uid); // Use user.uid as the Firestore document ID
     } catch (error) {
@@ -64,6 +68,15 @@ export const userServices = {
       console.log("Document updated with ID: ", documentID);
     } catch (e) {
       console.error("Error updating document: ", e);
+    }
+  },
+  recoverPassword: async (email: string) => {
+    try {
+      await sendPasswordResetEmail(auth, email);
+      console.log("Password reset email sent successfully.");
+    } catch (error) {
+      console.error("Error sending password reset email:", error);
+      throw error;
     }
   },
 };

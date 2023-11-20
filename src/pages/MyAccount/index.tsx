@@ -29,7 +29,7 @@ const Register = () => {
                   <Divider>Personal Data</Divider>
                 </Grid>
 
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="phone"
@@ -39,7 +39,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="fullName"
@@ -73,7 +73,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="city"
@@ -83,7 +83,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
                     name="postalCode"
@@ -93,7 +93,7 @@ const Register = () => {
                     )}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                   <ControlledSelect
                     control={control}
                     name="country"

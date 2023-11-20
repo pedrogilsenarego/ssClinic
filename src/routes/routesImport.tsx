@@ -15,4 +15,7 @@ export const RoutesI = {
   Product: lazyWithRetryAndLoader(() => import("../pages/Product")),
   MyAccount: lazyWithRetryAndLoader(() => import("../pages/MyAccount")),
   BuySuccess: lazyWithRetryAndLoader(() => import("../pages/BuySuccess")),
+  RecoverPassword: lazyWithRetryAndLoader(
+    () => import("../pages/Auth/RecoverPassword")
+  ),
 };

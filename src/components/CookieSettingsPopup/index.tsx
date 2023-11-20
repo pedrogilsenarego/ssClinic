@@ -59,10 +59,10 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
               dispatch(
                 changeCookieSettings({
                   value: "functional",
-                  signal: !cookieSettings.functional,
+                  signal: !cookieSettings?.functional || true,
                 })
               ),
-            signal: cookieSettings.functional,
+            signal: cookieSettings?.functional || true,
           }}
         >
           <Typography>
@@ -78,10 +78,10 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
               dispatch(
                 changeCookieSettings({
                   value: "analytics",
-                  signal: !cookieSettings.analytics,
+                  signal: !cookieSettings?.analytics || true,
                 })
               ),
-            signal: cookieSettings.analytics,
+            signal: cookieSettings?.analytics || true,
           }}
         >
           <Typography>
@@ -104,10 +104,10 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
               dispatch(
                 changeCookieSettings({
                   value: "advertisement",
-                  signal: !cookieSettings.advertisement,
+                  signal: !cookieSettings?.advertisement || true,
                 })
               ),
-            signal: cookieSettings.advertisement,
+            signal: cookieSettings?.advertisement || true,
           }}
         >
           <Typography>
@@ -123,10 +123,10 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
               dispatch(
                 changeCookieSettings({
                   value: "uncategorized",
-                  signal: !cookieSettings.uncategorized,
+                  signal: !cookieSettings?.uncategorized || true,
                 })
               ),
-            signal: cookieSettings.uncategorized,
+            signal: cookieSettings?.uncategorized || true,
           }}
         >
           <Typography>

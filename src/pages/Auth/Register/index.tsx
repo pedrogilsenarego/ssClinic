@@ -40,7 +40,7 @@ const Register = () => {
                     name="username"
                     inputPlaceholder={i18n.t(
                       "pages.auth.register.username",
-                      "Username"
+                      "Username*"
                     )}
                   />
                 </Grid>

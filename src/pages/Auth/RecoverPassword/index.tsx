@@ -2,20 +2,22 @@ import { Box, Grid, Typography } from "@mui/material";
 import ControlledFormInput from "../../../components/Inputs/ControlledInput";
 import Loader from "../../../components/Loader";
 import Button from "../../../components/Ui/Button";
-import { ROUTE_PATHS } from "../../../routes/constants";
 import { Colors, mainColors } from "../../../theme/theme";
 import { i18n } from "../../../translations/i18n";
 import useStyles from "./styles";
-import useLogin from "./useLogin";
+import useLogin from "./useRecoverPassword";
 
-const Login = () => {
+const RecoverPassword = () => {
   const classes = useStyles();
-  const { handleSubmit, onSubmit, control, isLogin, navigate } = useLogin();
+  const { handleSubmit, onSubmit, control, isLogin } = useLogin();
   return (
     <>
       {isLogin ? (
         <Loader
-          customMessage={i18n.t("pages.auth.login.loaderMessage", "Logging in")}
+          customMessage={i18n.t(
+            "pages.auth.recoverPassword.loaderMessage",
+            "Logging in"
+          )}
         />
       ) : (
         <Box className={classes.root}>
@@ -28,7 +30,7 @@ const Login = () => {
                 lineHeight: "49px",
               }}
             >
-              {i18n.t("pages.auth.login.welcome")}
+              {i18n.t("pages.auth.recoverPassword.welcome")}
             </Typography>
             <Typography
               style={{
@@ -38,12 +40,12 @@ const Login = () => {
                 color: mainColors.secondary[400],
               }}
             >
-              {i18n.t("pages.auth.login.subWelcome")}
+              {i18n.t("pages.auth.recoverPassword.subWelcome")}
             </Typography>
           </Box>
           <form
             className={classes.form}
-            id="login-in"
+            id="recover-pwd"
             onSubmit={handleSubmit(onSubmit)}
           >
             <Box className={classes.inputBox}>
@@ -55,33 +57,10 @@ const Login = () => {
                     inputPlaceholder={i18n.t("pages.auth.login.email", "Email")}
                   />
                 </Grid>
-                <Grid item xs={12}>
-                  <ControlledFormInput
-                    control={control}
-                    type="password"
-                    name="password"
-                    inputPlaceholder={i18n.t(
-                      "pages.auth.login.password",
-                      "Password"
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography
-                    className={classes.register}
-                    onClick={() => navigate(ROUTE_PATHS.RECOVER_PASSWORD)}
-                  >
-                    {i18n.t(
-                      "pages.auth.login.forgotPassword",
-                      "Forgot your password, click here"
-                    )}
-                  </Typography>
-                </Grid>
               </Grid>
             </Box>
             <Box
               style={{
-                marginTop: "60px",
                 display: "flex",
                 flexDirection: "column",
                 rowGap: "15px",
@@ -96,18 +75,8 @@ const Login = () => {
                 type="submit"
                 style={{ color: Colors.blackish[400] }}
               >
-                {i18n.t("pages.auth.login.login", "Login")}
+                {i18n.t("pages.auth.recoverPassword.submit")}
               </Button>
-              <Typography
-                onClick={() => navigate(ROUTE_PATHS.REGISTER)}
-                style={{
-                  color: Colors.blackish[400],
-                  cursor: "pointer",
-                  fontSize: "20px",
-                }}
-              >
-                {i18n.t("pages.auth.login.newUser")}
-              </Typography>
             </Box>
           </form>
         </Box>
@@ -116,4 +85,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default RecoverPassword;

@@ -11,4 +11,5 @@ export const ROUTE_PATHS = {
   REGISTER: "/auth/register",
   PRIVACY_POLICY: "/privacy-policy",
   BUY_SUCCESS: "/success",
+  RECOVER_PASSWORD: "/recover-password",
 };
