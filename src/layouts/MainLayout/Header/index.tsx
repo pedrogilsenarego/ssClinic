@@ -16,6 +16,7 @@ import { CurrentUser } from "../../../types/user";
 import Cart from "./Cart";
 import UserPopoverContent from "./UserPopoverContent";
 import { langOptions, options } from "./constants";
+import "./index.css";
 import useStyles from "./styles";
 import useHeader from "./useHeader";
 
@@ -106,8 +107,10 @@ const Header = () => {
               {options.map((option) => {
                 return (
                   <Typography
-                    className={classes.text}
+                    className={"text"}
                     style={{
+                      cursor: "pointer",
+                      fontSize: "14px",
                       color:
                         location.pathname === option.link
                           ? mainColors.secondary[400]

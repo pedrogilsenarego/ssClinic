@@ -1,0 +1,19 @@
+.text:after {
+  transition: all ease-in-out 0.2s;
+  background: none repeat scroll 0 0 #ff5959;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0;
+}
+.text-selected:after {
+  transition: all ease-in-out 0.2s;
+  background: none repeat scroll 0 0 #ff5959;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+.text:hover:after {
+  width: 100%;
+}
