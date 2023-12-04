@@ -1,4 +1,10 @@
-import { Box, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import miniLogo from "../../../assets/miniLogo.svg";
@@ -11,6 +17,8 @@ import { options } from "./constants";
 const Footer = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const Theme = useTheme();
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const handleInstagram = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
@@ -43,8 +51,11 @@ const Footer = () => {
           <Box
             style={{
               display: "flex",
+              flexDirection: mobile ? "column" : "row",
               columnGap: "30px",
+              rowGap: "10px",
               justifyContent: "center",
+              alignItems: "center",
             }}
           >
             {options.map((option) => {

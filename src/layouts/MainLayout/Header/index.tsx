@@ -408,6 +408,7 @@ const Header = () => {
         </DrawerMine>
         <DrawerMine
           fullHeight
+          fullWidth
           position="left"
           openDrawer={cartDrawer}
           setOpenDrawer={setCartDrawer}
