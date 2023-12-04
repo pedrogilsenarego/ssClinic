@@ -18,4 +18,5 @@ export const RoutesI = {
   RecoverPassword: lazyWithRetryAndLoader(
     () => import("../pages/Auth/RecoverPassword")
   ),
+  Policies: lazyWithRetryAndLoader(() => import("../pages/Policies")),
 };

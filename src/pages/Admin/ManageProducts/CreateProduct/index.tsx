@@ -208,7 +208,7 @@ const CreateProduct = ({ edit = false }: Props) => {
                 </Grid>
               </Grid>
             </Box>
-            <Button type="submit">
+            <Button type="submit" darkenColors>
               {i18n.t(
                 "pages.admin.createProducts.form.submit",
                 "Create Product"

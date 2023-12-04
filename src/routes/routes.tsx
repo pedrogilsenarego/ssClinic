@@ -55,4 +55,12 @@ export const routes: AppRoute[] = [
       </MainLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.POLICIES,
+    component: (
+      <MainLayout>
+        <RoutesI.Policies />
+      </MainLayout>
+    ),
+  },
 ];
