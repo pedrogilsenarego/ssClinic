@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import Loader from "../../components/Loader";
 import Button from "../../components/Ui/Button";
 import { mainColors } from "../../theme/theme";
@@ -12,6 +12,7 @@ const Collections = () => {
     handleClickProduct,
     handleProductToCart,
   } = useCollections();
+
   return loadingProducts ? (
     <Loader customMessage="Getting Products" />
   ) : (
@@ -48,21 +49,25 @@ const Collections = () => {
         </Box>
       </Box>
       <Container maxWidth="xl">
-        <Box
+        <Grid
+          container
           style={{
             display: "flex",
             width: "100%",
             justifyContent: "center",
             columnGap: "40px",
             marginTop: "80px",
+            rowGap: "60px",
           }}
         >
           {productsData.map((product: Product) => {
             return (
-              <Box
+              <Grid
+                item
+                xs={12}
+                md={2}
                 style={{
                   display: "flex",
-                  width: "20%",
                   flexDirection: "column",
                   alignItems: "center",
                   rowGap: "20px",
@@ -99,10 +104,10 @@ const Collections = () => {
                     </Typography>
                   </Button>
                 </Box>
-              </Box>
+              </Grid>
             );
           })}
-        </Box>
+        </Grid>
       </Container>
     </Box>
   );

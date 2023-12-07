@@ -18,7 +18,7 @@ const Login = () => {
           customMessage={i18n.t("pages.auth.login.loaderMessage", "Logging in")}
         />
       ) : (
-        <Box className={classes.root}>
+        <Box className={classes.root} margin="0px 20px 0px 20px">
           <Box>
             <Typography
               style={{

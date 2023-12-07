@@ -20,9 +20,14 @@ const Product = () => {
   return isLoadingProduct ? (
     <Loader />
   ) : (
-    <Box display="flex" justifyContent="center" mt="50px">
+    <Box
+      display="flex"
+      justifyContent="center"
+      mt="50px"
+      margin="50px 20px 0px 20px"
+    >
       <Grid container columnSpacing="40px" maxWidth="xl">
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <img
             src={productData?.images[mainImage]}
             style={{ width: "100%", height: "700px", objectFit: "cover" }}
@@ -52,7 +57,7 @@ const Product = () => {
             })}
           </Box>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} md={6}>
           <Box>
             <Typography
               style={{

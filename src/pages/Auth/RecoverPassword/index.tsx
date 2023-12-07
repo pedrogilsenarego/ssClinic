@@ -20,7 +20,7 @@ const RecoverPassword = () => {
           )}
         />
       ) : (
-        <Box className={classes.root}>
+        <Box className={classes.root} margin="0px 20px 0px 20px">
           <Box>
             <Typography
               style={{

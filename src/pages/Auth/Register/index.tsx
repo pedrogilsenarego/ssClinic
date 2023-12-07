@@ -22,7 +22,7 @@ const Register = () => {
           )}
         />
       ) : (
-        <Box className={classes.root}>
+        <Box className={classes.root} margin="0px 20px 0px 20px">
           {" "}
           <form
             className={classes.form}

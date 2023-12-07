@@ -1,4 +1,4 @@
-import { Box, Divider, Grid } from "@mui/material";
+import { Box, Divider, Grid, useMediaQuery, useTheme } from "@mui/material";
 import ControlledFormInput from "../../components/Inputs/ControlledInput";
 import ControlledSelect from "../../components/Inputs/ControlledSelect";
 import Loader from "../../components/Loader";
@@ -11,12 +11,17 @@ import useRegister from "./useRegister";
 const Register = () => {
   const classes = useStyles();
   const { handleSubmit, onSubmit, control, isEditing } = useRegister();
+  const Theme = useTheme();
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   return (
     <>
       {isEditing ? (
         <Loader />
       ) : (
-        <Box className={classes.root}>
+        <Box
+          className={classes.root}
+          style={{ padding: mobile ? undefined : "80px 40px 0px 40px" }}
+        >
           {" "}
           <form
             className={classes.form}
