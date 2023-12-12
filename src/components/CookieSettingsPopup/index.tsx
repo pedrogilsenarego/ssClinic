@@ -149,6 +149,7 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
             fullWidth
             darkenColors
             onClick={() => {
+              setOpenPopup(false);
               dispatch(acceptAllCookies());
               dispatch(setCookiePolicy(false));
             }}
@@ -159,6 +160,7 @@ const CookieSettingsPopup = ({ openPopup, setOpenPopup }: Props) => {
             fullWidth
             darkenColors
             onClick={() => {
+              setOpenPopup(false);
               dispatch(declineAllCookies());
               dispatch(setCookiePolicy(false));
             }}

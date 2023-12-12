@@ -128,6 +128,15 @@ export const content = {
         myCollection: {
           edit: "Edit Information",
         },
+        policies: {
+          termsOfService: "Terms of Service",
+        },
+        shippingPolicies: {
+          shippingPolicies: "Shipping Policies",
+        },
+        refundPolicies: {
+          refundPolicies: "Refund Policies",
+        },
       },
       technicalDetails: {
         description:

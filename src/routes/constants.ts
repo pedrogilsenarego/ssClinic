@@ -12,5 +12,7 @@ export const ROUTE_PATHS = {
   PRIVACY_POLICY: "/privacy-policy",
   BUY_SUCCESS: "/success",
   RECOVER_PASSWORD: "/recover-password",
-  POLICIES: "/policies",
+  POLICIES: "/terms-of-service",
+  SHIPPING_POLICIES: "/shipping-policies",
+  REFUND_POLICIE: "/refund-policies",
 };

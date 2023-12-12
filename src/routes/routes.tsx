@@ -63,4 +63,20 @@ export const routes: AppRoute[] = [
       </MainLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.SHIPPING_POLICIES,
+    component: (
+      <MainLayout>
+        <RoutesI.ShippingPolicies />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.REFUND_POLICIE,
+    component: (
+      <MainLayout>
+        <RoutesI.RefundPolicies />
+      </MainLayout>
+    ),
+  },
 ];

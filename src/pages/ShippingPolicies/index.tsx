@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { i18n } from "../../translations/i18n";
 
-const Policies = () => {
+const ShippingPolicies = () => {
   return (
     <Box
       style={{ display: "flex", justifyContent: "center", margin: "0px 20px" }}
@@ -15,7 +15,7 @@ const Policies = () => {
             lineHeight: "49px",
           }}
         >
-          {i18n.t("pages.policies.termsOfService")}
+          {i18n.t("pages.shippingPolicies.shippingPolicies")}
         </Typography>
         <Typography
           style={{
@@ -36,4 +36,4 @@ const Policies = () => {
   );
 };
 
-export default Policies;
+export default ShippingPolicies;

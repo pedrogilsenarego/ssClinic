@@ -19,4 +19,10 @@ export const RoutesI = {
     () => import("../pages/Auth/RecoverPassword")
   ),
   Policies: lazyWithRetryAndLoader(() => import("../pages/Policies")),
+  ShippingPolicies: lazyWithRetryAndLoader(
+    () => import("../pages/ShippingPolicies")
+  ),
+  RefundPolicies: lazyWithRetryAndLoader(
+    () => import("../pages/RefundPolicies")
+  ),
 };

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { acceptAllCookies, setCookiePolicy } from "../../redux/general/actions";
 import { State } from "../../redux/types";
@@ -15,6 +15,8 @@ const CookiePolicy = () => {
   );
   const dispatch = useDispatch();
   const [settingsPopup, setSettingsPopup] = useState(false);
+  const Theme = useTheme();
+  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
 
   return (
     <>
@@ -22,11 +24,11 @@ const CookiePolicy = () => {
         <Box
           style={{
             position: "fixed",
-            bottom: "60px",
+            bottom: mobile ? 0 : "60px",
             maxWidth: "400px",
             borderRadius: CSS.borderRadiusS,
-            zIndex: 2000,
-            right: "60px",
+            zIndex: 10,
+            right: mobile ? undefined : "60px",
             backgroundColor: Colors.white[40095],
             boxShadow: `2px 2px 6px ${Colors.black[40025]}`,
           }}
