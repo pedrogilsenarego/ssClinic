@@ -10,7 +10,7 @@ import { updateSuccessNotification } from "../../../../../redux/general/actions"
 import { State } from "../../../../../redux/types";
 import { ROUTE_PATHS } from "../../../../../routes/constants";
 
-import { stripeLocal } from "../../../../../stripe/config";
+import { stripeLocal, stripeProduction } from "../../../../../stripe/config";
 import { i18n } from "../../../../../translations/i18n";
 import { Checkout } from "../../../../../types/checkout";
 import { CurrentUser } from "../../../../../types/user";
@@ -53,7 +53,7 @@ const useCheckout = ({ closeCart }: Props) => {
       });
     });
 
-    await fetch(stripeLocal, {
+    await fetch(stripeProduction, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
