@@ -15,7 +15,7 @@ import { FiMenu } from "react-icons/fi";
 import { VscMenu } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import logo from "../../../assets/logo.svg";
+//import logo from "../../../assets/logo.svg";
 import DrawerMine from "../../../components/Drawer";
 import { Icons } from "../../../components/Icons";
 import UncontrolledSelect from "../../../components/Inputs/UncontroledSelect";
@@ -81,7 +81,7 @@ const Header = () => {
           <Grid container>
             <Grid
               item
-              xs={4}
+              xs={2}
               style={{
                 display: "flex",
                 justifyContent: "left",
@@ -99,14 +99,14 @@ const Header = () => {
             >
               <img
                 onClick={() => navigate(ROUTE_PATHS.HOME)}
-                src={logo}
+                src={""}
                 alt="logo"
                 style={{ width: "120px", cursor: "pointer" }}
               />
             </Grid>
             <Grid
               item
-              xs={4}
+              xs={6}
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -308,7 +308,7 @@ const Header = () => {
               style={{ textTransform: "uppercase" }}
               fontWeight={800}
               onClick={() => {
-                navigate(ROUTE_PATHS.DNA);
+                navigate(ROUTE_PATHS.ABOUT);
                 setMobileDrawer(false);
               }}
             >
@@ -318,7 +318,7 @@ const Header = () => {
               style={{ textTransform: "uppercase" }}
               fontWeight={800}
               onClick={() => {
-                navigate(ROUTE_PATHS.COLLECTIONS);
+                navigate(ROUTE_PATHS.PRODUCTS);
                 setMobileDrawer(false);
               }}
             >

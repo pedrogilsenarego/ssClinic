@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { mainColors } from "../../theme/theme";
 import "./index.css";
 
-const DNA = () => {
+const About = () => {
   const [mouseX, setMouseX] = useState<number>(0);
-  const maintext = "Finally a watch that is your...  ";
+  const maintext = "Finally a service that is your...  ";
 
   useEffect(() => {
     function handleMouseMove(event: { clientX: number; clientY: any }) {
@@ -75,7 +75,7 @@ const DNA = () => {
             color={mainColors.secondary[40050]}
           >
             {maintext}{" "}
-            <b style={{ fontFamily: "Gochi Hand", fontSize: "140px" }}>Enemy</b>
+            <b style={{ fontFamily: "Gochi Hand", fontSize: "140px" }}>Best</b>
           </Typography>
         </Box>
       </Box>
@@ -83,4 +83,4 @@ const DNA = () => {
   );
 };
 
-export default DNA;
+export default About;

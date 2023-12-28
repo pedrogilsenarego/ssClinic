@@ -3,12 +3,15 @@ export const content = {
     translations: {
       header: {
         home: "Home",
-        collections: "Collections",
-        dna: "DNA",
+        products: "Products",
+        about: "about",
         account: "My account",
         login: "Login",
         logout: "Sign Out",
         admin: "Admin",
+        blog: "Blog",
+        testemonials: "Testemonials",
+        contacts: "Contacts",
       },
       errors: {
         notFound404: "404: Page not found",
@@ -25,8 +28,7 @@ export const content = {
         title: "Customize Consent Preferences",
       },
       footer: {
-        registeredBrand:
-          "© 2023 Favre-Bulle - All intelectual rights are proprietary",
+        registeredBrand: "All intelectual rights are proprietary",
       },
       cartDrawer: {
         title: "Cart",

@@ -5,7 +5,7 @@ import { mainColors } from "../../theme/theme";
 import { Product } from "../../types/product";
 import useCollections from "./useCollections";
 
-const Collections = () => {
+const Products = () => {
   const {
     loadingProducts,
     productsData,
@@ -19,7 +19,7 @@ const Collections = () => {
     <Box>
       <Box
         style={{
-          backgroundImage: `url("https://ba111od.com/cdn/shop/files/IMG_3841.jpg?v=1668782447&width=1920")`,
+          backgroundImage: `url("https://ef-medispa.imgix.net/storage/uploads/banners/Christmas_banner3-01.png?fm=pjpg&auto=format")`,
           width: "100%",
           height: "500px",
           backgroundSize: "cover",
@@ -113,4 +113,4 @@ const Collections = () => {
   );
 };
 
-export default Collections;
+export default Products;

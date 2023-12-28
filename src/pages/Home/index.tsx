@@ -22,7 +22,7 @@ const Home = () => {
     <>
       <Box
         style={{
-          backgroundImage: `url("https://images5.alphacoders.com/349/349432.jpg")`,
+          backgroundImage: `url("https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png")`,
           width: "100%",
           height: "90vh",
           backgroundSize: "cover",

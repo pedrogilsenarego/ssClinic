@@ -5,13 +5,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDk-meqzqMfwkB_MpToufreqBHgGv06ETw",
-  authDomain: "favre-bulle.firebaseapp.com",
-  projectId: "favre-bulle",
-  storageBucket: "favre-bulle.appspot.com",
-  messagingSenderId: "902751605406",
-  appId: "1:902751605406:web:90bfcab14bd89ace69218f",
-  measurementId: "G-1GS1159M4X",
+  apiKey: "AIzaSyDR7r6MuZVwNKLjytoeYH-QNaNZ9CtgnHs",
+  authDomain: "ritz-f1344.firebaseapp.com",
+  projectId: "ritz-f1344",
+  storageBucket: "ritz-f1344.appspot.com",
+  messagingSenderId: "669743827570",
+  appId: "1:669743827570:web:3418458a23d3b9ffee10eb",
+  measurementId: "G-KL72NRWNTT",
 };
 
 const app = initializeApp(firebaseConfig);

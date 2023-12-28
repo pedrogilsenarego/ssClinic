@@ -10,8 +10,8 @@ export const RoutesI = {
   ),
   Login: lazyWithRetryAndLoader(() => import("../pages/Auth/Login")),
   Register: lazyWithRetryAndLoader(() => import("../pages/Auth/Register")),
-  DNA: lazyWithRetryAndLoader(() => import("../pages/DNA")),
-  Collections: lazyWithRetryAndLoader(() => import("../pages/Collections")),
+  About: lazyWithRetryAndLoader(() => import("../pages/About")),
+  Products: lazyWithRetryAndLoader(() => import("../pages/Products")),
   Product: lazyWithRetryAndLoader(() => import("../pages/Product")),
   MyAccount: lazyWithRetryAndLoader(() => import("../pages/MyAccount")),
   BuySuccess: lazyWithRetryAndLoader(() => import("../pages/BuySuccess")),
@@ -25,4 +25,7 @@ export const RoutesI = {
   RefundPolicies: lazyWithRetryAndLoader(
     () => import("../pages/RefundPolicies")
   ),
+  Blog: lazyWithRetryAndLoader(() => import("../pages/Blog")),
+  Testemonials: lazyWithRetryAndLoader(() => import("../pages/Testemonials")),
+  Contacts: lazyWithRetryAndLoader(() => import("../pages/Contacts")),
 };

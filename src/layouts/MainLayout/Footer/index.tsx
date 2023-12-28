@@ -47,7 +47,7 @@ const Footer = () => {
             rowGap: "20px",
           }}
         >
-          <img src={miniLogo} alt="logo" style={{ width: "100px" }} />
+          <img src="" alt="logo" style={{ width: "100px" }} />
           <Box
             style={{
               display: "flex",

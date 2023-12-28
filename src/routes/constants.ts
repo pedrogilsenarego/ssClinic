@@ -1,8 +1,8 @@
 export const ROUTE_PATHS = {
   HOME: "/",
-  COLLECTIONS: "/collections",
+  PRODUCTS: "/products",
   PRODUCT: "/product/:product",
-  DNA: "/dna",
+  ABOUT: "/about",
   MY_ACCOUNT: "/my-account",
   ADMIN: "/admin/manage-products",
   ADMIN_EDIT_PRODUCT: "/admin/manage-products/edit/:id",
@@ -15,4 +15,7 @@ export const ROUTE_PATHS = {
   POLICIES: "/terms-of-service",
   SHIPPING_POLICIES: "/shipping-policies",
   REFUND_POLICIE: "/refund-policies",
+  BLOG_: "/blog",
+  TESTEMONIALS: "/testemonials",
+  CONTACTS: "/contacts",
 };

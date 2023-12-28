@@ -3,12 +3,15 @@ export const content = {
     translations: {
       header: {
         home: "Home",
-        collections: "Coleções",
-        dna: "DNA",
+        products: "Produtos",
+        about: "Sobre Nós",
         account: "My account",
         login: "Logar",
         logout: "Sign Out",
         admin: "Admin",
+        blog: "Blog",
+        testemonials: "Testemunhos",
+        contacts: "Contactos",
       },
       errors: {
         notFound404: "404: Page not found",
@@ -22,8 +25,7 @@ export const content = {
           "By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage and assist in our marketing efforts. More info",
       },
       footer: {
-        registeredBrand:
-          "© 2023 Favre-Bulle - All intelectual rights are proprietary",
+        registeredBrand: "All intelectual rights are proprietary",
       },
       cartDrawer: {
         title: "Cart",

@@ -16,18 +16,42 @@ export const routes: AppRoute[] = [
     ),
   },
   {
-    path: ROUTE_PATHS.DNA,
+    path: ROUTE_PATHS.ABOUT,
     component: (
       <MainLayout>
-        <RoutesI.DNA />
+        <RoutesI.About />
       </MainLayout>
     ),
   },
   {
-    path: ROUTE_PATHS.COLLECTIONS,
+    path: ROUTE_PATHS.BLOG_,
     component: (
       <MainLayout>
-        <RoutesI.Collections />
+        <RoutesI.Blog />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.PRODUCTS,
+    component: (
+      <MainLayout>
+        <RoutesI.Products />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.TESTEMONIALS,
+    component: (
+      <MainLayout>
+        <RoutesI.Testemonials />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.CONTACTS,
+    component: (
+      <MainLayout>
+        <RoutesI.Contacts />
       </MainLayout>
     ),
   },
