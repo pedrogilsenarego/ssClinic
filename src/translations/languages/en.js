@@ -41,6 +41,9 @@ export const content = {
         admin: {
           sidebar: {
             products: "Products",
+            users: "Users",
+            analytics: "Analytics",
+            blog: "Blog",
             backHome: "Home",
           },
           manageProducts: {

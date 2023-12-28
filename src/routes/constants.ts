@@ -7,6 +7,9 @@ export const ROUTE_PATHS = {
   ADMIN: "/admin/manage-products",
   ADMIN_EDIT_PRODUCT: "/admin/manage-products/edit/:id",
   ADMIN_CREATE_PRODUCT: "/admin/manage-products/create-product",
+  ADMIN_MANAGE_USERS: "/admin/manage-users",
+  ADMIN_MANAGE_ANALYTICS: "/admin/manage-analytics",
+  ADMIN_MANAGE_BLOG: "/admin/manage-blog",
   LOGIN: "/auth/login",
   REGISTER: "/auth/register",
   PRIVACY_POLICY: "/privacy-policy",
@@ -18,4 +21,8 @@ export const ROUTE_PATHS = {
   BLOG_: "/blog",
   TESTEMONIALS: "/testemonials",
   CONTACTS: "/contacts",
+  CLINIC1: "/clinic1",
+  CLINIC2: "/clinic2",
+  CLINIC3: "/clinic3",
+  CLINIC4: "/clinic4",
 };

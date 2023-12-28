@@ -37,8 +37,11 @@ export const content = {
       pages: {
         admin: {
           sidebar: {
-            products: "Products",
+            products: "Produtos",
             backHome: "Home",
+            analytics: "Métricas",
+            blog: "Blog",
+            users: "Utilizadores",
           },
           manageProducts: {
             title: "Manage Products",

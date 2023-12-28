@@ -22,6 +22,26 @@ const AdminSideBar = () => {
       }}
     >
       <Button
+        label={i18n.t("pages.admin.sidebar.analytics", "Analytics")}
+        icon={<Icons.Graph />}
+        path={ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS}
+      />
+
+      <Divider />
+      <Button
+        label={i18n.t("pages.admin.sidebar.users", "Users")}
+        icon={<Icons.User />}
+        path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
+      />
+      <Divider />
+      <Button
+        label={i18n.t("pages.admin.sidebar.blog", "Blog")}
+        icon={<Icons.Time />}
+        path={ROUTE_PATHS.ADMIN_MANAGE_BLOG}
+      />
+
+      <Divider />
+      <Button
         label={i18n.t("pages.admin.sidebar.products", "Products")}
         icon={<Icons.Edit />}
         path={ROUTE_PATHS.ADMIN}

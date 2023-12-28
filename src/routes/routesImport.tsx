@@ -8,6 +8,15 @@ export const RoutesI = {
   AdminCreateProduct: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageProducts/CreateProduct")
   ),
+  AdminManageUsers: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManageUsers")
+  ),
+  AdminManageAnalytics: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManageAnalytics")
+  ),
+  AdminManageBlog: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManageBlog")
+  ),
   Login: lazyWithRetryAndLoader(() => import("../pages/Auth/Login")),
   Register: lazyWithRetryAndLoader(() => import("../pages/Auth/Register")),
   About: lazyWithRetryAndLoader(() => import("../pages/About")),
@@ -28,4 +37,8 @@ export const RoutesI = {
   Blog: lazyWithRetryAndLoader(() => import("../pages/Blog")),
   Testemonials: lazyWithRetryAndLoader(() => import("../pages/Testemonials")),
   Contacts: lazyWithRetryAndLoader(() => import("../pages/Contacts")),
+  Clinic1: lazyWithRetryAndLoader(() => import("../pages/Clinics/Clinic1")),
+  Clinic2: lazyWithRetryAndLoader(() => import("../pages/Clinics/Clinic2")),
+  Clinic3: lazyWithRetryAndLoader(() => import("../pages/Clinics/Clinic3")),
+  Clinic4: lazyWithRetryAndLoader(() => import("../pages/Clinics/Clinic4")),
 };

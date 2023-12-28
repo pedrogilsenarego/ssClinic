@@ -48,6 +48,38 @@ export const routes: AppRoute[] = [
     ),
   },
   {
+    path: ROUTE_PATHS.CLINIC1,
+    component: (
+      <MainLayout>
+        <RoutesI.Clinic1 />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.CLINIC2,
+    component: (
+      <MainLayout>
+        <RoutesI.Clinic2 />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.CLINIC3,
+    component: (
+      <MainLayout>
+        <RoutesI.Clinic3 />
+      </MainLayout>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.CLINIC4,
+    component: (
+      <MainLayout>
+        <RoutesI.Clinic4 />
+      </MainLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.CONTACTS,
     component: (
       <MainLayout>

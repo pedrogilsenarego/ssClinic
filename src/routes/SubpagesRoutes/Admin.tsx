@@ -34,4 +34,34 @@ export const adminPages = [
       </WithAdminAuth>
     ),
   },
+  {
+    path: ROUTE_PATHS.ADMIN_MANAGE_USERS,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageUsers />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageAnalytics />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_MANAGE_BLOG,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageBlog />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
 ];

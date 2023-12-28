@@ -8,6 +8,22 @@ type Option = {
 
 export const options: Option[] = [
   {
+    name: "Clinic 1",
+    link: ROUTE_PATHS.CLINIC1,
+  },
+  {
+    name: "Clinic 2",
+    link: ROUTE_PATHS.CLINIC2,
+  },
+  {
+    name: "Clinic 3",
+    link: ROUTE_PATHS.CLINIC3,
+  },
+  {
+    name: "Clinic 4",
+    link: ROUTE_PATHS.CLINIC4,
+  },
+  {
     name: i18n.t("header.contacts", "Contacts"),
     link: ROUTE_PATHS.CONTACTS,
   },

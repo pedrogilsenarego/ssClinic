@@ -7,11 +7,8 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-
 import { useState } from "react";
-import { AiOutlineShopping } from "react-icons/ai";
 import { BsInstagram } from "react-icons/bs";
-import { FiMenu } from "react-icons/fi";
 import { VscMenu } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -81,7 +78,7 @@ const Header = () => {
           <Grid container>
             <Grid
               item
-              xs={2}
+              xs={1}
               style={{
                 display: "flex",
                 justifyContent: "left",
@@ -90,7 +87,7 @@ const Header = () => {
             ></Grid>
             <Grid
               item
-              xs={4}
+              xs={3}
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -106,7 +103,7 @@ const Header = () => {
             </Grid>
             <Grid
               item
-              xs={6}
+              xs={8}
               style={{
                 display: "flex",
                 justifyContent: "center",
