@@ -5,6 +5,8 @@ export const ROUTE_PATHS = {
   ABOUT: "/about",
   MY_ACCOUNT: "/my-account",
   ADMIN: "/admin/manage-products",
+  ADMIN_EDIT_BLOG: "/admin/manage-blog/edit/:id",
+  ADMIN_CREATE_BLOG: "/admin/manage-blog/create-blog",
   ADMIN_EDIT_PRODUCT: "/admin/manage-products/edit/:id",
   ADMIN_CREATE_PRODUCT: "/admin/manage-products/create-product",
   ADMIN_MANAGE_USERS: "/admin/manage-users",

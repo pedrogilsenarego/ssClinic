@@ -35,6 +35,26 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_EDIT_BLOG,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminCreateBlog edit />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_CREATE_BLOG,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminCreateBlog />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_MANAGE_USERS,
     component: (
       <WithAdminAuth>

@@ -8,6 +8,9 @@ export const RoutesI = {
   AdminCreateProduct: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageProducts/CreateProduct")
   ),
+  AdminCreateBlog: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManageBlog/CreateBlog")
+  ),
   AdminManageUsers: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageUsers")
   ),
