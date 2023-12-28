@@ -1,0 +1,56 @@
+
+@-webkit-keyframes blink {
+  40% {
+    opacity: 1;
+  }
+
+  42% {
+    opacity: 0.8;
+  }
+
+  43% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.2;
+  }
+
+  46% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  40% {
+    opacity: 1;
+  }
+
+  42% {
+    opacity: 0.8;
+  }
+
+  43% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.2;
+  }
+
+  46% {
+    opacity: 1;
+  }
+}
+
+.buzzing-element {
+  margin-bottom: 10%;
+  font-family: "neontubes";
+  font-weight: 500;
+  color: #d4eaff;
+  text-shadow:
+    0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff;
+  -webkit-animation: blink 8s infinite alternate;
+  animation: blink 8s infinite alternate;
+
+}
