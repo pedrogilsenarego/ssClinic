@@ -78,18 +78,15 @@ const Header = () => {
   };
 
   useEffect(() => {
-    // Attach the event listener when the component mounts
     window.addEventListener("scroll", handleScroll);
 
-    // Detach the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array ensures that the effect runs only once
+  }, []);
 
-  // Calculate dynamic opacity based on the scroll position
   const opacity = Math.min(1, Math.max(0, scrollPosition / 500));
-  const backgroundColor = `rgba(0, 0, 0, ${0.4 * opacity})`;
+  const backgroundColor = `rgba(207, 181, 59, ${0.4 * opacity})`;
 
   const renderLaptop = () => {
     return (
