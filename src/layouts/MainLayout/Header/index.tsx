@@ -7,7 +7,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsInstagram } from "react-icons/bs";
 import { VscMenu } from "react-icons/vsc";
 import { useSelector } from "react-redux";
@@ -71,29 +71,60 @@ const Header = () => {
     handleClickPopover(e);
   };
 
+  const [scrollingUp, setScrollingUp] = useState(true);
+  const [prevScrollY, setPrevScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > prevScrollY) {
+        // Scrolling down
+        setScrollingUp(false);
+      } else {
+        // Scrolling up
+        if (currentScrollY <= 240) {
+          setScrollingUp(true);
+        }
+      }
+
+      setPrevScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollY]);
+
   const renderLaptop = () => {
     return (
       <Box
         style={{
+          backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
           padding: "15px 0px 15px 0px",
+          backgroundSize: "cover",
           backgroundColor: "lightgray",
           position: "fixed",
           width: "100%",
           zIndex: 1000,
           display: "flex",
           justifyContent: "center",
-          //top: 0,
-          //boxShadow: `1px 1px 10px ${Colors.black[40025]}`,
+          height: "100vh",
+          transform: `translateY(${scrollingUp ? 0 : "-80%"})`,
+          transition: "transform 0.5s ease-in-out",
         }}
       >
         <Container
           maxWidth="xl"
           disableGutters
           style={{
+            marginTop: "5vh",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
+            transform: `translateY(${scrollingUp ? 0 : "83%"})`,
+            transition: "transform 0.5s ease-in-out",
           }}
         >
           <Grid container>
