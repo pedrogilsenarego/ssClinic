@@ -73,125 +73,94 @@ const Header = () => {
 
   const renderLaptop = () => {
     return (
-      <Box className={classes.root}>
-        <Container maxWidth="xl" disableGutters className={classes.subRoot}>
+      <Box
+        style={{
+          padding: "15px 0px 15px 0px",
+          backgroundColor: "lightgray",
+          position: "fixed",
+          width: "100%",
+          zIndex: 1000,
+          display: "flex",
+          justifyContent: "center",
+          //top: 0,
+          //boxShadow: `1px 1px 10px ${Colors.black[40025]}`,
+        }}
+      >
+        <Container
+          maxWidth="xl"
+          disableGutters
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Grid container>
+            <Grid item xs={4}></Grid>
             <Grid
               item
-              xs={1}
-              style={{
-                display: "flex",
-                justifyContent: "left",
-                alignItems: "center",
-              }}
-            ></Grid>
-            <Grid
-              item
-              xs={3}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+              xs={4}
+              style={{ display: "flex", justifyContent: "center" }}
             >
               <img
                 onClick={() => navigate(ROUTE_PATHS.HOME)}
                 src={""}
                 alt="logo"
-                style={{ width: "120px", cursor: "pointer" }}
+                style={{
+                  width: "120px",
+                  cursor: "pointer",
+                  border: "solid 2px black",
+                }}
               />
             </Grid>
             <Grid
               item
-              xs={8}
+              xs={4}
               style={{
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "end",
                 alignItems: "center",
                 columnGap: "30px",
               }}
             >
+              <Icons.User />
+              <Icons.Menu />
+              <Box>
+                <UncontrolledSelect
+                  options={langOptions}
+                  initialValue={lang.toLowerCase()}
+                  onChange={(v) => changeLanguage(v)}
+                />
+              </Box>
               <Box
-                style={{
-                  display: "flex",
-
-                  justifyContent: "center",
-                  alignItems: "center",
-                  columnGap: "10px",
+                style={{ cursor: "pointer", position: "relative" }}
+                onClick={() => {
+                  setCartDrawer(true);
                 }}
               >
-                {options.map((option) => {
-                  return (
-                    <Typography
-                      className={"text"}
-                      style={{
-                        cursor: "pointer",
-                        fontSize: "14px",
-                        color:
-                          location.pathname === option.link
-                            ? mainColors.secondary[400]
-                            : "inherit",
-                      }}
-                      key={option.name}
-                      onClick={() => navigate(option.link)}
-                    >
-                      {option.name}
+                {totalCartItems > 0 && (
+                  <Box
+                    style={{
+                      border: `solid 3px ${Colors.blackish[40005]}`,
+                      position: "absolute",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "1px",
+                      width: "16px",
+                      height: "16px",
+                      right: "-17px",
+                      bottom: "2px",
+                    }}
+                  >
+                    <Typography fontSize="12px">
+                      {totalCartItems || 0}
                     </Typography>
-                  );
-                })}
-                <div
-                  style={{
-                    marginRight: "-10px",
-                    width: "2px",
-                    height: "24px",
-                    backgroundColor: Colors.blackish[40005],
-                  }}
-                />
-                <Box>
-                  <UncontrolledSelect
-                    options={langOptions}
-                    initialValue={lang.toLowerCase()}
-                    onChange={(v) => changeLanguage(v)}
-                  />
-                </Box>
-                <div
-                  style={{
-                    marginLeft: "-26px",
-                    marginRight: "6px",
-                    width: "2px",
-                    height: "24px",
-                    backgroundColor: Colors.blackish[40005],
-                  }}
-                />
-                <Box
-                  style={{ cursor: "pointer", position: "relative" }}
-                  onClick={() => {
-                    setCartDrawer(true);
-                  }}
-                >
-                  {totalCartItems > 0 && (
-                    <Box
-                      style={{
-                        border: `solid 3px ${Colors.blackish[40005]}`,
-                        position: "absolute",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        padding: "1px",
-                        width: "16px",
-                        height: "16px",
-                        right: "-17px",
-                        bottom: "2px",
-                      }}
-                    >
-                      <Typography fontSize="12px">
-                        {totalCartItems || 0}
-                      </Typography>
-                    </Box>
-                  )}
+                  </Box>
+                )}
 
-                  <Icons.Cart size={"20px"} />
-                </Box>
+                <Icons.Cart size={"20px"} />
               </Box>
               <Button
                 style={{
@@ -233,6 +202,58 @@ const Header = () => {
               </Button>
             </Grid>
           </Grid>
+
+          <Box
+            style={{
+              display: "flex",
+              marginTop: "60px",
+              width: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+              marginBottom: "10px",
+            }}
+          >
+            {options.map((option, index) => {
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    columnGap: "30px",
+                    margin: "0px 15px",
+                    color: "grey",
+                  }}
+                >
+                  <Typography
+                    className={"text"}
+                    style={{
+                      cursor: "pointer",
+                      fontSize: "16px",
+                      fontWeight: "bold",
+                      textTransform: "uppercase",
+                      color:
+                        location.pathname === option.link
+                          ? mainColors.secondary[400]
+                          : "inherit",
+                    }}
+                    key={option.name}
+                    onClick={() => navigate(option.link)}
+                  >
+                    {option.name}
+                  </Typography>
+                  {index < options.length - 1 && (
+                    <div
+                      style={{
+                        width: "2px",
+                        height: "20px",
+                        backgroundColor: "grey",
+                      }}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </Box>
         </Container>
 
         <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>

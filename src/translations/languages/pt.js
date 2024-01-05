@@ -4,7 +4,7 @@ export const content = {
       header: {
         home: "Home",
         products: "Produtos",
-        about: "Sobre Nós",
+        about: "Sobre a ETHIQ",
         account: "My account",
         login: "Logar",
         logout: "Sign Out",
@@ -12,6 +12,7 @@ export const content = {
         blog: "Blog",
         testemonials: "Testemunhos",
         contacts: "Contactos",
+        membership: "Membership",
       },
       errors: {
         notFound404: "404: Page not found",
