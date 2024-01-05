@@ -51,6 +51,7 @@ const Header = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const [mobileDrawer, setMobileDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const { onSignOut } = useSignOut();
 
   const handleClickPopover = (event: React.MouseEvent<HTMLElement>) => {
@@ -71,49 +72,37 @@ const Header = () => {
     handleClickPopover(e);
   };
 
-  const [scrollingUp, setScrollingUp] = useState(true);
-  const [prevScrollY, setPrevScrollY] = useState(0);
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > prevScrollY) {
-        // Scrolling down
-        setScrollingUp(false);
-      } else {
-        // Scrolling up
-        if (currentScrollY <= 140) {
-          setScrollingUp(true);
-        }
-      }
-
-      setPrevScrollY(currentScrollY);
-    };
-
+    // Attach the event listener when the component mounts
     window.addEventListener("scroll", handleScroll);
 
+    // Detach the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollY]);
+  }, []); // Empty dependency array ensures that the effect runs only once
+
+  // Calculate dynamic opacity based on the scroll position
+  const opacity = Math.min(1, Math.max(0, scrollPosition / 500));
+  const backgroundColor = `rgba(0, 0, 0, ${0.4 * opacity})`;
 
   const renderLaptop = () => {
     return (
       <Box
         style={{
-          backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
           padding: "15px 0px 15px 0px",
-          backgroundSize: "cover",
-          backgroundColor: "lightgray",
+          backgroundColor,
+
           position: "fixed",
           width: "100%",
           zIndex: 1000,
           display: "flex",
           justifyContent: "center",
-          height: "100vh",
-          transform: `translateY(${scrollingUp ? 0 : "-80%"})`,
-          transition: "transform 0.5s ease-in-out",
         }}
       >
         <Container
@@ -123,8 +112,6 @@ const Header = () => {
             marginTop: "5vh",
             display: "flex",
             flexDirection: "column",
-            transform: `translateY(${scrollingUp ? 0 : "83%"})`,
-            transition: "transform 0.5s ease-in-out",
           }}
         >
           <Grid container>

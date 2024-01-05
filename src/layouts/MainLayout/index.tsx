@@ -23,7 +23,6 @@ const HomepageLayout = ({
       {hasHeader && <Header />}
 
       <Box
-        mt="80px"
         mb="200px"
         height="100%"
         width="100%"

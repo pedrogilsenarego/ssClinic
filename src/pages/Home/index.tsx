@@ -6,12 +6,21 @@ import { mainColors } from "../../theme/theme";
 const Home = () => {
   return (
     <>
+      <img
+        src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+        alt=""
+        style={{
+          height: "85vh",
+          width: "100%",
+          objectFit: "cover",
+        }}
+      />
       <Container style={{}} maxWidth="xl">
         <Grid
           container
           height="100%"
           width="100%"
-          style={{ marginTop: "650px" }}
+          style={{ marginTop: "450px" }}
         >
           <Grid
             item
