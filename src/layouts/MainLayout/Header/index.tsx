@@ -83,7 +83,7 @@ const Header = () => {
         setScrollingUp(false);
       } else {
         // Scrolling up
-        if (currentScrollY <= 240) {
+        if (currentScrollY <= 140) {
           setScrollingUp(true);
         }
       }

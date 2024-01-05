@@ -11,7 +11,7 @@ const Home = () => {
           container
           height="100%"
           width="100%"
-          style={{ marginTop: "850px" }}
+          style={{ marginTop: "650px" }}
         >
           <Grid
             item
@@ -44,7 +44,7 @@ const Home = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                alignItems: "start",
                 justifyContent: "center",
 
                 height: "500px",
@@ -54,7 +54,6 @@ const Home = () => {
             >
               <Typography
                 style={{
-                  color: mainColors.secondary[400],
                   fontSize: "32px",
                   fontWeight: 700,
                 }}
@@ -71,9 +70,6 @@ const Home = () => {
                 a watch that was created to break wallsDiscover the story behind
                 the building of a watch that was created to break walls
               </Typography>
-              <Button darkenColors fullWidth>
-                <Typography>Learn More</Typography>
-              </Button>
             </Box>
           </Grid>
         </Grid>
@@ -88,22 +84,6 @@ const Home = () => {
             xs={6}
             style={{
               height: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-              alt=""
-              style={{ height: "500px", width: "100%", objectFit: "cover" }}
-            />
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            style={{
-              height: "100%",
 
               display: "flex",
               justifyContent: "center",
@@ -114,7 +94,7 @@ const Home = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+                alignItems: "start",
                 justifyContent: "center",
 
                 height: "500px",
@@ -141,12 +121,85 @@ const Home = () => {
                 a watch that was created to break wallsDiscover the story behind
                 the building of a watch that was created to break walls
               </Typography>
-              <Button darkenColors fullWidth>
-                <Typography>Learn More</Typography>
-              </Button>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "end",
+                }}
+              >
+                <Button darkenColors>
+                  <Typography>Learn More</Typography>
+                </Button>
+              </div>
             </Box>
           </Grid>
+          <Grid
+            item
+            xs={6}
+            style={{
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+              alt=""
+              style={{ height: "500px", width: "100%", objectFit: "cover" }}
+            />
+          </Grid>
         </Grid>
+        <div
+          style={{
+            marginTop: "200px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            rowGap: "40px",
+          }}
+        >
+          <Typography style={{ fontSize: "20px", fontWeight: "800" }}>
+            Titulo
+          </Typography>
+          <Typography>Titulo</Typography>
+          <Grid container columnSpacing={"120px"}>
+            <Grid item xs={3}>
+              {" "}
+              <img
+                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+                alt=""
+                style={{ width: "100%", objectFit: "cover", aspectRatio: 1.6 }}
+              />
+            </Grid>
+            <Grid item xs={3}>
+              {" "}
+              <img
+                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+                alt=""
+                style={{ width: "100%", objectFit: "cover", aspectRatio: 1.6 }}
+              />
+            </Grid>
+            <Grid item xs={3}>
+              {" "}
+              <img
+                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+                alt=""
+                style={{ width: "100%", objectFit: "cover", aspectRatio: 1.6 }}
+              />
+            </Grid>
+            <Grid item xs={3}>
+              {" "}
+              <img
+                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+                alt=""
+                style={{ width: "100%", objectFit: "cover", aspectRatio: 1.6 }}
+              />
+            </Grid>
+          </Grid>
+        </div>
       </Container>
     </>
   );
