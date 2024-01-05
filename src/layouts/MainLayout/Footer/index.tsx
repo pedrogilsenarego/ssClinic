@@ -1,10 +1,12 @@
 import {
   Box,
   Container,
+  Grid,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { title } from "process";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import miniLogo from "../../../assets/miniLogo.svg";
@@ -12,7 +14,6 @@ import { Icons } from "../../../components/Icons";
 import { setCookiePolicy } from "../../../redux/general/actions";
 import { Colors } from "../../../theme/theme";
 import { i18n } from "../../../translations/i18n";
-import { options } from "./constants";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -34,68 +35,98 @@ const Footer = () => {
       );
     }
   };
+
+  type ItemProps = {
+    title: string;
+    list: {
+      title: string;
+      link?: string;
+    }[];
+  };
+
+  const Item = ({ title, list }: ItemProps) => {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+
+          rowGap: "16px",
+        }}
+      >
+        <Typography style={{ fontWeight: "bold" }}>{title}</Typography>
+        <div>
+          {list.map((item) => {
+            return (
+              <Typography
+                style={{
+                  textTransform: "uppercase",
+                  textDecoration: "underline",
+                  fontSize: "12px",
+                  cursor: "pointer",
+                }}
+              >
+                {item.title}
+              </Typography>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
   return (
-    <Box style={{ backgroundColor: Colors.blackish[400] }}>
+    <Box style={{ backgroundColor: "lightGrey" }}>
       <Container maxWidth="xl">
-        <Box
+        <Grid
+          container
           style={{
-            padding: "80px 0px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-            rowGap: "20px",
+            marginTop: "60px",
+            marginBottom: "50px",
+            flex: "display",
+            flexDirection: mobile ? "column" : "row",
           }}
         >
-          <img src="" alt="logo" style={{ width: "100px" }} />
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: mobile ? "column" : "row",
-              columnGap: "30px",
-              rowGap: "10px",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {options.map((option) => {
-              return (
-                <Typography
-                  style={{
-                    color: Colors.white[400],
-                    fontSize: "14px",
-                    cursor: "pointer",
-                  }}
-                  key={option.name}
-                  onClick={() => {
-                    if (option.name === "Cookie Policy")
-                      dispatch(setCookiePolicy(true));
-                    else navigate(option.link);
-                  }}
-                >
-                  {option.name}
-                </Typography>
-              );
-            })}
-          </Box>
-          <Box>
-            <Icons.Instagram
-              onClick={handleInstagram}
-              size={"20px"}
-              color={Colors.white[400]}
-              style={{ cursor: "pointer" }}
+          <Grid item xs={3}>
+            <Item
+              title="Redes Sociais"
+              list={[
+                { title: "Siga-nos no Instagram" },
+                { title: "Siga-nos no Facebook" },
+              ]}
             />
-          </Box>
-          <Typography
-            style={{
-              color: Colors.white[40050],
-              fontWeight: 200,
-              fontSize: "12px",
-            }}
-          >
-            {i18n.t("footer.registeredBrand")}
-          </Typography>
-        </Box>
+          </Grid>
+          <Grid item xs={3}>
+            <Item
+              title="Redes Sociais"
+              list={[
+                { title: "Marcações Online" },
+                { title: "Email:" },
+                { title: "Tel:" },
+              ]}
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Item
+              title="Redes Sociais"
+              list={[
+                { title: "Politica de Privaçidade" },
+                { title: "Politica de Cookies" },
+                { title: "Politica de E-commerce" },
+              ]}
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <div
+              style={{ display: "flex", alignItems: "center", height: "100%" }}
+            >
+              <Typography style={{ fontSize: "12px" }}>
+                Copyright 2024, develop by <u>Linea Agency</u>
+              </Typography>
+            </div>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );
