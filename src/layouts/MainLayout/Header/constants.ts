@@ -9,7 +9,7 @@ type Option = {
 export const options: Option[] = [
   {
     name: "O complexo",
-    link: ROUTE_PATHS.CLINIC1,
+    link: ROUTE_PATHS.COMPLEX,
   },
 
   {

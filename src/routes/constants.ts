@@ -22,6 +22,7 @@ export const ROUTE_PATHS = {
   REFUND_POLICIE: "/refund-policies",
   BLOG_: "/blog",
   TESTEMONIALS: "/testemonials",
+  COMPLEX: "/the-complex",
   CONTACTS: "/contacts",
   CLINIC1: "/clinic1",
   CLINIC2: "/clinic2",

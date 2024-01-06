@@ -37,6 +37,7 @@ export const RoutesI = {
   RefundPolicies: lazyWithRetryAndLoader(
     () => import("../pages/RefundPolicies")
   ),
+  Complex: lazyWithRetryAndLoader(() => import("../pages/Complex")),
   Blog: lazyWithRetryAndLoader(() => import("../pages/Blog")),
   Testemonials: lazyWithRetryAndLoader(() => import("../pages/Testemonials")),
   Contacts: lazyWithRetryAndLoader(() => import("../pages/Contacts")),

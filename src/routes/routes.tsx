@@ -48,6 +48,14 @@ export const routes: AppRoute[] = [
     ),
   },
   {
+    path: ROUTE_PATHS.COMPLEX,
+    component: (
+      <MainLayout>
+        <RoutesI.Complex />
+      </MainLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.CLINIC1,
     component: (
       <MainLayout>
