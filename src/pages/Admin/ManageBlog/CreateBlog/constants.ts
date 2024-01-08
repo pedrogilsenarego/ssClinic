@@ -5,6 +5,7 @@ export const defaultValues = {
   subtitleEN: "",
   images: [],
   clinic: "clinic1",
+  template: "1",
 };
 
 export const defaultValues1 = (createData: any) => {
@@ -15,5 +16,6 @@ export const defaultValues1 = (createData: any) => {
     subtitleEN: createData?.subtitleEN || "",
     images: createData?.images || [],
     clinic: createData?.clinic || "clinic1",
+    template: createData?.template || "0",
   };
 };

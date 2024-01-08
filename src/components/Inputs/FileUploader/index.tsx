@@ -20,6 +20,7 @@ interface Props {
   multiple?: boolean;
   value?: any;
   loading?: boolean;
+  hasLabel?: boolean;
   touched?: (signal: boolean) => void;
   control: Control<any, any>;
   setValue: UseFormSetValue<any>;
@@ -33,6 +34,7 @@ const FileUploader = ({
   multiple = false,
   value,
   loading,
+  hasLabel,
   touched,
   control,
   setValue,
@@ -152,6 +154,15 @@ const FileUploader = ({
     if (touched) touched(true);
   };
 
+  const handleChangeLabel = (pos: number, value: string) => {
+    const updatedImages = [...imageUpload];
+    const imageWithLabel = updatedImages[pos];
+    // Update the label for the corresponding image
+    imageWithLabel.label = value;
+    setImageUpload(updatedImages);
+    setValue(name, updatedImages);
+  };
+
   return (
     <Box>
       <Box display="flex" justifyContent="start">
@@ -252,6 +263,8 @@ const FileUploader = ({
                           </div>
                         )}
                         <Image
+                          handleChangeLabel={handleChangeLabel}
+                          hasLabel={hasLabel}
                           pos={pos}
                           image={image}
                           deleteImage={handleDeleteImage}

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { MdOutlineSearch } from "react-icons/md";
+import { ChangeEvent, useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { Colors } from "../../../../theme/theme";
 
@@ -7,10 +6,23 @@ interface Props {
   pos: number;
   image: any;
   deleteImage: (pos: number) => void;
+  handleChangeLabel: (pos: number, value: string) => void;
+  hasLabel?: boolean;
 }
 
-const Image = ({ pos, image, deleteImage }: Props) => {
+const Image = ({
+  pos,
+  image,
+  deleteImage,
+  hasLabel,
+  handleChangeLabel,
+}: Props) => {
   const [hover, setHover] = useState<boolean>(false);
+  const [labelValue, setLabelValue] = useState<string>("");
+  const handleLabelChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setLabelValue(e.target.value);
+    handleChangeLabel(pos, e.target.value);
+  };
   return (
     <div
       key={pos}
@@ -44,6 +56,9 @@ const Image = ({ pos, image, deleteImage }: Props) => {
         src={URL.createObjectURL(image)}
       />
       <div style={{ display: "flex", columnGap: "5px" }}>
+        {hasLabel && (
+          <input type="text" value={labelValue} onChange={handleLabelChange} />
+        )}
         <RiDeleteBinLine
           onClick={() => deleteImage(pos)}
           style={{ cursor: "pointer" }}

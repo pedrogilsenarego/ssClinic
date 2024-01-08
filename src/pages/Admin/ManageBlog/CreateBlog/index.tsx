@@ -68,6 +68,7 @@ const CreateBlog = ({ edit = false }: Props) => {
                 <Grid item xs={12}>
                   <FileUploader
                     name="images"
+                    hasLabel
                     multiple
                     loading={imagesLoader}
                     touched={setTouchedImages}
@@ -130,6 +131,21 @@ const CreateBlog = ({ edit = false }: Props) => {
                       { value: "clinic2", label: "Clinic2" },
                       { value: "clinic3", label: "Clinic3" },
                       { value: "clinic4", label: "Clinic4" },
+                    ]}
+                    defaultLabel={i18n.t(
+                      "pages.admin.createProducts.form.clinic",
+                      "Clinic"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledSelect
+                    control={control}
+                    name="template"
+                    options={[
+                      { value: "1", label: "Template 1" },
+                      { value: "2", label: "Template 2" },
+                      { value: "3", label: "Template 3" },
                     ]}
                     defaultLabel={i18n.t(
                       "pages.admin.createProducts.form.clinic",
