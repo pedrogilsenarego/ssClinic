@@ -22,77 +22,21 @@ const fileSize = (max: number, unit = "MB"): Yup.TestConfig<any> => ({
 });
 
 export const FORM_VALIDATION = Yup.object().shape({
-  model: Yup.string().required(
+  titlePT: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  // dimensions: Yup.string().required(
-  //   `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  // ),
-  // movement: Yup.string().required(
-  //   `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  // ),
-  sku: Yup.string().required(
+  titleEN: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  // description: Yup.string().required(
-  //   `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  // ),
-  color: Yup.string().required(
+  subtitlePT: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  // bracelet: Yup.string().required(
-  //   `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  // ),
-  numberWatches: Yup.number()
-    .typeError(
-      `${i18n.t(
-        "pages.admin.createProducts.form.mustNumber",
-        "Must be a number"
-      )}`
-    )
-    .required(
-      `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-    ),
-  price: Yup.number()
-    .typeError(
-      `${i18n.t(
-        "pages.admin.createProducts.form.mustNumber",
-        "Must be a number"
-      )}`
-    )
-    .required(
-      `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-    ),
-  specialThumbnail: Yup.mixed()
-    .required(
-      `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-    )
-    .test(fileSize(0.5))
-    .test(
-      onlySpecifiTypes([
-        //"image/jpeg",
-        // 'image/jpg',
-        // 'image/gif',
-        // 'image/png',
-        // 'image/pdf',
-        "image/webp",
-      ])
-    ),
-  thumbnail: Yup.mixed()
-    .required(
-      `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-    )
-    .test(fileSize(0.5))
-    .test(
-      onlySpecifiTypes([
-        //"image/jpeg",
-        // 'image/jpg',
-        // 'image/gif',
-        // 'image/png',
-        // 'image/pdf',
-        "image/webp",
-      ])
-    ),
+  subtitleEN: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  clinic: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
   images: Yup.mixed()
     .required(
       `${i18n.t("pages.admin.createProducts.form.required", "Required")}`

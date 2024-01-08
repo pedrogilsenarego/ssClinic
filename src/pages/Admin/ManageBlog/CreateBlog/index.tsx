@@ -1,5 +1,6 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import ControlledFormInput from "../../../../components/Inputs/ControlledInput";
+import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
 import FileUploader from "../../../../components/Inputs/FileUploader";
 import Loader from "../../../../components/Loader";
 import Button from "../../../../components/Ui/Button";
@@ -22,14 +23,8 @@ const CreateBlog = ({ edit = false }: Props) => {
     isCreatingProduct,
     isEditingProduct,
     isLoadingProduct,
-    thumbnailLoader,
-    thumbnailValue,
-    specialThumbnailLoader,
-    specialThumbnailValue,
     imagesLoader,
     imagesValue,
-    setTouchedThumbnail,
-    setTouchedSpecialThumbnail,
     setTouchedImages,
   } = useCreateProduct({ edit });
   return (
@@ -37,12 +32,12 @@ const CreateBlog = ({ edit = false }: Props) => {
       <Typography fontSize="16px">
         {edit
           ? i18n.t(
-              "pages.admin.createProducts.editTitle",
-              "Manage Products - Edit Product"
+              "pages.admin.createBlog.editTitle",
+              "Manage Blog - Edit Blog Entry"
             )
           : i18n.t(
-              "pages.admin.createProducts.title",
-              "Manage Products - Create Product"
+              "pages.admin.createBlog.title",
+              "Manage Blog - Create Blog Entry"
             )}
       </Typography>
       <Divider />
@@ -51,12 +46,12 @@ const CreateBlog = ({ edit = false }: Props) => {
           customMessage={
             isCreatingProduct
               ? i18n.t(
-                  "pages.admin.createProducts.isCreatingProduct",
-                  "The product is being created"
+                  "pages.admin.createBlog.isCreatingProduct",
+                  "The entry is being created"
                 )
               : i18n.t(
-                  "pages.admin.createProducts.isLoadingProduct",
-                  "The product is being fetched"
+                  "pages.admin.createBlog.isLoadingProduct",
+                  "The entry is being fetched"
                 )
           }
         />
@@ -65,41 +60,11 @@ const CreateBlog = ({ edit = false }: Props) => {
           {" "}
           <form
             className={classes.form}
-            id="createUser-form"
+            id="createBlog-form"
             onSubmit={handleSubmit(onSubmit)}
           >
             <Box className={classes.inputBox}>
               <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <FileUploader
-                    name="thumbnail"
-                    touched={setTouchedThumbnail}
-                    control={control}
-                    loading={thumbnailLoader}
-                    value={thumbnailValue || undefined}
-                    setValue={setValue}
-                    setError={setError}
-                    fieldTitle={i18n.t(
-                      "pages.admin.createProducts.form.thumbnail",
-                      "Thumbnail"
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <FileUploader
-                    name="specialThumbnail"
-                    loading={specialThumbnailLoader}
-                    touched={setTouchedSpecialThumbnail}
-                    value={specialThumbnailValue || undefined}
-                    control={control}
-                    setValue={setValue}
-                    setError={setError}
-                    fieldTitle={i18n.t(
-                      "pages.admin.createProducts.form.specialThumbnail",
-                      "Special Thumbnail"
-                    )}
-                  />
-                </Grid>
                 <Grid item xs={12}>
                   <FileUploader
                     name="images"
@@ -119,90 +84,56 @@ const CreateBlog = ({ edit = false }: Props) => {
                 <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
-                    name="model"
+                    name="titlePT"
                     inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.model",
-                      "Model"
-                    )}
-                  />
-                </Grid>
-                {/* <Grid item xs={6}>
-                  <ControlledFormInput
-                    control={control}
-                    name="dimensions"
-                    inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.dimensions",
-                      "Dimensions"
-                    )}
-                  />
-                </Grid> */}
-                {/* <Grid item xs={6}>
-                  <ControlledFormInput
-                    control={control}
-                    name="movement"
-                    inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.movement",
-                      "Movement"
-                    )}
-                  />
-                </Grid> */}
-                <Grid item xs={6}>
-                  <ControlledFormInput
-                    control={control}
-                    name="sku"
-                    inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.sku",
-                      "SKU"
-                    )}
-                  />
-                </Grid>
-                {/* <Grid item xs={6}>
-                  <ControlledFormInput
-                    control={control}
-                    name="description"
-                    inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.description",
-                      "Description"
-                    )}
-                  />
-                </Grid> */}
-                <Grid item xs={6}>
-                  <ControlledFormInput
-                    control={control}
-                    name="color"
-                    inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.color",
-                      "Color"
-                    )}
-                  />
-                </Grid>
-                {/* <Grid item xs={6}>
-                  <ControlledFormInput
-                    control={control}
-                    name="bracelet"
-                    inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.bracelet",
-                      "Bracelet"
-                    )}
-                  />
-                </Grid> */}
-                <Grid item xs={6}>
-                  <ControlledFormInput
-                    control={control}
-                    name="numberWatches"
-                    inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.numberWatches",
-                      "Number Watches"
+                      "pages.admin.createProducts.form.titlePT",
+                      "Title PT"
                     )}
                   />
                 </Grid>
                 <Grid item xs={6}>
                   <ControlledFormInput
                     control={control}
-                    name="price"
+                    name="titleEN"
                     inputPlaceholder={i18n.t(
-                      "pages.admin.createProducts.form.price",
-                      "Price"
+                      "pages.admin.createProducts.form.titleEN",
+                      "Title EN"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledFormInput
+                    control={control}
+                    name="subtitlePT"
+                    inputPlaceholder={i18n.t(
+                      "pages.admin.createProducts.form.subtitlePT",
+                      "SubTitle PT"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledFormInput
+                    control={control}
+                    name="subtitleEN"
+                    inputPlaceholder={i18n.t(
+                      "pages.admin.createProducts.form.subtitlePT",
+                      "SubTitle EN"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <ControlledSelect
+                    control={control}
+                    name="clinic"
+                    options={[
+                      { value: "clinic1", label: "Clinic1" },
+                      { value: "clinic2", label: "Clinic2" },
+                      { value: "clinic3", label: "Clinic3" },
+                      { value: "clinic4", label: "Clinic4" },
+                    ]}
+                    defaultLabel={i18n.t(
+                      "pages.admin.createProducts.form.clinic",
+                      "Clinic"
                     )}
                   />
                 </Grid>
@@ -210,8 +141,8 @@ const CreateBlog = ({ edit = false }: Props) => {
             </Box>
             <Button type="submit" darkenColors>
               {i18n.t(
-                "pages.admin.createProducts.form.submit",
-                "Create Product"
+                "pages.admin.createProducts.form.submitBlogEntry",
+                "Create Blog Entry"
               )}
             </Button>
           </form>

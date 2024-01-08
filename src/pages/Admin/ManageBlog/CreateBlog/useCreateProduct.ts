@@ -18,16 +18,6 @@ type Props = {
 const useCreateProduct = ({ edit = false }: Props) => {
   const navigate = useNavigate();
   const { id } = useParams<Record<string, string | undefined>>();
-  const [thumbnailLoader, setThumbnailLoader] = useState<boolean>(false);
-  const [thumbnailValue, setThumbnailValue] = useState<any>(undefined);
-  const [touchedThumbnail, setTouchedThumbnail] = useState<boolean>(false);
-
-  const [specialThumbnailLoader, setSpecialThumbnailLoader] =
-    useState<boolean>(false);
-  const [specialThumbnailValue, setSpecialThumbnailValue] =
-    useState<any>(undefined);
-  const [touchedSpecialThumbnail, setTouchedSpecialThumbnail] =
-    useState<boolean>(false);
 
   const [imagesLoader, setImagesLoader] = useState<boolean>(false);
   const [imagesValue, setImagesValue] = useState<any>(undefined);
@@ -56,18 +46,6 @@ const useCreateProduct = ({ edit = false }: Props) => {
 
   useEffect(() => {
     if (!isLoadingProduct && edit) {
-      if (initialValues.thumbnail.length > 0)
-        handleConvertStringIntoFile(
-          initialValues.thumbnail,
-          setThumbnailLoader,
-          setThumbnailValue
-        );
-      if (initialValues.specialThumbnail.length > 0)
-        handleConvertStringIntoFile(
-          initialValues.specialThumbnail,
-          setSpecialThumbnailLoader,
-          setSpecialThumbnailValue
-        );
       if (initialValues.images.length > 0)
         handleConvertStringIntoFile(
           initialValues.images,
@@ -76,12 +54,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
         );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    isLoadingProduct,
-    initialValues.thumbnail,
-    initialValues.specialThumbnail,
-    initialValues.images,
-  ]);
+  }, [isLoadingProduct, initialValues.images]);
 
   const { reset, control, handleSubmit, setValue, setError } = useForm({
     resolver: yupResolver(FORM_VALIDATION),
@@ -115,27 +88,22 @@ const useCreateProduct = ({ edit = false }: Props) => {
   );
 
   const onSubmit = async (formData: any) => {
-    if (edit) {
-      if (
-        !touchedThumbnail &&
-        !touchedSpecialThumbnail &&
-        !touchedImages &&
-        initialValues.sku === formData.sku
-      ) {
-        delete formData.thumbnail;
-        delete formData.specialThumbnail;
-        delete formData.images;
-      }
+    console.log(formData);
+    return;
+    // if (edit) {
+    //   if (!touchedImages && initialValues.titlePT === formData.titlePT) {
+    //     delete formData.images;
+    //   }
 
-      const payload = {
-        values: getObjectDifferences(initialValues, { ...formData }),
-        documentID: documentID,
-        sku: initialValues.sku,
-      };
+    //   const payload = {
+    //     values: getObjectDifferences(initialValues, { ...formData }),
+    //     documentID: documentID,
+    //     sku: initialValues.titlePT,
+    //   };
 
-      editProduct(payload);
-      setEdited(true);
-    } else createProduct(formData);
+    //   editProduct(payload);
+    //   setEdited(true);
+    // } else createProduct(formData);
   };
 
   return {
@@ -147,14 +115,10 @@ const useCreateProduct = ({ edit = false }: Props) => {
     isEditingProduct,
     isLoadingProduct,
     setError,
-    thumbnailLoader,
-    thumbnailValue,
-    specialThumbnailLoader,
-    specialThumbnailValue,
+
     imagesLoader,
     imagesValue,
-    setTouchedThumbnail,
-    setTouchedSpecialThumbnail,
+
     setTouchedImages,
   };
 };

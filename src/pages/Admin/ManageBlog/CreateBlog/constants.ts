@@ -1,31 +1,19 @@
 export const defaultValues = {
-  thumbnail: {},
-  specialThumbnail: {},
-  model: "",
-  //dimensions: "",
-  //movement: "",
-  sku: "",
-  //description: "",
-  color: "",
-  numberWatches: null,
-  //bracelet: "",
-  images: {},
-  price: null,
+  titlePT: "",
+  titleEN: "",
+  subtitlePT: "",
+  subtitleEN: "",
+  images: [],
+  clinic: "clinic1",
 };
 
 export const defaultValues1 = (createData: any) => {
   return {
-    thumbnail: createData?.thumbnail || [],
-    specialThumbnail: createData?.specialThumbnail || [],
-    model: createData?.model || "",
-    //dimensions: createData?.dimensions || "",
-    //movement: createData?.movement || "",
-    sku: createData?.sku || "",
-    //description: createData?.description || "",
-    color: createData?.color || "",
-    numberWatches: createData?.numberWatches || "",
-    //bracelet: createData?.bracelet || "",
+    titlePT: createData?.titlePT || "",
+    titleEN: createData?.titleEN || "",
+    subtitlePT: createData?.subtitlePT || "",
+    subtitleEN: createData?.subtitleEN || "",
     images: createData?.images || [],
-    price: createData?.price || 0,
+    clinic: createData?.clinic || "clinic1",
   };
 };
