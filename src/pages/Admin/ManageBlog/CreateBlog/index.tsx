@@ -1,5 +1,6 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import ControlledFormInput from "../../../../components/Inputs/ControlledInput";
+import ControlledFormInputEditor from "../../../../components/Inputs/ControlledInputEditor";
 import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
 import FileUploader from "../../../../components/Inputs/FileUploader";
 import Loader from "../../../../components/Loader";
@@ -14,6 +15,7 @@ interface Props {
 
 const CreateBlog = ({ edit = false }: Props) => {
   const classes = useStyles();
+
   const {
     handleSubmit,
     onSubmit,
@@ -119,6 +121,34 @@ const CreateBlog = ({ edit = false }: Props) => {
                     inputPlaceholder={i18n.t(
                       "pages.admin.createProducts.form.subtitlePT",
                       "SubTitle EN"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <ControlledFormInputEditor
+                    control={control}
+                    name="mainTextPT"
+                    label={i18n.t(
+                      "pages.admin.createProducts.form.maintextPT",
+                      "Main text PT"
+                    )}
+                    inputPlaceholder={i18n.t(
+                      "pages.admin.createProducts.form.maintextPT",
+                      "Main text PT"
+                    )}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <ControlledFormInputEditor
+                    control={control}
+                    name="mainTextEN"
+                    label={i18n.t(
+                      "pages.admin.createProducts.form.maintextPT",
+                      "Main text EN"
+                    )}
+                    inputPlaceholder={i18n.t(
+                      "pages.admin.createProducts.form.maintextPT",
+                      "Main text EN"
                     )}
                   />
                 </Grid>

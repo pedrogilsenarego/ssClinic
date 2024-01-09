@@ -6,6 +6,8 @@ export const defaultValues = {
   images: [],
   clinic: "clinic1",
   template: "1",
+  mainTextPT: "",
+  mainTextEN: "",
 };
 
 export const defaultValues1 = (createData: any) => {
@@ -17,5 +19,7 @@ export const defaultValues1 = (createData: any) => {
     images: createData?.images || [],
     clinic: createData?.clinic || "clinic1",
     template: createData?.template || "0",
+    mainTextPT: createData?.mainTextPT || "",
+    mainTextEN: createData?.mainTextEN || "",
   };
 };

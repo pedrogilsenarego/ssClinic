@@ -34,6 +34,12 @@ export const FORM_VALIDATION = Yup.object().shape({
   subtitleEN: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
+  mainTextPT: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  mainTextEN: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
   clinic: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
