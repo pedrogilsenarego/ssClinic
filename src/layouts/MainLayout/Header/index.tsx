@@ -86,33 +86,65 @@ const Header = () => {
   }, []);
 
   const opacity = Math.min(1, Math.max(0, scrollPosition / 500));
-  const backgroundColor = `rgba(207, 181, 59, ${0.4 * opacity})`;
+
+  const backgroundColor = `rgba(207, 181, 59, ${0.1 * opacity})`;
+
+  // const [firstBoxHeight, setFirstBoxHeight] = useState<number | null>(null);
+
+  // useEffect(() => {
+  //   const firstBox = document.getElementById("first-box");
+
+  //   if (firstBox) {
+  //     const height = firstBox.clientHeight;
+  //     setFirstBoxHeight(height);
+  //   }
+  // }, []);
+
+  // Calculate the equivalent pixel value for 85% of the viewport height
+  const viewportHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+  const triggerScrollPosition = 0.85 * viewportHeight - 350;
+
+  const isScrolled = scrollPosition < triggerScrollPosition;
 
   const renderLaptop = () => {
     return (
       <Box
+        id="first-box"
         style={{
           padding: "15px 0px 15px 0px",
           backgroundColor,
-
+          marginTop: "20px",
           position: "fixed",
           width: "100%",
           zIndex: 1000,
           display: "flex",
           justifyContent: "center",
+          transition: "all 0.5s ease-in-out",
         }}
       >
         <Container
           maxWidth="xl"
           disableGutters
           style={{
-            marginTop: "5vh",
+            marginTop: "2vh",
             display: "flex",
             flexDirection: "column",
           }}
         >
           <Grid container>
-            <Grid item xs={4}></Grid>
+            <Grid
+              item
+              xs={4}
+              style={{
+                display: "flex",
+                justifyContent: "start",
+                alignItems: "center",
+                columnGap: "30px",
+              }}
+            >
+              <Icons.Menu size={"30px"} />
+            </Grid>
             <Grid
               item
               xs={4}
@@ -140,7 +172,7 @@ const Header = () => {
               }}
             >
               <Icons.User />
-              <Icons.Menu />
+
               <Box>
                 <UncontrolledSelect
                   options={langOptions}
@@ -221,11 +253,14 @@ const Header = () => {
           <Box
             style={{
               display: "flex",
-              marginTop: "60px",
+
               width: "100%",
               justifyContent: "center",
               alignItems: "center",
               marginBottom: "10px",
+              opacity: isScrolled ? 1 : 0,
+              marginTop: isScrolled ? "60px" : "-20px", // Adjust the marginTop based on the scroll position
+              transition: "all 0.5s ease-in-out", // Add transition property
             }}
           >
             {options.map((option, index) => {
