@@ -277,7 +277,7 @@ const Header = () => {
                   <Typography
                     className={"text"}
                     style={{
-                      cursor: "pointer",
+                      cursor: !isScrolled ? undefined : "pointer",
                       fontSize: "16px",
                       fontWeight: "bold",
                       textTransform: "uppercase",
@@ -287,7 +287,9 @@ const Header = () => {
                           : "inherit",
                     }}
                     key={option.name}
-                    onClick={() => navigate(option.link)}
+                    onClick={
+                      !isScrolled ? () => null : () => navigate(option.link)
+                    }
                   >
                     {option.name}
                   </Typography>
