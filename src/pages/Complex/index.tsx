@@ -2,6 +2,8 @@ import { Container, Grid, Typography } from "@mui/material";
 
 import { useState } from "react";
 import Carousel from "../../components/Carousel";
+import Button from "../../components/Ui/Button";
+import Title from "../../components/Ui/Title";
 
 const Complex = () => {
   const childrenData = [
@@ -29,64 +31,77 @@ const Complex = () => {
     const [hover, setHover] = useState<boolean>(false);
     return (
       <div
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
         style={{
+          position: "relative",
           cursor: "pointer",
           width: "100%",
-          height: "500px",
-          backgroundImage: `url(${image})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          display: "flex",
-          justifyContent: "center",
+          aspectRatio: 0.72,
         }}
       >
         <div
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
           style={{
-            marginTop: "100px",
-
-            width: "70%",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url(${image})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
             display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            justifyContent: "center",
+            transition: "transform 0.5s",
+            transform: hover ? "scale(1.05)" : "scale(1)",
           }}
         >
-          <Typography style={{ fontSize: "20px", fontWeight: "bold" }}>
-            {clinic}
-          </Typography>
           <div
             style={{
-              height: "1px",
-              width: "40%",
-              backgroundColor: "black",
-              marginTop: "10px",
-            }}
-          />
-          <div
-            style={{
-              marginTop: "40px",
+              marginTop: "100px",
+
+              width: "70%",
               display: "flex",
               flexDirection: "column",
-              rowGap: "20px",
+              alignItems: "center",
             }}
           >
-            {subtitles.map((title, index) => {
-              return (
-                <Typography
-                  style={{
-                    textAlign: "center",
-                    textDecoration: "underline",
-                    fontSize: "18px",
-                    opacity: hover ? 1 : 0,
-                    transition: "all ease-in-out 0.5s",
-                  }}
-                  key={index}
-                >
-                  {title}
-                </Typography>
-              );
-            })}
+            <Typography style={{ fontSize: "20px", fontWeight: "bold" }}>
+              {clinic}
+            </Typography>
+            <div
+              style={{
+                height: "1px",
+                width: "40%",
+                backgroundColor: "black",
+                marginTop: "10px",
+              }}
+            />
+            <div
+              style={{
+                marginTop: "40px",
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "20px",
+              }}
+            >
+              {subtitles.map((title, index) => {
+                return (
+                  <Typography
+                    style={{
+                      textAlign: "center",
+                      textDecoration: "underline",
+                      fontSize: "18px",
+                      opacity: hover ? 1 : 0,
+                      transition: "all ease-in-out 0.5s",
+                    }}
+                    key={index}
+                  >
+                    {title}
+                  </Typography>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -96,6 +111,7 @@ const Complex = () => {
     <>
       <div style={{ marginTop: "230px" }}>
         <Carousel
+          navButton
           width={"100%"}
           height={`calc(100vh - 330px)`}
           pauseDuration={3000}
@@ -131,13 +147,10 @@ const Complex = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            rowGap: "40px",
+            rowGap: "75px",
           }}
         >
-          <Typography style={{ fontSize: "20px", fontWeight: "800" }}>
-            Titulo
-          </Typography>
-          <Typography>Titulo</Typography>
+          <Title>Titulo</Title>
           <Grid container columnSpacing={"40px"}>
             <Grid item xs={3}>
               <Tile
@@ -168,6 +181,11 @@ const Complex = () => {
               />
             </Grid>
           </Grid>
+          <Button>
+            <Typography style={{ fontSize: "22px", fontWeight: "bold" }}>
+              CTA
+            </Typography>
+          </Button>
         </div>
       </Container>
     </>

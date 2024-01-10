@@ -1,11 +1,5 @@
-import Carrousell from "../../components/Carroussel/Carrousell";
-
 const Blog = () => {
-  return (
-    <>
-      <Carrousell />
-    </>
-  );
+  return <></>;
 };
 
 export default Blog;

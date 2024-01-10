@@ -20,9 +20,9 @@ export const buttonStyle = ({ hover, darkenColors, lightenColor }: Props) => ({
     : Colors.white[40010],
   fontWeight: "bold",
   color: Colors.white[400],
-  borderRadius: CSS.borderRadius,
-  padding: "10px 12px",
+  borderRadius: "40px",
+  padding: "8px 80px",
   textTransform: "capitalize",
   marginTop: "5px",
-  //border: `solid 2px ${Colors.black[40050]}`,
+  border: `solid 2px ${Colors.black[40050]}`,
 });

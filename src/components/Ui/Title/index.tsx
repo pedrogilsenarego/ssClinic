@@ -8,7 +8,7 @@ const Title = ({ children }: Props) => {
   return (
     <Typography
       style={{
-        fontSize: "32px",
+        fontSize: "25px",
         fontWeight: 700,
       }}
     >
