@@ -3,6 +3,7 @@ import ControlledFormInput from "../../../../components/Inputs/ControlledInput";
 import ControlledFormInputEditor from "../../../../components/Inputs/ControlledInputEditor";
 import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
 import FileUploader from "../../../../components/Inputs/FileUploader";
+import MultiSelectInput from "../../../../components/Inputs/MultiSelect/MultiSelectInput";
 import Loader from "../../../../components/Loader";
 import Button from "../../../../components/Ui/Button";
 import { i18n } from "../../../../translations/i18n";
@@ -181,6 +182,26 @@ const CreateBlog = ({ edit = false }: Props) => {
                       "pages.admin.createProducts.form.clinic",
                       "Clinic"
                     )}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <MultiSelectInput
+                    disableDefaultLabel
+                    setValue={setValue}
+                    multiple
+                    control={control}
+                    chips
+                    label="tags"
+                    items={[
+                      { value: "unique", title: "Unique", titlePT: "Unico" },
+                      {
+                        value: "original",
+                        title: "Original",
+                        titlePT: "Original",
+                      },
+                      { value: "kids", title: "Kids", titlePT: "Crianças" },
+                    ]}
+                    name="tags"
                   />
                 </Grid>
               </Grid>

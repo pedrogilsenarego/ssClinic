@@ -8,6 +8,7 @@ export const defaultValues = {
   template: "1",
   mainTextPT: "",
   mainTextEN: "",
+  tags: [],
 };
 
 export const defaultValues1 = (createData: any) => {
@@ -21,5 +22,6 @@ export const defaultValues1 = (createData: any) => {
     template: createData?.template || "0",
     mainTextPT: createData?.mainTextPT || "",
     mainTextEN: createData?.mainTextEN || "",
+    tags: createData?.tags || [],
   };
 };
