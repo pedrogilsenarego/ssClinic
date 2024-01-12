@@ -1,9 +1,96 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 
+import { useState } from "react";
 import Button from "../../components/Ui/Button";
+import Title from "../../components/Ui/Title";
 import { mainColors } from "../../theme/theme";
 
 const Home = () => {
+  type PropsTile = {
+    image: string;
+    clinic: string;
+    subtitles: string[];
+  };
+  const Tile = ({ image, clinic, subtitles }: PropsTile) => {
+    const [hover, setHover] = useState<boolean>(false);
+    return (
+      <div
+        style={{
+          position: "relative",
+          cursor: "pointer",
+          width: "100%",
+          aspectRatio: 0.72,
+        }}
+      >
+        <div
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url(${image})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            display: "flex",
+            justifyContent: "center",
+            transition: "transform 0.5s",
+            transform: hover ? "scale(1.05)" : "scale(1)",
+          }}
+        >
+          <div
+            style={{
+              marginTop: "100px",
+
+              width: "70%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography style={{ fontSize: "20px", fontWeight: "bold" }}>
+              {clinic}
+            </Typography>
+            <div
+              style={{
+                height: "1px",
+                width: "40%",
+                backgroundColor: "black",
+                marginTop: "10px",
+              }}
+            />
+            <div
+              style={{
+                marginTop: "40px",
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "20px",
+              }}
+            >
+              {subtitles.map((title, index) => {
+                return (
+                  <Typography
+                    style={{
+                      textAlign: "center",
+                      textDecoration: "underline",
+                      fontSize: "18px",
+                      opacity: hover ? 1 : 0,
+                      transition: "all ease-in-out 0.5s",
+                    }}
+                    key={index}
+                  >
+                    {title}
+                  </Typography>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
   return (
     <>
       <img
@@ -15,12 +102,13 @@ const Home = () => {
           objectFit: "cover",
         }}
       />
-      <Container style={{}} maxWidth="xl">
+      <Container style={{ marginTop: "64px" }} maxWidth="xl">
+        <Title>TagLine TagLine TagLine TagLine TagLine TagLine</Title>
         <Grid
           container
           height="100%"
           width="100%"
-          style={{ marginTop: "450px" }}
+          style={{ marginTop: "45px" }}
         >
           <Grid
             item
@@ -35,7 +123,7 @@ const Home = () => {
             <img
               src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
               alt=""
-              style={{ height: "500px", width: "100%", objectFit: "cover" }}
+              style={{ height: "500px", width: "80%", objectFit: "cover" }}
             />
           </Grid>
           <Grid
@@ -82,6 +170,46 @@ const Home = () => {
             </Box>
           </Grid>
         </Grid>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "200px",
+          }}
+        >
+          <Title>The Blend</Title>
+        </div>
+        <Grid container columnSpacing={"40px"} style={{ marginTop: "75px" }}>
+          <Grid item xs={3}>
+            <Tile
+              subtitles={["Tratamentos", "Consultoria"]}
+              clinic="Nome clinica 1"
+              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Tile
+              subtitles={["Tratamentos", "Consultoria"]}
+              clinic="Nome clinica 1"
+              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Tile
+              subtitles={["Tratamentos", "Consultoria"]}
+              clinic="Nome clinica 1"
+              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <Tile
+              subtitles={["Tratamentos", "Consultoria"]}
+              clinic="Nome clinica 1"
+              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            />
+          </Grid>
+        </Grid>
+
         <Grid
           container
           height="100%"
@@ -160,55 +288,6 @@ const Home = () => {
             />
           </Grid>
         </Grid>
-        <div
-          style={{
-            marginTop: "200px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            rowGap: "40px",
-          }}
-        >
-          <Typography style={{ fontSize: "20px", fontWeight: "800" }}>
-            Titulo
-          </Typography>
-          <Typography>Titulo</Typography>
-          <Grid container columnSpacing={"120px"}>
-            <Grid item xs={3}>
-              {" "}
-              <img
-                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                alt=""
-                style={{ width: "100%", objectFit: "cover", aspectRatio: 1.6 }}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              {" "}
-              <img
-                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                alt=""
-                style={{ width: "100%", objectFit: "cover", aspectRatio: 1.6 }}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              {" "}
-              <img
-                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                alt=""
-                style={{ width: "100%", objectFit: "cover", aspectRatio: 1.6 }}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              {" "}
-              <img
-                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                alt=""
-                style={{ width: "100%", objectFit: "cover", aspectRatio: 1.6 }}
-              />
-            </Grid>
-          </Grid>
-        </div>
       </Container>
     </>
   );
