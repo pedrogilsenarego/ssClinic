@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from "@mui/material";
 
 import Carousel from "../../components/Carousel";
 import Button from "../../components/Ui/Button";
+import Team from "./Components/Team";
 
 const Complex = () => {
   const childrenData = [
@@ -221,6 +222,7 @@ const Complex = () => {
               />
             </Grid>
           </Grid>
+          <Team />
         </div>
       </Container>
     </>
