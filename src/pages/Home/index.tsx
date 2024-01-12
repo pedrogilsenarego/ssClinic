@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-
 import { useState } from "react";
+import Image1 from "../../assets/Airport.svg";
 import Button from "../../components/Ui/Button";
 import Title from "../../components/Ui/Title";
 import { mainColors } from "../../theme/theme";
@@ -209,86 +209,155 @@ const Home = () => {
             />
           </Grid>
         </Grid>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
 
-        <Grid
-          container
-          height="100%"
-          width="100%"
-          style={{ marginTop: "350px" }}
+            marginTop: "67px",
+          }}
         >
-          <Grid
-            item
-            xs={6}
+          <div
             style={{
-              height: "100%",
+              width: "2px",
+              height: "111px",
+              backgroundColor: "black",
+            }}
+          ></div>
+          <Button style={{ marginTop: "34px" }}>
+            <Typography>EXPERT ADVICE</Typography>
+          </Button>
+        </div>
+      </Container>
+      <div
+        style={{
+          marginTop: "200px",
+          width: "100%",
+          height: "670px",
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "100px",
+          justifyContent: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundImage:
+            "url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)",
+        }}
+      >
+        <div
+          style={{
+            paddingTop: "5%",
+            margin: "0px 20%",
+            display: "flex",
 
+            justifyContent: "end",
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "30%",
               display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              flexDirection: "column",
+
+              rowGap: "40px",
             }}
           >
-            <Box
+            <Typography style={{ textTransform: "uppercase" }}>
+              Concierge Services
+            </Typography>
+            <Typography
               style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "start",
-                justifyContent: "center",
-
-                height: "500px",
-                rowGap: "20px",
-                width: "70%",
+                textTransform: "uppercase",
+                fontWeight: "bold",
+                fontSize: "37px",
               }}
             >
-              <Typography
-                style={{
-                  color: mainColors.secondary[400],
-                  fontSize: "32px",
-                  fontWeight: 700,
-                }}
-              >
-                DNA
-              </Typography>
-              <Typography
-                style={{
-                  color: mainColors.primary[400],
-                }}
-              >
-                Discover the story behind the building of a watch that was
-                created to break wallsDiscover the story behind the building of
-                a watch that was created to break wallsDiscover the story behind
-                the building of a watch that was created to break walls
-              </Typography>
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "end",
-                }}
-              >
-                <Button darkenColors>
-                  <Typography>Learn More</Typography>
-                </Button>
-              </div>
-            </Box>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            style={{
-              height: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+              Acompanhamos a sua viagem
+            </Typography>
+            <Typography
+              style={{ textTransform: "uppercase", fontSize: "20px" }}
+            >
+              Subtitulo Subtitulo Subtitulo Subtitulo Subtitulo
+            </Typography>
+
+            <Button style={{ marginLeft: "10px", marginRight: "50px" }}>
+              <Typography>Solicitar Concierge</Typography>
+            </Button>
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            columnGap: "70px",
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
           >
             <img
-              src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+              src={Image1}
               alt=""
-              style={{ height: "500px", width: "100%", objectFit: "cover" }}
+              style={{
+                height: "50px",
+              }}
             />
-          </Grid>
-        </Grid>
-      </Container>
+            <Typography style={{ textTransform: "uppercase" }}>
+              Feature Viagem
+            </Typography>
+          </div>
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
+          >
+            <img
+              src={Image1}
+              alt=""
+              style={{
+                height: "50px",
+              }}
+            />
+            <Typography style={{ textTransform: "uppercase" }}>
+              Feature Transporte
+            </Typography>
+          </div>
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
+          >
+            <img
+              src={Image1}
+              alt=""
+              style={{
+                height: "50px",
+              }}
+            />
+            <Typography style={{ textTransform: "uppercase" }}>
+              Feature Privado
+            </Typography>
+          </div>
+        </div>
+      </div>
+      <div
+        style={{
+          marginTop: "150px",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          rowGap: "50px",
+          flexDirection: "column",
+        }}
+      >
+        <Typography style={{ fontSize: "25px" }}>
+          Conheça o espaço onde cuidamos de si
+        </Typography>
+        <Button>
+          <Typography style={{ textTransform: "uppercase" }}>
+            Complexo Ehtiq
+          </Typography>
+        </Button>
+      </div>
     </>
   );
 };

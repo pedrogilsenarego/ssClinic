@@ -21,7 +21,7 @@ export const buttonStyle = ({ hover, darkenColors, lightenColor }: Props) => ({
   fontWeight: "bold",
   color: Colors.white[400],
   borderRadius: "40px",
-  padding: "8px 80px",
+  padding: "8px 40px",
   textTransform: "capitalize",
   marginTop: "5px",
   border: `solid 2px ${Colors.black[40050]}`,
