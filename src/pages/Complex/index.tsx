@@ -1,9 +1,7 @@
 import { Container, Grid, Typography } from "@mui/material";
 
-import { useState } from "react";
 import Carousel from "../../components/Carousel";
 import Button from "../../components/Ui/Button";
-import Title from "../../components/Ui/Title";
 
 const Complex = () => {
   const childrenData = [
@@ -21,92 +19,6 @@ const Complex = () => {
     },
   ];
 
-  type PropsTile = {
-    image: string;
-    clinic: string;
-    subtitles: string[];
-  };
-
-  const Tile = ({ image, clinic, subtitles }: PropsTile) => {
-    const [hover, setHover] = useState<boolean>(false);
-    return (
-      <div
-        style={{
-          position: "relative",
-          cursor: "pointer",
-          width: "100%",
-          aspectRatio: 0.72,
-        }}
-      >
-        <div
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: `url(${image})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            display: "flex",
-            justifyContent: "center",
-            transition: "transform 0.5s",
-            transform: hover ? "scale(1.05)" : "scale(1)",
-          }}
-        >
-          <div
-            style={{
-              marginTop: "100px",
-
-              width: "70%",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography style={{ fontSize: "20px", fontWeight: "bold" }}>
-              {clinic}
-            </Typography>
-            <div
-              style={{
-                height: "1px",
-                width: "40%",
-                backgroundColor: "black",
-                marginTop: "10px",
-              }}
-            />
-            <div
-              style={{
-                marginTop: "40px",
-                display: "flex",
-                flexDirection: "column",
-                rowGap: "20px",
-              }}
-            >
-              {subtitles.map((title, index) => {
-                return (
-                  <Typography
-                    style={{
-                      textAlign: "center",
-                      textDecoration: "underline",
-                      fontSize: "18px",
-                      opacity: hover ? 1 : 0,
-                      transition: "all ease-in-out 0.5s",
-                    }}
-                    key={index}
-                  >
-                    {title}
-                  </Typography>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
   return (
     <>
       <div style={{ marginTop: "230px" }}>
@@ -147,45 +59,168 @@ const Complex = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            rowGap: "75px",
+            rowGap: "200px",
           }}
         >
-          <Title>Titulo</Title>
-          <Grid container columnSpacing={"40px"}>
-            <Grid item xs={3}>
-              <Tile
-                subtitles={["Tratamentos", "Consultoria"]}
-                clinic="Nome clinica 1"
-                image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-              />
+          <Grid container columnSpacing={"20px"}>
+            <Grid item xs={6}>
+              <div
+                style={{
+                  marginTop: "50px",
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "40px",
+                }}
+              >
+                <div style={{ display: "flex", columnGap: "10px" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "end",
+                      writingMode: "vertical-rl",
+                      textOrientation: "mixed",
+                      whiteSpace: "nowrap",
+                      fontSize: "19px",
+                    }}
+                  >
+                    <Typography
+                      style={{
+                        transform: "rotate(180deg)", // Rotate 180 degrees
+                        transformOrigin: "center",
+                      }}
+                    >
+                      Legenda 1
+                    </Typography>
+                  </div>
+                  <img
+                    src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+                    alt=""
+                    style={{
+                      height: "340px",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <div style={{ display: "flex", columnGap: "10px" }}>
+                    <div
+                      style={{
+                        writingMode: "vertical-rl",
+                        textOrientation: "mixed",
+                        whiteSpace: "nowrap",
+                        fontSize: "19px",
+                        width: "400px",
+                      }}
+                    >
+                      <Typography
+                        style={{
+                          transform: "rotate(180deg)", // Rotate 180 degrees
+                          transformOrigin: "center",
+                        }}
+                      >
+                        Legenda 1
+                      </Typography>
+                    </div>
+                    <img
+                      src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+                      alt=""
+                      style={{
+                        height: "250px",
+                        width: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
             </Grid>
-            <Grid item xs={3}>
-              <Tile
-                subtitles={["Tratamentos", "Consultoria"]}
-                clinic="Nome clinica 1"
-                image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-              />
+            <Grid
+              item
+              xs={6}
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <div style={{ display: "flex", columnGap: "10px" }}>
+                <img
+                  src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+                  alt=""
+                  style={{
+                    width: "550px",
+                    height: "550px",
+                    objectFit: "cover",
+                  }}
+                />
+                <div
+                  style={{
+                    writingMode: "vertical-rl",
+                    textOrientation: "mixed",
+                    whiteSpace: "nowrap",
+                    fontSize: "19px",
+                  }}
+                >
+                  <Typography>Legenda 2</Typography>
+                </div>
+              </div>
             </Grid>
-            <Grid item xs={3}>
-              <Tile
-                subtitles={["Tratamentos", "Consultoria"]}
-                clinic="Nome clinica 1"
-                image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-              />
+          </Grid>
+          <Grid container columnSpacing={"20px"}>
+            <Grid item xs={6}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "30px",
+                }}
+              >
+                <Typography
+                  style={{
+                    width: "50%",
+                    textTransform: "uppercase",
+                    fontSize: "32px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  De olhos na personalização
+                </Typography>
+
+                <div
+                  style={{
+                    marginLeft: "10%",
+                    borderLeft: "solid 2px black",
+                    width: "60%",
+                    padding: "20px",
+                  }}
+                >
+                  <Typography style={{ fontSize: "20px" }}>
+                    Descrever serviço personalizado Descrever serviço
+                    personalizado
+                  </Typography>
+                </div>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "end",
+                    paddingRight: "200px",
+                  }}
+                >
+                  <Button>CTA</Button>
+                </div>
+              </div>
             </Grid>
-            <Grid item xs={3}>
-              <Tile
-                subtitles={["Tratamentos", "Consultoria"]}
-                clinic="Nome clinica 1"
-                image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            <Grid item xs={6}>
+              {" "}
+              <img
+                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+                alt=""
+                style={{
+                  width: "100%",
+                  objectFit: "cover",
+                }}
               />
             </Grid>
           </Grid>
-          <Button>
-            <Typography style={{ fontSize: "22px", fontWeight: "bold" }}>
-              CTA
-            </Typography>
-          </Button>
         </div>
       </Container>
     </>
