@@ -14,7 +14,7 @@ export const options: Option[] = [
 
   {
     name: "Tratamentos",
-    link: ROUTE_PATHS.CONTACTS,
+    link: ROUTE_PATHS.TREATMENTS,
   },
 
   { name: i18n.t("header.about", "About"), link: ROUTE_PATHS.ABOUT },
