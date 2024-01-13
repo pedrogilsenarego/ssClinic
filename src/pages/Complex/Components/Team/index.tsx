@@ -94,15 +94,32 @@ const Team = () => {
         rowGap: "70px",
       }}
     >
-      <Typography
+      <div
         style={{
-          fontSize: "37px",
-          fontWeight: "bold",
-          textTransform: "uppercase",
+          display: "flex",
+
+          width: "100%",
+          alignItems: "center",
         }}
       >
-        A equipa Ethiq
-      </Typography>
+        <div
+          style={{ height: "1px", width: "100%", backgroundColor: "black" }}
+        />
+        <Typography
+          style={{
+            fontSize: "37px",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
+          A equipa Ethiq
+        </Typography>
+        <div
+          style={{ height: "2px", width: "100%", backgroundColor: "black" }}
+        />
+      </div>
 
       <div
         style={{
