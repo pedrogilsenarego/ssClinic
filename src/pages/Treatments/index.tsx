@@ -1,8 +1,8 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 
 import Carousel from "../../components/Carousel";
 import Button from "../../components/Ui/Button";
-import { mainColors } from "../../theme/theme";
+import SearchSection from "./Components/SearchSection";
 
 const childrenData = [
   {
@@ -142,6 +142,37 @@ const Treatments = () => {
             </div>
           </Grid>
         </Grid>
+        <div
+          style={{
+            marginTop: "150px",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            rowGap: "30px",
+          }}
+        >
+          <Typography
+            style={{
+              textAlign: "center",
+              color: "lightGrey",
+              fontWeight: "20px",
+              textTransform: "uppercase",
+            }}
+          >
+            Pesquisa de tratamentos
+          </Typography>
+          <Typography
+            style={{
+              textAlign: "center",
+              fontWeight: "bold",
+              fontSize: "28px",
+              textTransform: "uppercase",
+            }}
+          >
+            Titulo relacionado com a pesquisa
+          </Typography>
+        </div>
+        <SearchSection />
       </Container>
     </>
   );
