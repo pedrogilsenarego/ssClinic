@@ -10,19 +10,19 @@ const ByBodyPart = () => {
     {
       image:
         "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-      clinicName: "Lounge & Carrier",
+      clinicName: "Rosto",
       treatments: ["Etc", "tratment 1"],
     },
     {
       image:
         "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-      clinicName: "Dental",
+      clinicName: "Sorriso",
       treatments: ["Etc", "tratment 2"],
     },
     {
       image:
         "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-      clinicName: "Surgical",
+      clinicName: "Corpo",
       treatments: ["Etc", "tratment 3"],
     },
     {
@@ -52,6 +52,7 @@ const ByBodyPart = () => {
                 onClick={() => {
                   setSelectedClinic(index);
                 }}
+                selected={index === selectedClinic}
                 key={index}
                 image={member.image}
                 clinicName={member.clinicName}

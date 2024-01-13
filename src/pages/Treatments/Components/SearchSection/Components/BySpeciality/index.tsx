@@ -52,6 +52,7 @@ const ByBodyPart = () => {
                 onClick={() => {
                   setSelectedClinic(index);
                 }}
+                selected={index === selectedClinic}
                 key={index}
                 image={member.image}
                 clinicName={member.clinicName}
