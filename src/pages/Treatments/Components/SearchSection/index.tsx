@@ -1,11 +1,13 @@
 import CustomizedAccordions from "../../../../components/Accordion";
+import ByBodyPart from "./Components/ByBodyPart";
+
 import BySpeciality from "./Components/BySpeciality";
 
 const SearchSection = () => {
   return (
     <div style={{ marginTop: "100px" }}>
       <BySpeciality />
-      <CustomizedAccordions title="Por zonas do corpo">s</CustomizedAccordions>
+      <ByBodyPart />
       <CustomizedAccordions title="Por preocupações">s</CustomizedAccordions>
     </div>
   );
