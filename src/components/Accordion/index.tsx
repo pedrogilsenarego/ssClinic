@@ -31,25 +31,6 @@ const Accordion = styled((props: AccordionProps) => (
   },
 }));
 
-const AccordionSummary = styled((props: AccordionSummaryProps) => (
-  <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
-    {...props}
-  />
-))(({ theme }) => ({
-  backgroundColor:
-    theme.palette.mode === "dark"
-      ? "rgba(255, 255, 255, .05)"
-      : "rgba(0, 0, 0, .03)",
-  flexDirection: "row-reverse",
-  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
-    transform: "rotate(90deg)",
-  },
-  "& .MuiAccordionSummary-content": {
-    marginLeft: theme.spacing(1),
-  },
-}));
-
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
   borderTop: "1px solid rgba(0, 0, 0, .125)",
@@ -74,18 +55,41 @@ export default function CustomizedAccordions({
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography
-            style={{ display: "flex", justifyContent: "center", width: "100%" }}
+        <MuiAccordionSummary
+          aria-controls="panel1d-content"
+          id="panel1d-header"
+          style={{
+            padding: 0,
+            borderBottom: "solid 2px black",
+          }}
+        >
+          <div
+            style={{
+              justifyContent: "space-between",
+              display: "flex",
+              width: "100%",
+              alignItems: "center",
+            }}
           >
-            {title}
-          </Typography>
+            <Typography
+              style={{
+                fontSize: "24px",
+                fontWeight: "bold",
+                textTransform: "uppercase",
+              }}
+            >
+              {title}
+            </Typography>
+            <Typography style={{ fontSize: "30px", fontWeight: "bold" }}>
+              {expanded ? "-" : "+"}
+            </Typography>
+          </div>
           {toggle && (
             <Box style={{ position: "absolute", right: "20px" }}>
               <Toggle isActive={toggle.signal} onClick={toggle.onToggle} />
             </Box>
           )}
-        </AccordionSummary>
+        </MuiAccordionSummary>
         <AccordionDetails
           style={{
             display: "flex",

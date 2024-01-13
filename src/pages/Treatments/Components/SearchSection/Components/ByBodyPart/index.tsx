@@ -34,7 +34,7 @@ const ByBodyPart = () => {
   ];
 
   return (
-    <CustomizedAccordions title="Por parte do corpo">
+    <CustomizedAccordions title="Por zonas do corpo">
       <div style={{ padding: "50px 0px" }}>
         <div
           style={{
