@@ -2,6 +2,7 @@ import { Container, Grid, Typography } from "@mui/material";
 
 import Carousel from "../../components/Carousel";
 import Button from "../../components/Ui/Button";
+import SchedulleMembership from "../Complex/Components/SchedulleMembership";
 import SearchSection from "./Components/SearchSection";
 
 const childrenData = [
@@ -173,6 +174,9 @@ const Treatments = () => {
           </Typography>
         </div>
         <SearchSection />
+        <div style={{ marginTop: "100px" }}>
+          <SchedulleMembership />
+        </div>
       </Container>
     </>
   );
