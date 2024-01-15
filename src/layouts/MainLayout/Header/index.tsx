@@ -398,7 +398,7 @@ const Header = () => {
               style={{ textTransform: "uppercase" }}
               fontWeight={800}
               onClick={() => {
-                navigate(ROUTE_PATHS.ABOUT);
+                navigate(ROUTE_PATHS.COMPLEX);
                 setMobileDrawer(false);
               }}
             >
