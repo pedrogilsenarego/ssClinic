@@ -1,4 +1,5 @@
 import React, { MouseEvent, useEffect, useMemo, useRef, useState } from "react";
+import usePreventScroll from "../../hooks/usePreventScrollY";
 import "./index.css";
 import tween from "./tween";
 
@@ -58,6 +59,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     children,
   } = props;
   const [current, setCurrent] = useState(direction === 1 ? 1 : children.length);
+  const [touched, setTouched] = useState(false);
   const absPerWidthRef = useRef(0);
   const pauseRef = useRef(false);
   const leftRef = useRef(0);
@@ -104,7 +106,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
   };
 
   useEffect(init, []);
-
+  usePreventScroll(touched);
   useEffect(() => {
     go(current);
     return () => clearTimeout(timer.current);
@@ -271,6 +273,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     } else {
       go(current);
     }
+    setTouched(false);
     mouseDownClientXRef.current = -1;
     mouseMoveClientXRef.current = 0;
   };
@@ -310,13 +313,11 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     if (!draggable) return;
     if (slidingRef.current) return;
     if (timer.current) clearTimeout(timer.current);
-
+    setTouched(true);
     const touch = e.touches[0];
     mouseDownClientXRef.current =
       orientation === "vertical" ? touch.clientY : touch.clientX;
   };
-
-  const threshold = 50; // Adjust this threshold value
 
   const handleTouchMove = (e: any) => {
     if (!draggable) return;
@@ -332,7 +333,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     );
 
     // Check if the absolute offset exceeds the threshold
-    if (absOffset >= threshold) {
+    if (absOffset >= 50) {
       const offset =
         ((mouseMoveClientXRef.current - mouseDownClientXRef.current) /
           absPerWidthRef.current) *
@@ -350,8 +351,10 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
       mouseDownClientXRef.current = -1;
       // If autoplay == true && pauseOnHover == false && mouseDown && noMove, trigger the timer
       calcNext();
+
       return;
     }
+
     handleSlideEnd();
   };
 
