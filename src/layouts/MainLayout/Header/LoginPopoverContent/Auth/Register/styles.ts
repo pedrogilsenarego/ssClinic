@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles({
   root: {
-    marginTop: "80px",
+    margin: "80px 0px",
     display: "flex",
     flexDirection: "column",
     rowGap: "60px",
