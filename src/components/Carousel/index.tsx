@@ -306,12 +306,54 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     } as React.CSSProperties;
   };
 
+  const handleTouchStart = (e: any) => {
+    if (!draggable) return;
+    if (slidingRef.current) return;
+    if (timer.current) clearTimeout(timer.current);
+
+    const touch = e.touches[0];
+    mouseDownClientXRef.current =
+      orientation === "vertical" ? touch.clientY : touch.clientX;
+  };
+
+  const handleTouchMove = (e: any) => {
+    if (!draggable) return;
+    if (mouseDownClientXRef.current === -1) return;
+    preventClick.current = true;
+
+    const touch = e.touches[0];
+    mouseMoveClientXRef.current =
+      orientation === "vertical" ? touch.clientY : touch.clientX;
+
+    const offset =
+      ((mouseMoveClientXRef.current - mouseDownClientXRef.current) /
+        absPerWidthRef.current) *
+      100;
+
+    sliderRef.current!.style[slidePropRef.current] = `${-(
+      leftRef.current - offset
+    )}%`;
+  };
+
+  const handleTouchEnd = (e: any) => {
+    if (!draggable) return;
+    if (mouseMoveClientXRef.current === 0) {
+      mouseDownClientXRef.current = -1;
+      // If autoplay == true && pauseOnHover == false && mouseDown && noMove, trigger the timer
+      calcNext();
+      return;
+    }
+    handleSlideEnd();
+  };
+
   return (
     <div
-      draggable={false}
       className="carousel"
       style={{ width, height }}
       onMouseEnter={pauseTimer}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
       onMouseLeave={handleMouseLeave}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}

@@ -39,7 +39,7 @@ const Complex = () => {
           pauseDuration={3000}
           slideDuration={1000}
           direction={1}
-          autoPlay={true}
+          autoPlay={mobile ? false : true}
           pauseOnHover={true}
           tweenAnime="ease"
           dotsActivedColor="black"
