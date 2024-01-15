@@ -20,6 +20,7 @@ export const ROUTE_PATHS = {
   POLICIES: "/terms-of-service",
   SHIPPING_POLICIES: "/shipping-policies",
   REFUND_POLICIE: "/refund-policies",
+  MEMBERSHIP: "/membership",
   BLOG_: "/blog",
   TESTEMONIALS: "/testemonials",
   TREATMENTS: "/treatments",

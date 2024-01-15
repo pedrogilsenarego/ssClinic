@@ -20,7 +20,7 @@ export const options: Option[] = [
   { name: i18n.t("header.about", "About"), link: ROUTE_PATHS.ABOUT },
   {
     name: i18n.t("header.membership", "Membership"),
-    link: ROUTE_PATHS.PRODUCTS,
+    link: ROUTE_PATHS.MEMBERSHIP,
   },
 ];
 

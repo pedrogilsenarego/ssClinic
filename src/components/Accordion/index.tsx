@@ -51,7 +51,7 @@ export default function CustomizedAccordions({
   return (
     <div>
       <Accordion
-        sx={{ border: "none" }}
+        sx={{ border: "none", backgroundColor: "transparent" }}
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
