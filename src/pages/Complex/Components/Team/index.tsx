@@ -1,7 +1,9 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 
 const Team = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   type PropsTile = {
     image: string;
 
@@ -41,7 +43,7 @@ const Team = () => {
         style={{
           position: "relative",
           cursor: "pointer",
-          width: "200px",
+          width: mobile ? "100px" : "200px",
 
           aspectRatio: 1,
         }}
@@ -103,11 +105,11 @@ const Team = () => {
         }}
       >
         <div
-          style={{ height: "1px", width: "100%", backgroundColor: "black" }}
+          style={{ height: "2px", width: "100%", backgroundColor: "black" }}
         />
         <Typography
           style={{
-            fontSize: "37px",
+            fontSize: mobile ? "22px" : "37px",
             fontWeight: "bold",
             textTransform: "uppercase",
             width: "100%",
@@ -123,11 +125,11 @@ const Team = () => {
 
       <div
         style={{
-          gap: "120px",
+          gap: mobile ? "50px" : "120px",
           width: "100%",
 
           display: "flex",
-          flexWrap: "wrap",
+          flexWrap: "wrap-reverse",
           justifyContent: "center",
         }}
       >

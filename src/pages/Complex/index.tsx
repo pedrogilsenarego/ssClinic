@@ -109,8 +109,8 @@ const Complex = () => {
             rowGap: "200px",
           }}
         >
-          <Grid container columnSpacing={"20px"}>
-            <Grid item xs={6}>
+          <Grid container columnSpacing={"50px"}>
+            <Grid item xs={12} md={6}>
               <div
                 style={{
                   marginTop: "50px",
@@ -120,25 +120,27 @@ const Complex = () => {
                 }}
               >
                 <div style={{ display: "flex", columnGap: "10px" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "end",
-                      writingMode: "vertical-rl",
-                      textOrientation: "mixed",
-                      whiteSpace: "nowrap",
-                      fontSize: "19px",
-                    }}
-                  >
-                    <Typography
+                  {!mobile && (
+                    <div
                       style={{
-                        transform: "rotate(180deg)", // Rotate 180 degrees
-                        transformOrigin: "center",
+                        display: "flex",
+                        justifyContent: "end",
+                        writingMode: "vertical-rl",
+                        textOrientation: "mixed",
+                        whiteSpace: "nowrap",
+                        fontSize: "19px",
                       }}
                     >
-                      Legenda 1
-                    </Typography>
-                  </div>
+                      <Typography
+                        style={{
+                          transform: "rotate(180deg)",
+                          transformOrigin: "center",
+                        }}
+                      >
+                        Legenda 1
+                      </Typography>
+                    </div>
+                  )}
                   <img
                     src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
                     alt=""
@@ -152,24 +154,26 @@ const Complex = () => {
 
                 <div>
                   <div style={{ display: "flex", columnGap: "10px" }}>
-                    <div
-                      style={{
-                        writingMode: "vertical-rl",
-                        textOrientation: "mixed",
-                        whiteSpace: "nowrap",
-                        fontSize: "19px",
-                        width: "400px",
-                      }}
-                    >
-                      <Typography
+                    {!mobile && (
+                      <div
                         style={{
-                          transform: "rotate(180deg)", // Rotate 180 degrees
-                          transformOrigin: "center",
+                          writingMode: "vertical-rl",
+                          textOrientation: "mixed",
+                          whiteSpace: "nowrap",
+                          fontSize: "19px",
+                          width: "400px",
                         }}
                       >
-                        Legenda 1
-                      </Typography>
-                    </div>
+                        <Typography
+                          style={{
+                            transform: "rotate(180deg)", // Rotate 180 degrees
+                            transformOrigin: "center",
+                          }}
+                        >
+                          Legenda 2
+                        </Typography>
+                      </div>
+                    )}
                     <img
                       src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
                       alt=""
@@ -185,34 +189,52 @@ const Complex = () => {
             </Grid>
             <Grid
               item
-              xs={6}
-              style={{ display: "flex", justifyContent: "center" }}
+              xs={12}
+              md={6}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
             >
               <div style={{ display: "flex", columnGap: "10px" }}>
                 <img
                   src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
                   alt=""
                   style={{
-                    width: "550px",
+                    width: "100%",
                     height: "550px",
                     objectFit: "cover",
                   }}
                 />
-                <div
-                  style={{
-                    writingMode: "vertical-rl",
-                    textOrientation: "mixed",
-                    whiteSpace: "nowrap",
-                    fontSize: "19px",
-                  }}
-                >
-                  <Typography>Legenda 2</Typography>
-                </div>
+                {!mobile && (
+                  <div
+                    style={{
+                      writingMode: "vertical-rl",
+                      textOrientation: "mixed",
+                      whiteSpace: "nowrap",
+                      fontSize: "19px",
+                    }}
+                  >
+                    <Typography>Legenda 3</Typography>
+                  </div>
+                )}
               </div>
+              <Typography
+                style={{
+                  textTransform: "uppercase",
+                  marginTop: "40px",
+                  marginLeft: "20px",
+                  textAlign: mobile ? "center" : undefined,
+                  fontSize: mobile ? "10px" : "15px",
+                }}
+              >
+                frase extra frase extra frase extra
+              </Typography>
             </Grid>
           </Grid>
-          <Grid container columnSpacing={"20px"}>
-            <Grid item xs={6}>
+          <Grid container spacing={"20px"}>
+            <Grid item xs={12} sm={6}>
               <div
                 style={{
                   display: "flex",
@@ -222,10 +244,11 @@ const Complex = () => {
               >
                 <Typography
                   style={{
-                    width: "50%",
+                    width: mobile ? undefined : "50%",
                     textTransform: "uppercase",
-                    fontSize: "32px",
+                    fontSize: mobile ? "22px" : "32px",
                     fontWeight: "bold",
+                    margin: mobile ? "20px" : undefined,
                   }}
                 >
                   De olhos na personalização
@@ -236,10 +259,10 @@ const Complex = () => {
                     marginLeft: "10%",
                     borderLeft: "solid 2px black",
                     width: "60%",
-                    padding: "20px",
+                    padding: mobile ? "10px" : "20px",
                   }}
                 >
-                  <Typography style={{ fontSize: "20px" }}>
+                  <Typography style={{ fontSize: mobile ? "12px" : "20px" }}>
                     Descrever serviço personalizado Descrever serviço
                     personalizado
                   </Typography>
@@ -249,15 +272,18 @@ const Complex = () => {
                     width: "100%",
                     display: "flex",
                     justifyContent: "end",
-                    paddingRight: "200px",
+                    paddingRight: mobile ? undefined : "200px",
                   }}
                 >
-                  <Button>CTA</Button>
+                  <Button>
+                    <Typography style={{ fontSize: mobile ? "12px" : "16px" }}>
+                      CTA
+                    </Typography>
+                  </Button>
                 </div>
               </div>
             </Grid>
-            <Grid item xs={6}>
-              {" "}
+            <Grid item xs={12} sm={6}>
               <img
                 src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
                 alt=""
