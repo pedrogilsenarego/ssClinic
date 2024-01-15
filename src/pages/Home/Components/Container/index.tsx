@@ -101,11 +101,27 @@ const ContainerC = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Container style={{ marginTop: "64px" }} maxWidth="xl">
-      <Title>TagLine TagLine TagLine TagLine TagLine TagLine</Title>
-      <Grid container height="100%" width="100%" style={{ marginTop: "45px" }}>
+      <Typography
+        style={{
+          textAlign: mobile ? "center" : undefined,
+          fontSize: mobile ? "14px" : "25px",
+          fontWeight: 700,
+        }}
+      >
+        TagLine TagLine TagLine TagLine TagLine TagLine
+      </Typography>
+
+      <Grid
+        container
+        height="100%"
+        width="100%"
+        rowSpacing={"50px"}
+        style={{ marginTop: mobile ? "0px" : "45px" }}
+      >
         <Grid
           item
-          xs={6}
+          xs={12}
+          md={6}
           style={{
             height: "100%",
             display: "flex",
@@ -116,15 +132,19 @@ const ContainerC = () => {
           <img
             src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             alt=""
-            style={{ height: "500px", width: "80%", objectFit: "cover" }}
+            style={{
+              height: mobile ? "250px" : "500px",
+              width: "80%",
+              objectFit: "cover",
+            }}
           />
         </Grid>
         <Grid
           item
-          xs={6}
+          xs={12}
+          md={6}
           style={{
-            height: "100%",
-
+            height: mobile ? undefined : "100%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -134,25 +154,29 @@ const ContainerC = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "start",
+              alignItems: mobile ? "center" : "start",
               justifyContent: "center",
 
-              height: "500px",
+              height: mobile ? undefined : "500px",
               rowGap: "20px",
               width: "70%",
             }}
           >
             <Typography
               style={{
-                fontSize: "32px",
+                textTransform: "uppercase",
+                textAlign: mobile ? "center" : undefined,
+                fontSize: mobile ? "14px" : "22px",
                 fontWeight: 700,
               }}
             >
-              DNA
+              Apresentação curta
             </Typography>
             <Typography
               style={{
+                textAlign: mobile ? "center" : undefined,
                 color: mainColors.primary[400],
+                fontSize: mobile ? "12px" : "20px",
               }}
             >
               Discover the story behind the building of a watch that was created
@@ -211,7 +235,7 @@ const ContainerC = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-
+          rowGap: "20px",
           marginTop: "67px",
         }}
       >
@@ -222,7 +246,8 @@ const ContainerC = () => {
             backgroundColor: "black",
           }}
         ></div>
-        <Button style={{ marginTop: "34px" }}>
+        <Typography>Texto sobre pesquisa inteligente</Typography>
+        <Button>
           <Typography>EXPERT ADVICE</Typography>
         </Button>
       </div>

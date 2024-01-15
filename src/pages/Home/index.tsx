@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import Button from "../../components/Ui/Button";
 
@@ -6,6 +6,8 @@ import ContainerC from "./Components/Container";
 import Escort from "./Components/Escort";
 
 const Home = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       <img
@@ -29,11 +31,24 @@ const Home = () => {
           flexDirection: "column",
         }}
       >
-        <Typography style={{ fontSize: "25px" }}>
+        <Typography
+          style={{
+            fontSize: mobile ? "15px" : "25px",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            maxWidth: "70%",
+            textAlign: "center",
+          }}
+        >
           Conheça o espaço onde cuidamos de si
         </Typography>
         <Button>
-          <Typography style={{ textTransform: "uppercase" }}>
+          <Typography
+            style={{
+              textTransform: "uppercase",
+              fontSize: mobile ? "12px" : "15px",
+            }}
+          >
             Complexo Ehtiq
           </Typography>
         </Button>
