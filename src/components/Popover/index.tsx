@@ -33,12 +33,12 @@ const BasicPopover: React.FC<BasicPopoverProps> = ({
           horizontal: "center",
         }}
         sx={{
-          marginTop: "10px",
+          marginTop: "40px",
           cursor: "pointer",
         }}
         PaperProps={{
           sx: {
-            borderRadius: CSS.borderRadiusS,
+            borderRadius: "10px",
             backgroundColor: Colors.white[40095],
           },
         }}

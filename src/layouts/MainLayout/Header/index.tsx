@@ -25,6 +25,7 @@ import { Colors, mainColors } from "../../../theme/theme";
 import { i18n } from "../../../translations/i18n";
 import { CurrentUser } from "../../../types/user";
 import Cart from "./Cart";
+import LoginPopoverContent from "./LoginPopoverContent";
 import UserPopoverContent from "./UserPopoverContent";
 import { langOptions, options } from "./constants";
 import "./index.css";
@@ -51,6 +52,7 @@ const Header = () => {
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const [mobileDrawer, setMobileDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [anchorElLogin, setAnchorElLogin] = useState<HTMLElement | null>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const { onSignOut } = useSignOut();
 
@@ -62,11 +64,29 @@ const Header = () => {
     }
   };
 
+  const handleClickPopoverLogin = (event: React.MouseEvent<HTMLElement>) => {
+    if (anchorElLogin) {
+      setAnchorElLogin(null);
+    } else {
+      setAnchorElLogin(event.currentTarget);
+    }
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
 
+  const handleCloseLogin = () => {
+    setAnchorElLogin(null);
+  };
+
   const isOpen = Boolean(anchorEl);
+
+  const isOpenLogin = Boolean(anchorElLogin);
+
+  const handleLogin = (e: any) => {
+    handleClickPopoverLogin(e);
+  };
 
   const handleUser = (e: any) => {
     handleClickPopover(e);
@@ -89,18 +109,6 @@ const Header = () => {
 
   const backgroundColor = `rgba(207, 181, 59, ${0.1 * opacity})`;
 
-  // const [firstBoxHeight, setFirstBoxHeight] = useState<number | null>(null);
-
-  // useEffect(() => {
-  //   const firstBox = document.getElementById("first-box");
-
-  //   if (firstBox) {
-  //     const height = firstBox.clientHeight;
-  //     setFirstBoxHeight(height);
-  //   }
-  // }, []);
-
-  // Calculate the equivalent pixel value for 85% of the viewport height
   const viewportHeight =
     window.innerHeight || document.documentElement.clientHeight;
   const triggerScrollPosition = 0.85 * viewportHeight - 350;
@@ -171,7 +179,13 @@ const Header = () => {
                 columnGap: "30px",
               }}
             >
-              <Icons.User />
+              <div
+                onClick={(e) => {
+                  handleLogin(e);
+                }}
+              >
+                <Icons.User style={{ cursor: "pointer" }} />
+              </div>
 
               <Box>
                 <UncontrolledSelect
@@ -307,7 +321,13 @@ const Header = () => {
             })}
           </Box>
         </Container>
-
+        <BasicPopover
+          isOpen={isOpenLogin}
+          anchorEl={anchorElLogin}
+          onClose={handleCloseLogin}
+        >
+          <LoginPopoverContent handleClose={handleCloseLogin} />
+        </BasicPopover>
         <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
           <UserPopoverContent handleClose={handleClose} />
         </BasicPopover>
