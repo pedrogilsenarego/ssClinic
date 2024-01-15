@@ -316,6 +316,8 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
       orientation === "vertical" ? touch.clientY : touch.clientX;
   };
 
+  const threshold = 50; // Adjust this threshold value
+
   const handleTouchMove = (e: any) => {
     if (!draggable) return;
     if (mouseDownClientXRef.current === -1) return;
@@ -325,14 +327,21 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     mouseMoveClientXRef.current =
       orientation === "vertical" ? touch.clientY : touch.clientX;
 
-    const offset =
-      ((mouseMoveClientXRef.current - mouseDownClientXRef.current) /
-        absPerWidthRef.current) *
-      100;
+    const absOffset = Math.abs(
+      mouseMoveClientXRef.current - mouseDownClientXRef.current
+    );
 
-    sliderRef.current!.style[slidePropRef.current] = `${-(
-      leftRef.current - offset
-    )}%`;
+    // Check if the absolute offset exceeds the threshold
+    if (absOffset >= threshold) {
+      const offset =
+        ((mouseMoveClientXRef.current - mouseDownClientXRef.current) /
+          absPerWidthRef.current) *
+        100;
+
+      sliderRef.current!.style[slidePropRef.current] = `${-(
+        leftRef.current - offset
+      )}%`;
+    }
   };
 
   const handleTouchEnd = (e: any) => {
