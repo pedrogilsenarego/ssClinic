@@ -44,6 +44,7 @@ const Complex = () => {
           tweenAnime="ease"
           dotsActivedColor="black"
           dotsColor="grey"
+          dragThreshold={mobile ? 10 : undefined}
           onItemClick={(item) => console.log(item)}
         >
           {childrenData.map((item, index) => (

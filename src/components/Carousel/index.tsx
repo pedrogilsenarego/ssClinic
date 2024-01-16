@@ -59,8 +59,10 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     children,
   } = props;
   const [current, setCurrent] = useState(direction === 1 ? 1 : children.length);
+
   const [touched, setTouched] = useState(false);
   const absPerWidthRef = useRef(0);
+
   const pauseRef = useRef(false);
   const leftRef = useRef(0);
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -74,6 +76,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
   ]);
   const timer = useRef<any>(-1);
   const mouseDownClientXRef = useRef(-1);
+
   const mouseMoveClientXRef = useRef(0);
   const preventClick = useRef(false);
   const tweenFn = useMemo(() => {
@@ -328,21 +331,14 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     mouseMoveClientXRef.current =
       orientation === "vertical" ? touch.clientY : touch.clientX;
 
-    const absOffset = Math.abs(
-      mouseMoveClientXRef.current - mouseDownClientXRef.current
-    );
+    const offset =
+      ((mouseMoveClientXRef.current - mouseDownClientXRef.current) /
+        absPerWidthRef.current) *
+      100;
 
-    // Check if the absolute offset exceeds the threshold
-    if (absOffset >= 50) {
-      const offset =
-        ((mouseMoveClientXRef.current - mouseDownClientXRef.current) /
-          absPerWidthRef.current) *
-        100;
-
-      sliderRef.current!.style[slidePropRef.current] = `${-(
-        leftRef.current - offset
-      )}%`;
-    }
+    sliderRef.current!.style[slidePropRef.current] = `${-(
+      leftRef.current - offset
+    )}%`;
   };
 
   const handleTouchEnd = (e: any) => {
