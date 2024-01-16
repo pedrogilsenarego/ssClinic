@@ -11,24 +11,32 @@ const Escort = () => {
     <div
       style={{
         marginTop: "200px",
+        position: "relative",
         width: "100%",
         height: mobile ? "600px" : "670px",
         display: "flex",
         flexDirection: "column",
         rowGap: "100px",
         justifyContent: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundImage:
-          "url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)",
       }}
     >
+      <img
+        alt=""
+        style={{
+          width: mobile ? "100%" : "50%",
+          height: "90vh",
+          zIndex: 1,
+          position: "absolute",
+          objectFit: "cover",
+        }}
+        src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+      />
       <div
         style={{
           paddingTop: "5%",
           margin: mobile ? "0px 20px" : "0px 20%",
           display: "flex",
+          zIndex: 10,
 
           justifyContent: mobile ? "start" : "end",
         }}
@@ -38,7 +46,7 @@ const Escort = () => {
             maxWidth: mobile ? undefined : "30%",
             display: "flex",
             flexDirection: "column",
-
+            zIndex: 1000,
             rowGap: "40px",
           }}
         >
@@ -78,6 +86,7 @@ const Escort = () => {
           display: "flex",
           columnGap: mobile ? "20px" : "70px",
           width: "100%",
+          zIndex: 10,
           justifyContent: "center",
         }}
       >

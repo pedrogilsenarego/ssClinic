@@ -1,9 +1,10 @@
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import Button from "../../components/Ui/Button";
 
 import ContainerC from "./Components/Container";
 import Escort from "./Components/Escort";
+import Whats from "./Components/Whats";
 
 const Home = () => {
   const theme = useTheme();
@@ -19,8 +20,14 @@ const Home = () => {
           objectFit: "cover",
         }}
       />
-      <ContainerC />
+      <Container style={{ marginTop: "64px" }} maxWidth="xl">
+        <ContainerC />
+        <div style={{ marginTop: "200px" }}>
+          <Whats />
+        </div>
+      </Container>
       <Escort />
+
       <div
         style={{
           marginTop: "150px",

@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import Button from "../../../../components/Ui/Button";
 import Title from "../../../../components/Ui/Title";
@@ -100,7 +93,7 @@ const ContainerC = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Container style={{ marginTop: "64px" }} maxWidth="xl">
+    <>
       <Typography
         style={{
           textAlign: mobile ? "center" : undefined,
@@ -251,7 +244,7 @@ const ContainerC = () => {
           <Typography>EXPERT ADVICE</Typography>
         </Button>
       </div>
-    </Container>
+    </>
   );
 };
 
