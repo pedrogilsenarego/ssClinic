@@ -24,6 +24,7 @@ export const ROUTE_PATHS = {
   BLOG_: "/blog",
   TESTEMONIALS: "/testemonials",
   TREATMENTS: "/treatments",
+  TREATMENT_ID: "/treatments/:id",
   COMPLEX: "/the-complex",
   CONTACTS: "/contacts",
   CLINIC1: "/clinic1",

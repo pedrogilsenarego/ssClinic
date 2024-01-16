@@ -64,6 +64,14 @@ export const routes: AppRoute[] = [
     ),
   },
   {
+    path: ROUTE_PATHS.TREATMENT_ID,
+    component: (
+      <MainLayout>
+        <RoutesI.TreatmentID />
+      </MainLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.COMPLEX,
     component: (
       <MainLayout>

@@ -1,36 +1,51 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CustomizedAccordions from "../../../../../../components/Accordion";
+import { ROUTE_PATHS } from "../../../../../../routes/constants";
 import Tile from "./Components/Tile";
 
 const ByBodyPart = () => {
   const [selectedClinic, setSelectedClinic] = useState<number | null>(null);
   const theme = useTheme();
+  const navigate = useNavigate();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const teamList = [
     {
       image:
         "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
       clinicName: "Rosto",
-      treatments: ["Etc", "tratment 1"],
+      treatments: [
+        { label: "Etc", id: "facial-mask" },
+        { label: "Etc", id: "facial-mask2" },
+      ],
     },
     {
       image:
         "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
       clinicName: "Sorriso",
-      treatments: ["Etc", "tratment 2"],
+      treatments: [
+        { label: "Etc", id: "facial-mask" },
+        { label: "Etc", id: "facial-mask2" },
+      ],
     },
     {
       image:
         "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
       clinicName: "Corpo",
-      treatments: ["Etc", "tratment 3"],
+      treatments: [
+        { label: "Etc", id: "facial-mask" },
+        { label: "Etc", id: "facial-mask2" },
+      ],
     },
     {
       image:
         "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
       clinicName: "Non-surgical",
-      treatments: ["Etc", "tratment 4"],
+      treatments: [
+        { label: "Etc", id: "facial-mask" },
+        { label: "Etc", id: "facial-mask2" },
+      ],
     },
   ];
 
@@ -75,6 +90,9 @@ const ByBodyPart = () => {
             {teamList[selectedClinic].treatments.map((member, index) => {
               return (
                 <Typography
+                  onClick={() =>
+                    navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", member.id))
+                  }
                   key={index}
                   style={{
                     textDecoration: "underline",
@@ -84,7 +102,7 @@ const ByBodyPart = () => {
                     textAlign: "center",
                   }}
                 >
-                  {member}
+                  {member.label}
                 </Typography>
               );
             })}

@@ -1,5 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import { memo, useState } from "react";
+import { useState } from "react";
 
 type PropsTile = {
   onClick?: any;
