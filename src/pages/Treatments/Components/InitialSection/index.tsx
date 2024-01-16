@@ -92,6 +92,7 @@ const InitialSection = () => {
             pauseOnHover={true}
             tweenAnime="ease"
             dotsActivedColor="black"
+            dragThreshold={mobile ? 10 : undefined}
             dotsColor="grey"
             onItemClick={(item) => console.log(item)}
           >

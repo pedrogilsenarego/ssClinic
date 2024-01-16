@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { memo, useState } from "react";
 
 type PropsTile = {
@@ -11,7 +11,8 @@ type PropsTile = {
 
 const Tile = ({ image, clinicName, onClick, selected }: PropsTile) => {
   const [hover, setHover] = useState<boolean>(false);
-
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div
       onClick={onClick ? onClick : undefined}
@@ -20,7 +21,7 @@ const Tile = ({ image, clinicName, onClick, selected }: PropsTile) => {
       style={{
         position: "relative",
         cursor: "pointer",
-        width: "200px",
+        width: mobile ? "140px" : "200px",
         aspectRatio: 0.8,
       }}
     >

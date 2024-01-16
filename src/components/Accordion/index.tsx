@@ -1,5 +1,5 @@
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import MuiAccordionSummary, {
@@ -42,7 +42,8 @@ export default function CustomizedAccordions({
   toggle,
 }: Props) {
   const [expanded, setExpanded] = React.useState<string | false>(false);
-
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
       setExpanded(newExpanded ? panel : false);
@@ -73,7 +74,7 @@ export default function CustomizedAccordions({
           >
             <Typography
               style={{
-                fontSize: "24px",
+                fontSize: mobile ? "13px" : "24px",
                 fontWeight: "bold",
                 textTransform: "uppercase",
               }}

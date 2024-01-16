@@ -1,11 +1,12 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import CustomizedAccordions from "../../../../../../components/Accordion";
 import Tile from "./Components/Tile";
 
 const ByBodyPart = () => {
   const [selectedClinic, setSelectedClinic] = useState<number | null>(null);
-
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const teamList = [
     {
       image:
@@ -38,7 +39,7 @@ const ByBodyPart = () => {
       <div style={{ padding: "50px 0px" }}>
         <div
           style={{
-            gap: "120px",
+            gap: mobile ? "10px" : "120px",
             width: "100%",
 
             display: "flex",
