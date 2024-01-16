@@ -269,6 +269,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
 
   const handleSlideEnd = () => {
     const absOffset = mouseMoveClientXRef.current - mouseDownClientXRef.current;
+
     const offset = (absOffset / absPerWidthRef.current) * 100;
     leftRef.current = leftRef.current - offset;
     if (Math.abs(absOffset) >= dragThreshold) {
@@ -316,13 +317,13 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     if (!draggable) return;
     if (slidingRef.current) return;
     if (timer.current) clearTimeout(timer.current);
-    setTouched(true);
+    //setTouched(true);
     const touch = e.touches[0];
     mouseDownClientXRef.current =
       orientation === "vertical" ? touch.clientY : touch.clientX;
   };
 
-  const handleTouchMove = (e: any) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (!draggable) return;
     if (mouseDownClientXRef.current === -1) return;
     preventClick.current = true;
@@ -335,6 +336,11 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
       ((mouseMoveClientXRef.current - mouseDownClientXRef.current) /
         absPerWidthRef.current) *
       100;
+    //console.log(Math.abs(offset));
+
+    // if (Math.abs(offset) > 5) {
+    //   e.preventDefault();
+    // }
 
     sliderRef.current!.style[slidePropRef.current] = `${-(
       leftRef.current - offset
