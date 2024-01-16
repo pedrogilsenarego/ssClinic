@@ -1,6 +1,15 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 const EhtiqCode = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div
       style={{
@@ -20,13 +29,15 @@ const EhtiqCode = () => {
           height="100%"
           width="100%"
           style={{ margin: "100px 0px" }}
-          spacing={"50px"}
+          columnSpacing={mobile ? "0px" : "50px"}
+          rowSpacing={mobile ? "50px" : "50px"}
         >
-          <Grid item xs={7}>
+          <Grid item xs={12} md={7}>
             <div
               style={{
                 height: "100%",
                 display: "flex",
+                flexDirection: mobile ? "column" : "row",
 
                 alignItems: "center",
                 width: "100%",
@@ -53,10 +64,11 @@ const EhtiqCode = () => {
               />
             </div>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={12} md={5}>
             <div
               style={{
                 display: "flex",
+                alignItems: mobile ? "center" : undefined,
                 justifyContent: "center",
                 flexDirection: "column",
                 rowGap: "80px",
@@ -64,7 +76,12 @@ const EhtiqCode = () => {
             >
               <div style={{ display: "flex", columnGap: "20px" }}>
                 <div>
-                  <Typography style={{ fontSize: "40px", color: "grey" }}>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "30px" : "40px",
+                      color: "grey",
+                    }}
+                  >
                     01
                   </Typography>
                 </div>
@@ -75,10 +92,21 @@ const EhtiqCode = () => {
                     rowGap: "30px",
                   }}
                 >
-                  <Typography style={{ fontSize: "20px", fontWeight: "bold" }}>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "15px" : "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
                     Titulo valor ehtiq
                   </Typography>
-                  <Typography>Descrição Descrição Descrição</Typography>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "12px" : "18px",
+                    }}
+                  >
+                    Descrição Descrição Descrição
+                  </Typography>
                 </div>
               </div>
               <div style={{ display: "flex", columnGap: "20px" }}>
@@ -89,20 +117,41 @@ const EhtiqCode = () => {
                     rowGap: "30px",
                   }}
                 >
-                  <Typography style={{ fontSize: "20px", fontWeight: "bold" }}>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "15px" : "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
                     Titulo valor ehtiq
                   </Typography>
-                  <Typography>Descrição Descrição Descrição</Typography>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "12px" : "18px",
+                    }}
+                  >
+                    Descrição Descrição Descrição
+                  </Typography>
                 </div>
                 <div>
-                  <Typography style={{ fontSize: "40px", color: "grey" }}>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "30px" : "40px",
+                      color: "grey",
+                    }}
+                  >
                     02
                   </Typography>
                 </div>
               </div>
               <div style={{ display: "flex", columnGap: "20px" }}>
                 <div>
-                  <Typography style={{ fontSize: "40px", color: "grey" }}>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "30px" : "40px",
+                      color: "grey",
+                    }}
+                  >
                     03
                   </Typography>
                 </div>
@@ -113,10 +162,21 @@ const EhtiqCode = () => {
                     rowGap: "30px",
                   }}
                 >
-                  <Typography style={{ fontSize: "20px", fontWeight: "bold" }}>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "15px" : "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
                     Titulo valor ehtiq
                   </Typography>
-                  <Typography>Descrição Descrição Descrição</Typography>
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "12px" : "18px",
+                    }}
+                  >
+                    Descrição Descrição Descrição
+                  </Typography>
                 </div>
               </div>
             </div>

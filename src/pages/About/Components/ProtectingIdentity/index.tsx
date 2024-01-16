@@ -1,8 +1,10 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image1 from "../../../../assets/Airport.svg";
 import Button from "../../../../components/Ui/Button";
 
 const ProtectingIdentity = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div style={{ display: "flex", flexDirection: "column", rowGap: "150px" }}>
       <div>
@@ -101,6 +103,8 @@ const ProtectingIdentity = () => {
       <div
         style={{
           display: "flex",
+          flexDirection: mobile ? "column" : "row",
+          rowGap: mobile ? "20px" : undefined,
           justifyContent: "end",
           columnGap: "40px",
           alignItems: "center",

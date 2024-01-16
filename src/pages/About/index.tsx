@@ -1,10 +1,9 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
-import Button from "../../components/Ui/Button";
-import Title from "../../components/Ui/Title";
-import { mainColors } from "../../theme/theme";
+
 import SchedulleMembership from "../Complex/Components/SchedulleMembership";
 import EhtiqCode from "./Components/EhtiqCode";
+import Location from "./Components/Location";
 import ProtectingIdentity from "./Components/ProtectingIdentity";
 import "./index.css";
 
@@ -38,72 +37,7 @@ const About = () => {
   return (
     <>
       <Container style={{}} maxWidth="xl">
-        <Grid
-          container
-          height="100%"
-          width="100%"
-          style={{ marginTop: "450px" }}
-        >
-          <Grid
-            item
-            xs={6}
-            style={{
-              height: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-              alt=""
-              style={{ height: "500px", width: "100%", objectFit: "cover" }}
-            />
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            style={{
-              height: "100%",
-
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "start",
-                justifyContent: "center",
-
-                height: "500px",
-                rowGap: "20px",
-                width: "70%",
-              }}
-            >
-              <Typography
-                style={{
-                  fontSize: "32px",
-                  fontWeight: 700,
-                }}
-              >
-                Sobre o Ritz / Localização
-              </Typography>
-              <Typography
-                style={{
-                  color: mainColors.primary[400],
-                }}
-              >
-                Discover the story behind the building of a watch that was
-                created to break wallsDiscover the story behind the building of
-                a watch that was created to break wallsDiscover the story behind
-                the building of a watch that was created to break walls
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
+        <Location />
       </Container>
       <EhtiqCode />
       <Container style={{}} maxWidth="xl">

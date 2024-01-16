@@ -1,9 +1,17 @@
-import { Container, Grid, Typography } from "@mui/material";
+import {
+  Container,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import CustomizedAccordions from "../../../../components/Accordion";
 import Button from "../../../../components/Ui/Button";
 
 const Tagline = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div
       style={{
@@ -23,24 +31,32 @@ const Tagline = () => {
           height="100%"
           width="100%"
           style={{ margin: "100px 0px" }}
-          spacing={"100px"}
+          columnSpacing={mobile ? "0px" : "100px"}
+          rowSpacing={mobile ? "50px" : "100px"}
         >
-          <Grid item xs={7}>
+          <Grid item xs={12} md={7}>
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-
+                alignItems: mobile ? "center" : undefined,
                 height: "100%",
                 width: "100%",
-                rowGap: "100px",
+                rowGap: mobile ? "20px" : "100px",
                 justifyContent: "space-around",
               }}
             >
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: mobile ? "20px" : "0px",
+                }}
+              >
                 <Typography
                   style={{
-                    fontSize: "35px",
+                    textAlign: mobile ? "center" : undefined,
+                    fontSize: mobile ? "22px" : "35px",
                     textTransform: "uppercase",
                     fontWeight: "bold",
                   }}
@@ -48,12 +64,20 @@ const Tagline = () => {
                   Tagline Membership
                 </Typography>
                 <Typography
-                  style={{ fontSize: "20", textTransform: "uppercase" }}
+                  style={{
+                    fontSize: mobile ? "14px" : "20px",
+                    textTransform: "uppercase",
+                  }}
                 >
                   Enunciar o que se vai ler mais abaixo
                 </Typography>
               </div>
-              <div style={{ width: "100%", paddingLeft: "10%" }}>
+              <div
+                style={{
+                  width: mobile ? "90%" : "100%",
+                  paddingLeft: mobile ? "0px" : "10%",
+                }}
+              >
                 <CustomizedAccordions title="Features">
                   dew
                 </CustomizedAccordions>
@@ -61,7 +85,7 @@ const Tagline = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={12} md={5}>
             <div
               style={{
                 display: "flex",
