@@ -5,7 +5,7 @@ const Description = () => {
 
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Grid container>
+    <Grid container rowSpacing={mobile ? "50px" : "0px"}>
       {!mobile && (
         <Grid item xs={12} md={7}>
           <div
@@ -50,6 +50,7 @@ const Description = () => {
               alignItems: "center",
               justifyContent: "center",
               height: "100%",
+              padding: "0px 30px",
             }}
           >
             <div>

@@ -12,71 +12,62 @@ const TreatmentsGuide = () => {
       >
         Guia de tratamentos
       </Typography>
-      {mobile ? (
-        <></>
-      ) : (
-        <div style={{ display: "flex" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              padding: "0px 40px",
-              rowGap: "20px",
-              borderRight: "solid 2px black",
-            }}
-          >
-            <Typography style={{ fontWeight: "bold" }}>
-              Pre-tratamento
-            </Typography>
-            <Typography>Descrição Descrição</Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              padding: "0px 40px",
-              rowGap: "20px",
-              borderRight: "solid 2px black",
-            }}
-          >
-            <Typography style={{ fontWeight: "bold" }}>
-              Pre-tratamento
-            </Typography>
-            <Typography>Descrição Descrição</Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              padding: "0px 40px",
-              rowGap: "20px",
-              borderRight: "solid 2px black",
-            }}
-          >
-            <Typography style={{ fontWeight: "bold" }}>
-              Pre-tratamento
-            </Typography>
-            <Typography>Descrição Descrição</Typography>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              padding: "0px 40px",
-              rowGap: "20px",
-            }}
-          >
-            <Typography style={{ fontWeight: "bold" }}>
-              Pre-tratamento
-            </Typography>
-            <Typography>Descrição Descrição</Typography>
-          </div>
+
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: mobile ? "0px 10px" : "0px 40px",
+            rowGap: "20px",
+            borderRight: "solid 2px black",
+            borderBottom: mobile ? "solid 2px black" : "none",
+          }}
+        >
+          <Typography style={{ fontWeight: "bold" }}>Pre-tratamento</Typography>
+          <Typography>Descrição Descrição</Typography>
         </div>
-      )}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: mobile ? "0px 10px" : "0px 40px",
+            rowGap: "20px",
+            borderRight: mobile ? "none" : "solid 2px black",
+            borderBottom: mobile ? "solid 2px black" : "none",
+          }}
+        >
+          <Typography style={{ fontWeight: "bold" }}>Pre-tratamento</Typography>
+          <Typography>Descrição Descrição</Typography>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: mobile ? "0px 10px" : "0px 40px",
+            rowGap: "20px",
+            borderRight: "solid 2px black",
+          }}
+        >
+          <Typography style={{ fontWeight: "bold" }}>Pre-tratamento</Typography>
+          <Typography>Descrição Descrição</Typography>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: mobile ? "0px 10px" : "0px 40px",
+            rowGap: "20px",
+          }}
+        >
+          <Typography style={{ fontWeight: "bold" }}>Pre-tratamento</Typography>
+          <Typography>Descrição Descrição</Typography>
+        </div>
+      </div>
 
       <div
         style={{
