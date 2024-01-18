@@ -1,14 +1,17 @@
-import { Container } from "@mui/material";
+import { Container, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect, useState } from "react";
 
 import SchedulleMembership from "../Complex/Components/SchedulleMembership";
 import EhtiqCode from "./Components/EhtiqCode";
+import Journey from "./Components/Journey";
 import Location from "./Components/Location";
 import ProtectingIdentity from "./Components/ProtectingIdentity";
 import Slogan from "./Components/Slogan";
 import "./index.css";
 
 const About = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [mouseX, setMouseX] = useState<number>(0);
   const maintext = "Finally a service that is your...  ";
 
@@ -37,11 +40,13 @@ const About = () => {
 
   return (
     <>
-      <div style={{ marginTop: "300px" }}>
-        <Slogan />
-      </div>
+      <div style={{ marginTop: "300px" }}>{!mobile && <Slogan />}</div>
       <Location />
-
+      {!mobile && (
+        <div style={{ marginTop: "100px" }}>
+          <Journey />
+        </div>
+      )}
       <EhtiqCode />
       <Container style={{}} maxWidth="xl">
         <div style={{ marginTop: "300px" }}>
