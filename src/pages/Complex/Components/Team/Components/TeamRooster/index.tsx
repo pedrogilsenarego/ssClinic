@@ -131,7 +131,7 @@ const TeamRooster = () => {
     },
   ];
 
-  const ImageRooster = () => {
+  const ImageRoosterLaptop = () => {
     const [member, setMember] = useState<number>(0);
     return (
       <Grid
@@ -255,9 +255,13 @@ const TeamRooster = () => {
     );
   };
 
+  const ImageRoosterMobile = () => {
+    return <></>;
+  };
+
   return (
     <div style={{ padding: "0px 200px", width: "100%" }}>
-      <ImageRooster />
+      {mobile ? <ImageRoosterMobile /> : <ImageRoosterLaptop />}
     </div>
   );
 };
