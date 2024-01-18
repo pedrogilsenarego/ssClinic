@@ -5,6 +5,7 @@ import SchedulleMembership from "../Complex/Components/SchedulleMembership";
 import EhtiqCode from "./Components/EhtiqCode";
 import Location from "./Components/Location";
 import ProtectingIdentity from "./Components/ProtectingIdentity";
+import Slogan from "./Components/Slogan";
 import "./index.css";
 
 const About = () => {
@@ -36,9 +37,11 @@ const About = () => {
 
   return (
     <>
-      <Container style={{}} maxWidth="xl">
-        <Location />
-      </Container>
+      <div style={{ marginTop: "300px" }}>
+        <Slogan />
+      </div>
+      <Location />
+
       <EhtiqCode />
       <Container style={{}} maxWidth="xl">
         <div style={{ marginTop: "300px" }}>
