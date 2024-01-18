@@ -25,8 +25,7 @@ const TeamRooster = () => {
           name: "huhiu",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
-          image:
-            "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
+          image: "",
         },
         {
           name: "huhiu",
@@ -143,6 +142,45 @@ const TeamRooster = () => {
     },
   ];
 
+  const ImageRooster = () => {
+    const [member, setMember] = useState<number>(0);
+    return (
+      <>
+        <img
+          alt=""
+          style={{ height: "350px", width: "100%", objectFit: "cover" }}
+          src={teamList[team].team[member].image}
+        />
+        {teamList[team]?.team?.map((team, index) => {
+          return (
+            <div
+              onClick={() => setMember(index)}
+              key={index}
+              style={{
+                cursor: "pointer",
+
+                paddingTop: `${10 + index * 20}px`,
+                paddingLeft: "0px 6px",
+                paddingRight: "0px 6px",
+                backgroundColor: `rgb(0,0,0,${0.6 - index / 10})`,
+              }}
+            >
+              <Typography
+                style={{
+                  writingMode: "vertical-rl",
+                  textOrientation: "mixed",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {team.name}
+              </Typography>
+            </div>
+          );
+        })}
+      </>
+    );
+  };
+
   return (
     <div style={{ margin: "0px 200px" }}>
       <div style={{ display: "flex" }}>
@@ -203,24 +241,7 @@ const TeamRooster = () => {
         </Grid>
         <Grid item xs={6}>
           <div style={{ display: "flex" }}>
-            <img
-              alt=""
-              style={{ height: "350px", width: "100%", objectFit: "cover" }}
-              src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-            />
-            {teamList[team]?.team?.map((team, index) => {
-              return (
-                <div
-                  key={index}
-                  style={{
-                    cursor: "pointer",
-                    width: "30px",
-                    backgroundColor: "black",
-                    opacity: 0.6 - index / 10,
-                  }}
-                ></div>
-              );
-            })}
+            <ImageRooster />
           </div>
         </Grid>
       </Grid>
