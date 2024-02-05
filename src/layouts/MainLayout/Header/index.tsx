@@ -291,7 +291,7 @@ const Header = () => {
               alignItems: "center",
               marginBottom: "10px",
               opacity: isScrolled ? 1 : 0,
-              marginTop: isScrolled ? "60px" : "-20px", // Adjust the marginTop based on the scroll position
+              marginTop: isScrolled ? "40px" : "-20px", // Adjust the marginTop based on the scroll position
               transition: "all 0.5s ease-in-out", // Add transition property
             }}
           >
