@@ -13,6 +13,9 @@ import { VscMenu } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 //import logo from "../../../assets/logo.svg";
+import Logo from "../../../assets/EHTIQ_Logo.svg";
+import SearchIcon from "../../../assets/Icon_Search.svg";
+import Login from "../../../assets/Log_In.svg";
 import DrawerMine from "../../../components/Drawer";
 import { Icons } from "../../../components/Icons";
 import UncontrolledSelect from "../../../components/Inputs/UncontroledSelect";
@@ -160,12 +163,11 @@ const Header = () => {
             >
               <img
                 onClick={() => navigate(ROUTE_PATHS.HOME)}
-                src={""}
+                src={Logo}
                 alt="logo"
                 style={{
-                  width: "120px",
+                  width: "155px",
                   cursor: "pointer",
-                  border: "solid 2px black",
                 }}
               />
             </Grid>
@@ -179,22 +181,38 @@ const Header = () => {
                 columnGap: "30px",
               }}
             >
-              <div
-                onClick={(e) => {
-                  handleLogin(e);
-                }}
-              >
-                <Icons.User style={{ cursor: "pointer" }} />
+              <div>
+                <img
+                  src={SearchIcon}
+                  alt="logo"
+                  style={{
+                    width: "24px",
+                    cursor: "pointer",
+                  }}
+                />
+              </div>
+              <div>
+                <img
+                  onClick={(e) => {
+                    handleLogin(e);
+                  }}
+                  src={Login}
+                  alt="logo"
+                  style={{
+                    width: "24px",
+                    cursor: "pointer",
+                  }}
+                />
               </div>
 
-              <Box>
+              {/* <Box>
                 <UncontrolledSelect
                   options={langOptions}
                   initialValue={lang.toLowerCase()}
                   onChange={(v) => changeLanguage(v)}
                 />
-              </Box>
-              <Box
+              </Box> */}
+              {/* <Box
                 style={{ cursor: "pointer", position: "relative" }}
                 onClick={() => {
                   setCartDrawer(true);
@@ -222,8 +240,8 @@ const Header = () => {
                 )}
 
                 <Icons.Cart size={"20px"} />
-              </Box>
-              <Button
+              </Box> */}
+              {/* <Button
                 style={{
                   marginTop: "-3px",
                   minWidth: "200px",
@@ -260,7 +278,7 @@ const Header = () => {
                     }}
                   />
                 )}
-              </Button>
+              </Button> */}
             </Grid>
           </Grid>
 
@@ -283,7 +301,7 @@ const Header = () => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    columnGap: "30px",
+                    columnGap: "20px",
                     margin: "0px 15px",
                     color: "grey",
                   }}
@@ -292,7 +310,7 @@ const Header = () => {
                     className={"text"}
                     style={{
                       cursor: !isScrolled ? undefined : "pointer",
-                      fontSize: "16px",
+                      fontSize: "15px",
                       fontWeight: "bold",
                       textTransform: "uppercase",
                       color:

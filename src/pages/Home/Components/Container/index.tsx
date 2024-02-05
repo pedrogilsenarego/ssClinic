@@ -1,8 +1,10 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
+import logo12 from "../../../../assets/EHTIQ BRANDS-12.svg";
 import Button from "../../../../components/Ui/Button";
 import Title from "../../../../components/Ui/Title";
 import { mainColors } from "../../../../theme/theme";
+import { i18n } from "../../../../translations/i18n";
 
 const ContainerC = () => {
   type PropsTile = {
@@ -97,11 +99,11 @@ const ContainerC = () => {
       <Typography
         style={{
           textAlign: mobile ? "center" : undefined,
-          fontSize: mobile ? "14px" : "25px",
-          fontWeight: 700,
+          fontSize: mobile ? "14px" : "60px",
+          fontWeight: 500,
         }}
       >
-        TagLine TagLine TagLine TagLine TagLine TagLine
+        IN THE PURSUIT OF LONGEVITY
       </Typography>
 
       <Grid
@@ -147,7 +149,7 @@ const ContainerC = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: mobile ? "center" : "start",
+              alignItems: mobile ? "center" : "center",
               justifyContent: "center",
 
               height: mobile ? undefined : "500px",
@@ -158,90 +160,113 @@ const ContainerC = () => {
             <Typography
               style={{
                 textTransform: "uppercase",
-                textAlign: mobile ? "center" : undefined,
-                fontSize: mobile ? "14px" : "22px",
-                fontWeight: 700,
+                textAlign: mobile ? "center" : "center",
+                fontSize: mobile ? "14px" : "20px",
+                fontWeight: 600,
               }}
             >
-              Apresentação curta
+              {i18n.t("pages.home.beutyAndWellBeing")}
             </Typography>
             <Typography
               style={{
-                textAlign: mobile ? "center" : undefined,
+                textAlign: mobile ? "center" : "center",
                 color: mainColors.primary[400],
-                fontSize: mobile ? "12px" : "20px",
+                fontSize: mobile ? "12px" : "18px",
               }}
             >
-              Discover the story behind the building of a watch that was created
-              to break wallsDiscover the story behind the building of a watch
-              that was created to break wallsDiscover the story behind the
-              building of a watch that was created to break walls
+              {i18n.t("pages.home.beutyText")}
             </Typography>
+            <img src={logo12} alt="" style={{ width: "90px" }} />
           </Box>
         </Grid>
       </Grid>
       <div
         style={{
-          display: "flex",
+          backgroundImage: "linear-gradient(to right, #848387, #314F5F4A)",
+          padding: "50px 100px 100px 120px",
           justifyContent: "center",
           marginTop: "200px",
+          position: "relative",
         }}
       >
-        <Title>The Blend</Title>
+        <div
+          style={{ display: "flex", justifyContent: "center", width: "100%" }}
+        >
+          <Typography
+            style={{
+              color: "white",
+              textTransform: "uppercase",
+              fontSize: "30px",
+              fontWeight: "bold",
+            }}
+          >
+            {i18n.t("pages.home.treatments")}
+          </Typography>
+        </div>
+
+        <Grid
+          container
+          spacing={mobile ? "10px" : "40px"}
+          style={{ marginTop: "75px" }}
+        >
+          <Grid item xs={6} md={3}>
+            <Tile
+              subtitles={["Tratamentos", "Consultoria"]}
+              clinic="Nome clinica 1"
+              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              subtitles={["Tratamentos", "Consultoria"]}
+              clinic="Nome clinica 1"
+              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              subtitles={["Tratamentos", "Consultoria"]}
+              clinic="Nome clinica 1"
+              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              subtitles={["Tratamentos", "Consultoria"]}
+              clinic="Nome clinica 1"
+              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            />
+          </Grid>
+        </Grid>
+        <div
+          style={{
+            position: "absolute",
+            width: "1px",
+            left: "50%",
+            height: "111px",
+            bottom: -80,
+            backgroundColor: "#8C8787",
+            zIndex: 10,
+          }}
+        ></div>
       </div>
-      <Grid
-        container
-        spacing={mobile ? "10px" : "40px"}
-        style={{ marginTop: "75px" }}
-      >
-        <Grid item xs={6} md={3}>
-          <Tile
-            subtitles={["Tratamentos", "Consultoria"]}
-            clinic="Nome clinica 1"
-            image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-          />
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            subtitles={["Tratamentos", "Consultoria"]}
-            clinic="Nome clinica 1"
-            image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-          />
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            subtitles={["Tratamentos", "Consultoria"]}
-            clinic="Nome clinica 1"
-            image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-          />
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            subtitles={["Tratamentos", "Consultoria"]}
-            clinic="Nome clinica 1"
-            image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-          />
-        </Grid>
-      </Grid>
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           rowGap: "20px",
-          marginTop: "67px",
+          marginTop: "100px",
         }}
       >
-        <div
-          style={{
-            width: "2px",
-            height: "111px",
-            backgroundColor: "black",
-          }}
-        ></div>
-        <Typography>Texto sobre pesquisa inteligente</Typography>
+        <Typography style={{ fontSize: "13px" }}>
+          {" "}
+          {i18n.t("pages.home.correctTreatment")}
+        </Typography>
         <Button>
-          <Typography>EXPERT ADVICE</Typography>
+          <Typography style={{ fontSize: "22px", color: "#5D5C5C" }}>
+            EXPERT ADVICE
+          </Typography>
         </Button>
       </div>
     </>

@@ -36,6 +36,13 @@ export const content = {
         noProducts: "There aren't any products on the cart",
       },
       pages: {
+        home: {
+          beutyAndWellBeing: "Fusão de Beleza e Bem-Estar",
+          beutyText:
+            "Um espaço de sofisticação e auto-descoberta que o leva a viajar num horizonte de beleza e bem-estar.",
+          treatments: "Tratamentos",
+          correctTreatment: "DESCUBRA OS TRATAMENTOS INDICADOS PARA SI",
+        },
         admin: {
           sidebar: {
             products: "Produtos",
