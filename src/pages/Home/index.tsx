@@ -2,6 +2,7 @@ import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import Button from "../../components/Ui/Button";
 
+import { i18n } from "../../translations/i18n";
 import ContainerC from "./Components/Container";
 import Escort from "./Components/Escort";
 import Whats from "./Components/Whats";
@@ -26,11 +27,13 @@ const Home = () => {
           <Whats />
         </div>
       </Container>
-      <Escort />
+      <div style={{ marginTop: "400px" }}>
+        <Escort />
+      </div>
 
       <div
         style={{
-          marginTop: "150px",
+          marginTop: "350px",
           width: "100%",
           display: "flex",
           alignItems: "center",
@@ -38,6 +41,9 @@ const Home = () => {
           flexDirection: "column",
         }}
       >
+        <div
+          style={{ width: "10%", height: "1px", backgroundColor: "darkGrey" }}
+        ></div>
         <Typography
           style={{
             fontSize: mobile ? "15px" : "25px",
@@ -47,16 +53,16 @@ const Home = () => {
             textAlign: "center",
           }}
         >
-          Conheça o espaço onde cuidamos de si
+          {i18n.t("pages.home.spaceWhere")}
         </Typography>
         <Button>
           <Typography
             style={{
               textTransform: "uppercase",
-              fontSize: mobile ? "12px" : "15px",
+              fontSize: mobile ? "12px" : "22px",
             }}
           >
-            Complexo Ehtiq
+            {i18n.t("pages.home.ctaSpaceWhere")}
           </Typography>
         </Button>
       </div>

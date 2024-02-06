@@ -46,6 +46,17 @@ export const content = {
           dental: "Dentário",
           nonCirurgy: "Não Cirúrgico",
           healthPrevention: "Saúde Preventida ",
+          conciergeServices: "serviços concierge",
+          conciergeTitle: "Descubra o padrão ehtiq",
+          conciergeText:
+            "O Serviço de Concierge é projetado para oferecer conveniência máxima, eliminando as preocupações logísticas e otimizando o seu tempo.</br></br> Do agendamento de consultas ao acesso prioritário a especialistas e tratamentos, a nossa equipa Concierge está à disposição para garantir que a sua visita seja tranquila, confortável.",
+          conciergeButton: "Solicitar concierge",
+          hotel: "Hotel",
+          travel: "Viagem",
+          transport: "Transporte",
+          concierge: "Concierge",
+          spaceWhere: "conheça o espaço onde cuidamos de si",
+          ctaSpaceWhere: "A Clínica",
         },
         admin: {
           sidebar: {

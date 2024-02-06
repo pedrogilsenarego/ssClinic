@@ -1,6 +1,9 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image1 from "../../../../assets/Airport.svg";
+import Limousine from "../../../../assets/Limousine.svg";
+import Valet from "../../../../assets/Valet.svg";
 import Button from "../../../../components/Ui/Button";
+import { i18n } from "../../../../translations/i18n";
 
 const Escort = () => {
   const theme = useTheme();
@@ -10,7 +13,6 @@ const Escort = () => {
   return (
     <div
       style={{
-        marginTop: "200px",
         position: "relative",
         width: "100%",
         height: mobile ? "600px" : "670px",
@@ -50,34 +52,36 @@ const Escort = () => {
             rowGap: "40px",
           }}
         >
+          <div>
+            <Typography
+              style={{
+                textTransform: "uppercase",
+                fontSize: mobile ? "8px" : "15px",
+              }}
+            >
+              {i18n.t("pages.home.conciergeServices")}
+            </Typography>
+            <Typography
+              style={{
+                textTransform: "uppercase",
+                fontWeight: "bold",
+                fontSize: mobile ? "28px" : "32px",
+              }}
+            >
+              {i18n.t("pages.home.conciergeTitle")}
+            </Typography>
+          </div>
           <Typography
-            style={{
-              textTransform: "uppercase",
-              fontSize: mobile ? "8px" : "16px",
+            dangerouslySetInnerHTML={{
+              __html: i18n.t("pages.home.conciergeText"),
             }}
-          >
-            Concierge Services
-          </Typography>
-          <Typography
             style={{
-              textTransform: "uppercase",
-              fontWeight: "bold",
-              fontSize: mobile ? "28px" : "37px",
+              fontSize: mobile ? "12px" : "16px",
             }}
-          >
-            Acompanhamos a sua viagem
-          </Typography>
-          <Typography
-            style={{
-              textTransform: "uppercase",
-              fontSize: mobile ? "12px" : "20px",
-            }}
-          >
-            Subtitulo Subtitulo Subtitulo Subtitulo Subtitulo
-          </Typography>
+          />
 
           <Button style={{ marginLeft: "10px", marginRight: "50px" }}>
-            <Typography>Solicitar Concierge</Typography>
+            <Typography> {i18n.t("pages.home.conciergeButton")}</Typography>
           </Button>
         </div>
       </div>
@@ -103,7 +107,7 @@ const Escort = () => {
           <Typography
             style={{ textTransform: "uppercase", fontSize: iconTextSize }}
           >
-            Feature Viagem
+            {i18n.t("pages.home.hotel")}
           </Typography>
         </div>
         <div
@@ -119,14 +123,14 @@ const Escort = () => {
           <Typography
             style={{ textTransform: "uppercase", fontSize: iconTextSize }}
           >
-            Feature Transporte
+            {i18n.t("pages.home.travel")}
           </Typography>
         </div>
         <div
           style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
         >
           <img
-            src={Image1}
+            src={Limousine}
             alt=""
             style={{
               height: iconSize,
@@ -135,7 +139,23 @@ const Escort = () => {
           <Typography
             style={{ textTransform: "uppercase", fontSize: iconTextSize }}
           >
-            Feature Privado
+            {i18n.t("pages.home.transport")}
+          </Typography>
+        </div>
+        <div
+          style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
+        >
+          <img
+            src={Valet}
+            alt=""
+            style={{
+              height: iconSize,
+            }}
+          />
+          <Typography
+            style={{ textTransform: "uppercase", fontSize: iconTextSize }}
+          >
+            {i18n.t("pages.home.concierge")}
           </Typography>
         </div>
       </div>

@@ -56,7 +56,11 @@ const ContainerC = () => {
                 textTransform: "uppercase",
                 fontWeight: 600,
                 textAlign: "center",
+                transition: "margin-top ease-in-out 0.5s", // Add transition
+                marginTop: hover ? "-20px" : "0", // Adjust marginTop based on hover state
               }}
+              onMouseEnter={() => setHover(true)} // Set hover state to true on mouse enter
+              onMouseLeave={() => setHover(false)} // Set hover state to false on mouse leave
             >
               {clinic}
             </Typography>
@@ -74,33 +78,26 @@ const ContainerC = () => {
                 display: "flex",
                 flexDirection: "column",
                 rowGap: "20px",
+                alignItems: "center",
+                transition: "all ease-in-out 0.5s",
               }}
             >
-              {!hover ? (
-                <>
-                  <Typography>+</Typography>
-                </>
-              ) : (
-                <>
-                  {" "}
-                  {subtitles.map((title, index) => {
-                    return (
-                      <Typography
-                        style={{
-                          textAlign: "center",
-                          textDecoration: "underline",
-                          fontSize: "18px",
-                          opacity: hover ? 1 : 0,
-                          transition: "all ease-in-out 0.5s",
-                        }}
-                        key={index}
-                      >
-                        {title}
-                      </Typography>
-                    );
-                  })}
-                </>
-              )}
+              {hover &&
+                subtitles.map((title, index) => {
+                  return (
+                    <Typography
+                      style={{
+                        textAlign: "center",
+                        textDecoration: "underline",
+                        transition: "all ease-in-out 0.5s",
+                      }}
+                      key={index}
+                    >
+                      {title}
+                    </Typography>
+                  );
+                })}
+              <Typography>+</Typography>
             </div>
           </div>
         </div>
