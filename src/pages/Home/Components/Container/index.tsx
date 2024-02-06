@@ -43,15 +43,21 @@ const ContainerC = () => {
         >
           <div
             style={{
-              marginTop: "100px",
-
               width: "70%",
               display: "flex",
+              justifyContent: "center",
               flexDirection: "column",
               alignItems: "center",
             }}
           >
-            <Typography style={{ fontSize: "20px", fontWeight: "bold" }}>
+            <Typography
+              style={{
+                fontSize: "23px",
+                textTransform: "uppercase",
+                fontWeight: 600,
+                textAlign: "center",
+              }}
+            >
               {clinic}
             </Typography>
             <div
@@ -70,22 +76,31 @@ const ContainerC = () => {
                 rowGap: "20px",
               }}
             >
-              {subtitles.map((title, index) => {
-                return (
-                  <Typography
-                    style={{
-                      textAlign: "center",
-                      textDecoration: "underline",
-                      fontSize: "18px",
-                      opacity: hover ? 1 : 0,
-                      transition: "all ease-in-out 0.5s",
-                    }}
-                    key={index}
-                  >
-                    {title}
-                  </Typography>
-                );
-              })}
+              {!hover ? (
+                <>
+                  <Typography>+</Typography>
+                </>
+              ) : (
+                <>
+                  {" "}
+                  {subtitles.map((title, index) => {
+                    return (
+                      <Typography
+                        style={{
+                          textAlign: "center",
+                          textDecoration: "underline",
+                          fontSize: "18px",
+                          opacity: hover ? 1 : 0,
+                          transition: "all ease-in-out 0.5s",
+                        }}
+                        key={index}
+                      >
+                        {title}
+                      </Typography>
+                    );
+                  })}
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -212,28 +227,28 @@ const ContainerC = () => {
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos", "Consultoria"]}
-              clinic="Nome clinica 1"
+              clinic={i18n.t("pages.home.cirurgy")}
               image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos", "Consultoria"]}
-              clinic="Nome clinica 1"
+              clinic={i18n.t("pages.home.dental")}
               image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos", "Consultoria"]}
-              clinic="Nome clinica 1"
+              clinic={i18n.t("pages.home.nonCirurgy")}
               image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos", "Consultoria"]}
-              clinic="Nome clinica 1"
+              clinic={i18n.t("pages.home.healthPrevention")}
               image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             />
           </Grid>

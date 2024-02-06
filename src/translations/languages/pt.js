@@ -42,6 +42,10 @@ export const content = {
             "Um espaço de sofisticação e auto-descoberta que o leva a viajar num horizonte de beleza e bem-estar.",
           treatments: "Tratamentos",
           correctTreatment: "DESCUBRA OS TRATAMENTOS INDICADOS PARA SI",
+          cirurgy: "Cirúrgico",
+          dental: "Dentário",
+          nonCirurgy: "Não Cirúrgico",
+          healthPrevention: "Saúde Preventida ",
         },
         admin: {
           sidebar: {
