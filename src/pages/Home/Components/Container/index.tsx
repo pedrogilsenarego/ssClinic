@@ -20,6 +20,7 @@ const ContainerC = () => {
           position: "relative",
           cursor: "pointer",
           width: "100%",
+
           aspectRatio: 0.72,
         }}
       >
@@ -52,7 +53,7 @@ const ContainerC = () => {
           >
             <Typography
               style={{
-                fontSize: "23px",
+                fontSize: mobile ? "14px" : "23px",
                 textTransform: "uppercase",
                 fontWeight: 600,
                 textAlign: "center",
@@ -108,15 +109,17 @@ const ContainerC = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
-      <Typography
-        style={{
-          textAlign: mobile ? "center" : undefined,
-          fontSize: mobile ? "14px" : "60px",
-          fontWeight: 500,
-        }}
-      >
-        IN THE PURSUIT OF LONGEVITY
-      </Typography>
+      {!mobile && (
+        <Typography
+          style={{
+            textAlign: mobile ? "center" : undefined,
+            fontSize: mobile ? "14px" : "60px",
+            fontWeight: 500,
+          }}
+        >
+          IN THE PURSUIT OF LONGEVITY
+        </Typography>
+      )}
 
       <Grid
         container
@@ -132,19 +135,34 @@ const ContainerC = () => {
           style={{
             height: "100%",
             display: "flex",
+            flexDirection: mobile ? "column" : "row",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <img
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-            alt=""
-            style={{
-              height: mobile ? "250px" : "500px",
-              width: "80%",
-              objectFit: "cover",
-            }}
-          />
+          <div>
+            {mobile && (
+              <Typography
+                style={{
+                  textAlign: "start",
+                  fontSize: "15px",
+                  fontWeight: 500,
+                }}
+              >
+                IN THE PURSUIT OF LONGEVITY
+              </Typography>
+            )}
+            <img
+              src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+              alt=""
+              style={{
+                marginTop: mobile ? "50px" : "0px",
+                height: mobile ? "250px" : "500px",
+                width: mobile ? "100%" : "80%",
+                objectFit: "cover",
+              }}
+            />
+          </div>
         </Grid>
         <Grid
           item
@@ -195,9 +213,9 @@ const ContainerC = () => {
       <div
         style={{
           backgroundImage: "linear-gradient(to right, #848387, #314F5F4A)",
-          padding: "50px 100px 100px 120px",
+          padding: mobile ? "50px 20px 80px 20px" : "50px 100px 100px 120px",
           justifyContent: "center",
-          marginTop: "200px",
+          marginTop: mobile ? "100px" : "200px",
           position: "relative",
         }}
       >
@@ -219,7 +237,7 @@ const ContainerC = () => {
         <Grid
           container
           spacing={mobile ? "10px" : "40px"}
-          style={{ marginTop: "75px" }}
+          style={{ marginTop: mobile ? "50px" : "75px" }}
         >
           <Grid item xs={6} md={3}>
             <Tile
@@ -255,8 +273,8 @@ const ContainerC = () => {
             position: "absolute",
             width: "1px",
             left: "50%",
-            height: "111px",
-            bottom: -80,
+            height: mobile ? "60px" : "111px",
+            bottom: mobile ? -50 : -80,
             backgroundColor: "#8C8787",
             zIndex: 10,
           }}
@@ -271,12 +289,14 @@ const ContainerC = () => {
           marginTop: "100px",
         }}
       >
-        <Typography style={{ fontSize: "13px" }}>
+        <Typography style={{ fontSize: mobile ? "11px" : "13px" }}>
           {" "}
           {i18n.t("pages.home.correctTreatment")}
         </Typography>
         <Button>
-          <Typography style={{ fontSize: "22px", color: "#5D5C5C" }}>
+          <Typography
+            style={{ fontSize: mobile ? "15px" : "22px", color: "#5D5C5C" }}
+          >
             EXPERT ADVICE
           </Typography>
         </Button>

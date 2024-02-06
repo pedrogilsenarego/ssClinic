@@ -5,9 +5,19 @@ const Whats = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div
-      style={{ display: "flex", alignItems: "start", flexDirection: "column" }}
+      style={{
+        display: "flex",
+        alignItems: mobile ? "center" : "start",
+        flexDirection: "column",
+      }}
     >
-      <Typography style={{ fontSize: mobile ? "17px" : "40px" }}>
+      <Typography
+        style={{
+          fontSize: mobile ? "17px" : "40px",
+          textTransform: "uppercase",
+          fontWeight: "bold",
+        }}
+      >
         Em destaque...
       </Typography>
       <Grid

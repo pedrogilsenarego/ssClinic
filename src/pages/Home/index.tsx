@@ -21,7 +21,7 @@ const Home = () => {
           objectFit: "cover",
         }}
       />
-      <Container style={{ marginTop: "86px" }} maxWidth="xl">
+      <Container style={{ marginTop: mobile ? "50px" : "86px" }} maxWidth="xl">
         <ContainerC />
         <div style={{ marginTop: "200px" }}>
           <Whats />
