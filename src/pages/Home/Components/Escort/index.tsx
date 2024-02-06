@@ -80,22 +80,35 @@ const Escort = () => {
             }}
           />
 
-          <Button style={{ marginLeft: "10px", marginRight: "50px" }}>
-            <Typography> {i18n.t("pages.home.conciergeButton")}</Typography>
+          <Button
+            fullWidth={mobile ? false : true}
+            style={{ marginLeft: "10px", marginRight: "50px" }}
+          >
+            <Typography style={{ fontSize: mobile ? "11px" : "16px" }}>
+              {" "}
+              {i18n.t("pages.home.conciergeButton")}
+            </Typography>
           </Button>
         </div>
       </div>
       <div
         style={{
           display: "flex",
-          columnGap: mobile ? "20px" : "70px",
+          columnGap: mobile ? "0px" : "70px",
           width: "100%",
+          padding: mobile ? "0px 20px" : undefined,
           zIndex: 10,
-          justifyContent: "center",
+
+          justifyContent: mobile ? "space-between" : "center",
         }}
       >
         <div
-          style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            columnGap: "10px",
+            flexDirection: mobile ? "column" : "row",
+          }}
         >
           <img
             src={Image1}
@@ -111,7 +124,13 @@ const Escort = () => {
           </Typography>
         </div>
         <div
-          style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+
+            columnGap: "10px",
+            flexDirection: mobile ? "column" : "row",
+          }}
         >
           <img
             src={Image1}
@@ -127,7 +146,12 @@ const Escort = () => {
           </Typography>
         </div>
         <div
-          style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            columnGap: "10px",
+            flexDirection: mobile ? "column" : "row",
+          }}
         >
           <img
             src={Limousine}
@@ -143,7 +167,12 @@ const Escort = () => {
           </Typography>
         </div>
         <div
-          style={{ display: "flex", alignItems: "center", columnGap: "10px" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            columnGap: "10px",
+            flexDirection: mobile ? "column" : "row",
+          }}
         >
           <img
             src={Valet}

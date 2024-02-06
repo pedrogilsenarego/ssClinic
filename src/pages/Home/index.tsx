@@ -27,17 +27,17 @@ const Home = () => {
           <Whats />
         </div>
       </Container>
-      <div style={{ marginTop: "400px" }}>
+      <div style={{ marginTop: mobile ? "100px" : "400px" }}>
         <Escort />
       </div>
 
       <div
         style={{
-          marginTop: "350px",
+          marginTop: mobile ? "100px" : "350px",
           width: "100%",
           display: "flex",
           alignItems: "center",
-          rowGap: "50px",
+          rowGap: mobile ? "30px" : "50px",
           flexDirection: "column",
         }}
       >

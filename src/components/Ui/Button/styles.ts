@@ -4,9 +4,15 @@ interface Props {
   hover: boolean;
   darkenColors?: boolean;
   lightenColor?: boolean;
+  mobile?: boolean;
 }
 
-export const buttonStyle = ({ hover, darkenColors, lightenColor }: Props) => ({
+export const buttonStyle = ({
+  hover,
+  darkenColors,
+  lightenColor,
+  mobile,
+}: Props) => ({
   backgroundColor: hover
     ? lightenColor
       ? Colors.white[40010]
@@ -21,7 +27,7 @@ export const buttonStyle = ({ hover, darkenColors, lightenColor }: Props) => ({
   fontWeight: "bold",
   color: Colors.white[400],
   borderRadius: "40px",
-  padding: "2px 40px",
+  padding: mobile ? "2px 10px" : "2px 40px",
   textTransform: "capitalize",
   marginTop: "5px",
   border: `solid 2px ${Colors.black[40050]}`,
