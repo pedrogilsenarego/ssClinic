@@ -111,6 +111,7 @@ const ContainerC = () => {
     <>
       {!mobile && (
         <Typography
+          variant="h1"
           style={{
             textAlign: mobile ? "center" : undefined,
             fontSize: mobile ? "14px" : "60px",

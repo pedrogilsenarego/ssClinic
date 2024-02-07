@@ -57,13 +57,31 @@ export const mainColors = {
 export const theme = createTheme({
   typography: {
     allVariants: {
-      fontFamily: "'termina', sans-serif;",
+      fontFamily: "'termina', sans-serif",
       fontWeight: 400,
       textTransform: "none",
       fontSize: 16,
       color: Colors.blackish[400],
       caretColor: "transparent",
     },
+    h1: {
+      fontFamily: "'orpheuspro', serif",
+      fontWeight: 700,
+      lineHeight: 1.2, // Example line height, adjust as needed
+    },
+    h2: {
+      fontFamily: "'orpheuspro', serif",
+      fontWeight: 500,
+      fontSize: "2.5rem", // Example size, adjust as needed
+      lineHeight: 1.2, // Example line height, adjust as needed
+    },
+    h3: {
+      fontFamily: "'orpheuspro', serif",
+      fontWeight: 500,
+      fontSize: "2rem", // Example size, adjust as needed
+      lineHeight: 1.2, // Example line height, adjust as needed
+    },
+    // Add more variant overrides as needed
   },
   palette: {
     primary: {
