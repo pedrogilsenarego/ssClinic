@@ -27,6 +27,7 @@ export const content = {
       },
       footer: {
         registeredBrand: "All intelectual rights are proprietary",
+        schedulle: "Marcações",
       },
       cartDrawer: {
         title: "Cart",
