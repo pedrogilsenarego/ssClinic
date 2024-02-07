@@ -115,6 +115,7 @@ const ContainerC = () => {
             textAlign: mobile ? "center" : undefined,
             fontSize: mobile ? "14px" : "60px",
             fontWeight: 500,
+            fontFamily: "'orpheuspro', sans-serif;",
           }}
         >
           IN THE PURSUIT OF LONGEVITY

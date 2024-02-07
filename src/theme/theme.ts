@@ -57,7 +57,7 @@ export const mainColors = {
 export const theme = createTheme({
   typography: {
     allVariants: {
-      fontFamily: "'Urbanist', sans-serif",
+      fontFamily: "'termina', sans-serif;",
       fontWeight: 400,
       textTransform: "none",
       fontSize: 16,

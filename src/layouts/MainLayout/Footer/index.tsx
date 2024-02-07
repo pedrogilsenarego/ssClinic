@@ -46,166 +46,283 @@ const Footer = () => {
     }[];
   };
 
-  const Item = ({ title, list }: ItemProps) => {
+  const renderLaptop = () => {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-
-          rowGap: "16px",
-        }}
-      >
-        <Typography style={{ fontWeight: "bold" }}>{title}</Typography>
-        <div>
-          {list.map((item) => {
-            return (
-              <Typography
+      <Box style={{ backgroundColor: "lightGrey" }}>
+        <Container maxWidth="xl">
+          <Grid
+            container
+            style={{
+              marginTop: "60px",
+              marginBottom: "50px",
+              flex: "display",
+              flexDirection: mobile ? "column" : "row",
+            }}
+            spacing={2}
+          >
+            <Grid item xs={2.4}>
+              <img
+                src={mainLogo}
+                alt=""
                 style={{
-                  textTransform: "uppercase",
-                  textDecoration: "underline",
-                  fontSize: "12px",
-                  cursor: "pointer",
+                  height: 40,
                 }}
-              >
-                {item.title}
-              </Typography>
-            );
-          })}
-        </div>
-      </div>
-    );
-  };
-  return (
-    <Box style={{ backgroundColor: "lightGrey" }}>
-      <Container maxWidth="xl">
-        <Grid
-          container
-          style={{
-            marginTop: "60px",
-            marginBottom: "50px",
-            flex: "display",
-            flexDirection: mobile ? "column" : "row",
-          }}
-          spacing={2}
-        >
-          <Grid item xs={2.4}>
-            <img
-              src={mainLogo}
-              alt=""
-              style={{
-                height: 40,
-              }}
-            />
-          </Grid>
-          <Grid item xs={2.4}>
-            <Button>
-              <Typography>Marcações</Typography>
-            </Button>
-          </Grid>
-          <Grid item xs={2.4}>
-            <div style={{ display: "flex", columnGap: "20px" }}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  rowGap: "20px",
-                }}
-              >
-                {" "}
-                <img
-                  src={Instagram}
-                  alt=""
+              />
+            </Grid>
+            <Grid item xs={2.4}>
+              <Button>
+                <Typography>Marcações</Typography>
+              </Button>
+            </Grid>
+            <Grid item xs={2.4}>
+              <div style={{ display: "flex", columnGap: "20px" }}>
+                <div
                   style={{
-                    height: 23,
+                    display: "flex",
+                    flexDirection: "column",
+                    rowGap: "20px",
                   }}
-                />
-                <img
-                  src={Facebook}
-                  alt=""
+                >
+                  {" "}
+                  <img
+                    src={Instagram}
+                    alt=""
+                    style={{
+                      height: 23,
+                    }}
+                  />
+                  <img
+                    src={Facebook}
+                    alt=""
+                    style={{
+                      height: 23,
+                    }}
+                  />
+                  <img
+                    src={Youtube}
+                    alt=""
+                    style={{
+                      height: 16,
+                    }}
+                  />
+                </div>
+                <div
                   style={{
-                    height: 23,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
                   }}
-                />
-                <img
-                  src={Youtube}
-                  alt=""
-                  style={{
-                    height: 16,
-                  }}
-                />
+                >
+                  <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
+                    Contacte-nos
+                  </Typography>
+                  <Typography
+                    style={{ fontSize: "10px", textDecoration: "underline" }}
+                  >
+                    RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
+                    INFO@EHTIQ.COM +351 215 909 009
+                  </Typography>
+                </div>
               </div>
+            </Grid>
+            <Grid item xs={2.4}>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
+                  height: "100%",
                 }}
               >
                 <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
-                  Contacte-nos
+                  As nossas políticas
                 </Typography>
                 <Typography
                   style={{ fontSize: "10px", textDecoration: "underline" }}
                 >
-                  RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
-                  INFO@EHTIQ.COM +351 215 909 009
+                  POLITICA DE PRIVACIDADE POLÍTICA DE COOKIES POLÍTICA DE
+                  E-COMMERCE
                 </Typography>
               </div>
-            </div>
-          </Grid>
-          <Grid item xs={2.4}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                height: "100%",
-              }}
-            >
-              <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
-                As nossas políticas
-              </Typography>
-              <Typography
-                style={{ fontSize: "10px", textDecoration: "underline" }}
+            </Grid>
+            <Grid item xs={2.4}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "end",
+                  height: "100%",
+                  justifyContent: "space-around",
+                }}
               >
-                POLITICA DE PRIVACIDADE POLÍTICA DE COOKIES POLÍTICA DE
-                E-COMMERCE
-              </Typography>
-            </div>
+                <img
+                  src={LivroReclamações}
+                  alt=""
+                  style={{
+                    height: 38,
+                  }}
+                />
+                <Typography style={{ fontSize: "5px", fontWeight: 500 }}>
+                  Registar reclamação
+                </Typography>
+
+                <Typography style={{ fontSize: "7px", fontWeight: 600 }}>
+                  @Copyright 2024, develop by <u>Linea Agency</u>
+                </Typography>
+              </div>
+            </Grid>
           </Grid>
-          <Grid item xs={2.4}>
-            <div
+        </Container>
+      </Box>
+    );
+  };
+  const renderMobile = () => {
+    return (
+      <Box style={{ backgroundColor: "lightGrey" }}>
+        <Container maxWidth="xl">
+          <Grid
+            container
+            style={{
+              marginTop: "60px",
+              marginBottom: "50px",
+              flex: "display",
+              flexDirection: mobile ? "column" : "row",
+            }}
+            spacing={4}
+          >
+            <Grid
+              item
+              xs={12}
               style={{
                 display: "flex",
-                flexDirection: "column",
-                alignItems: "end",
-                height: "100%",
-                justifyContent: "space-around",
+                justifyContent: "center",
+                width: "100%",
               }}
             >
               <img
-                src={LivroReclamações}
+                src={mainLogo}
                 alt=""
                 style={{
-                  height: 38,
+                  height: 40,
                 }}
               />
-              <Typography style={{ fontSize: "7px" }}>
-                Registar reclamação
-              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+              }}
+            >
+              <Button>
+                <Typography>Marcações</Typography>
+              </Button>
+            </Grid>
+            <Grid item xs={12} style={{ margin: "0px 50px" }}>
+              <div style={{ display: "flex", columnGap: "20px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
+                    Contacte-nos
+                  </Typography>
+                  <Typography
+                    style={{ fontSize: "10px", textDecoration: "underline" }}
+                  >
+                    RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
+                    INFO@EHTIQ.COM +351 215 909 009
+                  </Typography>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    rowGap: "20px",
+                  }}
+                >
+                  {" "}
+                  <img
+                    src={Instagram}
+                    alt=""
+                    style={{
+                      height: 23,
+                    }}
+                  />
+                  <img
+                    src={Facebook}
+                    alt=""
+                    style={{
+                      height: 23,
+                    }}
+                  />
+                  <img
+                    src={Youtube}
+                    alt=""
+                    style={{
+                      height: 16,
+                    }}
+                  />
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} style={{ margin: "0px 50px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  height: "100%",
+                }}
+              >
+                <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
+                  As nossas políticas
+                </Typography>
+                <Typography
+                  style={{ fontSize: "10px", textDecoration: "underline" }}
+                >
+                  POLITICA DE PRIVACIDADE POLÍTICA DE COOKIES POLÍTICA DE
+                  E-COMMERCE
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item xs={12}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  height: "100%",
+                  justifyContent: "space-around",
+                }}
+              >
+                <img
+                  src={LivroReclamações}
+                  alt=""
+                  style={{
+                    height: 38,
+                  }}
+                />
+                <Typography style={{ fontSize: "7px" }}>
+                  Registar reclamação
+                </Typography>
 
-              <Typography style={{ fontSize: "12px" }}>
-                Copyright 2024, develop by <u>Linea Agency</u>
-              </Typography>
-            </div>
+                <Typography style={{ fontSize: "12px", marginTop: "20px" }}>
+                  @Copyright 2024, develop by <u>Linea Agency</u>
+                </Typography>
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </Box>
-  );
+        </Container>
+      </Box>
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };
 
 export default Footer;
