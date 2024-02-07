@@ -12,10 +12,14 @@ const Whats = () => {
       }}
     >
       <Typography
+        variant="h1"
         style={{
-          fontSize: mobile ? "17px" : "40px",
-          textTransform: "uppercase",
-          fontWeight: "bold",
+          fontStyle: "italic",
+
+          fontSize: mobile ? "17px" : "50px",
+          letterSpacing: "1px",
+          textTransform: "capitalize",
+          fontWeight: 400,
         }}
       >
         Em destaque...

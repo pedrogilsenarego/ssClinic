@@ -2,7 +2,6 @@ import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import logo12 from "../../../../assets/EHTIQ BRANDS-12.svg";
 import Button from "../../../../components/Ui/Button";
-import Title from "../../../../components/Ui/Title";
 import { mainColors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
 
@@ -20,7 +19,6 @@ const ContainerC = () => {
           position: "relative",
           cursor: "pointer",
           width: "100%",
-
           aspectRatio: 0.72,
         }}
       >
@@ -53,9 +51,10 @@ const ContainerC = () => {
           >
             <Typography
               style={{
-                fontSize: mobile ? "14px" : "23px",
+                fontSize: mobile ? "14px" : "18px",
                 textTransform: "uppercase",
-                fontWeight: 600,
+                fontWeight: 500,
+                letterSpacing: "2px",
                 textAlign: "center",
                 transition: "margin-top ease-in-out 0.5s", // Add transition
                 marginTop: hover ? "-20px" : "0", // Adjust marginTop based on hover state
@@ -114,9 +113,10 @@ const ContainerC = () => {
           variant="h1"
           style={{
             textAlign: mobile ? "center" : undefined,
-            fontSize: mobile ? "14px" : "60px",
+            fontSize: mobile ? "14px" : "55px",
             fontWeight: 500,
             fontFamily: "'orpheuspro', sans-serif;",
+            letterSpacing: "4px",
           }}
         >
           IN THE PURSUIT OF LONGEVITY
@@ -145,6 +145,7 @@ const ContainerC = () => {
           <div>
             {mobile && (
               <Typography
+                variant="h1"
                 style={{
                   textAlign: "start",
                   fontSize: "15px",
@@ -190,11 +191,13 @@ const ContainerC = () => {
             }}
           >
             <Typography
+              variant="h1"
               style={{
                 textTransform: "uppercase",
                 textAlign: mobile ? "center" : "center",
-                fontSize: mobile ? "14px" : "20px",
-                fontWeight: 600,
+                fontSize: mobile ? "14px" : "25px",
+                fontWeight: 700,
+                letterSpacing: "2px",
               }}
             >
               {i18n.t("pages.home.beutyAndWellBeing")}
@@ -203,7 +206,8 @@ const ContainerC = () => {
               style={{
                 textAlign: mobile ? "center" : "center",
                 color: mainColors.primary[400],
-                fontSize: mobile ? "12px" : "18px",
+                fontSize: mobile ? "12px" : "16px",
+                letterSpacing: "1px",
               }}
             >
               {i18n.t("pages.home.beutyText")}
@@ -225,11 +229,12 @@ const ContainerC = () => {
           style={{ display: "flex", justifyContent: "center", width: "100%" }}
         >
           <Typography
+            variant="h1"
             style={{
-              color: "white",
               textTransform: "uppercase",
               fontSize: "30px",
-              fontWeight: "bold",
+              fontWeight: 700,
+              letterSpacing: "3px",
             }}
           >
             {i18n.t("pages.home.treatments")}
@@ -291,13 +296,19 @@ const ContainerC = () => {
           marginTop: "100px",
         }}
       >
-        <Typography style={{ fontSize: mobile ? "11px" : "13px" }}>
+        <Typography
+          style={{ fontSize: mobile ? "11px" : "13px", letterSpacing: "2px" }}
+        >
           {" "}
           {i18n.t("pages.home.correctTreatment")}
         </Typography>
         <Button>
           <Typography
-            style={{ fontSize: mobile ? "15px" : "22px", color: "#5D5C5C" }}
+            style={{
+              fontSize: mobile ? "15px" : "14px",
+              color: "#5D5C5C",
+              letterSpacing: "1px",
+            }}
           >
             EXPERT ADVICE
           </Typography>
