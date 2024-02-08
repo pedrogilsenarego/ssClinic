@@ -29,7 +29,7 @@ const Whats = () => {
         container
         columnSpacing={"40px"}
         rowSpacing="30px"
-        style={{ marginTop: "30px" }}
+        style={{ marginTop: mobile ? "25px" : "30px" }}
       >
         <Grid item xs={12} md={4}>
           <div>

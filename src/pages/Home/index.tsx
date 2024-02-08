@@ -46,10 +46,11 @@ const Home = () => {
         ></div>
         <Typography
           style={{
-            fontSize: mobile ? "15px" : "19px",
+            fontSize: mobile ? "12px" : "19px",
             letterSpacing: "1px",
+            lineHeight: "22px",
             textTransform: "uppercase",
-            maxWidth: "70%",
+            maxWidth: mobile ? "60%" : "70%",
             textAlign: "center",
           }}
         >

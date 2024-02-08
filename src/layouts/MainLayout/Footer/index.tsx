@@ -14,6 +14,9 @@ import Instagram from "../../../assets/Insta.svg";
 import LivroReclamações from "../../../assets/LivroReclamações.svg";
 import mainLogo from "../../../assets/LogoFull.svg";
 import Youtube from "../../../assets/Youtube.svg";
+import mail from "../../../assets/mail.svg";
+import map from "../../../assets/map.svg";
+import phone from "../../../assets/phone.svg";
 import Button from "../../../components/Ui/Button";
 import { i18n } from "../../../translations/i18n";
 
@@ -110,18 +113,73 @@ const Footer = () => {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "center",
+                    justifyContent: "start",
+                    rowGap: "10px",
                   }}
                 >
                   <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
                     Contacte-nos
                   </Typography>
-                  <Typography
-                    style={{ fontSize: "10px", textDecoration: "underline" }}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "start",
+                      columnGap: "4px",
+                    }}
                   >
-                    RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
-                    INFO@EHTIQ.COM +351 215 909 009
-                  </Typography>
+                    <img
+                      src={map}
+                      alt=""
+                      style={{
+                        height: 12,
+                      }}
+                    />
+                    <Typography
+                      style={{ fontSize: "8px", textDecoration: "underline" }}
+                    >
+                      RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
+                    </Typography>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "start",
+                      columnGap: "4px",
+                    }}
+                  >
+                    <img
+                      src={mail}
+                      alt=""
+                      style={{
+                        height: 12,
+                      }}
+                    />
+                    <Typography
+                      style={{ fontSize: "8px", textDecoration: "underline" }}
+                    >
+                      INFO@EHTIQ.COM
+                    </Typography>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "start",
+                      columnGap: "4px",
+                    }}
+                  >
+                    <img
+                      src={phone}
+                      alt=""
+                      style={{
+                        height: 12,
+                      }}
+                    />
+                    <Typography
+                      style={{ fontSize: "8px", textDecoration: "underline" }}
+                    >
+                      +351 215 909 009
+                    </Typography>
+                  </div>
                 </div>
               </div>
             </Grid>
@@ -130,18 +188,28 @@ const Footer = () => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "center",
+                  justifyContent: "start",
                   height: "100%",
+                  rowGap: "10px",
                 }}
               >
                 <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
                   As nossas políticas
                 </Typography>
                 <Typography
-                  style={{ fontSize: "10px", textDecoration: "underline" }}
+                  style={{ fontSize: "8px", textDecoration: "underline" }}
                 >
-                  POLITICA DE PRIVACIDADE POLÍTICA DE COOKIES POLÍTICA DE
-                  E-COMMERCE
+                  POLITICA DE PRIVACIDADE
+                </Typography>
+                <Typography
+                  style={{ fontSize: "8px", textDecoration: "underline" }}
+                >
+                  POLÍTICA DE COOKIES
+                </Typography>
+                <Typography
+                  style={{ fontSize: "8px", textDecoration: "underline" }}
+                >
+                  POLÍTICA DE E-COMMERCE
                 </Typography>
               </div>
             </Grid>
@@ -162,7 +230,13 @@ const Footer = () => {
                     height: 38,
                   }}
                 />
-                <Typography style={{ fontSize: "5px", fontWeight: 500 }}>
+                <Typography
+                  style={{
+                    fontSize: "5px",
+                    marginTop: "-15px",
+                    fontWeight: 500,
+                  }}
+                >
                   Registar reclamação
                 </Typography>
 
@@ -220,24 +294,79 @@ const Footer = () => {
                 <Typography>Marcações</Typography>
               </Button>
             </Grid>
-            <Grid item xs={12} style={{ margin: "0px 50px" }}>
+            <Grid item xs={12} style={{ margin: "20px 50px" }}>
               <div style={{ display: "flex", columnGap: "20px" }}>
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
+                    rowGap: "10px",
                   }}
                 >
                   <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
                     Contacte-nos
                   </Typography>
-                  <Typography
-                    style={{ fontSize: "10px", textDecoration: "underline" }}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "start",
+                      columnGap: "4px",
+                    }}
                   >
-                    RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
-                    INFO@EHTIQ.COM +351 215 909 009
-                  </Typography>
+                    <img
+                      src={map}
+                      alt=""
+                      style={{
+                        height: 12,
+                      }}
+                    />
+                    <Typography
+                      style={{ fontSize: "8px", textDecoration: "underline" }}
+                    >
+                      RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
+                    </Typography>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "start",
+                      columnGap: "4px",
+                    }}
+                  >
+                    <img
+                      src={mail}
+                      alt=""
+                      style={{
+                        height: 12,
+                      }}
+                    />
+                    <Typography
+                      style={{ fontSize: "8px", textDecoration: "underline" }}
+                    >
+                      INFO@EHTIQ.COM
+                    </Typography>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "start",
+                      columnGap: "4px",
+                    }}
+                  >
+                    <img
+                      src={phone}
+                      alt=""
+                      style={{
+                        height: 12,
+                      }}
+                    />
+                    <Typography
+                      style={{ fontSize: "8px", textDecoration: "underline" }}
+                    >
+                      +351 215 909 009
+                    </Typography>
+                  </div>
                 </div>
                 <div
                   style={{
@@ -278,6 +407,7 @@ const Footer = () => {
                   flexDirection: "column",
                   justifyContent: "center",
                   height: "100%",
+                  rowGap: "10px",
                 }}
               >
                 <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
@@ -286,8 +416,17 @@ const Footer = () => {
                 <Typography
                   style={{ fontSize: "10px", textDecoration: "underline" }}
                 >
-                  POLITICA DE PRIVACIDADE POLÍTICA DE COOKIES POLÍTICA DE
-                  E-COMMERCE
+                  POLITICA DE PRIVACIDADE
+                </Typography>
+                <Typography
+                  style={{ fontSize: "10px", textDecoration: "underline" }}
+                >
+                  POLÍTICA DE COOKIES
+                </Typography>
+                <Typography
+                  style={{ fontSize: "10px", textDecoration: "underline" }}
+                >
+                  POLÍTICA DE E-COMMERCE
                 </Typography>
               </div>
             </Grid>
@@ -308,11 +447,17 @@ const Footer = () => {
                     height: 38,
                   }}
                 />
-                <Typography style={{ fontSize: "7px" }}>
+                <Typography style={{ fontSize: "7px", marginTop: "10px" }}>
                   Registar reclamação
                 </Typography>
 
-                <Typography style={{ fontSize: "12px", marginTop: "20px" }}>
+                <Typography
+                  style={{
+                    fontSize: "7px",
+                    marginTop: "20px",
+                    letterSpacing: "1px",
+                  }}
+                >
                   @Copyright 2024, develop by <u>Linea Agency</u>
                 </Typography>
               </div>

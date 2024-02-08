@@ -8,8 +8,8 @@ import { i18n } from "../../../../translations/i18n";
 const Escort = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const iconSize = mobile ? "20px" : "50px";
-  const iconTextSize = mobile ? "8px" : "16px";
+  const iconSize = mobile ? "29px" : "50px";
+  const iconTextSize = mobile ? "7px" : "16px";
   return (
     <div
       style={{
@@ -18,7 +18,7 @@ const Escort = () => {
         height: mobile ? "600px" : "670px",
         display: "flex",
         flexDirection: "column",
-        rowGap: "100px",
+        rowGap: mobile ? "70px" : "100px",
         justifyContent: "center",
       }}
     >
@@ -26,7 +26,7 @@ const Escort = () => {
         alt=""
         style={{
           width: mobile ? "100%" : "50%",
-          height: "90vh",
+          height: mobile ? "110vh" : "90vh",
           zIndex: 1,
           position: "absolute",
           objectFit: "cover",
@@ -36,7 +36,8 @@ const Escort = () => {
       <div
         style={{
           paddingTop: "5%",
-          margin: mobile ? "0px 20px" : "0px 20%",
+
+          margin: mobile ? "0px 40px" : "0px 10%",
           display: "flex",
           zIndex: 10,
 
@@ -45,7 +46,7 @@ const Escort = () => {
       >
         <div
           style={{
-            maxWidth: mobile ? undefined : "30%",
+            maxWidth: mobile ? undefined : "40%",
             display: "flex",
             flexDirection: "column",
             zIndex: 1000,
@@ -65,14 +66,22 @@ const Escort = () => {
             <Typography
               variant="h1"
               style={{
+                maxWidth: mobile ? undefined : "70%",
                 marginTop: "20px",
                 textTransform: "uppercase",
                 fontWeight: "bold",
                 fontSize: mobile ? "28px" : "32px",
+                letterSpacing: mobile ? "2px" : "1px",
               }}
             >
               {i18n.t("pages.home.conciergeTitle")}
-              <span style={{ fontStyle: "italic", fontWeight: 400 }}>
+              <span
+                style={{
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  textTransform: "capitalize",
+                }}
+              >
                 {" "}
                 {i18n.t("pages.home.conciergeTitle2")}{" "}
               </span>
@@ -86,13 +95,14 @@ const Escort = () => {
             style={{
               fontSize: mobile ? "12px" : "13px",
               textAlign: "justify",
+              lineHeight: "23px",
               fontWeight: "300",
             }}
           />
 
           <Button
             fullWidth={mobile ? false : true}
-            style={{ marginLeft: "10px", marginRight: "50px" }}
+            style={{ marginLeft: mobile ? "0px" : "10px", marginRight: "70px" }}
           >
             <Typography style={{ fontSize: mobile ? "11px" : "16px" }}>
               {" "}
@@ -106,7 +116,7 @@ const Escort = () => {
           display: "flex",
           columnGap: mobile ? "0px" : "70px",
           width: "100%",
-          padding: mobile ? "0px 20px" : undefined,
+          padding: mobile ? "0px 35px" : undefined,
           zIndex: 10,
 
           justifyContent: mobile ? "space-between" : "center",
@@ -128,7 +138,11 @@ const Escort = () => {
             }}
           />
           <Typography
-            style={{ textTransform: "uppercase", fontSize: iconTextSize }}
+            style={{
+              textTransform: "uppercase",
+              fontSize: iconTextSize,
+              letterSpacing: "1px",
+            }}
           >
             {i18n.t("pages.home.hotel")}
           </Typography>
@@ -150,7 +164,11 @@ const Escort = () => {
             }}
           />
           <Typography
-            style={{ textTransform: "uppercase", fontSize: iconTextSize }}
+            style={{
+              textTransform: "uppercase",
+              fontSize: iconTextSize,
+              letterSpacing: "1px",
+            }}
           >
             {i18n.t("pages.home.travel")}
           </Typography>
@@ -171,7 +189,11 @@ const Escort = () => {
             }}
           />
           <Typography
-            style={{ textTransform: "uppercase", fontSize: iconTextSize }}
+            style={{
+              textTransform: "uppercase",
+              fontSize: iconTextSize,
+              letterSpacing: "1px",
+            }}
           >
             {i18n.t("pages.home.transport")}
           </Typography>
@@ -192,7 +214,11 @@ const Escort = () => {
             }}
           />
           <Typography
-            style={{ textTransform: "uppercase", fontSize: iconTextSize }}
+            style={{
+              textTransform: "uppercase",
+              fontSize: iconTextSize,
+              letterSpacing: "1px",
+            }}
           >
             {i18n.t("pages.home.concierge")}
           </Typography>
