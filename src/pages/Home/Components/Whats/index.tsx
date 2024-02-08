@@ -7,8 +7,9 @@ const Whats = () => {
     <div
       style={{
         display: "flex",
-        alignItems: mobile ? "center" : "start",
+        alignItems: mobile ? "start" : "start",
         flexDirection: "column",
+        padding: mobile ? "0px 25px" : undefined,
       }}
     >
       <Typography
@@ -16,7 +17,7 @@ const Whats = () => {
         style={{
           fontStyle: "italic",
 
-          fontSize: mobile ? "17px" : "50px",
+          fontSize: mobile ? "27px" : "50px",
           letterSpacing: "1px",
           textTransform: "capitalize",
           fontWeight: 400,

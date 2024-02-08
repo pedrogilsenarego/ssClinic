@@ -147,8 +147,9 @@ const ContainerC = () => {
               <Typography
                 variant="h1"
                 style={{
-                  textAlign: "start",
-                  fontSize: "15px",
+                  textAlign: "center",
+                  fontSize: "20px",
+                  letterSpacing: "1px",
                   fontWeight: 500,
                 }}
               >
@@ -187,7 +188,7 @@ const ContainerC = () => {
 
               height: mobile ? undefined : "500px",
               rowGap: "20px",
-              width: "70%",
+              width: mobile ? "90%" : "70%",
             }}
           >
             <Typography
@@ -195,9 +196,9 @@ const ContainerC = () => {
               style={{
                 textTransform: "uppercase",
                 textAlign: mobile ? "center" : "center",
-                fontSize: mobile ? "14px" : "25px",
+                fontSize: mobile ? "15px" : "25px",
                 fontWeight: 700,
-                letterSpacing: "2px",
+                letterSpacing: mobile ? "1px" : "2px",
               }}
             >
               {i18n.t("pages.home.beutyAndWellBeing")}
@@ -206,13 +207,18 @@ const ContainerC = () => {
               style={{
                 textAlign: mobile ? "center" : "center",
                 color: mainColors.primary[400],
-                fontSize: mobile ? "12px" : "16px",
+                fontSize: mobile ? "10px" : "16px",
                 letterSpacing: "1px",
+                lineHeight: mobile ? "17px" : undefined,
               }}
             >
               {i18n.t("pages.home.beutyText")}
             </Typography>
-            <img src={logo12} alt="" style={{ width: "90px" }} />
+            <img
+              src={logo12}
+              alt=""
+              style={{ width: mobile ? "60px" : "90px" }}
+            />
           </Box>
         </Grid>
       </Grid>
@@ -232,9 +238,9 @@ const ContainerC = () => {
             variant="h1"
             style={{
               textTransform: "uppercase",
-              fontSize: "30px",
+              fontSize: mobile ? "25px" : "30px",
               fontWeight: 700,
-              letterSpacing: "3px",
+              letterSpacing: mobile ? "2px" : "3px",
             }}
           >
             {i18n.t("pages.home.treatments")}
@@ -297,7 +303,12 @@ const ContainerC = () => {
         }}
       >
         <Typography
-          style={{ fontSize: mobile ? "11px" : "13px", letterSpacing: "2px" }}
+          style={{
+            fontSize: mobile ? "9px" : "13px",
+            letterSpacing: "2px",
+            textAlign: mobile ? "center" : "left",
+            maxWidth: "80%",
+          }}
         >
           {" "}
           {i18n.t("pages.home.correctTreatment")}

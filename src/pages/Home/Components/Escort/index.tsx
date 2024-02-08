@@ -56,19 +56,27 @@ const Escort = () => {
             <Typography
               style={{
                 textTransform: "uppercase",
-                fontSize: mobile ? "8px" : "15px",
+                fontSize: mobile ? "8px" : "11px",
+                letterSpacing: "2px",
               }}
             >
               {i18n.t("pages.home.conciergeServices")}
             </Typography>
             <Typography
+              variant="h1"
               style={{
+                marginTop: "20px",
                 textTransform: "uppercase",
                 fontWeight: "bold",
                 fontSize: mobile ? "28px" : "32px",
               }}
             >
               {i18n.t("pages.home.conciergeTitle")}
+              <span style={{ fontStyle: "italic", fontWeight: 400 }}>
+                {" "}
+                {i18n.t("pages.home.conciergeTitle2")}{" "}
+              </span>
+              {i18n.t("pages.home.conciergeTitle3")}
             </Typography>
           </div>
           <Typography
@@ -76,7 +84,9 @@ const Escort = () => {
               __html: i18n.t("pages.home.conciergeText"),
             }}
             style={{
-              fontSize: mobile ? "12px" : "16px",
+              fontSize: mobile ? "12px" : "13px",
+              textAlign: "justify",
+              fontWeight: "300",
             }}
           />
 

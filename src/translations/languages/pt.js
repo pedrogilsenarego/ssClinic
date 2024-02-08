@@ -48,7 +48,9 @@ export const content = {
           nonCirurgy: "Não Cirúrgico",
           healthPrevention: "Saúde Preventida ",
           conciergeServices: "serviços concierge",
-          conciergeTitle: "Descubra o padrão ehtiq",
+          conciergeTitle: "Descubra o",
+          conciergeTitle2: "padrão",
+          conciergeTitle3: "ehtiq",
           conciergeText:
             "O Serviço de Concierge é projetado para oferecer conveniência máxima, eliminando as preocupações logísticas e otimizando o seu tempo.</br></br> Do agendamento de consultas ao acesso prioritário a especialistas e tratamentos, a nossa equipa Concierge está à disposição para garantir que a sua visita seja tranquila, confortável.",
           conciergeButton: "Solicitar concierge",

@@ -1,3 +1,49 @@
 
 
-https://youtu.be/rfTJ_X2DR6Q
+
+Termina Light
+font-family: "termina", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Termina Regular
+font-family: "termina", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Termina Medium
+font-family: "termina", sans-serif;
+font-weight: 500;
+font-style: normal;
+
+Termina Demi
+font-family: "termina", sans-serif;
+font-weight: 600;
+font-style: normal;
+
+
+FONTE ORPHEUS PRO
+
+
+<head>
+<link rel="stylesheet" href="https://use.typekit.net/ytt5ctq.css">
+
+Orpheus Pro Regular
+font-family: "orpheuspro", serif;
+font-weight: 400;
+font-style: normal;
+
+Orpheus Pro Italic
+font-family: "orpheuspro", serif;
+font-weight: 400;
+font-style: italic;
+
+Orpheus Pro Medium
+font-family: "orpheuspro", serif;
+font-weight: 500;
+font-style: normal;
+
+Orpheus Pro Bold
+font-family: "orpheuspro", serif;
+font-weight: 700;
+font-style: normal;

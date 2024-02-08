@@ -68,6 +68,14 @@ export const theme = createTheme({
       fontFamily: "'orpheuspro', serif",
       fontWeight: 400,
     },
+    h2: {
+      fontFamily: "'termina', sans-serif",
+      fontWeight: 500,
+      textTransform: "none",
+      fontSize: 16,
+      color: Colors.blackish[400],
+      caretColor: "transparent",
+    },
 
     // Add more variant overrides as needed
   },
