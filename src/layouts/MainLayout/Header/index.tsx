@@ -301,17 +301,17 @@ const Header = () => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    columnGap: "20px",
+                    columnGap: "24px",
                     margin: "0px 15px",
-                    color: "grey",
                   }}
                 >
                   <Typography
                     className={"text"}
                     style={{
                       cursor: !isScrolled ? undefined : "pointer",
-                      fontSize: "15px",
-                      fontWeight: "bold",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      letterSpacing: "1px",
                       textTransform: "uppercase",
                       color:
                         location.pathname === option.link
