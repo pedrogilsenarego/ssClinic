@@ -10,7 +10,7 @@ const SchedulleMembership = () => {
         <div
           style={{
             padding: "50px 0px",
-            borderRight: "solid 1px black",
+            borderRight: mobile ? undefined : "solid 1px black",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -32,7 +32,7 @@ const SchedulleMembership = () => {
               textAlign: "center",
               fontSize: mobile ? "8px" : "13px",
               letterSpacing: "1px",
-              lineHeight: "23px",
+              lineHeight: mobile ? "14px" : "23px",
             }}
           >
             Agende online ou faça a sua marcação com os nossos assistentes.
@@ -53,7 +53,7 @@ const SchedulleMembership = () => {
         <div
           style={{
             padding: "50px 0px",
-            borderLeft: "solid 1px black",
+            borderLeft: mobile ? undefined : "solid 1px black",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -75,7 +75,7 @@ const SchedulleMembership = () => {
               textAlign: "center",
               fontSize: mobile ? "8px" : "13px",
               letterSpacing: "1px",
-              lineHeight: "23px",
+              lineHeight: mobile ? "14px" : "23px",
             }}
           >
             Explore benefícios exclusivos com o nosso Acesso Membership.
