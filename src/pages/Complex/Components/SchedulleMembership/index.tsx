@@ -14,11 +14,15 @@ const SchedulleMembership = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            rowGap: mobile ? "40px" : "70px",
+            rowGap: mobile ? "40px" : "60px",
           }}
         >
           <Typography
-            style={{ fontSize: mobile ? "17px" : "24px", fontWeight: "bold" }}
+            style={{
+              fontSize: mobile ? "17px" : "18px",
+              fontWeight: 500,
+              textTransform: "uppercase",
+            }}
           >
             Marcações
           </Typography>
@@ -26,10 +30,12 @@ const SchedulleMembership = () => {
             style={{
               maxWidth: "50%",
               textAlign: "center",
-              fontSize: mobile ? "8px" : "16px",
+              fontSize: mobile ? "8px" : "13px",
+              letterSpacing: "1px",
+              lineHeight: "23px",
             }}
           >
-            Descrição Descrição Descrição Descrição Descrição Descrição
+            Agende online ou faça a sua marcação com os nossos assistentes.
           </Typography>
           <Button>
             <Typography
@@ -51,11 +57,15 @@ const SchedulleMembership = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            rowGap: mobile ? "40px" : "70px",
+            rowGap: mobile ? "40px" : "60px",
           }}
         >
           <Typography
-            style={{ fontSize: mobile ? "17px" : "24px", fontWeight: "bold" }}
+            style={{
+              fontSize: mobile ? "17px" : "18px",
+              fontWeight: 500,
+              textTransform: "uppercase",
+            }}
           >
             MemberShip
           </Typography>
@@ -63,10 +73,12 @@ const SchedulleMembership = () => {
             style={{
               maxWidth: "50%",
               textAlign: "center",
-              fontSize: mobile ? "8px" : "16px",
+              fontSize: mobile ? "8px" : "13px",
+              letterSpacing: "1px",
+              lineHeight: "23px",
             }}
           >
-            Descrição Descrição Descrição Descrição Descrição Descrição
+            Explore benefícios exclusivos com o nosso Acesso Membership.
           </Typography>
           <Button>
             <Typography
@@ -75,7 +87,7 @@ const SchedulleMembership = () => {
                 textTransform: "uppercase",
               }}
             >
-              Mais Informações
+              + Informação
             </Typography>
           </Button>
         </div>

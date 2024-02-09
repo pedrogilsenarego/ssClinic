@@ -58,7 +58,8 @@ const Complex = () => {
                 height: mobile ? "600px" : `calc(100vh - 330px)`,
                 objectFit: "cover",
                 width: "100%",
-                padding: "40px",
+                padding: mobile ? "40px" : "50px",
+                paddingBottom: mobile ? undefined : "100px",
               }}
             >
               <div
@@ -68,16 +69,17 @@ const Complex = () => {
                   justifyContent: "end",
                   alignItems: "end",
                   height: "100%",
-                  rowGap: "10px",
+                  rowGap: "30px",
                   paddingBottom: mobile ? "30px" : undefined,
                 }}
               >
                 <Typography
+                  variant="h1"
                   style={{
                     fontSize: mobile ? "14px" : "25px",
                     textTransform: "uppercase",
                     fontWeight: "bold",
-                    width: mobile ? "100%" : "30%",
+                    width: mobile ? "100%" : "25%",
                     textAlign: "center",
                   }}
                 >
@@ -85,9 +87,10 @@ const Complex = () => {
                 </Typography>
                 <Typography
                   style={{
-                    fontSize: mobile ? "12px" : "25px",
+                    fontSize: mobile ? "12px" : "17px",
                     textTransform: "uppercase",
-                    width: mobile ? "100%" : "30%",
+                    width: mobile ? "100%" : "25%",
+                    letterSpacing: "2px",
                     textAlign: "center",
                   }}
                 >
@@ -129,13 +132,13 @@ const Complex = () => {
                         writingMode: "vertical-rl",
                         textOrientation: "mixed",
                         whiteSpace: "nowrap",
-                        fontSize: "19px",
                       }}
                     >
                       <Typography
                         style={{
                           transform: "rotate(180deg)",
                           transformOrigin: "center",
+                          fontSize: "17px",
                         }}
                       >
                         Legenda 1
@@ -161,7 +164,7 @@ const Complex = () => {
                           writingMode: "vertical-rl",
                           textOrientation: "mixed",
                           whiteSpace: "nowrap",
-                          fontSize: "19px",
+
                           width: "400px",
                         }}
                       >
@@ -169,6 +172,7 @@ const Complex = () => {
                           style={{
                             transform: "rotate(180deg)", // Rotate 180 degrees
                             transformOrigin: "center",
+                            fontSize: "17px",
                           }}
                         >
                           Legenda 2
@@ -214,10 +218,11 @@ const Complex = () => {
                       writingMode: "vertical-rl",
                       textOrientation: "mixed",
                       whiteSpace: "nowrap",
-                      fontSize: "19px",
                     }}
                   >
-                    <Typography>Legenda 3</Typography>
+                    <Typography style={{ fontSize: "17px" }}>
+                      Legenda 3
+                    </Typography>
                   </div>
                 )}
               </div>
@@ -226,11 +231,14 @@ const Complex = () => {
                   textTransform: "uppercase",
                   marginTop: "40px",
                   marginLeft: "20px",
+                  width: mobile ? "100%" : "90%",
                   textAlign: mobile ? "center" : undefined,
                   fontSize: mobile ? "10px" : "15px",
+                  letterSpacing: "1px",
                 }}
               >
-                frase extra frase extra frase extra
+                Elegância e inovação, onde cada espaço é uma celebração da
+                estética.
               </Typography>
             </Grid>
           </Grid>
@@ -240,32 +248,79 @@ const Complex = () => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  rowGap: "30px",
+                  rowGap: "50px",
                 }}
               >
                 <Typography
+                  variant="h1"
                   style={{
                     width: mobile ? undefined : "50%",
                     textTransform: "uppercase",
                     fontSize: mobile ? "22px" : "32px",
-                    fontWeight: "bold",
+                    fontWeight: 500,
                     margin: mobile ? "20px" : undefined,
+                    letterSpacing: "2px",
                   }}
                 >
-                  De olhos na personalização
+                  De olhos
+                  <div style={{ display: "flex", columnGap: "10px" }}>
+                    <Typography
+                      variant="h1"
+                      style={{
+                        textTransform: "uppercase",
+                        fontSize: mobile ? "22px" : "32px",
+                        fontWeight: 500,
+                        margin: mobile ? "20px" : undefined,
+                        letterSpacing: "2px",
+                      }}
+                    >
+                      na
+                    </Typography>
+                    <Typography
+                      variant="h1"
+                      style={{
+                        fontStyle: "italic",
+                        textTransform: "capitalize",
+                        fontSize: mobile ? "22px" : "32px",
+                        letterSpacing: "2px",
+                      }}
+                    >
+                      personalização
+                    </Typography>
+                  </div>
                 </Typography>
 
                 <div
                   style={{
-                    marginLeft: "10%",
+                    marginLeft: "10px",
                     borderLeft: "solid 2px black",
-                    width: "60%",
+                    width: "70%",
                     padding: mobile ? "10px" : "20px",
                   }}
                 >
-                  <Typography style={{ fontSize: mobile ? "12px" : "20px" }}>
-                    Descrever serviço personalizado Descrever serviço
-                    personalizado
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "12px" : "15px",
+                      letterSpacing: "1px",
+                      lineHeight: "25px",
+                      fontWeight: 400,
+                    }}
+                  >
+                    Na EHTIQ a personalização é a essência da nossa filosofia.
+                    Moldamos cada tratamento para refletir as suas aspirações.
+                  </Typography>
+                  <Typography
+                    style={{
+                      marginTop: "20px",
+                      marginLeft: "20px",
+                      fontSize: mobile ? "10px" : "12px",
+                      letterSpacing: "1px",
+                      lineHeight: "25px",
+                      fontWeight: 400,
+                    }}
+                  >
+                    Acreditamos que a beleza é uma jornada individual, feita à
+                    sua medida para realçar a sua singularidade.
                   </Typography>
                 </div>
                 <div
@@ -278,7 +333,7 @@ const Complex = () => {
                 >
                   <Button>
                     <Typography style={{ fontSize: mobile ? "12px" : "16px" }}>
-                      CTA
+                      Experiência
                     </Typography>
                   </Button>
                 </div>

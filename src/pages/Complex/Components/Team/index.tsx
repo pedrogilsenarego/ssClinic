@@ -19,19 +19,20 @@ const Team = () => {
       <div
         style={{
           display: "flex",
-          backgroundColor: "#00000066",
+          backgroundColor: "lightGrey",
           width: "100%",
           alignItems: "center",
           padding: "30px",
         }}
       >
         <div
-          style={{ height: "2px", width: "100%", backgroundColor: "black" }}
+          style={{ height: "2px", width: "100%", backgroundColor: "grey" }}
         />
         <Typography
+          variant="h1"
           style={{
-            fontSize: mobile ? "22px" : "37px",
-            fontWeight: "bold",
+            fontSize: mobile ? "22px" : "40px",
+            fontWeight: 500,
             textTransform: "uppercase",
             width: "100%",
             textAlign: "center",
@@ -40,17 +41,20 @@ const Team = () => {
           A equipa Ethiq
         </Typography>
         <div
-          style={{ height: "2px", width: "100%", backgroundColor: "black" }}
+          style={{ height: "2px", width: "100%", backgroundColor: "grey" }}
         />
       </div>
       <Typography
         style={{
-          fontSize: mobile ? "11px" : "15px",
+          fontSize: mobile ? "11px" : "13px",
+          width: "50%",
+          textAlign: "center",
           textTransform: "uppercase",
+          lineHeight: "25px",
         }}
       >
-        Descrição Descrição Descrição Descrição Descrição Descrição Descrição
-        Descrição
+        Cada rosto da nossa equipa é uma extensão do nosso compromisso em
+        realçar a sua beleza única.
       </Typography>
       <TeamRooster />
     </div>

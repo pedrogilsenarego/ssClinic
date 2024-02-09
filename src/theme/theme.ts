@@ -58,7 +58,7 @@ export const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily: "'termina', sans-serif",
-      fontWeight: 500,
+      fontWeight: 400,
       textTransform: "none",
       fontSize: 16,
       color: Colors.blackish[400],

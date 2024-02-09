@@ -8,7 +8,7 @@ const TeamRooster = () => {
 
   const teamList = [
     {
-      title: "Team recepção & Bar",
+      title: "Cirúrgico",
       team: [
         {
           name: "huhiu",
@@ -52,7 +52,7 @@ const TeamRooster = () => {
       ],
     },
     {
-      title: "Team dental",
+      title: "Dentário",
       team: [
         {
           name: "huhiu",
@@ -78,7 +78,7 @@ const TeamRooster = () => {
       ],
     },
     {
-      title: "Team dental",
+      title: "Não-Cirúrgico",
       team: [
         {
           name: "huhiu",
@@ -104,7 +104,7 @@ const TeamRooster = () => {
       ],
     },
     {
-      title: "Team dental",
+      title: "Saúde Preventiva",
       team: [
         {
           name: "huhiu",
@@ -164,7 +164,9 @@ const TeamRooster = () => {
                   <Typography
                     style={{
                       textTransform: "uppercase",
-                      fontWeight: index === team ? "bold" : "normal",
+                      fontSize: "12px",
+                      letterSpacing: "1px",
+                      fontWeight: index === team ? 700 : 500,
                       cursor: "pointer",
                     }}
                   >
@@ -193,13 +195,14 @@ const TeamRooster = () => {
               rowGap: "20px",
               justifyContent: "center",
               height: "100%",
-              width: "100%",
+              width: "80%",
             }}
           >
             <Typography
               style={{
                 textTransform: "uppercase",
-                fontSize: mobile ? "15px" : "25px",
+                fontSize: mobile ? "15px" : "20px",
+                letterSpacing: "1px",
                 fontWeight: "bold",
               }}
             >
@@ -209,6 +212,8 @@ const TeamRooster = () => {
               style={{
                 textTransform: "uppercase",
                 fontSize: mobile ? "8px" : "12px",
+                lineHeight: "21px",
+                fontWeight: 400,
               }}
             >
               {teamList[team].team[member].description}
