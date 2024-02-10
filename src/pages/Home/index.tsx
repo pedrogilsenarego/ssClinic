@@ -1,10 +1,8 @@
-import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Container, useMediaQuery, useTheme } from "@mui/material";
 
-import Button from "../../components/Ui/Button";
-
-import { i18n } from "../../translations/i18n";
 import ContainerC from "./Components/Container";
 import Escort from "./Components/Escort";
+import SpaceWhere from "./Components/SpaceWhere";
 import Whats from "./Components/Whats";
 
 const Home = () => {
@@ -30,43 +28,7 @@ const Home = () => {
       <div style={{ marginTop: mobile ? "100px" : "400px" }}>
         <Escort />
       </div>
-
-      <div
-        style={{
-          marginTop: mobile ? "100px" : "350px",
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          rowGap: mobile ? "30px" : "50px",
-          flexDirection: "column",
-        }}
-      >
-        <div
-          style={{ width: "10%", height: "1px", backgroundColor: "darkGrey" }}
-        ></div>
-        <Typography
-          style={{
-            fontSize: mobile ? "12px" : "19px",
-            letterSpacing: "1px",
-            lineHeight: "22px",
-            textTransform: "uppercase",
-            maxWidth: mobile ? "60%" : "70%",
-            textAlign: "center",
-          }}
-        >
-          {i18n.t("pages.home.spaceWhere")}
-        </Typography>
-        <Button>
-          <Typography
-            style={{
-              textTransform: "uppercase",
-              fontSize: mobile ? "12px" : "22px",
-            }}
-          >
-            {i18n.t("pages.home.ctaSpaceWhere")}
-          </Typography>
-        </Button>
-      </div>
+      <SpaceWhere />
     </>
   );
 };
