@@ -11,21 +11,24 @@ const Treatments = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
-      <div style={{ marginTop: mobile ? "0px" : "200px" }}>
+      <div style={{ marginTop: mobile ? "120px" : "200px" }}>
         <InitialImage />
       </div>
-      <Container style={{ marginTop: "200px" }} maxWidth="xl">
+      <Container
+        style={{ marginTop: mobile ? "100px" : "200px" }}
+        maxWidth="xl"
+      >
         <InitialSection2 />
-        <div style={{ marginTop: "200px" }}>
+        <div style={{ marginTop: mobile ? "150px" : "200px" }}>
           <IdentityProtection />
         </div>
         {/* <InitialSection /> */}
         {/* <SearchSection /> */}
       </Container>
-      <div style={{ marginTop: "400px" }}>
+      <div style={{ marginTop: mobile ? "250px" : "400px" }}>
         <Escort />
       </div>
-      <div>
+      <div style={{ marginTop: mobile ? "100px" : "0px" }}>
         <SpaceWhere />
       </div>
     </>

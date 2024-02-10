@@ -5,19 +5,15 @@ const InitialImage = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Container
-      maxWidth="xl"
-      style={{ marginTop: "100px" }}
-      disableGutters={mobile ? true : false}
-    >
+    <Container maxWidth="xl" style={{ marginTop: "100px" }}>
       <div
         style={{
           height: "100%",
           display: "flex",
-
+          margin: "0px 20px",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: mobile ? "center" : "start",
+          alignItems: mobile ? "start" : "start",
           width: "100%",
           rowGap: "20px",
         }}
@@ -25,9 +21,10 @@ const InitialImage = () => {
         <Typography
           variant="h1"
           style={{
-            textAlign: "center",
+            textAlign: mobile ? "start" : "center",
             textTransform: "uppercase",
-            fontSize: mobile ? "11px" : "60px",
+            fontSize: mobile ? "24px" : "60px",
+
             fontWeight: 500,
           }}
         >
@@ -37,25 +34,56 @@ const InitialImage = () => {
           variant="h1"
           style={{
             textTransform: "uppercase",
-            fontSize: mobile ? "32px" : "60px",
+            fontSize: mobile ? "24px" : "60px",
             fontStyle: "italic",
             fontWeight: 400,
           }}
         >
           Experiência
         </Typography>
-        <Typography
-          style={{
-            marginTop: "50px",
-            fontSize: mobile ? "16px" : "18px",
-            letterSpacing: "1px",
-            lineHeight: "31px",
-            width: "70%",
-          }}
-        >
-          Valorizamos cada momento. O nosso compromisso é o seu conforto,
-          garantindo que cada passo seja uma expressão de cuidado e excelência.
-        </Typography>
+        {!mobile && (
+          <Typography
+            style={{
+              marginTop: "50px",
+              fontSize: mobile ? "11px" : "18px",
+              letterSpacing: "1px",
+              lineHeight: mobile ? "20px" : "31px",
+              width: "70%",
+            }}
+          >
+            Valorizamos cada momento. O nosso compromisso é o seu conforto,
+            garantindo que cada passo seja uma expressão de cuidado e
+            excelência.
+          </Typography>
+        )}
+        {mobile && (
+          <div style={{ marginRight: "20px" }}>
+            <Typography
+              style={{
+                marginTop: "50px",
+                fontSize: mobile ? "11px" : "18px",
+                letterSpacing: "1px",
+                lineHeight: mobile ? "20px" : "31px",
+                width: "100%",
+              }}
+            >
+              Valorizamos cada momento da sua jornada.
+            </Typography>
+            <Typography
+              style={{
+                marginTop: "10px",
+                fontSize: mobile ? "11px" : "18px",
+                letterSpacing: "1px",
+                lineHeight: mobile ? "20px" : "31px",
+                width: "100%",
+              }}
+            >
+              O nosso compromisso é o seu conforto, onde oferecemos um
+              atendimento adaptado às suas necessidades, garantindo que cada
+              passo seja uma expressão de cuidado e excelência.
+            </Typography>
+          </div>
+        )}
       </div>
       <div
         style={{
@@ -69,7 +97,7 @@ const InitialImage = () => {
           src={Logo}
           alt=""
           style={{
-            height: 110,
+            height: mobile ? 64 : 110,
           }}
         />
       </div>

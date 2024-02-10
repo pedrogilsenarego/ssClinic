@@ -1,7 +1,9 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Button from "../../../../components/Ui/Button";
 
 const IdentityProtection = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <div
       style={{
@@ -11,12 +13,18 @@ const IdentityProtection = () => {
         alignItems: "center",
       }}
     >
-      <div style={{ width: "1px", height: "200px", backgroundColor: "grey" }} />
+      <div
+        style={{
+          width: "1px",
+          height: mobile ? "91px" : "200px",
+          backgroundColor: "grey",
+        }}
+      />
 
       <Typography
         style={{
           marginTop: "50px",
-          fontSize: "18px",
+          fontSize: mobile ? "10px" : "18px",
           letterSpacing: "1px",
           textTransform: "uppercase",
         }}
@@ -27,7 +35,7 @@ const IdentityProtection = () => {
         variant="h1"
         style={{
           marginTop: "30px",
-          fontSize: "35px",
+          fontSize: mobile ? "20px" : "35px",
           fontWeight: 700,
           letterSpacing: "2px",
           textTransform: "uppercase",
@@ -39,14 +47,18 @@ const IdentityProtection = () => {
         style={{
           display: "flex",
           marginTop: "100px",
-          justifyContent: "space-between",
-          width: "50%",
+          rowGap: mobile ? "30px" : undefined,
+          flexDirection: mobile ? "column" : "row",
+          alignItems: mobile ? "center" : undefined,
+          justifyContent: mobile ? "center" : "space-between",
+          width: mobile ? "100%" : "50%",
         }}
       >
         <Typography
           style={{
             fontWeight: 500,
             letterSpacing: "1px",
+            fontSize: mobile ? "8px" : "15px",
             textTransform: "uppercase",
           }}
         >
@@ -56,6 +68,7 @@ const IdentityProtection = () => {
           style={{
             fontWeight: 500,
             letterSpacing: "1px",
+            fontSize: mobile ? "8px" : "15px",
             textTransform: "uppercase",
           }}
         >
@@ -65,6 +78,7 @@ const IdentityProtection = () => {
           style={{
             fontWeight: 500,
             letterSpacing: "1px",
+            fontSize: mobile ? "8px" : "15px",
             textTransform: "uppercase",
           }}
         >
@@ -76,6 +90,7 @@ const IdentityProtection = () => {
           marginTop: "100px",
           fontWeight: 500,
           letterSpacing: "1px",
+          fontSize: mobile ? "12px" : "15px",
           textTransform: "uppercase",
           color: "grey",
         }}
