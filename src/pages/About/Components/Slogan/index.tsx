@@ -4,92 +4,68 @@ const Slogan = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const renderLaptop = () => {
-    return (
+  return (
+    <div
+      style={{
+        width: "100%",
+
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <div
         style={{
-          width: "100%",
-
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          rowGap: "50px",
+          margin: mobile ? "20px" : "0px",
+        }}
+      >
+        <Typography
+          variant="h1"
+          style={{
+            fontSize: mobile ? "24px" : "45px",
+            textTransform: "uppercase",
+            textAlign: "center",
+            fontWeight: 500,
+            maxWidth: "550px",
+            lineHeight: mobile ? "41px" : "61px",
+          }}
+        >
+          A nossa promessa é o seu Bem-estar
+        </Typography>
+      </div>
+      <Container
+        maxWidth="xl"
+        style={{
+          marginTop: mobile ? "100px" : "400px",
+          position: "relative",
+          padding: mobile ? "30px" : "0px",
         }}
       >
         <div
-          style={{ display: "flex", flexDirection: "column", rowGap: "50px" }}
-        >
-          <Typography
-            variant="h1"
-            style={{
-              fontSize: "45px",
-              textTransform: "uppercase",
-              textAlign: "center",
-              fontWeight: 500,
-              maxWidth: "550px",
-              lineHeight: "61px",
-            }}
-          >
-            A nossa promessa é o seu Bem-estar
-          </Typography>
-        </div>
-        <Container
-          maxWidth="xl"
-          style={{ marginTop: "400px", position: "relative" }}
-        >
-          <div
-            style={{
-              width: "1px",
-              height: "216px",
-              position: "absolute",
-              backgroundColor: "black",
-              left: "50%",
-              top: "-150px",
-            }}
-          />
-          <img
-            alt=""
-            style={{ width: "100%", height: "580px", objectFit: "cover" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-          />
-        </Container>
-      </div>
-    );
-  };
-
-  const renderMobile = () => {
-    return (
-      <div>
-        {" "}
+          style={{
+            width: "1px",
+            height: mobile ? "100px" : "216px",
+            position: "absolute",
+            backgroundColor: "black",
+            left: "50%",
+            top: mobile ? "-58px" : "-150px",
+          }}
+        />
         <img
           alt=""
-          style={{ width: "100%", height: "250px", objectFit: "cover" }}
+          style={{
+            width: "100%",
+            height: mobile ? "194px" : "580px",
+            objectFit: "cover",
+          }}
           src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
         />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            rowGap: "20px",
-            marginTop: "50px",
-          }}
-        >
-          <Typography
-            style={{
-              fontSize: "16px",
-              textAlign: "center",
-              fontWeight: "bold",
-            }}
-          >
-            Slogan sobre a marca
-          </Typography>
-          <Typography style={{ textAlign: "center", fontSize: "13px" }}>
-            Descrição descrição descrição
-          </Typography>
-        </div>
-      </div>
-    );
-  };
-  return mobile ? renderMobile() : renderLaptop();
+      </Container>
+    </div>
+  );
 };
 
 export default Slogan;

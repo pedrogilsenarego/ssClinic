@@ -21,20 +21,20 @@ const Values = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "100px 400px",
+        padding: mobile ? "100px 20px" : "100px 400px",
       }}
     >
       <div
         style={{
-          backgroundColor: "lightgray",
-          padding: "150px 100px 100px 120px",
+          backgroundColor: mobile ? undefined : "lightgray",
+          padding: mobile ? "0px" : "150px 100px 100px 120px",
         }}
       >
         <Typography
           variant="h1"
           style={{
             textTransform: "uppercase",
-            fontSize: "27px",
+            fontSize: mobile ? "19px" : "27px",
             letterSpacing: "1px",
             lineHeight: "27px",
             textAlign: "center",
@@ -45,10 +45,10 @@ const Values = () => {
         <Typography
           variant="h1"
           style={{
-            marginTop: "20px",
+            marginTop: mobile ? "5px" : "20px",
             textAlign: "center",
             textTransform: "uppercase",
-            fontSize: "27px",
+            fontSize: mobile ? "19px" : "27px",
             fontWeight: 700,
             letterSpacing: "1px",
             lineHeight: "27px",
@@ -65,7 +65,12 @@ const Values = () => {
           }}
         >
           <div
-            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              columnGap: "20px",
+              flexDirection: mobile ? "column" : "row",
+            }}
           >
             <div
               style={{
@@ -81,6 +86,7 @@ const Values = () => {
                   display: "flex",
                   width: "50px",
                   height: "50px",
+                  fontWeight: 600,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
@@ -90,9 +96,11 @@ const Values = () => {
             </div>
             <Typography
               style={{
-                fontSize: "14px",
+                textAlign: "center",
+                width: mobile ? "90%" : undefined,
+                fontSize: mobile ? "11px" : "14px",
                 letterSpacing: "1px",
-                lineHeight: "25px",
+                lineHeight: mobile ? "18px" : "25px",
               }}
             >
               <b style={{ textTransform: "uppercase" }}>Elegância</b> Reflete a
@@ -101,7 +109,12 @@ const Values = () => {
             </Typography>
           </div>
           <div
-            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              columnGap: "20px",
+              flexDirection: mobile ? "column" : "row",
+            }}
           >
             <div
               style={{
@@ -116,6 +129,7 @@ const Values = () => {
                   color: "gray",
                   display: "flex",
                   width: "50px",
+                  fontWeight: 600,
                   height: "50px",
                   justifyContent: "center",
                   alignItems: "center",
@@ -126,9 +140,11 @@ const Values = () => {
             </div>
             <Typography
               style={{
-                fontSize: "14px",
+                textAlign: "center",
+                width: mobile ? "90%" : undefined,
+                fontSize: mobile ? "11px" : "14px",
                 letterSpacing: "1px",
-                lineHeight: "25px",
+                lineHeight: mobile ? "18px" : "25px",
               }}
             >
               <b style={{ textTransform: "uppercase" }}>Harmonia</b> A constante
@@ -137,7 +153,12 @@ const Values = () => {
             </Typography>
           </div>
           <div
-            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              columnGap: "20px",
+              flexDirection: mobile ? "column" : "row",
+            }}
           >
             <div
               style={{
@@ -150,6 +171,7 @@ const Values = () => {
                 style={{
                   fontSize: "40px",
                   color: "gray",
+                  fontWeight: 600,
                   display: "flex",
                   width: "50px",
                   height: "50px",
@@ -162,9 +184,11 @@ const Values = () => {
             </div>
             <Typography
               style={{
-                fontSize: "14px",
+                textAlign: "center",
+                width: mobile ? "90%" : undefined,
+                fontSize: mobile ? "11px" : "14px",
                 letterSpacing: "1px",
-                lineHeight: "25px",
+                lineHeight: mobile ? "18px" : "25px",
               }}
             >
               <b style={{ textTransform: "uppercase" }}>Tranquilidade</b> Traduz
@@ -173,7 +197,12 @@ const Values = () => {
             </Typography>
           </div>
           <div
-            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              columnGap: "20px",
+              flexDirection: mobile ? "column" : "row",
+            }}
           >
             <div
               style={{
@@ -188,6 +217,7 @@ const Values = () => {
                   color: "gray",
                   display: "flex",
                   width: "50px",
+                  fontWeight: 600,
                   height: "50px",
                   justifyContent: "center",
                   alignItems: "center",
@@ -198,9 +228,11 @@ const Values = () => {
             </div>
             <Typography
               style={{
-                fontSize: "14px",
+                textAlign: "center",
+                width: mobile ? "90%" : undefined,
+                fontSize: mobile ? "11px" : "14px",
                 letterSpacing: "1px",
-                lineHeight: "25px",
+                lineHeight: mobile ? "18px" : "25px",
               }}
             >
               <b style={{ textTransform: "uppercase" }}>Inovação</b> Motivados a
@@ -209,7 +241,12 @@ const Values = () => {
             </Typography>
           </div>
           <div
-            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              columnGap: "20px",
+              flexDirection: mobile ? "column" : "row",
+            }}
           >
             <div
               style={{
@@ -224,6 +261,7 @@ const Values = () => {
                   color: "gray",
                   display: "flex",
                   width: "50px",
+                  fontWeight: 600,
                   height: "50px",
                   justifyContent: "center",
                   alignItems: "center",
@@ -234,9 +272,11 @@ const Values = () => {
             </div>
             <Typography
               style={{
-                fontSize: "14px",
+                textAlign: "center",
+                width: mobile ? "90%" : undefined,
+                fontSize: mobile ? "11px" : "14px",
                 letterSpacing: "1px",
-                lineHeight: "25px",
+                lineHeight: mobile ? "18px" : "25px",
               }}
             >
               <b style={{ textTransform: "uppercase" }}>Qualidade</b> O pilar
