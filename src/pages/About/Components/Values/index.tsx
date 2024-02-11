@@ -1,0 +1,253 @@
+import {
+  Button,
+  Container,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+
+const Values = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  return (
+    <div
+      style={{
+        width: "100vw",
+        marginTop: "200px",
+        backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "100px 400px",
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "lightgray",
+          padding: "150px 100px 100px 120px",
+        }}
+      >
+        <Typography
+          variant="h1"
+          style={{
+            textTransform: "uppercase",
+            fontSize: "27px",
+            letterSpacing: "1px",
+            lineHeight: "27px",
+            textAlign: "center",
+          }}
+        >
+          VALORES QUE REPRESENTAM{" "}
+        </Typography>
+        <Typography
+          variant="h1"
+          style={{
+            marginTop: "20px",
+            textAlign: "center",
+            textTransform: "uppercase",
+            fontSize: "27px",
+            fontWeight: 700,
+            letterSpacing: "1px",
+            lineHeight: "27px",
+          }}
+        >
+          EXCELÊNCIA
+        </Typography>
+        <div
+          style={{
+            marginTop: "80px",
+            display: "flex",
+            flexDirection: "column",
+            rowGap: "30px",
+          }}
+        >
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+          >
+            <div
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  fontSize: "40px",
+                  color: "gray",
+                  display: "flex",
+                  width: "50px",
+                  height: "50px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                E
+              </Typography>
+            </div>
+            <Typography
+              style={{
+                fontSize: "14px",
+                letterSpacing: "1px",
+                lineHeight: "25px",
+              }}
+            >
+              <b style={{ textTransform: "uppercase" }}>Elegância</b> Reflete a
+              abordagem sofisticada e atenta aos detalhes, criando um ambiente
+              esteticamente agradável e acolhedor.
+            </Typography>
+          </div>
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+          >
+            <div
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  fontSize: "40px",
+                  color: "gray",
+                  display: "flex",
+                  width: "50px",
+                  height: "50px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                H
+              </Typography>
+            </div>
+            <Typography
+              style={{
+                fontSize: "14px",
+                letterSpacing: "1px",
+                lineHeight: "25px",
+              }}
+            >
+              <b style={{ textTransform: "uppercase" }}>Harmonia</b> A constante
+              procura pelo equilíbrio entre tecnologia avançada e atendimento
+              personalizado.
+            </Typography>
+          </div>
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+          >
+            <div
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  fontSize: "40px",
+                  color: "gray",
+                  display: "flex",
+                  width: "50px",
+                  height: "50px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                T
+              </Typography>
+            </div>
+            <Typography
+              style={{
+                fontSize: "14px",
+                letterSpacing: "1px",
+                lineHeight: "25px",
+              }}
+            >
+              <b style={{ textTransform: "uppercase" }}>Tranquilidade</b> Traduz
+              o compromisso em oferecer um espaço de paz e serenidade, para que
+              se sinta seguro e cuidado.
+            </Typography>
+          </div>
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+          >
+            <div
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  fontSize: "40px",
+                  color: "gray",
+                  display: "flex",
+                  width: "50px",
+                  height: "50px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                I
+              </Typography>
+            </div>
+            <Typography
+              style={{
+                fontSize: "14px",
+                letterSpacing: "1px",
+                lineHeight: "25px",
+              }}
+            >
+              <b style={{ textTransform: "uppercase" }}>Inovação</b> Motivados a
+              superar os limites do possível, trazendo novas soluções para o
+              cuidado e bem-estar dos nossos pacientes.
+            </Typography>
+          </div>
+          <div
+            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+          >
+            <div
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  fontSize: "40px",
+                  color: "gray",
+                  display: "flex",
+                  width: "50px",
+                  height: "50px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                Q
+              </Typography>
+            </div>
+            <Typography
+              style={{
+                fontSize: "14px",
+                letterSpacing: "1px",
+                lineHeight: "25px",
+              }}
+            >
+              <b style={{ textTransform: "uppercase" }}>Qualidade</b> O pilar
+              sobre o qual todos os nossos serviços são construídos, garantindo
+              excelência em cada interação e tratamento.
+            </Typography>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Values;

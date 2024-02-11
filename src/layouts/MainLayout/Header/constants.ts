@@ -18,7 +18,7 @@ export const options: Option[] = [
   },
   {
     name: "A experiência",
-    link: ROUTE_PATHS.TREATMENTS,
+    link: ROUTE_PATHS.YOUR_EXPERIENCE,
   },
   { name: i18n.t("header.about", "About"), link: ROUTE_PATHS.ABOUT },
   {

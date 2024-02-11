@@ -4,6 +4,7 @@ export const ROUTE_PATHS = {
   PRODUCT: "/product/:product",
   ABOUT: "/about",
   MY_ACCOUNT: "/my-account",
+  YOUR_EXPERIENCE: "/your-experience",
   ADMIN: "/admin/manage-products",
   ADMIN_EDIT_BLOG: "/admin/manage-blog/edit/:id",
   ADMIN_CREATE_BLOG: "/admin/manage-blog/create-blog",

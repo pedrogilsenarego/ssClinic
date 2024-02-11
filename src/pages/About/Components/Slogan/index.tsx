@@ -19,15 +19,33 @@ const Slogan = () => {
           style={{ display: "flex", flexDirection: "column", rowGap: "50px" }}
         >
           <Typography
-            style={{ fontSize: "42px", textAlign: "center", maxWidth: "450px" }}
+            variant="h1"
+            style={{
+              fontSize: "45px",
+              textTransform: "uppercase",
+              textAlign: "center",
+              fontWeight: 500,
+              maxWidth: "550px",
+              lineHeight: "61px",
+            }}
           >
-            Slogan sobre a marca
-          </Typography>
-          <Typography style={{ textAlign: "center" }}>
-            Descrição descrição descrição
+            A nossa promessa é o seu Bem-estar
           </Typography>
         </div>
-        <Container maxWidth="xl" style={{ marginTop: "400px" }}>
+        <Container
+          maxWidth="xl"
+          style={{ marginTop: "400px", position: "relative" }}
+        >
+          <div
+            style={{
+              width: "1px",
+              height: "216px",
+              position: "absolute",
+              backgroundColor: "black",
+              left: "50%",
+              top: "-150px",
+            }}
+          />
           <img
             alt=""
             style={{ width: "100%", height: "580px", objectFit: "cover" }}
