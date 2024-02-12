@@ -23,7 +23,7 @@ import {
   BsSnow,
 } from "react-icons/bs";
 import { CgSwiss } from "react-icons/cg";
-import { FaRegUser } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaRegUser } from "react-icons/fa";
 import { FiInstagram, FiSettings } from "react-icons/fi";
 import { GoHome } from "react-icons/go";
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
@@ -46,7 +46,6 @@ import {
 } from "react-icons/pi";
 import { RxLoop } from "react-icons/rx";
 import { TfiControlPause, TfiShoppingCartFull } from "react-icons/tfi";
-import { TiArrowLeft, TiArrowRight } from "react-icons/ti";
 import { VscMenu, VscSettings } from "react-icons/vsc";
 
 export const Icons = {
@@ -88,9 +87,9 @@ export const Icons = {
   Aim: (props: IconBaseProps) => <AiOutlineAim {...props} />,
   Edit: (props: IconBaseProps) => <MdOutlineEdit {...props} />,
   User: (props: IconBaseProps) => <FaRegUser {...props} />,
-  RightArrow: (props: IconBaseProps) => <TiArrowRight {...props} />,
+  RightArrow: (props: IconBaseProps) => <FaChevronRight {...props} />,
   Radiation: (props: IconBaseProps) => <PiLightbulbThin {...props} />,
-  LeftArrow: (props: IconBaseProps) => <TiArrowLeft {...props} />,
+  LeftArrow: (props: IconBaseProps) => <FaChevronLeft {...props} />,
   DownArrow: (props: IconBaseProps) => (
     <MdOutlineKeyboardArrowDown {...props} />
   ),

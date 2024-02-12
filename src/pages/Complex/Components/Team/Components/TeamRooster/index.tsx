@@ -1,10 +1,12 @@
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
+import { Icons } from "../../../../../../components/Icons";
 
 const TeamRooster = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [team, setTeam] = useState<number>(0);
+  const [member, setMember] = useState<number>(0);
 
   const teamList = [
     {
@@ -132,7 +134,6 @@ const TeamRooster = () => {
   ];
 
   const ImageRoosterLaptop = () => {
-    const [member, setMember] = useState<number>(0);
     return (
       <Grid
         container
@@ -260,12 +261,143 @@ const TeamRooster = () => {
     );
   };
 
+  const MobileElement = ({ element }: any) => {
+    const [open, setOpen] = useState<boolean>(false);
+    return (
+      <>
+        <div
+          onClick={() => setOpen(!open)}
+          style={{
+            backgroundColor: "lightgray",
+            padding: "5px 20px",
+            marginTop: "10px",
+          }}
+        >
+          <Typography
+            style={{
+              fontSize: "9px",
+              letterSpacing: "1px",
+              textDecoration: "underline",
+            }}
+          >
+            {element.name}
+          </Typography>
+        </div>
+        {open && (
+          <div style={{ padding: "50px 0px" }}>
+            <Typography
+              style={{
+                fontSize: "13px",
+                fontWeight: 700,
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+              }}
+            >
+              {element.name}
+            </Typography>
+            <Typography
+              style={{
+                marginTop: "20px",
+                fontSize: "8px",
+                fontWeight: 400,
+                letterSpacing: "1px",
+
+                lineHeight: "15px",
+              }}
+            >
+              {element.description}
+            </Typography>
+          </div>
+        )}
+      </>
+    );
+  };
+
   const ImageRoosterMobile = () => {
-    return <></>;
+    return (
+      <div
+        style={{
+          width: "90%",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            columnGap: "5px",
+          }}
+        >
+          <Icons.LeftArrow size={"10px"} />
+          <div
+            style={{
+              columnGap: "20px",
+              paddingTop: "1px",
+              display: "flex",
+              overflowX: "auto",
+              alignItems: "center",
+            }}
+          >
+            {teamList.map((item, index) => {
+              return (
+                <Typography
+                  onClick={() => setTeam(index)}
+                  key={index}
+                  style={{
+                    fontWeight: item.title === teamList[team].title ? 700 : 500,
+                    fontSize: "6px",
+                    letterSpacing: "1px",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {item.title}
+                </Typography>
+              );
+            })}
+          </div>
+          <Icons.RightArrow size={"10px"} />
+        </div>
+        <img
+          alt=""
+          style={{
+            marginTop: "30px",
+            height: "260px",
+            width: "100%",
+            objectFit: "cover",
+          }}
+          src={teamList[team].team[member].image}
+        />
+        {teamList[team].team.map((element, index) => {
+          return <MobileElement key={index} element={element} />;
+        })}
+        <div
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <div
+            style={{
+              backgroundColor: "black",
+              width: "50%",
+              height: "1px",
+              marginTop: "100px",
+            }}
+          ></div>
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div style={{ padding: "0px 200px", width: "100%" }}>
+    <div
+      style={{
+        padding: mobile ? "0px" : "0px 200px",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       {mobile ? <ImageRoosterMobile /> : <ImageRoosterLaptop />}
     </div>
   );
