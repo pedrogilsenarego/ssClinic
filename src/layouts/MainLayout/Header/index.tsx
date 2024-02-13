@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { BsInstagram } from "react-icons/bs";
 import { VscMenu } from "react-icons/vsc";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 //import logo from "../../../assets/logo.svg";
 import Logo from "../../../assets/EHTIQ_Logo.svg";
 import SearchIcon from "../../../assets/Icon_Search.svg";
@@ -50,7 +50,7 @@ const Header = () => {
   const currentUser = useSelector<State, CurrentUser | null>(
     (state) => state.user.currentUser
   );
-
+  const path = location.pathname;
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const [mobileDrawer, setMobileDrawer] = useState<boolean>(false);
@@ -281,63 +281,64 @@ const Header = () => {
               </Button> */}
             </Grid>
           </Grid>
+          {path === ROUTE_PATHS.HOME && (
+            <Box
+              style={{
+                display: "flex",
 
-          <Box
-            style={{
-              display: "flex",
-
-              width: "100%",
-              justifyContent: "center",
-              alignItems: "center",
-              marginBottom: "10px",
-              opacity: isScrolled ? 1 : 0,
-              marginTop: isScrolled ? "40px" : "-20px", // Adjust the marginTop based on the scroll position
-              transition: "all 0.5s ease-in-out", // Add transition property
-            }}
-          >
-            {options.map((option, index) => {
-              return (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    columnGap: "24px",
-                    margin: "0px 15px",
-                  }}
-                >
-                  <Typography
-                    className={"text"}
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: "10px",
+                opacity: isScrolled ? 1 : 0,
+                marginTop: isScrolled ? "40px" : "-20px", // Adjust the marginTop based on the scroll position
+                transition: "all 0.5s ease-in-out", // Add transition property
+              }}
+            >
+              {options.map((option, index) => {
+                return (
+                  <div
                     style={{
-                      cursor: !isScrolled ? undefined : "pointer",
-                      fontSize: "14px",
-                      fontWeight: 500,
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
-                      color:
-                        location.pathname === option.link
-                          ? mainColors.secondary[400]
-                          : "inherit",
+                      display: "flex",
+                      alignItems: "center",
+                      columnGap: "24px",
+                      margin: "0px 15px",
                     }}
-                    key={option.name}
-                    onClick={
-                      !isScrolled ? () => null : () => navigate(option.link)
-                    }
                   >
-                    {option.name}
-                  </Typography>
-                  {index < options.length - 1 && (
-                    <div
+                    <Typography
+                      className={"text"}
                       style={{
-                        width: "2px",
-                        height: "20px",
-                        backgroundColor: "grey",
+                        cursor: !isScrolled ? undefined : "pointer",
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
+                        color:
+                          location.pathname === option.link
+                            ? mainColors.secondary[400]
+                            : "inherit",
                       }}
-                    />
-                  )}
-                </div>
-              );
-            })}
-          </Box>
+                      key={option.name}
+                      onClick={
+                        !isScrolled ? () => null : () => navigate(option.link)
+                      }
+                    >
+                      {option.name}
+                    </Typography>
+                    {index < options.length - 1 && (
+                      <div
+                        style={{
+                          width: "2px",
+                          height: "20px",
+                          backgroundColor: "grey",
+                        }}
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </Box>
+          )}
         </Container>
         <BasicPopover
           isOpen={isOpenLogin}
@@ -368,19 +369,39 @@ const Header = () => {
         <Box
           display="flex"
           alignItems="center"
-          justifyContent="flex-end"
           style={{
             zIndex: 1000,
-            position: "absolute",
+            position: "fixed",
+            justifyContent: "space-between",
+            padding: "0px 35px",
             top: "20px",
             width: "100%",
-            paddingRight: "30px",
           }}
         >
           <VscMenu
-            size="35px"
+            size="20px"
             color={mainColors.primary[400]}
             onClick={() => setMobileDrawer(true)}
+          />
+          <img
+            onClick={() => navigate(ROUTE_PATHS.HOME)}
+            src={Logo}
+            alt="logo"
+            style={{
+              width: "123px",
+              cursor: "pointer",
+            }}
+          />
+          <img
+            onClick={(e) => {
+              handleLogin(e);
+            }}
+            src={Login}
+            alt="logo"
+            style={{
+              width: "18px",
+              cursor: "pointer",
+            }}
           />
         </Box>
         <DrawerMine

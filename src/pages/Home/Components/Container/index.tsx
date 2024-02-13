@@ -49,27 +49,36 @@ const ContainerC = () => {
               alignItems: "center",
             }}
           >
-            <Typography
+            <div
               style={{
-                fontSize: mobile ? "14px" : "18px",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                letterSpacing: "2px",
-                textAlign: "center",
-                transition: "margin-top ease-in-out 0.5s", // Add transition
-                marginTop: hover ? "-20px" : "0", // Adjust marginTop based on hover state
+                height: "60px",
+                display: "flex",
+                alignItems: "end",
+                transform: hover ? "translateY(-40px)" : "none",
+                transition: "all ease-in-out 0.5s", // Add transition
               }}
-              onMouseEnter={() => setHover(true)} // Set hover state to true on mouse enter
-              onMouseLeave={() => setHover(false)} // Set hover state to false on mouse leave
             >
-              {clinic}
-            </Typography>
+              <Typography
+                style={{
+                  fontSize: mobile ? "14px" : "18px",
+                  textTransform: "uppercase",
+                  fontWeight: 500,
+                  lineHeight: "27px",
+                  letterSpacing: "2px",
+                  textAlign: "center",
+                }}
+              >
+                {clinic}
+              </Typography>
+            </div>
             <div
               style={{
                 height: "1px",
                 width: "40%",
                 backgroundColor: "black",
                 marginTop: "10px",
+                transform: hover ? "translateY(-40px)" : "none",
+                transition: "all ease-in-out 0.5s", // Add transition
               }}
             />
             <div
@@ -82,22 +91,33 @@ const ContainerC = () => {
                 transition: "all ease-in-out 0.5s",
               }}
             >
-              {hover &&
-                subtitles.map((title, index) => {
-                  return (
-                    <Typography
-                      style={{
-                        textAlign: "center",
-                        textDecoration: "underline",
-                        transition: "all ease-in-out 0.5s",
-                      }}
-                      key={index}
-                    >
-                      {title}
-                    </Typography>
-                  );
-                })}
-              <Typography>+</Typography>
+              {subtitles.map((title, index) => {
+                return (
+                  <Typography
+                    style={{
+                      position: "absolute",
+                      textAlign: "center",
+                      textDecoration: "underline",
+                      transform: `translateY(${index * 24 - 40}px)`,
+                      opacity: hover ? 1 : 0,
+                      transition: "all ease-in-out 0.5s",
+                    }}
+                    key={index}
+                  >
+                    {title}
+                  </Typography>
+                );
+              })}
+              <Typography
+                style={{
+                  transform: hover
+                    ? `translateY(${subtitles.length * 20}px)`
+                    : "none",
+                  transition: "all ease-in-out 0.5s",
+                }}
+              >
+                +
+              </Typography>
             </div>
           </div>
         </div>
@@ -254,7 +274,7 @@ const ContainerC = () => {
         >
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos", "Consultoria"]}
+              subtitles={["Tratamentos", "Consultoria", "teste", "oleol"]}
               clinic={i18n.t("pages.home.cirurgy")}
               image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             />
