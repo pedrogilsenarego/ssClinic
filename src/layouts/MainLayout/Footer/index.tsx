@@ -78,7 +78,12 @@ const Footer = () => {
               </Button>
             </Grid>
             <Grid item xs={2.4}>
-              <div style={{ display: "flex", columnGap: "20px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  columnGap: "40px",
+                }}
+              >
                 <div
                   style={{
                     display: "flex",

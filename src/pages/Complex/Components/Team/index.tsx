@@ -56,7 +56,7 @@ const Team = () => {
       <Typography
         style={{
           fontSize: mobile ? "8px" : "13px",
-          width: mobile ? "90%" : "50%",
+          width: mobile ? "90%" : "60%",
           textAlign: "center",
           textTransform: "uppercase",
           letterSpacing: "1px",

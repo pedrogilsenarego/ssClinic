@@ -1,8 +1,10 @@
 import { Container, useMediaQuery, useTheme } from "@mui/material";
 
+import { MAX_SCREEN } from "../../constants/screen";
 import ContainerC from "./Components/Container";
 import Escort from "./Components/Escort";
 import SpaceWhere from "./Components/SpaceWhere";
+import Treatments from "./Components/Treatments";
 import Whats from "./Components/Whats";
 
 const Home = () => {
@@ -19,8 +21,28 @@ const Home = () => {
           objectFit: "cover",
         }}
       />
-      <Container style={{ marginTop: mobile ? "50px" : "86px" }} maxWidth="xl">
+      <Container
+        style={{
+          marginTop: mobile ? "50px" : "86px",
+          maxWidth: MAX_SCREEN,
+          padding: "0px 80px",
+        }}
+      >
         <ContainerC />
+      </Container>
+      <Container
+        style={{
+          maxWidth: MAX_SCREEN,
+        }}
+      >
+        <Treatments />
+      </Container>
+      <Container
+        style={{
+          maxWidth: MAX_SCREEN,
+          padding: mobile ? undefined : "0px 414px",
+        }}
+      >
         <div style={{ marginTop: "200px" }}>
           <Whats />
         </div>

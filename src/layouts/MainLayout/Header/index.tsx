@@ -21,6 +21,7 @@ import { Icons } from "../../../components/Icons";
 import UncontrolledSelect from "../../../components/Inputs/UncontroledSelect";
 import BasicPopover from "../../../components/Popover";
 import Button from "../../../components/Ui/Button";
+import { MAX_SCREEN } from "../../../constants/screen";
 import { useSignOut } from "../../../hooks/useLogout";
 import { State } from "../../../redux/types";
 import { ROUTE_PATHS } from "../../../routes/constants";
@@ -135,12 +136,12 @@ const Header = () => {
         }}
       >
         <Container
-          maxWidth="xl"
-          disableGutters
           style={{
+            maxWidth: MAX_SCREEN,
             marginTop: "2vh",
             display: "flex",
             flexDirection: "column",
+            padding: "0px 80px",
           }}
         >
           <Grid container>
@@ -281,64 +282,63 @@ const Header = () => {
               </Button> */}
             </Grid>
           </Grid>
-          {path === ROUTE_PATHS.HOME && (
-            <Box
-              style={{
-                display: "flex",
 
-                width: "100%",
-                justifyContent: "center",
-                alignItems: "center",
-                marginBottom: "10px",
-                opacity: isScrolled ? 1 : 0,
-                marginTop: isScrolled ? "40px" : "-20px", // Adjust the marginTop based on the scroll position
-                transition: "all 0.5s ease-in-out", // Add transition property
-              }}
-            >
-              {options.map((option, index) => {
-                return (
-                  <div
+          <Box
+            style={{
+              display: "flex",
+
+              width: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+              marginBottom: "10px",
+              opacity: isScrolled ? 1 : 0,
+              marginTop: isScrolled ? "40px" : "-20px", // Adjust the marginTop based on the scroll position
+              transition: "all 0.5s ease-in-out", // Add transition property
+            }}
+          >
+            {options.map((option, index) => {
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    columnGap: "24px",
+                    margin: "0px 15px",
+                  }}
+                >
+                  <Typography
+                    className={"text"}
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      columnGap: "24px",
-                      margin: "0px 15px",
+                      cursor: !isScrolled ? undefined : "pointer",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      letterSpacing: "1px",
+                      textTransform: "uppercase",
+                      color:
+                        location.pathname === option.link
+                          ? mainColors.secondary[400]
+                          : "inherit",
                     }}
+                    key={option.name}
+                    onClick={
+                      !isScrolled ? () => null : () => navigate(option.link)
+                    }
                   >
-                    <Typography
-                      className={"text"}
+                    {option.name}
+                  </Typography>
+                  {index < options.length - 1 && (
+                    <div
                       style={{
-                        cursor: !isScrolled ? undefined : "pointer",
-                        fontSize: "14px",
-                        fontWeight: 500,
-                        letterSpacing: "1px",
-                        textTransform: "uppercase",
-                        color:
-                          location.pathname === option.link
-                            ? mainColors.secondary[400]
-                            : "inherit",
+                        width: "2px",
+                        height: "20px",
+                        backgroundColor: "grey",
                       }}
-                      key={option.name}
-                      onClick={
-                        !isScrolled ? () => null : () => navigate(option.link)
-                      }
-                    >
-                      {option.name}
-                    </Typography>
-                    {index < options.length - 1 && (
-                      <div
-                        style={{
-                          width: "2px",
-                          height: "20px",
-                          backgroundColor: "grey",
-                        }}
-                      />
-                    )}
-                  </div>
-                );
-              })}
-            </Box>
-          )}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </Box>
         </Container>
         <BasicPopover
           isOpen={isOpenLogin}

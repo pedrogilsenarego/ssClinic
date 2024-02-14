@@ -72,7 +72,7 @@ const IdentityProtection = () => {
             textTransform: "uppercase",
           }}
         >
-          Privaçidade
+          Privacidade
         </Typography>
         <Typography
           style={{

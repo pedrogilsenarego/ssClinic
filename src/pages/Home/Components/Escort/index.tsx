@@ -99,16 +99,17 @@ const Escort = () => {
               fontWeight: "300",
             }}
           />
-
-          <Button
-            fullWidth={mobile ? false : true}
-            style={{ marginLeft: mobile ? "0px" : "10px", marginRight: "70px" }}
-          >
-            <Typography style={{ fontSize: mobile ? "11px" : "16px" }}>
-              {" "}
-              {i18n.t("pages.home.conciergeButton")}
-            </Typography>
-          </Button>
+          <div>
+            <Button
+              style={{
+                marginRight: "70px",
+              }}
+            >
+              <Typography style={{ fontSize: mobile ? "11px" : "16px" }}>
+                {i18n.t("pages.home.conciergeButton")}
+              </Typography>
+            </Button>
+          </div>
         </div>
       </div>
       <div

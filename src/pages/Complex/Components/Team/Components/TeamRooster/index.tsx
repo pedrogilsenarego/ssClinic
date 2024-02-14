@@ -148,7 +148,7 @@ const TeamRooster = () => {
           xs={12}
           style={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "center",
             marginBottom: "50px",
           }}
         >
@@ -194,9 +194,10 @@ const TeamRooster = () => {
               display: "flex",
               flexDirection: "column",
               rowGap: "20px",
-              justifyContent: "center",
+              justifyContent: "end",
+              paddingBottom: "30px",
               height: "100%",
-              width: "80%",
+              width: "90%",
             }}
           >
             <Typography
