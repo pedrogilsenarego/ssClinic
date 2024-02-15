@@ -115,7 +115,6 @@ const Location = () => {
         height="100%"
         width="100%"
         style={{
-          marginTop: mobile ? "300px" : "450px",
           paddingLeft: "20px",
           paddingRight: "20px",
         }}

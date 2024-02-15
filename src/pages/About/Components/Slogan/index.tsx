@@ -1,4 +1,5 @@
 import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { MAX_SCREEN } from "../../../../constants/screen";
 
 const Slogan = () => {
   const theme = useTheme();
@@ -37,11 +38,11 @@ const Slogan = () => {
         </Typography>
       </div>
       <Container
-        maxWidth="xl"
         style={{
-          marginTop: mobile ? "100px" : "400px",
+          maxWidth: MAX_SCREEN,
+          marginTop: mobile ? "100px" : "350px",
           position: "relative",
-          padding: mobile ? "30px" : "0px",
+          padding: mobile ? "30px" : "0px 265px",
         }}
       >
         <div

@@ -21,13 +21,13 @@ const Values = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: mobile ? "100px 20px" : "100px 400px",
+        padding: mobile ? "100px 20px" : "132px 400px 122px 400px",
       }}
     >
       <div
         style={{
           backgroundColor: mobile ? undefined : "lightgray",
-          padding: mobile ? "0px" : "150px 100px 100px 120px",
+          padding: mobile ? "0px" : "150px 116px 68px 90px",
         }}
       >
         <Typography
@@ -58,7 +58,7 @@ const Values = () => {
         </Typography>
         <div
           style={{
-            marginTop: "80px",
+            marginTop: "106px",
             display: "flex",
             flexDirection: "column",
             rowGap: "30px",

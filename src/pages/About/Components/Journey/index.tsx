@@ -6,18 +6,19 @@ import {
   useTheme,
 } from "@mui/material";
 import Button from "../../../../components/Ui/Button";
+import { MAX_SCREEN } from "../../../../constants/screen";
 
 const Journey = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Container
-      maxWidth="xl"
       style={{
-        padding: mobile ? "0px" : "0px 7%",
+        padding: mobile ? "0px" : "0px 193px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        maxWidth: MAX_SCREEN,
       }}
     >
       {!mobile && (
@@ -87,6 +88,7 @@ const Journey = () => {
                     letterSpacing: "1px",
                     lineHeight: "22px",
                     textAlign: "center",
+                    marginTop: "40px",
                   }}
                 >
                   Entre num universo cuidadosamente criado para proporcionar uma
@@ -105,7 +107,7 @@ const Journey = () => {
                   experiência são os nossos compromissos.
                 </Typography>
                 <div>
-                  <Button style={{ marginTop: "20px" }}>
+                  <Button style={{ marginTop: "30px" }}>
                     <Typography>Entrar</Typography>
                   </Button>
                 </div>
