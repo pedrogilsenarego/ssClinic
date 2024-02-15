@@ -1,5 +1,4 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import Button from "../../../../components/Ui/Button";
 
 const InitialSection2 = () => {
   const theme = useTheme();
@@ -9,7 +8,14 @@ const InitialSection2 = () => {
       <div
         style={{ display: "flex", flexDirection: "column", rowGap: "120px" }}
       >
-        <div style={{ display: "flex", columnGap: "30px" }}>
+        <div
+          style={{
+            display: "flex",
+            columnGap: "50px",
+            justifyContent: "end",
+            width: "100%",
+          }}
+        >
           <div
             style={{
               width: "50%",
@@ -17,67 +23,71 @@ const InitialSection2 = () => {
               flexDirection: "column",
               justifyContent: "end",
               padding: "30px 0px",
+
+              alignItems: "end",
             }}
           >
-            <Typography
-              variant="h1"
-              style={{
-                display: "flex",
-                columnGap: "10px",
-                marginBottom: "0px",
-                alignItems: "end",
-                fontStyle: "italic",
-                fontSize: "60px",
-                padding: "0px",
+            <div style={{ width: "80%" }}>
+              <Typography
+                variant="h1"
+                style={{
+                  display: "flex",
+                  columnGap: "10px",
+                  marginBottom: "0px",
+                  alignItems: "end",
+                  fontStyle: "italic",
+                  fontSize: "60px",
+                  padding: "0px",
 
-                lineHeight: "60px",
-                color: "lightgrey",
-              }}
-            >
-              1
-              <Typography
-                style={{
-                  fontSize: "23px",
-                  fontStyle: "normal",
-                  letterSpacing: "1px",
-                  fontWeight: 500,
-                  textTransform: "uppercase",
+                  lineHeight: "60px",
+                  color: "lightgrey",
                 }}
               >
-                Uma Recepção sem igual
+                1
+                <Typography
+                  style={{
+                    fontSize: "23px",
+                    fontStyle: "normal",
+                    letterSpacing: "1px",
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Uma Recepção sem igual
+                </Typography>
               </Typography>
-            </Typography>
 
-            <div
-              style={{
-                borderLeft: "1px solid black",
-                paddingLeft: "10px",
-                marginLeft: "10px",
-                marginTop: "20px",
-              }}
-            >
-              <Typography
+              <div
                 style={{
-                  width: "70%",
-                  fontSize: "13px",
-                  letterSpacing: "1px",
-                  lineHeight: "23px",
+                  borderLeft: "1px solid black",
+
+                  paddingLeft: "10px",
+                  marginLeft: "20px",
+                  marginTop: "20px",
                 }}
               >
-                Só somos desconhecidos uma vez. Esperamos por si à entrada do
-                edifício, para que entre acompanhado no nosso piso.
-              </Typography>
-              <Typography
-                style={{
-                  marginTop: "10px",
-                  width: "70%",
-                  fontSize: "13px",
-                  letterSpacing: "1px",
-                  lineHeight: "23px",
-                }}
-              >
-                Uma receção sem perguntas nem constrangimentos.
-              </Typography>
+                <Typography
+                  style={{
+                    fontSize: "13px",
+                    letterSpacing: "1px",
+                    lineHeight: "23px",
+                  }}
+                >
+                  Só somos desconhecidos uma vez. Esperamos por si à entrada do
+                  edifício, para que entre acompanhado no nosso piso.
+                </Typography>
+                <Typography
+                  style={{
+                    marginTop: "10px",
+
+                    fontSize: "13px",
+                    letterSpacing: "1px",
+                    lineHeight: "23px",
+                  }}
+                >
+                  Uma receção sem perguntas nem constrangimentos.
+                </Typography>
+              </div>
             </div>
           </div>
           <img
@@ -86,7 +96,7 @@ const InitialSection2 = () => {
             src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
           />
         </div>
-        <div style={{ display: "flex", columnGap: "30px" }}>
+        <div style={{ display: "flex", columnGap: "50px" }}>
           <img
             alt=""
             style={{ width: "50%", height: "340px", objectFit: "cover" }}
@@ -134,7 +144,7 @@ const InitialSection2 = () => {
               style={{
                 borderLeft: "1px solid black",
                 paddingLeft: "10px",
-                marginLeft: "10px",
+                marginLeft: "20px",
                 marginTop: "20px",
               }}
             >
@@ -163,7 +173,7 @@ const InitialSection2 = () => {
             </div>
           </div>
         </div>
-        <div style={{ display: "flex", columnGap: "30px" }}>
+        <div style={{ display: "flex", columnGap: "50px" }}>
           <div
             style={{
               width: "50%",
@@ -171,67 +181,69 @@ const InitialSection2 = () => {
               flexDirection: "column",
               justifyContent: "end",
               padding: "30px 0px",
+              alignItems: "end",
             }}
           >
-            <Typography
-              variant="h1"
-              style={{
-                display: "flex",
-                columnGap: "10px",
-                marginBottom: "0px",
-                alignItems: "end",
-                fontStyle: "italic",
-                fontSize: "60px",
-                padding: "0px",
+            <div style={{ width: "80%" }}>
+              <Typography
+                variant="h1"
+                style={{
+                  display: "flex",
+                  columnGap: "10px",
+                  marginBottom: "0px",
+                  alignItems: "end",
+                  fontStyle: "italic",
+                  fontSize: "60px",
+                  padding: "0px",
 
-                lineHeight: "60px",
-                color: "lightgrey",
-              }}
-            >
-              3
-              <Typography
-                style={{
-                  fontSize: "23px",
-                  fontStyle: "normal",
-                  letterSpacing: "1px",
-                  fontWeight: 500,
-                  textTransform: "uppercase",
+                  lineHeight: "60px",
+                  color: "lightgrey",
                 }}
               >
-                Sessões de tratamento
+                3
+                <Typography
+                  style={{
+                    fontSize: "23px",
+                    fontStyle: "normal",
+                    letterSpacing: "1px",
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Sessões de tratamento
+                </Typography>
               </Typography>
-            </Typography>
 
-            <div
-              style={{
-                borderLeft: "1px solid black",
-                paddingLeft: "10px",
-                marginLeft: "10px",
-                marginTop: "20px",
-              }}
-            >
-              <Typography
+              <div
                 style={{
-                  width: "70%",
-                  fontSize: "13px",
-                  letterSpacing: "1px",
-                  lineHeight: "23px",
+                  borderLeft: "1px solid black",
+                  paddingLeft: "10px",
+                  marginLeft: "20px",
+                  marginTop: "20px",
                 }}
               >
-                Estamos na vanguarda da Tecnologia, juntamente consigo.
-              </Typography>
-              <Typography
-                style={{
-                  marginTop: "10px",
-                  width: "70%",
-                  fontSize: "13px",
-                  letterSpacing: "1px",
-                  lineHeight: "23px",
-                }}
-              >
-                Utilizamos Tecnologias Avançadas, que garantem resultados
-                excecionais.
-              </Typography>
+                <Typography
+                  style={{
+                    fontSize: "13px",
+                    letterSpacing: "1px",
+                    lineHeight: "23px",
+                  }}
+                >
+                  Estamos na vanguarda da Tecnologia, juntamente consigo.
+                </Typography>
+                <Typography
+                  style={{
+                    marginTop: "10px",
+
+                    fontSize: "13px",
+                    letterSpacing: "1px",
+                    lineHeight: "23px",
+                  }}
+                >
+                  Utilizamos Tecnologias Avançadas, que garantem resultados
+                  excecionais.
+                </Typography>
+              </div>
             </div>
           </div>
           <img
@@ -240,7 +252,7 @@ const InitialSection2 = () => {
             src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
           />
         </div>
-        <div style={{ display: "flex", columnGap: "30px" }}>
+        <div style={{ display: "flex", columnGap: "50px" }}>
           <img
             alt=""
             style={{ width: "50%", height: "340px", objectFit: "cover" }}
@@ -288,7 +300,7 @@ const InitialSection2 = () => {
               style={{
                 borderLeft: "1px solid black",
                 paddingLeft: "10px",
-                marginLeft: "10px",
+                marginLeft: "20px",
                 marginTop: "20px",
               }}
             >

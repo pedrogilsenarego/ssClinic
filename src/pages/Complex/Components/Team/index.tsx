@@ -14,6 +14,7 @@ const Team = () => {
         marginTop: mobile ? "100px" : "0px",
         flexDirection: "column",
         rowGap: "70px",
+        padding: mobile ? undefined : "0px 190px",
       }}
     >
       <div

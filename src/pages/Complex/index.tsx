@@ -8,6 +8,7 @@ import {
 
 import Carousel from "../../components/Carousel";
 import Button from "../../components/Ui/Button";
+import { MAX_SCREEN } from "../../constants/screen";
 import SchedulleMembership from "./Components/SchedulleMembership";
 import Team from "./Components/Team";
 
@@ -58,7 +59,8 @@ const Complex = () => {
                 height: mobile ? "600px" : `calc(100vh - 330px)`,
                 objectFit: "cover",
                 width: "100%",
-                padding: mobile ? "40px" : "50px",
+                padding: mobile ? "40px" : "80px",
+
                 paddingBottom: mobile ? undefined : "100px",
               }}
             >
@@ -104,7 +106,7 @@ const Complex = () => {
           ))}
         </Carousel>
       </div>
-      <Container style={{}} maxWidth="xl">
+      <Container style={{ maxWidth: MAX_SCREEN }}>
         <div
           style={{
             marginTop: mobile ? "80px" : "200px",
@@ -116,7 +118,11 @@ const Complex = () => {
           }}
         >
           {!mobile && (
-            <Grid container columnSpacing={"50px"}>
+            <Grid
+              container
+              columnSpacing={"50px"}
+              style={{ padding: "0px 100px" }}
+            >
               <Grid item xs={12} md={6}>
                 <div
                   style={{
@@ -316,7 +322,11 @@ const Complex = () => {
               </Grid>
             </>
           )}
-          <Grid container spacing={"20px"}>
+          <Grid
+            container
+            spacing={"20px"}
+            style={{ padding: mobile ? undefined : "0px 190px" }}
+          >
             <Grid item xs={12} sm={6}>
               <div
                 style={{

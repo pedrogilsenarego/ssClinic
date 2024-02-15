@@ -1,11 +1,18 @@
 import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/EHTIQ BRANDS-12.svg";
+import { MAX_SCREEN } from "../../../../constants/screen";
 
 const InitialImage = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Container maxWidth="xl" style={{ marginTop: "100px" }}>
+    <Container
+      style={{
+        marginTop: mobile ? "100px" : "250px",
+        maxWidth: MAX_SCREEN,
+        padding: mobile ? undefined : "0px 196px",
+      }}
+    >
       <div
         style={{
           height: "100%",

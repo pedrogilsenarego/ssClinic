@@ -1,6 +1,7 @@
 import { Container, useMediaQuery, useTheme } from "@mui/material";
 import InitialImage from "./Components/InitialImage";
 
+import { MAX_SCREEN } from "../../constants/screen";
 import Escort from "../Home/Components/Escort";
 import SpaceWhere from "../Home/Components/SpaceWhere";
 import IdentityProtection from "./Components/IdentityProtection";
@@ -15,8 +16,11 @@ const Treatments = () => {
         <InitialImage />
       </div>
       <Container
-        style={{ marginTop: mobile ? "100px" : "200px" }}
-        maxWidth="xl"
+        style={{
+          marginTop: mobile ? "100px" : "200px",
+          maxWidth: MAX_SCREEN,
+          padding: mobile ? undefined : "0px 190px",
+        }}
       >
         <InitialSection2 />
         <div style={{ marginTop: mobile ? "150px" : "200px" }}>
