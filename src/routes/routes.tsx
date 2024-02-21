@@ -147,7 +147,7 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.BUY_SUCCESS,
     component: (
       <MainLayout>
-        <RoutesI.MyAccount />
+        <RoutesI.BuySuccess />
       </MainLayout>
     ),
   },
