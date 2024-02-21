@@ -45,12 +45,13 @@ const BuySuccess = () => {
     const baseUrl = "https://clinicasritz-be-staging.qloudyx.pt";
     const url = `${baseUrl}/collabs/list`;
     const accessToken = getCookie("access");
+    console.log(accessToken);
     try {
       const response = await fetch(url, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
+          authorization: `Bearer ${accessToken}`,
         },
         credentials: "include",
       });
