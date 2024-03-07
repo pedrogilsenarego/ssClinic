@@ -1,6 +1,8 @@
 import { Box, Container } from "@mui/material";
 import Footer from "./Footer";
 import Header from "./Header";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../routes/constants";
 interface HomepageLayoutProps {
   children: React.ReactNode;
   hasHeader?: boolean;
@@ -10,6 +12,7 @@ const HomepageLayout = ({
   children,
   hasHeader = true,
 }: HomepageLayoutProps) => {
+  const navigate = useNavigate();
   return (
     <Box
       style={{
@@ -20,6 +23,7 @@ const HomepageLayout = ({
         justifyContent: "space-between",
       }}
     >
+      <p onClick={() => navigate(ROUTE_PATHS.ADMIN)}>Admin</p>
       {hasHeader && <Header />}
 
       <Box

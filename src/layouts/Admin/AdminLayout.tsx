@@ -1,17 +1,13 @@
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import AdminSideBar from "../../pages/Admin/Presentational/AdminSideBar";
 
 const AdminLayout = (props: any) => {
   return (
-    <Grid container>
-      <Grid>
-        <AdminSideBar />
-      </Grid>
+    <Box style={{ display: "flex" }}>
+      <AdminSideBar />
 
-      <Grid style={{ padding: "20px", marginLeft: "200px", width: "100%" }}>
-        {props.children}
-      </Grid>
-    </Grid>
+      <Box style={{ padding: "20px" }}>{props.children}</Box>
+    </Box>
   );
 };
 

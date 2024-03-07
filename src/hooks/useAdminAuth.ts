@@ -12,15 +12,15 @@ const useAdminAuth = (props: any) => {
   );
 
   const navigate = useNavigate();
-  useEffect(
-    () => {
-      if (!currentUser || !checkUserIsAdmin(currentUser)) {
-        navigate(ROUTE_PATHS.HOME);
-      }
-    },
-    // eslint-disable-next-line
-    [currentUser]
-  );
+  // useEffect(
+  //   () => {
+  //     if (!currentUser || !checkUserIsAdmin(currentUser)) {
+  //       navigate(ROUTE_PATHS.HOME);
+  //     }
+  //   },
+  //   // eslint-disable-next-line
+  //   [currentUser]
+  // );
   return currentUser;
 };
 

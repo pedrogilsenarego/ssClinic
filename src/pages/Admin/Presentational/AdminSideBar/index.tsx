@@ -2,9 +2,10 @@ import { Box, Divider } from "@mui/material";
 
 import { Icons } from "../../../../components/Icons";
 import { ROUTE_PATHS } from "../../../../routes/constants";
-import { Colors } from "../../../../theme/theme";
+import Close from "../../../../assets/Frame 407.svg";
 import { i18n } from "../../../../translations/i18n";
 import Button from "./Button";
+import User from "./User";
 
 const AdminSideBar = () => {
   return (
@@ -13,14 +14,18 @@ const AdminSideBar = () => {
       flexDirection="column"
       rowGap={2}
       style={{
-        width: "200px",
-        position: "fixed",
         height: "100vh",
-        backgroundColor: Colors.white[400],
-        borderRight: `solid 1px ${Colors.black[400]}`,
-        padding: "50px 0px 0px 10px",
+        backgroundColor: "rgba(15, 9, 12, 0.7)",
+        borderRadius: "0px 20px 20px 0px",
+        padding: "40px 30px 0px 30px",
       }}
     >
+      <Box
+        style={{ display: "flex", justifyContent: "end", cursor: "pointer" }}
+      >
+        <img src={Close} style={{ height: "50px" }} />
+      </Box>
+      <User />
       <Button
         label={i18n.t("pages.admin.sidebar.analytics", "Analytics")}
         icon={<Icons.Graph />}
