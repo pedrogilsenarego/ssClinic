@@ -1,5 +1,5 @@
-import { Box, Divider } from "@mui/material";
-
+import { Box, Typography } from "@mui/material";
+import Status from "../../../../assets/status-up.svg";
 import { Icons } from "../../../../components/Icons";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import Close from "../../../../assets/Frame 407.svg";
@@ -26,33 +26,41 @@ const AdminSideBar = () => {
         <img src={Close} style={{ height: "50px" }} />
       </Box>
       <User />
+      <Typography
+        style={{
+          marginTop: "30px",
+          textTransform: "capitalize",
+          fontSize: "11px",
+          letterSpacing: "0.5px",
+          color: "rgba(255, 255, 255, 0.32)",
+        }}
+      >
+        Menu
+      </Typography>
       <Button
-        label={i18n.t("pages.admin.sidebar.analytics", "Analytics")}
-        icon={<Icons.Graph />}
+        label={"Performance"}
+        icon={<img src={Status} style={{ height: "24px" }} />}
         path={ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS}
       />
 
-      <Divider />
       <Button
         label={i18n.t("pages.admin.sidebar.users", "Users")}
         icon={<Icons.User />}
         path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
       />
-      <Divider />
+
       <Button
         label={i18n.t("pages.admin.sidebar.blog", "Blog")}
         icon={<Icons.Time />}
         path={ROUTE_PATHS.ADMIN_MANAGE_BLOG}
       />
 
-      <Divider />
       <Button
         label={i18n.t("pages.admin.sidebar.products", "Products")}
         icon={<Icons.Edit />}
         path={ROUTE_PATHS.ADMIN}
       />
 
-      <Divider />
       <Button
         label={i18n.t("pages.admin.sidebar.backHome", "Back Home")}
         icon={<Icons.Home />}
