@@ -7,81 +7,65 @@ export const adminPages = [
   {
     path: ROUTE_PATHS.ADMIN,
     component: (
-      <WithAdminAuth>
-        <AdminLayout>
-          <RoutesI.AdminManageProducts />
-        </AdminLayout>
-      </WithAdminAuth>
+      <AdminLayout>
+        <RoutesI.AdminManageProducts />
+      </AdminLayout>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_EDIT_PRODUCT,
     component: (
-      <WithAdminAuth>
-        <AdminLayout>
-          <RoutesI.AdminCreateProduct edit />
-        </AdminLayout>
-      </WithAdminAuth>
+      <AdminLayout>
+        <RoutesI.AdminCreateProduct edit />
+      </AdminLayout>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_CREATE_PRODUCT,
     component: (
-      <WithAdminAuth>
-        <AdminLayout>
-          <RoutesI.AdminCreateProduct />
-        </AdminLayout>
-      </WithAdminAuth>
+      <AdminLayout>
+        <RoutesI.AdminCreateProduct />
+      </AdminLayout>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_EDIT_BLOG,
     component: (
-      <WithAdminAuth>
-        <AdminLayout>
-          <RoutesI.AdminCreateBlog edit />
-        </AdminLayout>
-      </WithAdminAuth>
+      <AdminLayout>
+        <RoutesI.AdminCreateBlog edit />
+      </AdminLayout>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_CREATE_BLOG,
     component: (
-      <WithAdminAuth>
-        <AdminLayout>
-          <RoutesI.AdminCreateBlog />
-        </AdminLayout>
-      </WithAdminAuth>
+      <AdminLayout>
+        <RoutesI.AdminCreateBlog />
+      </AdminLayout>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_MANAGE_USERS,
     component: (
-      <WithAdminAuth>
-        <AdminLayout>
-          <RoutesI.AdminManageUsers />
-        </AdminLayout>
-      </WithAdminAuth>
+      <AdminLayout>
+        <RoutesI.AdminManageUsers />
+      </AdminLayout>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS,
     component: (
-      <WithAdminAuth>
-        <AdminLayout>
-          <RoutesI.AdminManageAnalytics />
-        </AdminLayout>
-      </WithAdminAuth>
+      <AdminLayout>
+        <RoutesI.AdminManageAnalytics />
+      </AdminLayout>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_MANAGE_BLOG,
     component: (
-      <WithAdminAuth>
-        <AdminLayout>
-          <RoutesI.AdminManageBlog />
-        </AdminLayout>
-      </WithAdminAuth>
+      <AdminLayout>
+        <RoutesI.AdminManageBlog />
+      </AdminLayout>
     ),
   },
 ];

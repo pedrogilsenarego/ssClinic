@@ -7,9 +7,10 @@ import { CurrentUser } from "../types/user";
 import checkUserIsAdmin from "../utils/checkUserIsAdmin";
 
 const useAdminAuth = (props: any) => {
-  const currentUser = useSelector<State, CurrentUser | null>(
-    (state) => state.user.currentUser
-  );
+  const currentUser =
+    useSelector<State, CurrentUser | null>(
+      (state) => state?.user?.currentUser
+    ) || null;
 
   const navigate = useNavigate();
   // useEffect(
