@@ -32,12 +32,12 @@ const Button = ({ icon, label, path, ...props }: Props) => {
       display="flex"
       columnGap={1}
       alignItems="center"
-      padding="20px 10px"
+      padding="16px 20px"
       style={{
         backgroundColor:
           location.pathname === path ? `rgba(255, 255, 255, 0.03)` : undefined,
         cursor: "pointer",
-        borderRadius: "30px",
+        borderRadius: "24px",
       }}
       onClick={() => navigate(path)}
       {...props}
@@ -51,11 +51,14 @@ const Button = ({ icon, label, path, ...props }: Props) => {
         <span style={iconStyle}>{icon}</span>
       )}
 
-      <Typography
+      <p
         style={{
+          marginTop: "1px",
           fontSize: "14px",
-          lineHeight: "20px",
-          textShadow: "10px 10px 16px 10px rgba(255, 255, 255, 1)",
+          lineHeight: "18px",
+          textShadow:
+            hover || location.pathname === path ? "0px 0px 16px white" : "none",
+
           color:
             hover || location.pathname === path
               ? "white"
@@ -63,7 +66,7 @@ const Button = ({ icon, label, path, ...props }: Props) => {
         }}
       >
         {label}
-      </Typography>
+      </p>
     </Box>
   );
 };

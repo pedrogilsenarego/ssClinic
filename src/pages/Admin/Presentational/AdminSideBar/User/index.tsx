@@ -9,7 +9,7 @@ const User = () => {
         style={{ height: "50px", aspectRatio: 1, borderRadius: "50%" }}
       />
       <Box>
-        <Typography
+        <p
           style={{
             fontSize: "14px",
             lineHeight: "20px",
@@ -19,9 +19,15 @@ const User = () => {
           }}
         >
           Josefina Vicente
-        </Typography>
-        <Box style={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography
+        </p>
+        <Box
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            columnGap: "20px",
+          }}
+        >
+          <p
             style={{
               fontSize: "11px",
               lineHeight: "22px",
@@ -32,7 +38,7 @@ const User = () => {
             }}
           >
             Admin | Gerente
-          </Typography>{" "}
+          </p>{" "}
           <img src={Edit} style={{ height: "17px", width: "17px" }} />
         </Box>
       </Box>
