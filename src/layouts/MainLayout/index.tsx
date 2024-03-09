@@ -23,7 +23,7 @@ const HomepageLayout = ({
         justifyContent: "space-between",
       }}
     >
-      <p onClick={() => navigate(ROUTE_PATHS.ADMIN)}>Admin</p>
+      <p onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}>Admin</p>
       {hasHeader && <Header />}
 
       <Box

@@ -6,17 +6,12 @@ import {
   FormControl,
   FormControlProps,
   FormHelperText,
-  IconButton,
-  InputAdornment,
   InputLabel,
-  TextField,
   Tooltip,
 } from "@mui/material";
 import { FC } from "react";
 import { Control, UseFormSetValue, get, useController } from "react-hook-form";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { Colors, mainColors } from "../../../theme/theme";
-import { Icons } from "../../Icons";
 import useStyles from "./styles";
 import useControlledInput from "./useControlledInput";
 
@@ -81,15 +76,7 @@ const ControlledFormInputEditor: FC<BaseProps> = (props) => {
     setValue,
     ...rest
   } = props;
-  const {
-    hasError,
-    field,
-
-    isSubmitting,
-    showPassword,
-    handleClickShowPassword,
-    handleMouseDownPassword,
-  } = useControlledInput({
+  const { field } = useControlledInput({
     name,
     control,
     setValue,

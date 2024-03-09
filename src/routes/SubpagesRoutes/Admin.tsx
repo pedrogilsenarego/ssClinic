@@ -5,6 +5,14 @@ import { RoutesI } from "../routesImport";
 
 export const adminPages = [
   {
+    path: ROUTE_PATHS.ADMIN_HOME,
+    component: (
+      <AdminLayout>
+        <RoutesI.AdminHome />
+      </AdminLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN,
     component: (
       <AdminLayout>

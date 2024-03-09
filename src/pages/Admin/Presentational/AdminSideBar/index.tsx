@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Status from "../../../../assets/status-up.svg";
 import Manage from "../../../../assets/share.svg";
 import Settings from "../../../../assets/setting-5.svg";
@@ -13,8 +13,10 @@ import Close from "../../../../assets/Frame 407.svg";
 import { i18n } from "../../../../translations/i18n";
 import Button from "./Button";
 import User from "./User";
+import { useNavigate } from "react-router-dom";
 
 const AdminSideBar = () => {
+  const navigate = useNavigate();
   return (
     <Box
       display="flex"
@@ -32,7 +34,12 @@ const AdminSideBar = () => {
         <Box
           style={{ display: "flex", justifyContent: "end", cursor: "pointer" }}
         >
-          <img src={Close} style={{ height: "50px" }} />
+          <img
+            onClick={() => navigate(ROUTE_PATHS.HOME)}
+            src={Close}
+            style={{ height: "50px", cursor: "pointer" }}
+            alt=""
+          />
         </Box>
         <User />
 
@@ -53,47 +60,47 @@ const AdminSideBar = () => {
           </p>
           <Button
             label={"Performance"}
-            icon={<img src={Status} style={{ height: "24px" }} />}
+            icon={<img src={Status} style={{ height: "24px" }} alt="" />}
             path={ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS}
           />
 
           <Button
             label={i18n.t("Gestão Conteúdos")}
-            icon={<img src={Manage} style={{ height: "24px" }} />}
+            icon={<img src={Manage} style={{ height: "24px" }} alt="" />}
             path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
           />
 
           <Button
             label={i18n.t("Utilizadores")}
-            icon={<img src={Settings} style={{ height: "24px" }} />}
+            icon={<img src={Settings} style={{ height: "24px" }} alt="" />}
             path={ROUTE_PATHS.ADMIN_MANAGE_BLOG}
           />
 
           <Button
             label={i18n.t("Clientes")}
-            icon={<img src={UserIcon} style={{ height: "24px" }} />}
+            icon={<img src={UserIcon} style={{ height: "24px" }} alt="" />}
             path={ROUTE_PATHS.ADMIN}
           />
 
           <Button
             label={i18n.t("Agenda")}
-            icon={<img src={Callendar} style={{ height: "24px" }} />}
+            icon={<img src={Callendar} style={{ height: "24px" }} alt="" />}
             path={ROUTE_PATHS.HOME}
           />
           <Button
             label={i18n.t("EXPERT ADVICE")}
-            icon={<img src={Scope} style={{ height: "24px" }} />}
+            icon={<img src={Scope} style={{ height: "24px" }} alt="" />}
             path={ROUTE_PATHS.HOME}
           />
 
           <Button
             label={i18n.t("Live-Chat")}
-            icon={<img src={Chat} style={{ height: "24px" }} />}
+            icon={<img src={Chat} style={{ height: "24px" }} alt="" />}
             path={ROUTE_PATHS.HOME}
           />
         </Box>
       </Box>
-      <img src={EhtiqLogo} style={{ height: "89px" }} />
+      <img src={EhtiqLogo} style={{ height: "89px" }} alt="" />
     </Box>
   );
 };

@@ -20,6 +20,7 @@ export const RoutesI = {
   AdminManageBlog: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageBlog")
   ),
+  AdminHome: lazyWithRetryAndLoader(() => import("../pages/Admin/Home")),
   Login: lazyWithRetryAndLoader(() => import("../pages/Auth/Login")),
   Register: lazyWithRetryAndLoader(() => import("../pages/Auth/Register")),
   About: lazyWithRetryAndLoader(() => import("../pages/About")),
