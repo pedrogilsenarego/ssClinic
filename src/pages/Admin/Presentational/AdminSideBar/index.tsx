@@ -67,7 +67,7 @@ const AdminSideBar = () => {
           <Button
             label={i18n.t("Gestão Conteúdos")}
             icon={<img src={Manage} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
+            path={ROUTE_PATHS.ADMIN_MANAGE_CONTENT}
           />
 
           <Button

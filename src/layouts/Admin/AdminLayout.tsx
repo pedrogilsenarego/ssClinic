@@ -14,7 +14,7 @@ const AdminLayout = (props: any) => {
     >
       <AdminSideBar />
 
-      <Box style={{ padding: "20px", width: "100%", position: "relative" }}>
+      <Box style={{ padding: "30px", width: "100%", position: "relative" }}>
         <Box
           style={{
             position: "relative",
@@ -44,8 +44,35 @@ const AdminLayout = (props: any) => {
               transform: "translateX(-200px)",
             }}
           />
+          <p
+            style={{
+              position: "absolute",
+              bottom: "-10px",
+              fontSize: "10px",
+              right: "25px",
+              fontWeight: 400,
+              color: "#6A6A6A",
+            }}
+          >
+            <span style={{ color: "black" }}>
+              Todos os direitos reservados. Apenas para uso interno.
+            </span>{" "}
+            Desenvolvido por{" "}
+            <span style={{ textDecoration: "underline", color: "#6A6A6A" }}>
+              LINEA AGENCY.
+            </span>
+          </p>
         </Box>
-        <Box style={{ position: "absolute", top: "20px", height: "100%" }}>
+        <Box
+          style={{
+            position: "absolute",
+            top: "0px",
+            height: "100%",
+
+            width: "100%",
+            padding: "50px 60px 80px 0px",
+          }}
+        >
           {props.children}
         </Box>
       </Box>

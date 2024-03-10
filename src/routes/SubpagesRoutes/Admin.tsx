@@ -21,6 +21,14 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT,
+    component: (
+      <AdminLayout>
+        <RoutesI.AdminManageContent />
+      </AdminLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_EDIT_PRODUCT,
     component: (
       <AdminLayout>
