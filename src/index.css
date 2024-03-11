@@ -5,8 +5,8 @@
 }
 
 *::-webkit-scrollbar {
-  width: none !important;
-  display: none !important;
+  width: none ;
+  display: none ;
 }
 
 body {
