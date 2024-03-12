@@ -5,11 +5,15 @@ import useManageProducts from "./useManageProducts";
 import Eye from "../../../assets/eye.svg";
 import SquareEdit from "../../../assets/dashboard-square-edit.svg";
 import "./index.css";
+import ControlledFormInput from "../../../components/Inputs/ControlledInputAdmin";
+import { useForm } from "react-hook-form";
+import Edit from "../../../assets/Component 1.svg";
 
 const ManageContent = () => {
   const classes = useStyles();
   const {} = useManageProducts();
   const navigate = useNavigate();
+  const { reset, control, handleSubmit } = useForm<any>({});
 
   return (
     <div
@@ -62,12 +66,29 @@ const ManageContent = () => {
           }}
         >
           <div style={{ width: "70%" }}>
+            <div>
+              <form>
+                <ControlledFormInput
+                  type="search"
+                  control={control}
+                  name="search"
+                  inputPlaceholder="Encontrar páginas"
+                  style={{
+                    width: "100%",
+                    padding: "20px 3px",
+                    borderRadius: "15px",
+                    background: "red",
+                  }}
+                />
+              </form>
+            </div>
             <div
               style={{
                 backgroundColor: "white",
                 borderRadius: "10px",
                 padding: "30px",
                 width: "100%",
+                marginTop: "50px",
               }}
             >
               <div
@@ -138,9 +159,23 @@ const ManageContent = () => {
           >
             <div
               style={{
+                backgroundColor: "white",
+                borderRadius: "15px",
+                padding: "10px 20px",
+                display: "flex",
+                gap: "10px",
+                cursor: "pointer",
+              }}
+            >
+              <img src={Edit} alt="" style={{ width: "17px" }} />
+              <p style={{ fontSize: "15px" }}>NOVA PÁGINA</p>
+            </div>
+            <div
+              style={{
                 padding: "30px",
                 borderRadius: "20px",
                 border: "1px solid #CDCDCD",
+                marginTop: "32px",
               }}
             >
               <p
@@ -234,7 +269,7 @@ const ManageContent = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "30px",
-                  marginTop: "30px",
+                  marginTop: "20px",
                   marginLeft: "20px",
                 }}
               >
@@ -255,7 +290,7 @@ const ManageContent = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "30px",
-                  marginTop: "30px",
+                  marginTop: "20px",
                   marginLeft: "20px",
                 }}
               >
@@ -276,7 +311,7 @@ const ManageContent = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "30px",
-                  marginTop: "30px",
+                  marginTop: "20px",
                   marginLeft: "20px",
                 }}
               >
@@ -297,7 +332,7 @@ const ManageContent = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "30px",
-                  marginTop: "30px",
+                  marginTop: "20px",
                   marginLeft: "20px",
                 }}
               >
@@ -318,7 +353,7 @@ const ManageContent = () => {
                   display: "flex",
                   alignItems: "center",
                   gap: "30px",
-                  marginTop: "30px",
+                  marginTop: "20px",
                   marginLeft: "20px",
                 }}
               >
