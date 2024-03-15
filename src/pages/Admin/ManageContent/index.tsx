@@ -16,7 +16,7 @@ const ManageContent = () => {
   const { reset, control, handleSubmit } = useForm<any>({});
 
   return (
-    <GeneralPage>
+    <GeneralPage title="BLOG EHTIQ" subTitle="Gestão Conteúdos">
       <div
         style={{
           marginTop: "100px",

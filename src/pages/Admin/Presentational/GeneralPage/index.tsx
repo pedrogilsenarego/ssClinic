@@ -5,9 +5,11 @@ import { ROUTE_PATHS } from "../../../../routes/constants";
 
 type Props = {
   children: React.ReactNode;
+  title: string;
+  subTitle: string;
 };
 
-const GeneralPage = ({ children }: Props) => {
+const GeneralPage = ({ children, title, subTitle }: Props) => {
   const navigate = useNavigate();
   return (
     <div
@@ -41,7 +43,7 @@ const GeneralPage = ({ children }: Props) => {
             fontWeight: 500,
           }}
         >
-          Gestão Conteúdos
+          {subTitle}
         </p>
         <p
           style={{
@@ -52,7 +54,7 @@ const GeneralPage = ({ children }: Props) => {
             color: "black",
           }}
         >
-          Blog Ehtiq
+          {title}
         </p>
         <div
           style={{

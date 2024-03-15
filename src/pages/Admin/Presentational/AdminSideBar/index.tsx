@@ -73,7 +73,7 @@ const AdminSideBar = () => {
           <Button
             label={i18n.t("Utilizadores")}
             icon={<img src={Settings} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_BLOG}
+            path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
           />
 
           <Button
