@@ -5,9 +5,27 @@ import GeneralPage from "../Presentational/GeneralPage";
 import { tableColumns } from "./constants";
 import { mapAlarmHistoryList } from "./mapper";
 import UserAdd from "../../../assets/user-add--01.svg";
+import SignatureCanvas from "react-signature-canvas";
+import { useCallback, useRef, useState } from "react";
 
 const ManageUsers = () => {
   const { reset, control, handleSubmit } = useForm<any>({});
+  const padRef = useRef<any>(null);
+  const [canvas, setCanvas] = useState<string | undefined>(undefined);
+  const [canvasVisibility, setCanvasVisibility] = useState(false);
+
+  const clearSignatureCanvas = useCallback(() => {
+    padRef?.current?.clear();
+    setCanvas(undefined);
+    setCanvasVisibility(false);
+  }, []);
+
+  const handleGetCanvas = useCallback(() => {
+    const canvas = padRef?.current?.toDataURL();
+
+    setCanvas(canvas);
+    setCanvasVisibility(true);
+  }, []);
   return (
     <GeneralPage title="STAFF INTERNO" subTitle="Utilizadores">
       <div
@@ -55,6 +73,15 @@ const ManageUsers = () => {
           rows={mapAlarmHistoryList([1, 2, 2])}
           onAction={() => {}}
         />
+        <div style={{ backgroundColor: "white", width: 500, height: 200 }}>
+          <SignatureCanvas
+            ref={padRef}
+            canvasProps={{ width: 500, height: 200 }}
+          />
+        </div>
+        {canvasVisibility && <img src={canvas} alt="signature" />}
+        <button onClick={clearSignatureCanvas}>clear</button>
+        <button onClick={handleGetCanvas}>save</button>
       </div>
     </GeneralPage>
   );
