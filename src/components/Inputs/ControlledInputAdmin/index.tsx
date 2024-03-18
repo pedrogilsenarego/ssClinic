@@ -108,6 +108,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
           marginBottom: hasError ? "0.2rem" : "0",
           borderRadius: "15px",
           backgroundColor: "#CBCBCB",
+          width: "100%",
         }}
         {...field}
         id={name}

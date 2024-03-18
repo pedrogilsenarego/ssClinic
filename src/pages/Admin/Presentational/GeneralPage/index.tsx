@@ -59,13 +59,20 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
         <div
           style={{
             height: "2px",
-            width: "90%",
+            width: "95%",
             backgroundColor: "#00000080",
             marginTop: "20px",
           }}
         />
       </div>
-      <div style={{}} className="custom-scrollbar">
+      <div
+        style={{
+          paddingLeft: "60px",
+          paddingRight: "80px",
+          paddingTop: "100px",
+        }}
+        className="custom-scrollbar"
+      >
         {children}
       </div>
     </div>

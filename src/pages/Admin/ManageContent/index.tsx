@@ -19,8 +19,6 @@ const ManageContent = () => {
     <GeneralPage title="BLOG EHTIQ" subTitle="Gestão Conteúdos">
       <div
         style={{
-          marginTop: "100px",
-          paddingLeft: "100px",
           width: "100%",
           display: "flex",
           gap: "30px",
