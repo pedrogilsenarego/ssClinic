@@ -12,6 +12,8 @@ import { Colors } from "../../theme/theme";
 import * as Styled from "./styles";
 import { Column, ColumnType } from "./types";
 import useTableList from "./useTableList";
+import LeftArrow from "../../assets/leftArrow.svg";
+import RightArrow from "../../assets/rightArrow.svg";
 
 interface Props<T> {
   columns: Column[];
@@ -23,6 +25,10 @@ interface Props<T> {
   loading?: boolean;
   onAction: (type: string, id: number, value?: any) => void;
   onCheckBoxChange?: (data: any) => void;
+  pagination?: {
+    numberPages: number;
+    page: number;
+  };
 }
 
 interface BaseProps {
@@ -36,6 +42,7 @@ const TableList = <T extends BaseProps>({
   enableCheckBox = false,
   enableBulkSelect = false,
   onCheckBoxChangeAll,
+  pagination,
   rows,
   selectedOptions = [],
   loading = false,
@@ -189,6 +196,121 @@ const TableList = <T extends BaseProps>({
         </TableHead>
         <TableBody>{rows.map((row) => renderBodyRow(row))}</TableBody>
       </Table>
+      {pagination && (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            backgroundColor: "white",
+            justifyContent: "end",
+            padding: "8px 10px 10px 0px",
+            borderRadius: "0px 0px 6px 6px",
+          }}
+        >
+          <div style={{ display: "flex", columnGap: "5px" }}>
+            <div
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "25px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <img alt="" src={LeftArrow} style={{ width: "20px" }} />
+            </div>
+            <div
+              style={{
+                backgroundColor: "#F3F4F6",
+                width: "36px",
+                height: "36px",
+                borderRadius: "25px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <p style={{ fontSize: "12px", fontWeight: 500 }}>
+                {pagination.page}
+              </p>
+            </div>
+            <div
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "25px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <p style={{ fontSize: "12px", fontWeight: 500 }}>
+                {pagination.page + 1}
+              </p>
+            </div>
+            <div
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "25px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <p style={{ fontSize: "12px", fontWeight: 500 }}>
+                {pagination.page + 2}
+              </p>
+            </div>
+            <div
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "25px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <p style={{ fontSize: "12px", fontWeight: 500 }}>...</p>
+            </div>
+            <div
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "25px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <p style={{ fontSize: "12px", fontWeight: 500 }}>
+                {pagination.numberPages}
+              </p>
+            </div>
+          </div>
+          <div
+            style={{
+              width: "36px",
+              height: "36px",
+              borderRadius: "25px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              cursor: "pointer",
+            }}
+          >
+            <img alt="" src={RightArrow} style={{ width: "20px" }} />
+          </div>
+        </div>
+      )}
     </Styled.TableContainer>
   );
 };

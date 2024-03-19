@@ -28,7 +28,7 @@ export const tableColumns: Column[] = [
   },
   {
     id: "actions",
-    label: i18n.t("pages.admin.manageProducts.list.actions", "Actions"),
+    label: "",
     type: ColumnType.ActionComponent,
 
     sortable: false,
