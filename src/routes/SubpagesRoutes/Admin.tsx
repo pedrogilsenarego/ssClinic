@@ -69,6 +69,14 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_MANAGE_USERS_CREATE,
+    component: (
+      <AdminLayout>
+        <RoutesI.AdminManageUsersCreate />
+      </AdminLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS,
     component: (
       <AdminLayout>

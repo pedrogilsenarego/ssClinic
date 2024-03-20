@@ -5,9 +5,12 @@ import GeneralPage from "../Presentational/GeneralPage";
 import { tableColumns } from "./constants";
 import { mapAlarmHistoryList } from "./mapper";
 import UserAdd from "../../../assets/user-add--01.svg";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../routes/constants";
 
 const ManageUsers = () => {
   const { reset, control, handleSubmit } = useForm<any>({});
+  const navigate = useNavigate();
 
   return (
     <GeneralPage title="STAFF INTERNO" subTitle="Utilizadores">
@@ -37,6 +40,7 @@ const ManageUsers = () => {
           </div>
         </form>
         <div
+          onClick={() => navigate(ROUTE_PATHS.ADMIN_MANAGE_USERS_CREATE)}
           style={{
             backgroundColor: "#93C0D9",
             borderRadius: "15px",
