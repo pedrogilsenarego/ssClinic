@@ -5,14 +5,13 @@ import {
   FormControlProps,
   FormHelperText,
   InputAdornment,
-  InputLabel,
   TextField,
   Tooltip,
 } from "@mui/material";
 import { FC } from "react";
 import { Control, UseFormSetValue, get, useController } from "react-hook-form";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { Colors, mainColors } from "../../../theme/theme";
+import { mainColors } from "../../../theme/theme";
 import { Icons } from "../../Icons";
 import useStyles from "./styles";
 import useControlledInput from "./useControlledInput";
@@ -26,11 +25,14 @@ export interface BaseReactHookFormProps {
   tooltipLabel?: string;
   inputPlaceholder: string;
   type?: string;
+  width?: string;
+  multiline?: boolean;
 }
 export interface BaseProps extends FormControlProps, BaseReactHookFormProps {}
 
 const FormControlComp = (props: BaseProps) => {
-  const { children, name, control, label, tooltipLabel } = props;
+  const { children, name, control, label, tooltipLabel, width, multiline } =
+    props;
   const {
     formState: { errors },
   } = useController({ name, control });
@@ -41,11 +43,25 @@ const FormControlComp = (props: BaseProps) => {
       <Box
         style={{
           display: "flex",
-          alignItems: "center",
+          alignItems: "start",
           justifyContent: "center",
+          flexDirection: "column",
+          rowGap: "10px",
+          width,
         }}
       >
-        {label && <InputLabel htmlFor={name}>{label}</InputLabel>}
+        {label && (
+          <p
+            style={{
+              fontSize: "14px",
+              textTransform: "capitalize",
+              fontWeight: "500",
+              marginLeft: "6px",
+            }}
+          >
+            {label}
+          </p>
+        )}
         {tooltipLabel && (
           <Tooltip placement="left" color="primary.100" title={tooltipLabel}>
             <Box height="0.9rem" width="0.9rem">
@@ -53,8 +69,9 @@ const FormControlComp = (props: BaseProps) => {
             </Box>
           </Tooltip>
         )}
+        {children}
       </Box>
-      {children}
+
       <FormHelperText color="error">{error.message}</FormHelperText>
     </FormControl>
   );
@@ -67,6 +84,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
     label,
     inputPlaceholder,
     type,
+    multiline,
 
     setValue,
     ...rest
@@ -85,7 +103,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
     setValue,
   });
 
-  const classes = useStyles();
+  const classes = useStyles({ type });
   return (
     <FormControlComp
       name={name}
@@ -95,8 +113,9 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
       inputPlaceholder={inputPlaceholder}
     >
       <TextField
+        multiline={multiline}
         variant="outlined"
-        className={classes.root}
+        className={classes().root}
         type={
           type === "password"
             ? !showPassword
@@ -106,8 +125,8 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
         }
         style={{
           marginBottom: hasError ? "0.2rem" : "0",
-          borderRadius: "15px",
-          backgroundColor: "#CBCBCB",
+          borderRadius: type === "search" ? "15px" : "10px",
+          backgroundColor: type === "search" ? "#CBCBCB" : "transparent",
           width: "100%",
         }}
         {...field}
