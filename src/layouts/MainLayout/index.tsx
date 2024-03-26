@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../routes/constants";
+import TopFooter from "./TopFooter";
 interface HomepageLayoutProps {
   children: React.ReactNode;
   hasHeader?: boolean;
@@ -23,7 +24,7 @@ const HomepageLayout = ({
         justifyContent: "space-between",
       }}
     >
-      <p onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}>Admin</p>
+      <TopFooter />
       {hasHeader && <Header />}
 
       <Box

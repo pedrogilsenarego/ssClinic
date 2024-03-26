@@ -7,6 +7,9 @@ export const CSS = {
 };
 
 export const Colors = {
+  gold: {
+    400: "#af865a",
+  },
   redish: {
     200: "#ff5959",
     400: "#FF0000",

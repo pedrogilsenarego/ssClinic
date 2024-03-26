@@ -5,13 +5,12 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDR7r6MuZVwNKLjytoeYH-QNaNZ9CtgnHs",
-  authDomain: "ritz-f1344.firebaseapp.com",
-  projectId: "ritz-f1344",
-  storageBucket: "ritz-f1344.appspot.com",
-  messagingSenderId: "669743827570",
-  appId: "1:669743827570:web:3418458a23d3b9ffee10eb",
-  measurementId: "G-KL72NRWNTT",
+  apiKey: "AIzaSyDtSI1tfFfZjj-AUxjGqfBCAZEMXSPhyrs",
+  authDomain: "ssclinic-1e196.firebaseapp.com",
+  projectId: "ssclinic-1e196",
+  storageBucket: "ssclinic-1e196.appspot.com",
+  messagingSenderId: "799635055432",
+  appId: "1:799635055432:web:63c5b6c8341a68888a897d",
 };
 
 const app = initializeApp(firebaseConfig);
